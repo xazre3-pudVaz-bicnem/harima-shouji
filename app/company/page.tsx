@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { Phone, Mail, MapPin } from 'lucide-react'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import CTABanner from '@/components/sections/CTABanner'
 import { organizationSchema, localBusinessSchema, breadcrumbSchema } from '@/lib/structured-data'
@@ -146,8 +145,12 @@ export default function CompanyPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {strengths.map((item, index) => (
-              <div key={item.title} className="bg-white p-10 border border-gray-100">
-                <div className="text-3xl font-bold text-gray-100 mb-4">
+              <div key={item.title} className="group relative bg-white p-10 border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-gray-200">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div
+                  className="font-bold text-gray-100 mb-5 transition-colors duration-300 group-hover:text-amber-50"
+                  style={{ fontSize: '3.5rem', lineHeight: 1, letterSpacing: '-0.04em' }}
+                >
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
@@ -169,21 +172,23 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-4xl">
             {staff.map((member) => (
-              <div key={member.name}>
-                <div className="relative aspect-[4/5] overflow-hidden bg-gray-100 mb-6">
+              <div key={member.name} className="group">
+                <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-7">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-103"
+                    sizes="(max-width: 640px) 100vw, 50vw"
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
-                <div className="text-sm text-gray-400 tracking-widest uppercase mb-1">{member.role}</div>
-                <div className="text-xl font-bold text-gray-900 mb-3">{member.name}</div>
-                <p className="text-base text-gray-500 leading-relaxed">{member.comment}</p>
+                <div className="text-[10px] text-gray-400 tracking-[0.22em] uppercase mb-1.5">{member.role}</div>
+                <div className="text-xl font-bold text-gray-900 mb-4 tracking-tight">{member.name}</div>
+                <div className="h-px bg-gray-100 mb-4" />
+                <p className="text-sm text-gray-500 leading-relaxed" style={{ lineHeight: '2' }}>{member.comment}</p>
               </div>
             ))}
           </div>
@@ -218,42 +223,33 @@ export default function CompanyPage() {
       {/* Contact Info */}
       <section className="section-padding bg-white">
         <div className="container">
-          <div>
-            <div className="section-label mb-4">CONTACT</div>
-            <h2 className="section-title mb-10">連絡先</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl">
+          <div className="section-label mb-5">CONTACT</div>
+          <h2 className="section-title mb-14">連絡先</h2>
+          <div className="max-w-5xl border-t border-gray-100">
+            <div className="grid grid-cols-1 md:grid-cols-3">
               <a
                 href="tel:080-4724-0713"
-                className="flex flex-col items-center gap-4 p-10 border border-gray-100 hover:border-gray-300 hover:shadow-sm transition-all text-center group"
+                className="py-10 md:pr-12 border-b md:border-b-0 md:border-r border-gray-100 group"
               >
-                <div className="w-14 h-14 bg-gray-900 flex items-center justify-center group-hover:bg-gray-700 transition-colors">
-                  <Phone className="w-6 h-6 text-white" />
+                <div className="text-[10px] font-semibold tracking-[0.25em] text-gray-400 uppercase mb-4">TEL</div>
+                <div className="text-2xl font-bold text-gray-900 group-hover:text-amber-600 transition-colors mb-1 tracking-tight">
+                  080-4724-0713
                 </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-2 tracking-wide">電話番号</div>
-                  <div className="text-base font-bold text-gray-900">080-4724-0713</div>
-                </div>
+                <div className="text-xs text-gray-400">平日 9:00〜18:00</div>
               </a>
               <a
                 href="mailto:naisou@harima-shouji.co.jp"
-                className="flex flex-col items-center gap-4 p-10 border border-gray-100 hover:border-gray-300 hover:shadow-sm transition-all text-center group"
+                className="py-10 md:px-12 border-b md:border-b-0 md:border-r border-gray-100 group"
               >
-                <div className="w-14 h-14 bg-gray-900 flex items-center justify-center group-hover:bg-gray-700 transition-colors">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-2 tracking-wide">メール</div>
-                  <div className="text-sm font-semibold text-gray-900 break-all">naisou@harima-shouji.co.jp</div>
+                <div className="text-[10px] font-semibold tracking-[0.25em] text-gray-400 uppercase mb-4">EMAIL</div>
+                <div className="text-base font-semibold text-gray-700 group-hover:text-amber-600 transition-colors break-all">
+                  naisou@harima-shouji.co.jp
                 </div>
               </a>
-              <div className="flex flex-col items-center gap-4 p-10 border border-gray-100 text-center">
-                <div className="w-14 h-14 bg-gray-900 flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-2 tracking-wide">所在地</div>
-                  <div className="text-sm font-semibold text-gray-900">東京都練馬区関町南<br />2丁目2-4 山一ビル</div>
-                </div>
+              <div className="py-10 md:pl-12">
+                <div className="text-[10px] font-semibold tracking-[0.25em] text-gray-400 uppercase mb-4">ADDRESS</div>
+                <div className="text-base font-semibold text-gray-700">東京都練馬区関町南2丁目2-4</div>
+                <div className="text-sm text-gray-400 mt-1">山一ビル</div>
               </div>
             </div>
           </div>

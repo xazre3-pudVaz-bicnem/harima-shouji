@@ -14,9 +14,12 @@ export default function CTABanner({
   primaryHref?: string
 }) {
   return (
-    <section className="relative bg-[#071322] overflow-hidden" style={{ paddingTop: '7rem', paddingBottom: '7rem' }}>
-      {/* Background Image */}
-      <div className="absolute inset-0 opacity-[0.07]">
+    <section
+      className="relative overflow-hidden"
+      style={{ background: '#071322', paddingTop: '8rem', paddingBottom: '8rem' }}
+    >
+      {/* Background texture */}
+      <div className="absolute inset-0 opacity-[0.05]">
         <Image
           src="/LINE_ALBUM_2026.6.10_260610_26.jpg"
           alt=""
@@ -25,32 +28,72 @@ export default function CTABanner({
           sizes="100vw"
         />
       </div>
-      {/* Subtle left gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#071322] via-transparent to-[#071322]/60" />
+
+      {/* Top / bottom amber accent lines */}
+      <div
+        className="absolute top-0 left-0 right-0"
+        style={{ height: '1px', background: 'linear-gradient(90deg, transparent 0%, rgba(245,158,11,0.18) 50%, transparent 100%)' }}
+      />
+      <div
+        className="absolute bottom-0 left-0 right-0"
+        style={{ height: '1px', background: 'linear-gradient(90deg, transparent 0%, rgba(245,158,11,0.08) 50%, transparent 100%)' }}
+      />
 
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="text-xs font-bold tracking-[0.3em] text-amber-400 uppercase mb-6">
-            FREE CONSULTATION
+        <div className="max-w-5xl mx-auto text-center">
+
+          {/* Label */}
+          <div
+            className="font-bold tracking-[0.4em] text-amber-500 uppercase mb-8"
+            style={{ fontSize: '0.625rem' }}
+          >
+            Free Consultation
           </div>
+
+          {/* Title — wider container prevents bad wraps */}
           <h2
-            className="font-bold text-white mb-5 leading-tight"
-            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', letterSpacing: '-0.025em' }}
+            className="font-bold text-white mb-7 leading-tight"
+            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.75rem)', letterSpacing: '-0.02em' }}
           >
             {title}
           </h2>
-          <p className="text-gray-500 leading-relaxed mb-12" style={{ fontSize: '1rem', lineHeight: '2' }}>{description}</p>
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {['現地調査 無料', '見積 無料', '夜間工事 相談可', '原状回復 対応'].map((badge) => (
-              <span key={badge} className="text-xs font-semibold text-amber-400 border border-amber-500/30 px-4 py-2 tracking-wide">
-                {badge}
+
+          {/* Description */}
+          <p
+            className="leading-relaxed mb-10"
+            style={{
+              color: '#6b7280',
+              fontSize: '0.9375rem',
+              lineHeight: '2',
+              maxWidth: '36rem',
+              margin: '0 auto 2.5rem',
+            }}
+          >
+            {description}
+          </p>
+
+          {/* Subtle feature points — replaces amber badge strip */}
+          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-1.5 mb-12">
+            {['現地調査 無料', '見積 無料', '夜間工事 相談可', '原状回復 対応'].map((item, i) => (
+              <span key={item} className="flex items-center gap-2">
+                {i > 0 && (
+                  <span className="hidden sm:block" style={{ color: '#374151', fontSize: '0.5rem' }}>●</span>
+                )}
+                <span
+                  className="font-medium tracking-wide"
+                  style={{ color: '#6b7280', fontSize: '0.75rem' }}
+                >
+                  {item}
+                </span>
               </span>
             ))}
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <Link
               href={primaryHref}
-              className="inline-flex items-center justify-center gap-2.5 bg-amber-500 text-white font-bold px-10 py-5 hover:bg-amber-400 transition-colors tracking-wide"
+              className="inline-flex items-center justify-center gap-2.5 bg-amber-500 text-white font-bold px-10 py-4 hover:bg-amber-400 transition-colors tracking-wide"
               style={{ fontSize: '0.9375rem' }}
             >
               {primaryLabel}
@@ -58,13 +101,14 @@ export default function CTABanner({
             </Link>
             <a
               href="tel:080-4724-0713"
-              className="inline-flex items-center justify-center gap-2.5 border border-white/15 text-gray-300 font-medium px-10 py-5 hover:border-white/35 hover:text-white transition-colors"
-              style={{ fontSize: '0.9375rem' }}
+              className="inline-flex items-center justify-center gap-2 transition-colors hover:text-white"
+              style={{ color: '#6b7280', fontSize: '0.875rem' }}
             >
-              <Phone className="w-4 h-4" />
-              080-4724-0713
+              <Phone className="w-3.5 h-3.5" />
+              <span className="font-medium tracking-wide">080-4724-0713</span>
             </a>
           </div>
+
         </div>
       </div>
     </section>
