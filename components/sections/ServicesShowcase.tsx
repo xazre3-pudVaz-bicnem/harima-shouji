@@ -112,8 +112,7 @@ export default function ServicesShowcase() {
         <div key={service.title}>
           {/* group/card scopes hover effects to this card only */}
           <div
-            className={`relative group/card flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
-            style={{ minHeight: '720px' }}
+            className={`relative group/card flex flex-col lg:min-h-[720px] ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
           >
             {/* Invisible stretched link — makes entire card area clickable */}
             <Link
@@ -125,8 +124,7 @@ export default function ServicesShowcase() {
 
             {/* Photo — 60% width */}
             <motion.div
-              className="relative w-full lg:w-[60%] overflow-hidden bg-gray-100"
-              style={{ minHeight: '440px' }}
+              className="relative w-full lg:w-[60%] overflow-hidden bg-gray-100 min-h-[280px] lg:min-h-[440px]"
               initial={{ opacity: 0, scale: 1.03 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-80px' }}
@@ -158,7 +156,7 @@ export default function ServicesShowcase() {
 
             {/* Content — 40% width */}
             <motion.div
-              className="w-full lg:w-[40%] flex flex-col justify-center px-10 py-16 xl:px-20 xl:py-28"
+              className="w-full lg:w-[40%] flex flex-col justify-center px-6 py-10 md:px-10 md:py-16 xl:px-20 xl:py-28"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
@@ -170,19 +168,19 @@ export default function ServicesShowcase() {
                 </div>
                 <h3
                   className="font-bold text-gray-900 mb-6 leading-tight"
-                  style={{ fontSize: 'clamp(2rem, 2.8vw, 3.2rem)', letterSpacing: '-0.025em' }}
+                  style={{ fontSize: 'clamp(2.2rem, 3.2vw, 3.6rem)', letterSpacing: '-0.025em' }}
                 >
                   {service.title}
                 </h3>
                 <p
                   className="text-gray-500 mb-10 leading-relaxed"
-                  style={{ fontSize: '1rem', lineHeight: '2' }}
+                  style={{ fontSize: '1.125rem', lineHeight: '2' }}
                 >
                   {service.description}
                 </p>
                 <ul className="space-y-4 mb-12">
                   {service.features.map((f) => (
-                    <li key={f} className="flex items-center gap-4 text-gray-700" style={{ fontSize: '0.9375rem' }}>
+                    <li key={f} className="flex items-center gap-4 text-gray-700" style={{ fontSize: '1.0625rem' }}>
                       <span className="w-4 h-px bg-amber-400 shrink-0" />
                       {f}
                     </li>

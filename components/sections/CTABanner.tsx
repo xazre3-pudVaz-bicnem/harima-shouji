@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { ArrowRight, Phone } from 'lucide-react'
 
 export default function CTABanner({
-  title = '複数店舗の内装工事、まとめてご相談ください',
-  description = '現地調査・お見積りは無料です。フランチャイズ本部様・多店舗運営会社様からのご相談を積極的にお受けしております。',
+  title = '複数店舗の工事相談、まとめてお任せください',
+  description = 'フランチャイズ本部・多店舗展開企業の担当者様からのご相談を積極的にお受けしております。現地調査・お見積りは完全無料です。',
   primaryLabel = '無料相談する',
   primaryHref = '/contact',
 }: {
@@ -40,6 +40,13 @@ export default function CTABanner({
             {title}
           </h2>
           <p className="text-gray-500 leading-relaxed mb-12" style={{ fontSize: '1rem', lineHeight: '2' }}>{description}</p>
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {['現地調査 無料', '見積 無料', '夜間工事 相談可', '原状回復 対応'].map((badge) => (
+              <span key={badge} className="text-xs font-semibold text-amber-400 border border-amber-500/30 px-4 py-2 tracking-wide">
+                {badge}
+              </span>
+            ))}
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={primaryHref}

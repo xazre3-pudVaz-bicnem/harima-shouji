@@ -31,8 +31,7 @@ export default function FAQPage() {
             <div className="text-xs font-semibold tracking-widest text-amber-400 uppercase mb-3">FAQ</div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-5">よくある質問</h1>
             <p className="text-gray-300 text-base leading-relaxed">
-              フランチャイズ本部様・多店舗展開企業様からよくいただくご質問をまとめました。
-              解決しない場合はお気軽にお問い合わせください。
+              フランチャイズ本部・多店舗展開企業様からよくいただく質問をまとめました。複数店舗の工事管理・原状回復・退去立会いに関するご不明点はお気軽にお問い合わせください。
             </p>
           </div>
         </div>

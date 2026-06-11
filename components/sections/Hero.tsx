@@ -56,7 +56,7 @@ export default function Hero() {
               className="font-bold text-amber-400 uppercase tracking-[0.35em]"
               style={{ fontSize: '0.6875rem' }}
             >
-              INTERIOR CONSTRUCTION PARTNER FOR FRANCHISE
+              FC本部・多店舗企業向け施工パートナー
             </span>
           </motion.div>
 
@@ -72,9 +72,9 @@ export default function Hero() {
               lineHeight: '1.18',
             }}
           >
-            FC本部・多店舗展開企業の<br />
-            店舗工事管理を<br />
-            <span style={{ color: '#F59E0B' }}>一社に集約する。</span>
+            FC本部・多店舗企業専門。<br />
+            店舗内装・原状回復・退去立会いを<br />
+            <span style={{ color: '#F59E0B' }}>一括で管理できる施工パートナー</span>
           </motion.h1>
 
           {/* Subcopy */}
@@ -88,9 +88,9 @@ export default function Hero() {
               lineHeight: '2.1',
             }}
           >
-            店舗内装工事、原状回復、クロス張替え、店舗クリーニング、退去立会いまで。<br className="hidden md:block" />
+            店舗内装工事、クロス張替え、クリーニング、原状回復、退去立会いまで。<br className="hidden md:block" />
             複数店舗の工事管理をまとめて任せられる体制で、<br className="hidden md:block" />
-            FC本部・多店舗展開企業をサポートします。
+            フランチャイズ本部・多店舗展開企業をサポートします。
           </motion.p>
 
           {/* Tags */}

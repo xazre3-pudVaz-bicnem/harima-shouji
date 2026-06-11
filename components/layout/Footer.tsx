@@ -13,7 +13,6 @@ const serviceLinks = [
 
 const companyLinks = [
   { href: '/company', label: '会社概要' },
-  { href: '/works', label: '施工実績' },
   { href: '/area', label: '対応エリア' },
   { href: '/blog', label: 'ブログ' },
   { href: '/faq', label: 'よくある質問' },
