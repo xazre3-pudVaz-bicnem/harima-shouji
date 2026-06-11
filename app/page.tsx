@@ -4,7 +4,6 @@ import Problems from '@/components/sections/Problems'
 import ServicesShowcase from '@/components/sections/ServicesShowcase'
 import WorkScope from '@/components/sections/WorkScope'
 import WhyFCSection from '@/components/sections/WhyFCSection'
-import StatsStrip from '@/components/sections/StatsStrip'
 import AreaSection from '@/components/sections/AreaSection'
 import Process from '@/components/sections/Process'
 import ContactSection from '@/components/sections/ContactSection'
@@ -41,7 +40,6 @@ export default function HomePage() {
       ))}
 
       <Hero />
-      <StatsStrip />
       <Problems />
       <ServicesShowcase />
       <WorkScope />

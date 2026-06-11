@@ -1,4 +1,8 @@
-import { ChevronDown } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Plus, Minus } from 'lucide-react'
 
 type Faq = { q: string; a: string }
 
@@ -8,37 +12,87 @@ type Props = {
   bg?: 'white' | 'stone'
 }
 
-export default function ServiceFaqSection({ faqs, title = 'よくある質問', bg = 'stone' }: Props) {
+export default function ServiceFaqSection({ faqs, title = 'よくあるご質問', bg = 'stone' }: Props) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
   return (
     <section
       className={bg === 'stone' ? 'bg-stone-50' : 'bg-white'}
       style={{ paddingTop: '8rem', paddingBottom: '8rem' }}
     >
       <div className="container">
-        <div className="mb-16">
-          <div className="section-label mb-4">FAQ</div>
-          <h2 className="font-bold text-gray-900" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.5rem)' }}>{title}</h2>
+        <div className="mb-14">
+          <div className="section-label mb-5">FAQ</div>
+          <h2
+            className="font-bold text-gray-900"
+            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3.5rem)', lineHeight: '1.15' }}
+          >
+            {title}
+          </h2>
+          <p className="mt-3 text-gray-400 text-sm tracking-[0.15em] font-light">
+            Frequently Asked Questions
+          </p>
         </div>
-        <div className="max-w-3xl divide-y divide-gray-200">
-          {faqs.map((faq) => (
-            <details key={faq.q} className="group">
-              <summary className="flex justify-between items-start cursor-pointer list-none gap-6 py-8">
-                <div className="flex items-start gap-4">
+
+        <div className="space-y-3 max-w-4xl">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index
+            return (
+              <div
+                key={faq.q}
+                className="bg-white rounded-xl overflow-hidden border border-gray-100 transition-shadow duration-300"
+                style={{ boxShadow: isOpen ? '0 8px 24px rgba(0,0,0,0.07)' : '0 1px 6px rgba(0,0,0,0.04)' }}
+              >
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex items-center justify-between gap-6 text-left px-8 py-6 hover:bg-gray-50/50 transition-colors"
+                  style={{ minHeight: '80px' }}
+                >
                   <span
-                    className="font-black text-amber-400 shrink-0"
-                    style={{ fontSize: '1rem', letterSpacing: '0.05em', lineHeight: '1.6' }}
+                    className="font-bold text-gray-900 leading-snug"
+                    style={{ fontSize: 'clamp(1rem, 1.6vw, 1.125rem)' }}
                   >
-                    Q.
+                    {faq.q}
                   </span>
-                  <span className="text-lg font-bold text-gray-900 leading-snug">{faq.q}</span>
-                </div>
-                <ChevronDown className="w-5 h-5 text-gray-400 shrink-0 mt-1 group-open:rotate-180 transition-transform duration-300" />
-              </summary>
-              <div className="pb-8 pl-4 ml-4 border-l-2 border-amber-400">
-                <p className="text-base text-gray-600" style={{ lineHeight: '1.9' }}>{faq.a}</p>
+                  <div
+                    className="w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300"
+                    style={{
+                      background: isOpen ? '#f59e0b' : '#ffffff',
+                      borderColor: isOpen ? '#f59e0b' : '#e5e7eb',
+                    }}
+                  >
+                    {isOpen ? (
+                      <Minus className="w-3 h-3 text-white" />
+                    ) : (
+                      <Plus className="w-3 h-3 text-gray-500" />
+                    )}
+                  </div>
+                </button>
+
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-8 pb-8">
+                        <div className="h-px bg-gray-100 mb-6" />
+                        <p
+                          className="text-gray-600"
+                          style={{ fontSize: '0.9375rem', lineHeight: '2.1' }}
+                        >
+                          {faq.a}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </details>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
