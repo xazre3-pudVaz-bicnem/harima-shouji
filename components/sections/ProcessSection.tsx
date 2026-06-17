@@ -10,7 +10,7 @@ export default function ProcessSection({ steps, title = 'ご依頼の流れ', bg
   return (
     <section
       className={bg === 'stone' ? 'bg-stone-50' : 'bg-white'}
-      style={{ paddingTop: '8rem', paddingBottom: '8rem' }}
+      style={{ paddingTop: '12rem', paddingBottom: '12rem' }}
     >
       <div className="container">
         <div className="mb-16">

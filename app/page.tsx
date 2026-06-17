@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/sections/Hero'
-import Problems from '@/components/sections/Problems'
 import ServicesShowcase from '@/components/sections/ServicesShowcase'
 import WorkScope from '@/components/sections/WorkScope'
 import WhyFCSection from '@/components/sections/WhyFCSection'
@@ -40,7 +39,6 @@ export default function HomePage() {
       ))}
 
       <Hero />
-      <Problems />
       <ServicesShowcase />
       <WorkScope />
       <WhyFCSection />

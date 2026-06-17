@@ -31,9 +31,9 @@ const categories = [
 
 export default function WorkScope() {
   return (
-    <section className="bg-[#071322]" style={{ paddingTop: '10rem', paddingBottom: '0' }}>
+    <section className="bg-[#071322]" style={{ paddingTop: '14rem', paddingBottom: '0' }}>
       {/* Header */}
-      <div className="container" style={{ paddingBottom: '5rem' }}>
+      <div className="container" style={{ paddingBottom: '7rem' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function WorkScope() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.9, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="relative overflow-hidden group/card"
-            style={{ minHeight: '480px' }}
+            style={{ minHeight: '540px' }}
           >
             {/* Invisible stretched link */}
             <Link

@@ -37,7 +37,7 @@ const reasons = [
 
 export default function WhyFCSection() {
   return (
-    <section className="bg-[#071322]" style={{ paddingTop: '10rem', paddingBottom: '10rem' }}>
+    <section className="bg-[#071322]" style={{ paddingTop: '14rem', paddingBottom: '14rem' }}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

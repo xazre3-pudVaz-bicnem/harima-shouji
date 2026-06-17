@@ -7,7 +7,7 @@ type Props = {
 
 export default function ScopeSection({ items, title = '対応可能な工事内容' }: Props) {
   return (
-    <section className="bg-[#071322]" style={{ paddingTop: '8rem', paddingBottom: '8rem' }}>
+    <section className="bg-[#071322]" style={{ paddingTop: '12rem', paddingBottom: '12rem' }}>
       <div className="container">
         <div className="mb-14">
           <div className="text-xs font-bold tracking-[0.25em] text-amber-400 uppercase mb-5">SCOPE</div>

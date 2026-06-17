@@ -28,32 +28,32 @@ body {
     'Hiragino Kaku Gothic ProN',
     'Yu Gothic',
     sans-serif;
-  line-height: 1.85;
+  line-height: 2;
   -webkit-font-smoothing: antialiased;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
 }
 
 .section-padding {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+}
+
+.section-padding-sm {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
 
 @media (min-width: 768px) {
-  .section-padding {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
-}
-
-.section-padding-sm {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-@media (min-width: 768px) {
   .section-padding-sm {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+    padding-top: 9rem;
+    padding-bottom: 9rem;
   }
 }
 
@@ -67,22 +67,22 @@ body {
 
 @media (min-width: 768px) {
   .container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
 }
 
 .section-label {
@@ -101,27 +101,26 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255,255,255,0.22);
 }
 
-/* Section titles — much bigger than before */
 .section-title {
-  font-size: clamp(1.75rem, 5vw, 5rem);
+  font-size: clamp(2.2rem, 5.5vw, 5.5rem);
   font-weight: 700;
   color: #0f1117;
-  line-height: 1.18;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 .section-title-light {
-  font-size: clamp(1.75rem, 5vw, 5rem);
+  font-size: clamp(2.2rem, 5.5vw, 5.5rem);
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.18;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 .body-text {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   color: #4b5563;
-  line-height: 2.1;
+  line-height: 2.2;
 }
 
 .divider-line {

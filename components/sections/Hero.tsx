@@ -1,33 +1,39 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function Hero() {
+  const { scrollY } = useScroll()
+  const textY = useTransform(scrollY, [0, 800], [0, -100])
+  const videoScale = useTransform(scrollY, [0, 800], [1, 1.08])
+
   return (
     <section
       className="relative flex items-center overflow-hidden"
       style={{ minHeight: '100vh' }}
     >
-      {/* Video Background */}
+      {/* Video Background with subtle zoom parallax */}
       <div className="absolute inset-0" style={{ zIndex: 0 }}>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0" style={{ background: 'rgba(2,10,24,0.7)' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(2,10,24,0.5)] via-transparent to-transparent" />
+        <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
+        <div className="absolute inset-0" style={{ background: 'rgba(2,10,24,0.72)' }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(2,10,24,0.55)] via-transparent to-transparent" />
       </div>
 
-      {/* Content */}
-      <div
+      {/* Content — floats upward on scroll */}
+      <motion.div
         className="container relative"
-        style={{ zIndex: 10, paddingTop: '14rem', paddingBottom: '10rem' }}
+        style={{ zIndex: 10, paddingTop: '15rem', paddingBottom: '11rem', y: textY }}
       >
         <div className="max-w-5xl">
 
@@ -36,7 +42,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.0, delay: 0.15, ease: 'easeOut' }}
-            className="flex items-center gap-4 mb-10"
+            className="flex items-center gap-4 mb-11"
           >
             <div className="h-px w-10 bg-amber-500" />
             <span
@@ -49,14 +55,14 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="font-bold text-white leading-tight mb-10"
+            className="font-bold text-white leading-tight mb-11"
             style={{
-              fontSize: 'clamp(2.6rem, 6vw, 6rem)',
-              letterSpacing: '-0.03em',
-              lineHeight: '1.18',
+              fontSize: 'clamp(2.8rem, 6.5vw, 6.5rem)',
+              letterSpacing: '-0.035em',
+              lineHeight: '1.15',
             }}
           >
             フランチャイズ店舗の<br />
@@ -66,13 +72,13 @@ export default function Hero() {
 
           {/* Subcopy */}
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.85, delay: 0.52, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              color: 'rgba(209,213,219,0.7)',
-              fontSize: 'clamp(1rem, 1.6vw, 1.3rem)',
-              lineHeight: '1.9',
+              color: 'rgba(209,213,219,0.65)',
+              fontSize: 'clamp(1.05rem, 1.7vw, 1.4rem)',
+              lineHeight: '1.95',
             }}
           >
             多店舗展開企業・FC本部向け<br className="hidden md:block" />
@@ -80,17 +86,21 @@ export default function Hero() {
           </motion.p>
 
         </div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.1 }}
+        transition={{ duration: 1, delay: 1.2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
-        style={{ opacity: 0.3 }}
+        style={{ opacity: 0.28 }}
       >
-        <div className="w-px h-14 bg-gradient-to-b from-transparent to-white" />
+        <motion.div
+          animate={{ scaleY: [1, 0.6, 1] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-px h-14 bg-gradient-to-b from-transparent to-white origin-top"
+        />
         <span
           className="text-white tracking-[0.4em] uppercase"
           style={{ fontSize: '0.5625rem' }}

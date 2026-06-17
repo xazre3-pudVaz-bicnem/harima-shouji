@@ -79,7 +79,7 @@ export default function ServicesShowcase() {
   return (
     <section className="bg-white">
       {/* Section Header */}
-      <div className="container" style={{ paddingTop: '10rem', paddingBottom: '5rem' }}>
+      <div className="container" style={{ paddingTop: '12rem', paddingBottom: '7rem' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ export default function ServicesShowcase() {
         <div key={service.title}>
           {/* group/card scopes hover effects to this card only */}
           <div
-            className={`relative group/card flex flex-col lg:min-h-[720px] ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+            className={`relative group/card flex flex-col lg:min-h-[800px] ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
           >
             {/* Invisible stretched link — makes entire card area clickable */}
             <Link
@@ -125,10 +125,10 @@ export default function ServicesShowcase() {
             {/* Photo — 60% width */}
             <motion.div
               className="relative w-full lg:w-[60%] overflow-hidden bg-gray-100 min-h-[280px] lg:min-h-[440px]"
-              initial={{ opacity: 0, scale: 1.03 }}
+              initial={{ opacity: 0, scale: 1.06 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <Image
                 src={service.image}
@@ -156,7 +156,7 @@ export default function ServicesShowcase() {
 
             {/* Content — 40% width */}
             <motion.div
-              className="w-full lg:w-[40%] flex flex-col justify-center px-6 py-10 md:px-10 md:py-16 xl:px-20 xl:py-28"
+              className="w-full lg:w-[40%] flex flex-col justify-center px-6 py-14 md:px-12 md:py-20 xl:px-24 xl:py-32"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
@@ -173,19 +173,11 @@ export default function ServicesShowcase() {
                   {service.title}
                 </h3>
                 <p
-                  className="text-gray-500 mb-10 leading-relaxed"
+                  className="text-gray-500 mb-14 leading-relaxed"
                   style={{ fontSize: '1.125rem', lineHeight: '2' }}
                 >
                   {service.description}
                 </p>
-                <ul className="space-y-4 mb-12">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-center gap-4 text-gray-700" style={{ fontSize: '1.0625rem' }}>
-                      <span className="w-4 h-px bg-amber-400 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
                 <ServiceLink href={service.href} className="relative z-[2]" />
               </div>
             </motion.div>

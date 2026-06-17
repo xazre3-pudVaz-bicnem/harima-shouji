@@ -7,7 +7,7 @@ type Props = {
 
 export default function ReasonsSection({ reasons, title = '播磨商事が選ばれる理由' }: Props) {
   return (
-    <section className="bg-stone-50" style={{ paddingTop: '8rem', paddingBottom: '8rem' }}>
+    <section className="bg-stone-50" style={{ paddingTop: '12rem', paddingBottom: '12rem' }}>
       <div className="container">
         <div className="mb-14">
           <div className="section-label mb-5">WHY CHOOSE US</div>
