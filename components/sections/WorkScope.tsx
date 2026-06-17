@@ -9,29 +9,21 @@ import ServiceLink from '@/components/ui/ServiceLink'
 const categories = [
   {
     label: '内装工事',
-    description: '新規出店・改装・FC仕様統一施工。複数店舗の工程管理を一括で承ります。',
-    items: ['新規出店内装', 'クロス・壁紙', '床材工事', '天井・照明', '設備工事'],
     image: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
     href: '/service/shop-interior',
   },
   {
     label: '原状回復工事',
-    description: '退去立会い代行・解体・内装復旧まで一括対応。費用の適正化もサポート。',
-    items: ['内装解体・撤去', 'クロス・床の復旧', '退去立会い代行', '費用適正化', '複数店舗退去管理'],
     image: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
     href: '/service/restoration',
   },
   {
     label: '店舗クリーニング',
-    description: '退去・開業前・改装後の専門クリーニング。厨房・ダクト専門対応も。',
-    items: ['退去前クリーニング', '開業前清掃', '厨房専門', 'ダクト・エアコン', '複数店舗一括'],
     image: '/LINE_ALBUM_2026.6.10_260610_12.jpg',
     href: '/service/cleaning',
   },
   {
     label: '設備修繕',
-    description: '電気・空調・水まわりの修繕・急ぎ対応まで。店舗設備をワンストップで。',
-    items: ['電気・照明工事', '空調・換気', '水まわり修繕', '設備交換', '夜間・急ぎ対応'],
     image: '/LINE_ALBUM_2026.6.10_260610_8.jpg',
     href: '/service',
   },
@@ -52,12 +44,6 @@ export default function WorkScope() {
           <div>
             <div className="section-label-light mb-6">SCOPE OF WORK</div>
             <h2 className="section-title-light">対応できる工事内容</h2>
-            <p
-              className="mt-6 max-w-lg"
-              style={{ fontSize: '1.0625rem', color: 'rgba(107, 114, 128, 1)', lineHeight: '2' }}
-            >
-              内装から設備・クリーニング・原状回復まで。複数カテゴリを一括でご依頼いただけます。
-            </p>
           </div>
           <Link
             href="/service"
@@ -70,7 +56,7 @@ export default function WorkScope() {
         </motion.div>
       </div>
 
-      {/* 2×2 Large Photo Tiles — full width, no container padding */}
+      {/* 2×2 Large Photo Tiles */}
       <div className="grid grid-cols-1 md:grid-cols-2">
         {categories.map((cat, index) => (
           <motion.div
@@ -80,9 +66,9 @@ export default function WorkScope() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.9, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="relative overflow-hidden group/card"
-            style={{ minHeight: '420px' }}
+            style={{ minHeight: '480px' }}
           >
-            {/* Invisible stretched link — whole tile is clickable */}
+            {/* Invisible stretched link */}
             <Link
               href={cat.href}
               className="absolute inset-0 z-[1]"
@@ -99,34 +85,18 @@ export default function WorkScope() {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/15 group-hover/card:from-black/95 group-hover/card:via-black/65 transition-all duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/5 group-hover/card:from-black/90 transition-all duration-500" />
             {/* Hover border accent */}
             <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-500 scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left" />
 
             {/* Content */}
             <div className="absolute inset-0 flex flex-col justify-end p-10 lg:p-14">
               <h3
-                className="font-bold text-white mb-4 leading-tight"
-                style={{ fontSize: 'clamp(1.9rem, 2.8vw, 2.8rem)', letterSpacing: '-0.025em' }}
+                className="font-bold text-white mb-8 leading-tight"
+                style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', letterSpacing: '-0.03em' }}
               >
                 {cat.label}
               </h3>
-              <p
-                className="text-white/65 mb-7 leading-relaxed max-w-sm"
-                style={{ fontSize: '1rem', lineHeight: '1.85' }}
-              >
-                {cat.description}
-              </p>
-              <ul className="flex flex-wrap gap-2 mb-9">
-                {cat.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-[11px] font-medium text-white/55 border border-white/18 px-3.5 py-1.5 tracking-wide"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
               <ServiceLink href={cat.href} className="relative z-[2]" />
             </div>
           </motion.div>

@@ -31,12 +31,12 @@ const problems = [
 ]
 
 const reasons = [
-  { title: '複数店舗の施工品質を統一', description: 'FC本部様の仕様・基準に沿って加盟店ごとの施工品質を統一します。店舗数が増えても、一貫した品質管理を実現します。' },
-  { title: '本部担当者との窓口を一本化', description: '担当者を一名に固定し、複数店舗の工程・進捗・完了報告をまとめて管理。本部担当者様の個別対応コストを大幅に削減します。' },
-  { title: '複数店舗の同時並行施工対応', description: '複数店舗の工事を同時進行で進めることが可能です。開店スケジュールに合わせた工程調整・優先度管理にも対応します。' },
-  { title: '夜間・短工期・急ぎ案件も対応', description: '既存店舗の改装や退去後の原状回復など、夜間施工・短工期が必要な案件も対応。スケジュールが厳しい案件もご相談ください。' },
-  { title: '内装から退去立会いまで一括対応', description: '内装工事・クロス張替え・クリーニング・原状回復・退去立会いまで、すべて一社でまとめてお引き受けします。' },
-  { title: '現地調査から完了報告まで一貫担当', description: '現地調査・見積・工程調整・施工・完了確認・アフターフォローまで一貫して担当します。' },
+  { title: '複数店舗の施工品質を統一', description: 'FC本部様の仕様・基準に沿って加盟店ごとの施工品質を統一します。' },
+  { title: '本部担当者との窓口を一本化', description: '担当者を一名に固定し、複数店舗の工程・進捗・完了報告をまとめて管理します。' },
+  { title: '複数店舗の同時並行施工対応', description: '複数店舗の工事を同時進行で進めることが可能です。' },
+  { title: '夜間・短工期・急ぎ案件も対応', description: '夜間施工・短工期が必要な案件も柔軟に対応します。' },
+  { title: '内装から退去立会いまで一括対応', description: '内装工事からクリーニング・原状回復・退去立会いまで一社でお引き受けします。' },
+  { title: '現地調査から完了報告まで一貫担当', description: '調査・見積・施工・完了確認まで一貫して担当します。' },
 ]
 
 const scopeItems = [
@@ -57,12 +57,12 @@ const scopeItems = [
 ]
 
 const steps = [
-  { number: '01', title: 'お問い合わせ', description: 'お電話・メールフォームにてご連絡ください。まずは工事概要・店舗数・エリアなどを教えていただければ、スムーズに対応できます。' },
-  { number: '02', title: 'ヒアリング・現地調査', description: '工事内容・スケジュール・ご予算・店舗数など詳しくヒアリングします。現地調査は無料で対応。複数店舗の場合は合わせてスケジュールを整理します。' },
-  { number: '03', title: '見積・工程提案', description: '現地調査の結果をもとに詳細な見積書と工程表をご提出します。複数店舗の場合は一括で工程管理表を作成し、ご確認いただきます。' },
-  { number: '04', title: '施工・進捗報告', description: '承認後、施工を開始します。夜間・短工期にも対応。定期的な進捗報告と写真報告を行い、本部担当者様が現場に立ち合わなくても状況確認できます。' },
-  { number: '05', title: '完了確認・引き渡し', description: '施工完了後にご確認いただき、問題がなければ引き渡しとなります。完了写真・報告書を提出します。' },
-  { number: '06', title: 'アフターフォロー', description: '引き渡し後も継続サポートします。次回の工事やリピート案件もまとめてご依頼いただけます。' },
+  { number: '01', title: 'お問い合わせ', description: 'お電話またはメールフォームよりお気軽にご連絡ください。' },
+  { number: '02', title: 'ヒアリング・現地調査', description: '工事内容・スケジュール・ご予算・店舗数など詳しくヒアリングします。' },
+  { number: '03', title: '見積・工程提案', description: '現地調査の結果をもとに詳細な見積書と工程表をご提出します。' },
+  { number: '04', title: '施工・進捗報告', description: '承認後、施工を開始し、定期的な進捗報告と写真報告を行います。' },
+  { number: '05', title: '完了確認・引き渡し', description: '施工完了後にご確認いただき、完了写真・報告書を提出します。' },
+  { number: '06', title: 'アフターフォロー', description: '引き渡し後も継続サポートします。' },
 ]
 
 const faqs = [
@@ -90,12 +90,6 @@ const galleryPhotos = [
   { src: '/LINE_ALBUM_2026.6.10_260610_9.jpg', alt: '店舗内装仕上がり' },
 ]
 
-const statsItems = [
-  'FC本部・多店舗展開専門',
-  '複数店舗の同時並行対応',
-  '夜間・翌朝施工対応',
-  '東京・関東圏全域',
-]
 
 export default function FranchiseInteriorPage() {
   const structured = [
@@ -148,19 +142,6 @@ export default function FranchiseInteriorPage() {
         </div>
       </div>
 
-      {/* Stats Strip */}
-      <div className="bg-[#071322] py-8">
-        <div className="container">
-          <div className="flex flex-wrap items-center justify-center gap-0 divide-x divide-white/10">
-            {statsItems.map((item) => (
-              <div key={item} className="px-8 py-2 text-center">
-                <span className="text-sm font-bold text-white tracking-widest uppercase">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Overview */}
       <section style={{ paddingTop: '8rem', paddingBottom: '8rem' }} className="bg-white relative overflow-hidden">
         <div className="absolute top-8 left-8 text-[8rem] font-black text-gray-100 select-none leading-none pointer-events-none" aria-hidden="true">01</div>
@@ -171,28 +152,11 @@ export default function FranchiseInteriorPage() {
               <h2 className="font-bold text-gray-900 mb-8 leading-tight" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.5rem)' }}>
                 FC本部・チェーン店の内装工事を、<br />まとめて任せられる施工パートナー
               </h2>
-              <div className="space-y-5 text-gray-600 leading-relaxed" style={{ fontSize: '1.0625rem', lineHeight: '2.1' }}>
-                <p>
+              <p className="text-gray-600 leading-relaxed" style={{ fontSize: '1.0625rem', lineHeight: '2.1' }}>
                   フランチャイズ本部様・チェーン店本部様にとって、加盟店や直営店の内装工事管理は大きな負担となっています。
                   店舗ごとに異なる業者に発注する手間、施工品質のバラつき、退去時の原状回復対応——
                   こうした課題をまとめて解決するのが播磨商事の「フランチャイズ本部向け内装工事サービス」です。
                 </p>
-                <p>
-                  担当者を一本化することで、複数店舗の工程・進捗・完了報告を一元管理できます。
-                  本部担当者様は各店舗に個別対応する手間が省け、業務効率が大幅に向上します。
-                  夜間・短工期施工にも対応し、開店スケジュールが厳しい案件や深夜施工が必要な改装にも柔軟に対応します。
-                </p>
-                <p>
-                  内装工事だけでなく、退去立会い代行・オーナーとの交渉・原状回復工事・クリーニングまで、
-                  すべて一社でお任せいただけます。複数の業者に個別発注する手間と管理コストを一括で削減します。
-                </p>
-                <p>
-                  フランチャイズ加盟店は出店・運営・退去の各フェーズで内装工事が発生します。新規出店時の店舗設計・施工から、既存店舗の改装・リノベーション、退去時の原状回復まで、播磨商事ではフランチャイズ本部様のライフサイクル全体をサポートします。
-                </p>
-                <p>
-                  一般的な内装業者とは異なり、播磨商事はFC本部様・チェーン本部様の「工事管理担当者」として機能します。複数店舗の進捗をまとめて管理し、本部担当者様が個別対応する手間を省きます。フランチャイズ内装工事に特化した管理体制で、加盟店の出店スピードを支援します。
-                </p>
-              </div>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
               <Image
