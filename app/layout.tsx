@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import LoadingScreen from '@/components/sections/LoadingScreen'
+import Header from '@/app/v2/_components/Header'
+import Footer from '@/app/v2/_components/Footer'
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
@@ -14,22 +13,18 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: {
-    default: 'フランチャイズ・多店舗向け内装工事 | 株式会社播磨商事',
+    default: 'フランチャイズ本部・多店舗展開企業の施工パートナー | 株式会社播磨商事',
     template: '%s | 株式会社播磨商事',
   },
   description:
-    'FC本部・多店舗展開企業の内装工事をまとめてお任せください。クロス張替え・原状回復・店舗クリーニング・退去立会いまで一括対応。東京・関東圏で複数店舗の施工管理を一元化します。',
+    'FC本部・多店舗展開企業向けの店舗内装工事・原状回復工事。施工管理の負担を軽減します。東京・関東圏を中心に7都府県対応。現地調査・見積無料。',
   keywords: [
     'フランチャイズ 内装工事',
     '店舗 内装工事',
     '店舗 原状回復',
-    '店舗 クロス張替え',
-    '店舗 クリーニング',
-    '退去立会い 代行',
+    '多店舗 施工管理',
+    'FC本部 施工パートナー',
     '原状回復工事 東京',
-    '多店舗 内装工事',
-    'チェーン店 内装工事',
-    'FC本部 内装工事',
   ],
   metadataBase: new URL('https://harima-shouji.co.jp'),
   openGraph: {
@@ -45,41 +40,20 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
-  verification: {
-    google: '',
-  },
+  twitter: { card: 'summary_large_image' },
+  robots: { index: true, follow: true },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja" className={notoSansJP.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full flex flex-col">
-        <LoadingScreen />
+      <body className="min-h-full flex flex-col" style={{ background: '#FAFAF8' }}>
         <Header />
-        <main className="flex-1 pt-[72px]">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

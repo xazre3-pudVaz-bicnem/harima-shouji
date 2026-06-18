@@ -1,41 +1,66 @@
 import type { Metadata } from 'next'
-import Breadcrumb from '@/components/ui/Breadcrumb'
-import ContactSection from '@/components/sections/ContactSection'
-import { breadcrumbSchema } from '@/lib/structured-data'
+import PageHero from '@/app/v2/_components/PageHero'
+import ContactForm from '@/app/v2/contact/_components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'お問い合わせ | 無料相談・見積依頼',
-  description:
-    '株式会社播磨商事へのお問い合わせ。店舗内装工事・原状回復・クロス張替え・退去立会いなど、現地調査・お見積りは無料です。複数店舗のまとめてのご相談も歓迎。',
-  alternates: { canonical: 'https://harima-shouji.co.jp/contact' },
+  title: 'お問い合わせ',
+  description: '店舗内装工事・原状回復工事のご相談はこちら。複数店舗のまとめてのご相談も歓迎です。',
 }
 
 export default function ContactPage() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema([{ name: 'お問い合わせ', url: '/contact' }])),
-        }}
+    <div style={{ background: '#FAFAF8' }}>
+
+      <PageHero
+        label="CONTACT"
+        title="お問い合わせ"
+        subtitle="まずはお気軽にご相談ください。複数店舗のまとめてのご相談も歓迎します。"
+        image="/LINE_ALBUM_2026.6.10_260610_4.jpg"
+        breadcrumb={[
+          { label: 'TOP', href: '/' },
+          { label: 'お問い合わせ', href: '/contact' },
+        ]}
       />
 
-      {/* Page Header */}
-      <div className="bg-gray-950" style={{ paddingTop: '10rem' }}>
-        <div className="container py-16 md:py-20">
-          <Breadcrumb items={[{ label: 'お問い合わせ' }]} />
-          <div className="mt-5">
-            <div className="text-xs font-semibold tracking-[0.2em] text-amber-400 uppercase mb-4">CONTACT</div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-5 leading-tight">お問い合わせ</h1>
-            <p className="text-gray-400 text-base leading-relaxed">
-              現地調査・お見積りは無料です。複数店舗のまとめてのご相談も歓迎しております。
-              お気軽にご連絡ください。
-            </p>
+      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#FFFFFF' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gap: '5rem', alignItems: 'start' }} className="grid-cols-1 lg:grid-cols-[1fr_2fr]">
+
+            <div>
+              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>INFO</div>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '2.5rem' }}>
+                お電話でも<br />受け付けています
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                <div>
+                  <div style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.06em', color: '#9CA3AF', marginBottom: '0.5rem' }}>TEL</div>
+                  <a href="tel:080-4724-0713" style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0A0A0A', textDecoration: 'none', letterSpacing: '-0.02em' }}>
+                    080-4724-0713
+                  </a>
+                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: '0.375rem' }}>平日 9:00〜18:00</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.06em', color: '#9CA3AF', marginBottom: '0.5rem' }}>EMAIL</div>
+                  <a href="mailto:naisou@harima-shouji.co.jp" style={{ fontSize: '0.9375rem', color: '#0A0A0A', textDecoration: 'none' }}>
+                    naisou@harima-shouji.co.jp
+                  </a>
+                </div>
+                <div style={{ padding: '1.5rem 1.75rem', background: '#F5F4F0', borderLeft: '2px solid #0A0A0A' }}>
+                  <p style={{ fontSize: '0.8125rem', color: '#6B6B6B', lineHeight: 2 }}>
+                    複数店舗の施工管理、まとめてのご相談も歓迎します。対応エリア・工期のご確認もお気軽にどうぞ。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <ContactForm />
+            </div>
+
           </div>
         </div>
-      </div>
+      </section>
 
-      <ContactSection />
-    </>
+    </div>
   )
 }

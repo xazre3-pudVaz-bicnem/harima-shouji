@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { href: '/v2#service', label: 'サービス' },
-  { href: '/v2#why', label: '選ばれる理由' },
-  { href: '/v2#area', label: '対応エリア' },
-  { href: '/v2/contact', label: 'お問い合わせ' },
+  { href: '/#service', label: 'サービス' },
+  { href: '/#why', label: '選ばれる理由' },
+  { href: '/#area', label: '対応エリア' },
+  { href: '/contact', label: 'お問い合わせ' },
 ]
 
 export default function Header() {
@@ -16,30 +16,25 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const shell = document.getElementById('v2-shell')
-    if (!shell) return
-    const handleScroll = () => setScrolled(shell.scrollTop > 40)
-    shell.addEventListener('scroll', handleScroll, { passive: true })
-    return () => shell.removeEventListener('scroll', handleScroll)
+    const handleScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
-    const shell = document.getElementById('v2-shell')
-    if (shell) shell.style.overflow = mobileOpen ? 'hidden' : 'auto'
-    return () => { if (shell) shell.style.overflow = 'auto' }
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
   const handleAnchor = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!href.startsWith('#')) return
+    const hash = href.includes('#') ? '#' + href.split('#')[1] : null
+    if (!hash) return
     e.preventDefault()
     setMobileOpen(false)
-    const target = document.querySelector(href)
+    const target = document.querySelector(hash)
     if (target) {
-      const shell = document.getElementById('v2-shell')
-      if (shell) {
-        const offset = (target as HTMLElement).offsetTop
-        shell.scrollTo({ top: offset, behavior: 'smooth' })
-      }
+      const offset = (target as HTMLElement).getBoundingClientRect().top + window.scrollY
+      window.scrollTo({ top: offset, behavior: 'smooth' })
     }
   }
 
@@ -68,7 +63,7 @@ export default function Header() {
           }}
         >
           {/* Logo */}
-          <Link href="/v2" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '2px' }}>
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '2px' }}>
             <span style={{ fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.3em', color: '#9CA3AF', textTransform: 'uppercase' }}>
               HARIMA SHOUJI
             </span>

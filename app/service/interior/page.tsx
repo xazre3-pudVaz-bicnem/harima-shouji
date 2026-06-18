@@ -4,70 +4,72 @@ import Link from 'next/link'
 import PageHero from '@/app/v2/_components/PageHero'
 
 export const metadata: Metadata = {
-  title: '原状回復工事',
-  description: '退去立会い・解体・内装復旧まで。複数店舗の退去スケジュールを一元管理します。FC本部・多店舗展開企業向け。',
+  title: '店舗内装工事',
+  description: '新規出店・改装・リノベーション。クロス・床・設備まで、店舗内装工事を一括対応します。FC本部・多店舗展開企業向け。',
 }
 
 const features = [
-  { number: '01', title: '退去立会い・原状確認', note: 'オーナー・管理会社との立会いを代行。過剰な費用請求の適正化をサポートします。' },
-  { number: '02', title: '解体・撤去工事', note: '内装材・造作物・設備の解体から廃材処理まで一括対応します。' },
-  { number: '03', title: 'クロス・床・設備の復旧', note: '原状回復に必要な内装工事をすべてお任せいただけます。' },
-  { number: '04', title: '複数店舗の退去スケジュール管理', note: '多店舗の退去を一元管理し、担当者の負担を大幅に軽減します。' },
-  { number: '05', title: 'オーナー・管理会社との調整', note: '費用面・工事内容の交渉をサポートし、適正な原状回復を実現します。' },
+  { number: '01', title: '新規出店・改装・リノベーション', note: 'スケルトンからの新規出店、既存店舗の部分改装・全面リノベーションまで対応します。' },
+  { number: '02', title: '内装全般（クロス・床・天井）', note: '壁紙・フロア・天井の素材選定から施工まで一括してお任せください。' },
+  { number: '03', title: '設備・空調・厨房まわり', note: '内装に付随する設備工事も同時対応。専門業者との連携で工期を短縮します。' },
+  { number: '04', title: '夜間・短工期対応', note: '翌朝完了が必要な急ぎ案件、閉店後施工もご相談ください。' },
+  { number: '05', title: '複数店舗の同時進行', note: 'エリアをまたいだ同時並行施工に対応。工程管理の窓口を一本化します。' },
 ]
 
 const works = [
-  '/LINE_ALBUM_2026.6.10_260610_18.jpg',
-  '/LINE_ALBUM_2026.6.10_260610_19.jpg',
-  '/LINE_ALBUM_2026.6.10_260610_20.jpg',
-  '/LINE_ALBUM_2026.6.10_260610_21.jpg',
+  '/LINE_ALBUM_2026.6.10_260610_6.jpg',
+  '/LINE_ALBUM_2026.6.10_260610_9.jpg',
+  '/LINE_ALBUM_2026.6.10_260610_12.jpg',
+  '/LINE_ALBUM_2026.6.10_260610_17.jpg',
 ]
 
 const steps = [
-  { number: '01', title: 'お問い合わせ', note: '退去店舗数・スケジュールをお聞かせください。' },
-  { number: '02', title: '退去立会い・調査', note: 'オーナー・管理会社との立会いを代行します。' },
-  { number: '03', title: '解体・復旧工事', note: '解体から内装復旧まで一括で進めます。' },
-  { number: '04', title: '完了・引き渡し', note: '検収後、引き渡し。追加サポートも対応可能です。' },
+  { number: '01', title: 'お問い合わせ', note: 'フォームまたはお電話でご連絡ください。' },
+  { number: '02', title: '現地調査（無料）', note: '店舗に伺い、工事内容・スケジュールを確認します。' },
+  { number: '03', title: 'お見積り・ご提案', note: '調査内容をもとに、最適な施工プランをご提案します。' },
+  { number: '04', title: '施工・引き渡し', note: '工程管理を徹底し、完了後に検収・引き渡しを行います。' },
 ]
 
-export default function RestorationPage() {
+export default function InteriorPage() {
   return (
     <div style={{ background: '#FAFAF8' }}>
 
       <PageHero
-        label="SERVICE 02"
-        title="原状回復工事"
-        subtitle="退去立会いから解体・内装復旧まで。退去管理の負担を一社にまとめてください。"
-        image="/LINE_ALBUM_2026.6.10_260610_14.jpg"
+        label="SERVICE 01"
+        title="店舗内装工事"
+        subtitle="新規出店から改装・リノベーションまで。施工管理をまとめてお任せください。"
+        image="/LINE_ALBUM_2026.6.10_260610_3.jpg"
         breadcrumb={[
           { label: 'TOP', href: '/' },
           { label: 'サービス', href: '/#service' },
-          { label: '原状回復工事', href: '/service/restoration' },
+          { label: '店舗内装工事', href: '/service/interior' },
         ]}
       />
 
+      {/* Overview */}
       <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: '5rem', alignItems: 'center' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
               <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>OVERVIEW</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '2rem' }}>
-                退去管理の煩雑さを<br />ゼロにする
+                店舗の内装工事を<br />ワンストップで
               </h2>
               <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2, marginBottom: '1.5rem' }}>
-                複数店舗を抱えるフランチャイズ本部・多店舗展開企業にとって、退去時の原状回復は大きな負担です。オーナー・管理会社との調整、立会い代行、解体・内装復旧まですべてを一括してお任せいただけます。
+                クロス張替え・床材・天井・設備まわりなど内装に関わる工事を一括して承ります。現地調査・ヒアリングから施工・引き渡しまで一貫対応し、スムーズな開業・改装をサポートします。
               </p>
               <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2 }}>
-                複数店舗の退去スケジュールを一元管理することで、担当者様が個別に追う手間をなくします。
+                FC本部・チェーン店本部のパートナーとして、複数店舗を横断した品質統一と進捗管理を行います。本部担当者様の連絡先は一つで完結します。
               </p>
             </div>
             <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden' }}>
-              <Image src="/LINE_ALBUM_2026.6.10_260610_18.jpg" alt="原状回復工事の様子" fill style={{ objectFit: 'cover' }} sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image src="/LINE_ALBUM_2026.6.10_260610_6.jpg" alt="店舗内装工事の様子" fill style={{ objectFit: 'cover' }} sizes="(max-width: 1024px) 100vw, 50vw" />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Features */}
       <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#F5F4F0' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>FEATURES</div>
@@ -86,6 +88,7 @@ export default function RestorationPage() {
         </div>
       </section>
 
+      {/* Works gallery */}
       <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>WORKS</div>
@@ -100,6 +103,7 @@ export default function RestorationPage() {
         </div>
       </section>
 
+      {/* Flow */}
       <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#F5F4F0' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>FLOW</div>
@@ -121,11 +125,14 @@ export default function RestorationPage() {
         </div>
       </section>
 
+      {/* CTA */}
       <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#0D1117' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>CONTACT</div>
-          <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '2rem' }}>まずはお気軽に<br />ご相談ください</h2>
-          <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.4)', lineHeight: 2, marginBottom: '3rem' }}>複数店舗の退去スケジュールのご相談も歓迎します。</p>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '2rem' }}>
+            まずはお気軽に<br />ご相談ください
+          </h2>
+          <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.4)', lineHeight: 2, marginBottom: '3rem' }}>複数店舗のまとめてのご相談も歓迎します。</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{ display: 'inline-block', padding: '1rem 3rem', background: '#FFFFFF', color: '#0A0A0A', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.06em', textDecoration: 'none' }}>
               お問い合わせ

@@ -10,14 +10,14 @@ const services = [
     title: '店舗内装工事',
     description: '新規出店・改装・FC店舗施工・多店舗展開支援',
     image: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
-    href: '/v2/service/interior',
+    href: '/service/interior',
     label: 'INTERIOR',
   },
   {
     title: '原状回復工事',
     description: '退去・解体・内装復旧・クロス補修・設備復旧',
     image: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
-    href: '/v2/service/restoration',
+    href: '/service/restoration',
     label: 'RESTORATION',
   },
 ]

@@ -1,12 +1,12 @@
 import Link from 'next/link'
 
 const links = [
-  { href: '/v2/service/interior', label: '店舗内装工事' },
-  { href: '/v2/service/restoration', label: '原状回復工事' },
-  { href: '/v2/company', label: '会社概要' },
-  { href: '/v2/area', label: '対応エリア' },
-  { href: '/v2/faq', label: 'FAQ' },
-  { href: '/v2/contact', label: 'お問い合わせ' },
+  { href: '/service/interior', label: '店舗内装工事' },
+  { href: '/service/restoration', label: '原状回復工事' },
+  { href: '/company', label: '会社概要' },
+  { href: '/area', label: '対応エリア' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'お問い合わせ' },
 ]
 
 export default function Footer() {
@@ -65,7 +65,7 @@ export default function Footer() {
           <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)' }}>
             &copy; {new Date().getFullYear()} 株式会社播磨商事
           </p>
-          <Link href="/v2/privacy" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', textDecoration: 'none' }}>
+          <Link href="/privacy" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', textDecoration: 'none' }}>
             プライバシーポリシー
           </Link>
         </div>
