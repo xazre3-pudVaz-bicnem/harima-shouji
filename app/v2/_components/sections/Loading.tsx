@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Loading() {
   const [visible, setVisible] = useState(false)
@@ -42,16 +43,16 @@ export default function Loading() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              style={{
-                fontSize: '0.625rem',
-                fontWeight: 700,
-                letterSpacing: '0.45em',
-                color: '#0A0A0A',
-                textTransform: 'uppercase',
-                marginBottom: '0.75rem',
-              }}
+              style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}
             >
-              HARIMA SHOUJI
+              <Image
+                src="/LINE_ALBUM_2026.6.10_260610_5.jpg"
+                alt="株式会社播磨商事"
+                width={120}
+                height={144}
+                style={{ objectFit: 'contain' }}
+                priority
+              />
             </motion.div>
             <motion.div
               initial={{ scaleX: 0 }}

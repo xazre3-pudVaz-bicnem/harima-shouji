@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const linkGroups = [
   {
@@ -39,12 +40,23 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div style={{ marginBottom: '1.5rem' }}>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '4px' }}>
-                HARIMA SHOUJI
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
+              <div style={{ width: '44px', height: '44px', overflow: 'hidden', flexShrink: 0, position: 'relative', background: '#FFFFFF', borderRadius: '2px' }}>
+                <Image
+                  src="/LINE_ALBUM_2026.6.10_260610_5.jpg"
+                  alt="播磨商事ロゴ"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                  sizes="44px"
+                />
               </div>
-              <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.01em' }}>
-                株式会社播磨商事
+              <div>
+                <div style={{ fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  HARIMA SHOUJI
+                </div>
+                <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.01em' }}>
+                  株式会社播磨商事
+                </div>
               </div>
             </div>
             <address style={{ fontStyle: 'normal', fontSize: '0.8125rem', lineHeight: 2 }}>

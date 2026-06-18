@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
@@ -64,13 +65,24 @@ export default function Header() {
           }}
         >
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '2px' }}>
-            <span style={{ fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.3em', color: '#9CA3AF', textTransform: 'uppercase' }}>
-              HARIMA SHOUJI
-            </span>
-            <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.01em' }}>
-              株式会社播磨商事
-            </span>
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '36px', height: '36px', overflow: 'hidden', flexShrink: 0, position: 'relative' }}>
+              <Image
+                src="/LINE_ALBUM_2026.6.10_260610_5.jpg"
+                alt="播磨商事ロゴ"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                sizes="36px"
+              />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+              <span style={{ fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.3em', color: '#9CA3AF', textTransform: 'uppercase' }}>
+                HARIMA SHOUJI
+              </span>
+              <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.01em' }}>
+                株式会社播磨商事
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -151,9 +163,20 @@ export default function Header() {
           >
             {/* Mobile top bar */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px', padding: '0 2rem', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase' }}>HARIMA SHOUJI</span>
-                <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#FFFFFF' }}>株式会社播磨商事</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ width: '32px', height: '32px', overflow: 'hidden', flexShrink: 0, position: 'relative', borderRadius: '2px' }}>
+                  <Image
+                    src="/LINE_ALBUM_2026.6.10_260610_5.jpg"
+                    alt="播磨商事ロゴ"
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                    sizes="32px"
+                  />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                  <span style={{ fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase' }}>HARIMA SHOUJI</span>
+                  <span style={{ fontSize: '0.875rem', fontWeight: 700, color: '#FFFFFF' }}>株式会社播磨商事</span>
+                </div>
               </div>
               <button
                 onClick={() => setMobileOpen(false)}
