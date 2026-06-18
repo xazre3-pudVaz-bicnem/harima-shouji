@@ -1,11 +1,13 @@
 import Link from 'next/link'
 
 const links = [
-  { href: '/service/interior', label: '店舗内装工事' },
+  { href: '/service/shop-interior', label: '店舗内装工事' },
   { href: '/service/restoration', label: '原状回復工事' },
-  { href: '/company', label: '会社概要' },
+  { href: '/franchise', label: 'FC本部向け' },
   { href: '/area', label: '対応エリア' },
-  { href: '/faq', label: 'FAQ' },
+  { href: '/column', label: 'コラム' },
+  { href: '/blog', label: 'ブログ' },
+  { href: '/company', label: '会社概要' },
   { href: '/contact', label: 'お問い合わせ' },
 ]
 

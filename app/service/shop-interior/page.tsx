@@ -1,183 +1,203 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import Breadcrumb from '@/components/ui/Breadcrumb'
-import CTABanner from '@/components/sections/CTABanner'
-import ScopeSection from '@/components/sections/ScopeSection'
-import ProcessSection from '@/components/sections/ProcessSection'
-import ReasonsSection from '@/components/sections/ReasonsSection'
-import ServiceFaqSection from '@/components/sections/ServiceFaqSection'
-import { breadcrumbSchema, serviceSchema } from '@/lib/structured-data'
+import Image from 'next/image'
+import PageHero from '@/app/v2/_components/PageHero'
+import CtaSection from '@/app/v2/_components/CtaSection'
+import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
 
 export const metadata: Metadata = {
-  title: '店舗内装工事 東京 | 新規出店・改装リノベーション | 株式会社播磨商事',
-  description:
-    '東京・関東圏の店舗内装工事。新規出店・改装リノベーションから、フランチャイズ仕様統一施工まで対応。複数店舗の工程管理・短工期施工・夜間施工可能。見積無料。',
-  keywords: ['店舗内装工事 東京', '店舗 リノベーション', '店舗 改装工事', '新規出店 内装', '複数店舗 内装工事'],
+  title: '店舗内装工事 | FC本部・多店舗展開企業向け',
+  description: 'FC本部・多店舗展開企業の店舗内装工事を一括管理。新規出店・改装・夜間施工に対応。ブランド仕様の統一施工で全店品質を均一化。現地調査・見積無料。',
+  keywords: ['店舗内装工事', 'フランチャイズ 内装工事', '多店舗 内装工事', 'FC本部 内装工事'],
   alternates: { canonical: 'https://harima-shouji.co.jp/service/shop-interior' },
+  openGraph: { title: '店舗内装工事 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/service/shop-interior' },
 }
 
-const problems = [
-  '新規出店・改装工事を複数の業者に分割発注しており、管理コストが高い',
-  'フランチャイズの仕様に合わせた内装工事を一括で依頼できる業者がいない',
-  'オープン日までの短工期・夜間施工に対応できる施工会社が見つからない',
-  '内装工事の品質にばらつきがあり、ブランドの統一感が保てていない',
-  '内装工事の費用・工期が読みづらく、出店計画が立てにくい',
-]
-
-const reasons = [
-  { title: 'FC仕様統一施工に対応', description: 'フランチャイズ本部の仕様書・設計図面をもとに、複数店舗の施工品質を統一します。' },
-  { title: '短工期・夜間施工に対応', description: 'オープン日が決まっている新規出店でも、夜間・短工期施工で対応します。' },
-  { title: '設計から施工まで一括対応', description: '内装デザイン・設計・施工・設備工事まで一括してご依頼いただけます。' },
-  { title: '複数店舗の工程管理', description: '複数店舗の内装工事を同時進行で管理し、工程表を共有します。' },
-  { title: '東京・関東圏全域対応', description: '東京23区をはじめ、関東圏全域で施工対応しています。' },
-  { title: '施工後のアフターサポート', description: 'オープン後の不具合対応・追加工事・原状回復まで長期サポートします。' },
-]
-
-const scopeItems = [
-  '新規出店の内装工事一式',
-  '改装・リノベーション工事',
-  'フランチャイズ仕様統一施工',
-  '内装デザイン・設計提案',
-  '軽量鉄骨・木工下地工事',
-  'クロス・壁紙工事',
-  '床材工事（タイル・CF・フローリング）',
-  '天井工事',
-  '建具・造作工事',
-  '電気・照明工事',
-  '設備工事（給排水）',
-  '空調・換気工事',
-  'サイン・看板工事',
-  '廃材処分・産廃処理',
-]
-
-const steps = [
-  { number: '01', title: 'ご相談・ヒアリング', description: '店舗の業態・コンセプト・予算・工期のご要望をお聞きします。FC仕様の確認も行います。' },
-  { number: '02', title: '現地調査・設計提案', description: '対象物件を調査し、内装設計・仕様・材料のご提案を行います。' },
-  { number: '03', title: '見積・工程提出', description: '詳細な見積書と工程表を提出します。ご要望に合わせて調整します。' },
-  { number: '04', title: '施工', description: '工程表に沿って施工を進め、品質確認・進捗報告を定期的に行います。' },
-  { number: '05', title: '竣工・引き渡し', description: '施工完了後の確認・清掃を経て、引き渡しを行います。アフターサポートも継続します。' },
-]
-
-const galleryPhotos = [
-  { src: '/LINE_ALBUM_2026.6.10_260610_22.jpg', alt: '店舗内装工事 施工事例1' },
-  { src: '/LINE_ALBUM_2026.6.10_260610_4.jpg', alt: '店舗内装工事 施工事例2' },
-  { src: '/LINE_ALBUM_2026.6.10_260610_8.jpg', alt: '店舗内装工事 施工事例3' },
-  { src: '/LINE_ALBUM_2026.6.10_260610_9.jpg', alt: '店舗内装工事 施工事例4' },
-]
-
-const faqs = [
-  { q: '新規出店の内装工事はどのくらいの期間がかかりますか？', a: '工事内容・規模によって異なりますが、標準的な店舗（50〜100坪）で2〜6週間程度です。スケルトン状態からのフルスクラッチ施工か、居抜き物件の改装かによっても変わります。詳細はお問い合わせください。' },
-  { q: 'フランチャイズ本部の仕様書に対応できますか？', a: 'はい、FC本部の内装仕様書・設計図面をもとに施工します。既存の施工実績や承認業者との連携経験もありますので、ご相談ください。' },
-  { q: '複数店舗の出店工事をまとめて依頼できますか？', a: 'はい、複数店舗の内装工事を一括してご依頼いただけます。各店舗の工程を統一管理し、品質と工期を管理します。' },
-  { q: '営業中の店舗の改装も対応できますか？', a: 'はい、閉店後・深夜施工で営業への影響を最小化しながら進めることができます。仮営業が必要な場合のご相談も対応します。' },
-  { q: '施工後の保証はありますか？', a: '施工完了後1年間の施工保証を提供しています。施工に起因する不具合は無償で対応いたします。' },
-  { q: 'フランチャイズ仕様書がある場合、それに合わせた施工は可能ですか？', a: 'はい、可能です。本部からの仕様書・設計図面をご共有いただければ、それに沿った内装工事を実施します。加盟店ごとの品質統一をサポートします。' },
-  { q: '既存店舗の改装中に営業を続けることは可能ですか？', a: '改装の内容によりますが、夜間・休日施工を組み合わせることで、営業への影響を最小限に抑えながら改装することが可能です。まずはご相談ください。' },
-  { q: '小さなテナントの内装工事でも対応できますか？', a: 'はい、規模を問わず対応可能です。小型テナントから大型店舗まで、実際の店舗を確認した上でご提案します。' },
-]
-
-const related = [
-  { title: '原状回復工事', href: '/service/restoration', description: '退去・解体・内装復旧' },
+const interiorFaq = [
+  {
+    category: '施工について',
+    items: [
+      { q: '夜間・休日施工に対応していますか？', a: 'はい、閉店後の夜間施工に対応しています。翌日の営業開始に間に合うスケジュールでの対応実績があります。' },
+      { q: '複数店舗を同時に進めることはできますか？', a: 'はい、複数案件の同時進行管理を得意としています。担当者様の窓口を1つに集約して進捗管理します。' },
+      { q: 'フランチャイズ仕様書に基づいた施工はできますか？', a: 'はい、本部から支給された仕様書・VI基準に基づいて施工します。仕様の確認から施工完了報告まで一貫して対応します。' },
+      { q: '工期の目安を教えてください。', a: '標準的な店舗（30〜50坪）で2〜4週間が目安です。物件の状態・工事範囲・夜間施工の可否によって変わります。詳細はご相談ください。' },
+    ],
+  },
+  {
+    category: '費用・見積り',
+    items: [
+      { q: '見積りは無料ですか？', a: 'はい、現地調査・見積りは無料です。物件の図面やお持ちの情報があれば概算をお伝えすることも可能です。' },
+      { q: '予算内に収まるか相談できますか？', a: 'はい、工事範囲の調整やコスト最適化の提案を行っています。まずはご要件とご予算をお聞かせください。' },
+    ],
+  },
 ]
 
 export default function ShopInteriorPage() {
-  const structured = [
-    breadcrumbSchema([{ name: 'サービス一覧', url: '/service' }, { name: '店舗内装工事', url: '/service/shop-interior' }]),
-    serviceSchema('店舗内装工事', '新規出店・改装リノベーションからFC仕様統一施工まで。複数店舗の工程管理も対応。', '/service/shop-interior'),
-  ]
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: '店舗内装工事',
+    provider: { '@type': 'LocalBusiness', name: '株式会社播磨商事' },
+    description: 'FC本部・多店舗展開企業向けの店舗内装工事。新規出店・改装・夜間施工対応。',
+    areaServed: '東京都・埼玉県・千葉県・神奈川県・静岡県・大阪府・兵庫県',
+  }
+
   return (
-    <>
-      {structured.map((d, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(d) }} />)}
+    <div style={{ background: '#FAFAF8' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
-      {/* Hero */}
-      <div className="relative bg-gray-950 overflow-hidden" style={{ paddingTop: '10rem', minHeight: '65vh' }}>
-        <div className="absolute inset-0">
-          <Image src="/LINE_ALBUM_2026.6.10_260610_22.jpg" alt="店舗内装工事" fill className="object-cover opacity-25" priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/85 to-gray-950/50" />
-        </div>
-        <div className="container relative z-10 py-10 md:py-16">
-          <Breadcrumb items={[{ label: 'サービス一覧', href: '/service' }, { label: '店舗内装工事' }]} />
-          <div className="mt-7 max-w-3xl">
-            <div className="text-xs font-bold tracking-[0.25em] text-amber-400 uppercase mb-5">SHOP INTERIOR</div>
-            <h1 className="font-bold text-white mb-6 leading-tight" style={{ fontSize: 'clamp(2.4rem, 4.5vw, 4.5rem)' }}>店舗内装工事</h1>
-            <p className="text-gray-300 leading-relaxed max-w-2xl" style={{ fontSize: '1.0625rem', lineHeight: '2' }}>
-              新規出店・改装リノベーションからFC仕様統一施工まで、店舗の内装工事全般を対応。
-              複数店舗の工程管理・短工期・夜間施工も承ります。
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        label="INTERIOR WORKS"
+        title="店舗内装工事"
+        subtitle="FC本部・多店舗展開企業の出店・改装施工をまとめてサポート。担当者の管理工数を削減します。"
+        image="/LINE_ALBUM_2026.6.10_260610_22.jpg"
+        breadcrumb={[
+          { label: 'TOP', href: '/' },
+          { label: 'サービス', href: '/service' },
+          { label: '店舗内装工事', href: '/service/shop-interior' },
+        ]}
+      />
 
-      {/* Overview — image LEFT, text RIGHT, with pull quote */}
-      <section style={{ paddingTop: '8rem', paddingBottom: '8rem' }} className="bg-white">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 order-1 lg:order-none">
-              <Image src="/LINE_ALBUM_2026.6.10_260610_4.jpg" alt="店舗内装工事施工" fill className="object-cover" sizes="50vw" />
-            </div>
+      {/* Overview */}
+      <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gap: 'clamp(3rem, 6vw, 7rem)', alignItems: 'center' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">出店・改装の内装工事を<br />ワンストップで管理</h2>
-              <p className="text-gray-600" style={{ fontSize: '1.0625rem', lineHeight: '2.1' }}>フランチャイズ本部様や多店舗展開企業様にとって、店舗ごとの内装工事を個別に発注する手間は大きな負担です。業者選定・工程管理・品質確認を繰り返すことで、事業展開のスピードが落ちてしまうケースも少なくありません。</p>
+              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>OVERVIEW</div>
+              <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
+                施工管理を<br />本部担当者一人に<br />集約する体制
+              </h2>
+              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2, marginBottom: '2rem' }}>
+                加盟店ごとに施工業者が異なると、品質のばらつき・コスト管理の煩雑さ・担当者の対応負荷が生まれます。播磨商事は、FC本部・多店舗展開企業を主要取引先として、出店・改装施工の窓口を一本化します。
+              </p>
+              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+                本部仕様書に基づいた統一施工・夜間施工対応・複数案件の同時進行管理により、担当者の管理工数を大幅に削減します。
+              </p>
+            </div>
+            <div style={{ position: 'relative', height: 'clamp(300px, 50vh, 520px)', overflow: 'hidden' }}>
+              <Image
+                src="/LINE_ALBUM_2026.6.10_260610_6.jpg"
+                alt="店舗内装工事の施工例"
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <ScopeSection items={scopeItems} title="対応工事内容" />
-
-      {/* Problems */}
-      <section style={{ paddingTop: '8rem', paddingBottom: '8rem' }} className="bg-[#071322]">
-        <div className="container">
-          <div className="mb-14"><div className="section-label-light mb-5">PROBLEMS</div><h2 className="section-title-light">こんなお悩みありませんか？</h2></div>
-          <div className="divide-y divide-white/8">
-            {problems.map((p, i) => (
-              <div key={p} className="flex items-center gap-10 py-7 group">
-                <span className="text-[11px] font-bold text-amber-500/40 tracking-[0.3em] shrink-0 w-6">{String(i + 1).padStart(2, '0')}</span>
-                <p className="text-white/60 group-hover:text-white/90 transition-colors" style={{ fontSize: '1.125rem' }}>{p}</p>
+      {/* Features */}
+      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FEATURES</div>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
+            対応内容
+          </h2>
+          <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { label: '01', title: '新規出店施工', body: '物件引き渡し後の内装仕上げ全般。クロス・床・天井・照明・造作工事まで対応します。' },
+              { label: '02', title: '改装・リノベーション', body: '既存店舗のブランドリニューアル・設備更新・部分改装。営業を続けながらの段階施工にも対応します。' },
+              { label: '03', title: 'ブランド仕様の統一施工', body: 'FC本部から支給された仕様書・VI基準に基づいて施工。全店品質を均一化します。' },
+              { label: '04', title: '夜間・短工期対応', body: '閉店後の夜間施工で翌日の営業に影響を与えません。タイトなオープンスケジュールにも対応します。' },
+              { label: '05', title: '複数店舗の同時進行', body: '複数案件が同時に動いている状況でも、担当者の窓口を1つに集約して進捗管理します。' },
+              { label: '06', title: '施工完了報告', body: '写真・チェックリスト付きの完了報告書を提出。本部担当者の確認・承認業務を効率化します。' },
+            ].map((item) => (
+              <div key={item.label} style={{ background: '#FFFFFF', padding: '3rem 2.5rem' }}>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F0EFEC', letterSpacing: '-0.05em', marginBottom: '0.5rem', lineHeight: 1 }}>{item.label}</div>
+                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '1rem' }}>{item.title}</h3>
+                <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.8 }}>{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <ReasonsSection reasons={reasons} />
+      {/* Flow */}
+      <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FLOW</div>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
+            ご依頼の流れ
+          </h2>
+          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
+            {[
+              { step: '01', title: 'お問い合わせ・物件情報共有', body: '施工物件の概要・希望工期・仕様書などをお知らせください。' },
+              { step: '02', title: '現地調査・見積り', body: '現地を確認した上で詳細な見積りを提出します。現地調査・見積りは無料です。' },
+              { step: '03', title: '施工計画の確認', body: '工期・作業範囲・仕様を確認します。本部担当者様との情報共有フローを整えます。' },
+              { step: '04', title: '施工', body: '確定した計画に基づいて施工します。進捗は担当者様に定期報告します。' },
+              { step: '05', title: '完了確認・引き渡し', body: '施工完了後、写真・完了報告書を提出します。本部確認後に鍵をお渡しします。' },
+            ].map((item, i, arr) => (
+              <li key={item.step} style={{ display: 'grid', gridTemplateColumns: '4rem 1px 1fr', gap: '0 2rem', paddingBottom: i < arr.length - 1 ? '3rem' : 0 }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.1em', paddingTop: '0.25rem', textAlign: 'right' }}>{item.step}</div>
+                <div style={{ position: 'relative', width: '1px', background: '#E5E3DF' }}>
+                  <div style={{ position: 'absolute', top: '0.25rem', left: '-3px', width: '7px', height: '7px', borderRadius: '50%', background: '#0A0A0A' }} />
+                </div>
+                <div style={{ paddingBottom: '2rem' }}>
+                  <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.5rem' }}>{item.title}</h3>
+                  <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.8 }}>{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
-      {/* Gallery — 2x2 grid with aspect-[4/3] */}
-      <section style={{ paddingTop: '8rem', paddingBottom: '8rem' }} className="bg-white">
-        <div className="container">
-          <div className="mb-14"><div className="section-label mb-5">GALLERY</div><h2 className="text-4xl md:text-5xl font-bold text-gray-900">施工事例</h2></div>
-          <div className="grid grid-cols-2 gap-3">
-            {galleryPhotos.map((photo) => (
-              <div key={photo.src} className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                <Image src={photo.src} alt={photo.alt} fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="50vw" />
+      {/* Gallery */}
+      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>GALLERY</div>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>施工事例</h2>
+          <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-2 lg:grid-cols-4">
+            {[
+              '/LINE_ALBUM_2026.6.10_260610_3.jpg',
+              '/LINE_ALBUM_2026.6.10_260610_9.jpg',
+              '/LINE_ALBUM_2026.6.10_260610_14.jpg',
+              '/LINE_ALBUM_2026.6.10_260610_22.jpg',
+            ].map((src, i) => (
+              <div key={i} style={{ position: 'relative', aspectRatio: '1', overflow: 'hidden' }}>
+                <Image src={src} alt={`施工事例 ${i + 1}`} fill style={{ objectFit: 'cover' }} sizes="(max-width: 1024px) 50vw, 25vw" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <ProcessSection steps={steps} bg="stone" />
+      {/* FAQ */}
+      <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
+            よくある質問
+          </h2>
+          <FaqAccordion faqs={interiorFaq} />
+        </div>
+      </section>
 
-      <ServiceFaqSection faqs={faqs} bg="white" />
-
-      {/* Related Services */}
-      <section style={{ paddingTop: '5rem', paddingBottom: '5rem' }} className="bg-white">
-        <div className="container">
-          <div className="section-label mb-8">RELATED SERVICES</div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {related.map((r) => (
-              <Link key={r.href} href={r.href} className="group flex items-center justify-between border border-gray-100 p-6 hover:border-amber-200 transition-colors">
-                <div><div className="text-base font-bold text-gray-900 mb-1">{r.title}</div><div className="text-sm text-gray-500">{r.description}</div></div>
-                <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-amber-500 transition-colors shrink-0" />
+      {/* Related */}
+      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
+          <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: '原状回復工事', href: '/service/restoration', note: '退去・解体・内装復旧' },
+              { label: 'FC本部向けサービス', href: '/franchise', note: 'フランチャイズ本部の施工管理' },
+              { label: '多店舗展開企業向け', href: '/multi-store', note: '複数店舗の一括管理' },
+              { label: '対応エリア', href: '/area', note: '関東・東海・近畿 7都府県' },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} style={{ display: 'block', padding: '2rem', background: '#FFFFFF', textDecoration: 'none' }}>
+                <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{item.note}</div>
+                <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{item.label}</div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <CTABanner title="店舗内装工事のご相談はこちら" description="新規出店・改装・FC本部様の複数店舗対応まで。まずはお気軽にご連絡ください。" />
-    </>
+      <CtaSection heading="店舗内装工事について\nご相談ください" subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。現地調査・見積無料。" />
+    </div>
   )
 }

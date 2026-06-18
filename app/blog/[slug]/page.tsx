@@ -2,16 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import Breadcrumb from '@/components/ui/Breadcrumb'
-import CTABanner from '@/components/sections/CTABanner'
-import {
-  getPostBySlug,
-  getPosts,
-  getFeaturedImageUrl,
-  getCategories,
-  formatDate,
-} from '@/lib/wordpress'
-import { articleSchema, breadcrumbSchema } from '@/lib/structured-data'
+import PageHero from '@/app/v2/_components/PageHero'
+import CtaSection from '@/app/v2/_components/CtaSection'
+import { getPostBySlug, getPosts, getFeaturedImageUrl, getCategories, formatDate } from '@/lib/wordpress'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -24,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const imageUrl = getFeaturedImageUrl(post)
   return {
-    title: post.title.rendered,
+    title: `${post.title.rendered} | 播磨商事ブログ`,
     description: post.excerpt.rendered.replace(/<[^>]+>/g, '').slice(0, 120),
     alternates: { canonical: `https://harima-shouji.co.jp/blog/${slug}` },
     openGraph: {
@@ -48,109 +41,98 @@ export default async function BlogPostPage({ params }: Props) {
   const imageUrl = getFeaturedImageUrl(post)
   const categories = getCategories(post)
 
-  const structured = [
-    articleSchema({
-      title: post.title.rendered,
-      description: post.excerpt.rendered.replace(/<[^>]+>/g, '').slice(0, 120),
-      url: `/blog/${slug}`,
-      datePublished: post.date,
-      imageUrl: imageUrl || undefined,
-    }),
-    breadcrumbSchema([
-      { name: 'ブログ', url: '/blog' },
-      { name: post.title.rendered, url: `/blog/${slug}` },
-    ]),
-  ]
+  const articleStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title.rendered,
+    description: post.excerpt.rendered.replace(/<[^>]+>/g, '').slice(0, 120),
+    datePublished: post.date,
+    author: { '@type': 'Organization', name: '株式会社播磨商事' },
+    publisher: { '@type': 'Organization', name: '株式会社播磨商事' },
+    image: imageUrl || undefined,
+  }
 
   return (
-    <>
-      {structured.map((d, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(d) }} />
-      ))}
+    <div style={{ background: '#FAFAF8' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }} />
 
-      <div className="pt-20 bg-gray-950">
-        <div className="container py-10">
-          <Breadcrumb
-            items={[
-              { label: 'ブログ', href: '/blog' },
-              { label: post.title.rendered },
-            ]}
-          />
-        </div>
-      </div>
+      <PageHero
+        label="BLOG"
+        title={post.title.rendered}
+        image={imageUrl || '/LINE_ALBUM_2026.6.10_260610_3.jpg'}
+        breadcrumb={[
+          { label: 'TOP', href: '/' },
+          { label: 'ブログ', href: '/blog' },
+          { label: post.title.rendered.slice(0, 20) + (post.title.rendered.length > 20 ? '...' : ''), href: `/blog/${slug}` },
+        ]}
+      />
 
-      <article className="section-padding bg-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            {/* Header */}
-            <header className="mb-8">
-              {categories.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {categories.map((cat) => (
-                    <span key={cat} className="text-xs text-amber-600 font-medium">
-                      {cat}
-                    </span>
-                  ))}
-                </div>
-              )}
-              <h1
-                className="text-2xl md:text-3xl font-bold text-gray-900 mb-3"
-                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-              />
-              <p className="text-xs text-gray-400">{formatDate(post.date)}</p>
-            </header>
+      <article style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
 
-            {/* Featured Image */}
-            {imageUrl && (
-              <div className="mb-8 overflow-hidden">
-                <Image
-                  src={imageUrl}
-                  alt={post._embedded?.['wp:featuredmedia']?.[0]?.alt_text || post.title.rendered}
-                  width={900}
-                  height={500}
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-            )}
-
-            {/* Content */}
-            <div
-              className="prose prose-sm max-w-none text-gray-700 leading-relaxed
-                prose-headings:text-gray-900 prose-headings:font-bold
-                prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4
-                prose-h3:text-base prose-h3:mt-6 prose-h3:mb-3
-                prose-p:mb-4 prose-p:leading-relaxed
-                prose-ul:pl-5 prose-ul:mb-4
-                prose-li:mb-1
-                prose-a:text-gray-900 prose-a:underline"
-              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-            />
-
-            {/* Related Services */}
-            <div className="mt-14 pt-8 border-t border-gray-100">
-              <h2 className="text-base font-bold text-gray-900 mb-4">関連サービス</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  { href: '/service/shop-interior', label: '店舗内装工事' },
-                  { href: '/service/restoration', label: '原状回復工事' },
-                ].map((s) => (
-                  <Link
-                    key={s.href}
-                    href={s.href}
-                    className="flex items-center gap-2 text-sm text-gray-700 border border-gray-100 p-3 hover:border-gray-300 transition-colors"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-amber-500 shrink-0" />
-                    {s.label}
-                  </Link>
+          {/* Meta */}
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid #F0EFEC' }}>
+            {categories.length > 0 && (
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                {categories.map((cat) => (
+                  <span key={cat} style={{ fontSize: '0.6875rem', color: '#9CA3AF', background: '#F0EFEC', padding: '0.375rem 1rem', fontWeight: 600 }}>
+                    {cat}
+                  </span>
                 ))}
               </div>
+            )}
+            <time dateTime={post.date} style={{ fontSize: '0.8125rem', color: '#9CA3AF' }}>{formatDate(post.date)}</time>
+          </div>
+
+          {/* Featured Image */}
+          {imageUrl && (
+            <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden', marginBottom: '4rem' }}>
+              <Image
+                src={imageUrl}
+                alt={post._embedded?.['wp:featuredmedia']?.[0]?.alt_text || post.title.rendered}
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 800px) 100vw, 800px"
+                priority
+              />
             </div>
+          )}
+
+          {/* Content */}
+          <div
+            className="wp-content"
+            style={{ fontSize: '0.9375rem', color: '#3A3A3A', lineHeight: 2 }}
+            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          />
+
+          {/* Related Services */}
+          <div style={{ marginTop: '4rem', padding: '2.5rem', background: '#F5F4F0' }}>
+            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>RELATED SERVICES</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {[
+                { href: '/service/shop-interior', label: '店舗内装工事' },
+                { href: '/service/restoration', label: '原状回復工事' },
+              ].map((s) => (
+                <Link key={s.href} href={s.href} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem', fontWeight: 700, color: '#0A0A0A', textDecoration: 'none' }}>
+                  <svg width="16" height="6" viewBox="0 0 16 6" fill="none">
+                    <path d="M0 3H14M14 3L11 1M14 3L11 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {s.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Back to list */}
+          <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+            <Link href="/blog" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', color: '#0A0A0A', textDecoration: 'none', textTransform: 'uppercase', borderBottom: '1px solid #0A0A0A', paddingBottom: '2px' }}>
+              ブログ一覧へ戻る
+            </Link>
           </div>
         </div>
       </article>
 
-      <CTABanner />
-    </>
+      <CtaSection heading="施工管理について\nご相談ください" subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。" />
+    </div>
   )
 }
