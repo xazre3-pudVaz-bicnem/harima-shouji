@@ -15,7 +15,7 @@ const companyData = [
   { label: '電話番号', value: '080-4724-0713' },
   { label: 'メール', value: 'naisou@harima-shouji.co.jp' },
   { label: '営業時間', value: '平日 9:00〜18:00\n（夜間・土日は要相談）' },
-  { label: '事業内容', value: '店舗内装工事\n原状回復工事\nフランチャイズ本部向け施工管理' },
+  { label: '事業内容', value: '店舗内装工事\n原状回復工事\nホームページ制作' },
   { label: '対応エリア', value: '東京都・埼玉県・千葉県・神奈川県\n静岡県・大阪府・兵庫県' },
 ]
 
