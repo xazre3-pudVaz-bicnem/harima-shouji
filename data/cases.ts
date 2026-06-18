@@ -1,0 +1,353 @@
+export type CaseData = {
+  slug: string
+  title: string
+  metaTitle: string
+  metaDescription: string
+  keywords: string[]
+  heroImage: string
+  industry: string
+  area: string
+  serviceType: '店舗内装工事' | '原状回復工事' | '改装・リニューアル'
+  scope: string[]
+  duration: string
+  nightWork: boolean
+  challenge: string
+  approach: string
+  managementPoints: string[]
+  completionReport: string
+  relatedService: { label: string; href: string }[]
+  relatedIndustry?: { label: string; href: string }
+  relatedArea?: { label: string; href: string }
+  faqs: { q: string; a: string }[]
+}
+
+export const cases: CaseData[] = [
+  {
+    slug: 'restaurant-interior-tokyo',
+    title: '飲食FC店舗 新規出店内装工事（東京都）',
+    metaTitle: '飲食FC店舗 新規出店内装工事（東京都）｜施工事例｜株式会社播磨商事',
+    metaDescription: '東京都内の飲食フランチャイズ店舗の新規出店内装工事事例。厨房工事・排気ダクト・グリストラップ設置・ブランド仕様内装仕上げ。夜間施工対応。',
+    keywords: ['飲食店 内装工事 東京', '飲食FC 新規出店', 'フランチャイズ 飲食 内装'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
+    industry: '飲食業',
+    area: '東京都',
+    serviceType: '店舗内装工事',
+    scope: ['厨房設備基礎工事・排気ダクト設置', 'グリストラップ設置', '防滑床材施工', 'ホール内装仕上げ（クロス・床・天井・照明）', 'ブランドサイン設置', '給排水接続工事'],
+    duration: '4週間',
+    nightWork: true,
+    challenge: '商業施設内のテナントであったため、工事可能時間が施設閉店後の夜間に限られていました。厨房排気ダクトのルート確保において施設管理会社との調整が必要でした。',
+    approach: '施設管理会社への申請資料を作成し、ダクトルートを事前確認してから着工。工事可能時間（閉店21時〜翌朝6時）を最大活用した夜間施工スケジュールで4週間での完工を実現しました。',
+    managementPoints: [
+      '夜間施工スケジュールの精緻な管理',
+      'FC本部仕様書に基づく施工基準の共有',
+      '施設管理規約への適合確認',
+      '複数職人・工種間の工程調整',
+    ],
+    completionReport: 'FC本部仕様の各チェック項目に対応した写真と確認記録を添付した完了報告書を提出。本部担当者様が現地に来ることなく仕様確認できる形式で作成しました。',
+    relatedService: [
+      { label: '店舗内装工事', href: '/service/shop-interior' },
+      { label: 'FC本部向けサービス', href: '/franchise' },
+    ],
+    relatedIndustry: { label: '飲食店の内装工事', href: '/industry/restaurant-interior' },
+    relatedArea: { label: '東京都の店舗内装工事', href: '/area/tokyo' },
+    faqs: [
+      { q: '商業施設内の夜間施工に対応できますか？', a: 'はい、施設ルールに沿った夜間施工の実績があります。' },
+      { q: '飲食店の厨房排気ダクト工事も含まれますか？', a: 'はい、厨房設備工事・排気ダクト設置に対応しています。' },
+      { q: 'FC本部仕様書に基づいた施工は可能ですか？', a: 'はい、本部仕様書に基づいた施工管理を行います。' },
+    ],
+  },
+  {
+    slug: 'restaurant-restoration-tokyo',
+    title: '飲食店退去 原状回復工事（東京都）',
+    metaTitle: '飲食店退去 原状回復工事（東京都）｜施工事例｜株式会社播磨商事',
+    metaDescription: '東京都内の飲食店退去時の原状回復工事事例。グリストラップ清掃・臭気処理・床復旧・退去立会い代行・費用適正化サポート。',
+    keywords: ['飲食店 原状回復 東京', '飲食店 退去 工事 東京'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
+    industry: '飲食業',
+    area: '東京都',
+    serviceType: '原状回復工事',
+    scope: ['グリストラップ清掃・撤去', '排気ダクト内部清掃・撤去', '臭気処理（クロス・床・天井）', '防滑床撤去・床材復旧', '厨房造作撤去', 'クロス補修・張替え'],
+    duration: '2週間',
+    nightWork: false,
+    challenge: '長期使用による厨房の油汚れ・臭気の浸透が激しく、クロス・天井への臭気対応が必要でした。また管理会社から提示された原状回復費用が実際の工事範囲より過剰と判断される項目が含まれていました。',
+    approach: '独自見積りを提出し、費用の妥当性を管理会社に示すことで、一部費用の適正化交渉をサポート。専門の消臭処理を実施し、臭気基準をクリアした状態で引き渡しました。',
+    managementPoints: [
+      '管理会社見積りとの費用比較・適正化交渉サポート',
+      '退去立会い代行',
+      '臭気処理の専門施工',
+      '完了写真・報告書の提出',
+    ],
+    completionReport: '施工前後の状態比較写真・各工事項目の実施記録を含む完了報告書を提出。管理会社への引き渡し確認もサポートしました。',
+    relatedService: [
+      { label: '原状回復工事', href: '/service/restoration' },
+      { label: '多店舗展開企業向け', href: '/multi-store' },
+    ],
+    relatedIndustry: { label: '飲食店の原状回復工事', href: '/industry/restaurant-restoration' },
+    relatedArea: { label: '東京都の原状回復工事', href: '/area/tokyo' },
+    faqs: [
+      { q: '飲食店の退去立会い代行はできますか？', a: 'はい、管理会社との立会い代行に対応しています。費用交渉もサポートします。' },
+      { q: '臭気処理も施工範囲に含まれますか？', a: 'はい、専門の消臭処理に対応しています。' },
+    ],
+  },
+  {
+    slug: 'beauty-salon-interior-kanagawa',
+    title: '美容室FC店舗 新規出店内装工事（神奈川県）',
+    metaTitle: '美容室FC店舗 新規出店内装工事（神奈川県）｜施工事例｜株式会社播磨商事',
+    metaDescription: '神奈川県の美容室フランチャイズ店舗の新規出店内装工事事例。シャンプー台給排水・電気増設・ミラー設置・ブランド仕様仕上げ。',
+    keywords: ['美容室 内装工事 神奈川', '美容室FC 出店', 'ヘアサロン 内装工事'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
+    industry: '美容業',
+    area: '神奈川県',
+    serviceType: '店舗内装工事',
+    scope: ['シャンプー台給排水工事（6台分）', '電気容量増設（60A→100A）', 'スタイリングミラー設置（10面）', 'スタイリングチェアベース設置', 'ブランド仕様内装仕上げ', '受付カウンター造作'],
+    duration: '3週間',
+    nightWork: true,
+    challenge: '既存物件の電気容量が不足しており、電気増設工事が必要でした。シャンプー台6台分の給排水ルートを確保するため、床下配管の計画に時間を要しました。',
+    approach: '着工前に電気容量の増設申請・配管ルートの確認を並行して進め、工事開始後のスムーズな進行を確保。夜間施工を活用し、3週間での完工を実現しました。',
+    managementPoints: [
+      '電気増設申請と工事の並行管理',
+      '床下給排水配管ルートの事前確認',
+      'FC本部仕様書に基づくミラー・チェアの設置精度管理',
+    ],
+    completionReport: 'シャンプー台の給排水試運転確認・電気設備の動作確認を含む完了報告書を提出しました。',
+    relatedService: [
+      { label: '店舗内装工事', href: '/service/shop-interior' },
+      { label: 'FC本部向けサービス', href: '/franchise' },
+    ],
+    relatedIndustry: { label: '美容室の内装工事', href: '/industry/beauty-salon-interior' },
+    relatedArea: { label: '神奈川県の店舗内装工事', href: '/area/kanagawa' },
+    faqs: [
+      { q: '美容室のシャンプー台給排水工事に対応できますか？', a: 'はい、台数・配置に合わせた配管工事に対応しています。' },
+      { q: '電気容量の増設も施工に含まれますか？', a: 'はい、増設申請から工事まで対応しています。' },
+    ],
+  },
+  {
+    slug: 'retail-restoration-saitama',
+    title: '小売FC店舗 退去 原状回復工事（埼玉県）',
+    metaTitle: '小売FC店舗 退去 原状回復工事（埼玉県）｜施工事例｜株式会社播磨商事',
+    metaDescription: '埼玉県の小売フランチャイズ店舗の退去・原状回復工事事例。什器撤去・フィッティングルーム撤去・床壁補修・退去立会い代行。',
+    keywords: ['小売店 原状回復 埼玉', '小売FC 退去', 'アパレル 原状回復'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
+    industry: '小売業',
+    area: '埼玉県',
+    serviceType: '原状回復工事',
+    scope: ['什器・棚・陳列台撤去', 'フィッティングルーム撤去・壁面復旧', 'レジカウンター撤去', 'タイルカーペット撤去・床材復旧', 'クロス補修・張替え', '退去立会い代行'],
+    duration: '10日間',
+    nightWork: false,
+    challenge: '閉店セール終了後から退去期限まで2週間しかなく、短期間での完工が求められました。フィッティングルームの什器固定跡の補修が想定より範囲が広い状況でした。',
+    approach: '現地確認後、即座に施工計画を立案。優先順位をつけた工程管理で10日間での完工を実現しました。什器固定跡の補修は部分クロス張替えで対応しました。',
+    managementPoints: [
+      '短工期での工程管理',
+      '退去立会い代行・管理会社との調整',
+      '什器固定跡の補修範囲の適正確認',
+    ],
+    completionReport: '施工前後の写真と各項目の確認記録を含む完了報告書を提出。管理会社への鍵返却もサポートしました。',
+    relatedService: [
+      { label: '原状回復工事', href: '/service/restoration' },
+      { label: '多店舗展開企業向け', href: '/multi-store' },
+    ],
+    relatedIndustry: { label: '小売店の原状回復工事', href: '/industry/retail-restoration' },
+    relatedArea: { label: '埼玉県の原状回復工事', href: '/area/saitama' },
+    faqs: [
+      { q: '退去期限まで短期間でも対応できますか？', a: '状況をお知らせください。スケジュールに合わせた対応策をご提案します。' },
+      { q: '什器撤去から床補修まで一括対応できますか？', a: 'はい、什器撤去・床材復旧まで一括で対応します。' },
+    ],
+  },
+  {
+    slug: 'clinic-interior-chiba',
+    title: '整骨院FC店舗 新規出店内装工事（千葉県）',
+    metaTitle: '整骨院FC店舗 新規出店内装工事（千葉県）｜施工事例｜株式会社播磨商事',
+    metaDescription: '千葉県の整骨院フランチャイズ店舗の新規出店内装工事事例。診察室間仕切り・受付カウンター・手洗い設備・ブランド仕様内装仕上げ。',
+    keywords: ['整骨院 内装工事 千葉', '接骨院 内装工事', 'クリニック FC 内装'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
+    industry: '医療・整骨院',
+    area: '千葉県',
+    serviceType: '店舗内装工事',
+    scope: ['施術室4室の間仕切り設置（防音対応）', '受付カウンター造作', '手洗い設備設置（給排水工事含む）', 'ブランド仕様内装仕上げ', '照明設計・設置', 'バックヤード工事'],
+    duration: '3週間',
+    nightWork: false,
+    challenge: '施術室を4室設ける間仕切り設置において、患者のプライバシーを確保する防音性能と、スタッフの動線確保の両立が求められました。',
+    approach: 'FC本部仕様書の施術室レイアウト基準を確認した上で、防音性能の高い間仕切り材を選定。スタッフ動線を考慮した間仕切り配置で施工しました。',
+    managementPoints: [
+      '防音間仕切りの素材選定と設置精度管理',
+      'FC本部仕様書に基づくレイアウト確認',
+      '手洗い設備の給排水工事調整',
+    ],
+    completionReport: '各施術室の間仕切り設置状況・手洗い設備の動作確認を含む完了報告書を提出しました。',
+    relatedService: [
+      { label: '店舗内装工事', href: '/service/shop-interior' },
+      { label: 'FC本部向けサービス', href: '/franchise' },
+    ],
+    relatedIndustry: { label: 'クリニックの内装工事', href: '/industry/clinic-interior' },
+    relatedArea: { label: '千葉県の店舗内装工事', href: '/area/chiba' },
+    faqs: [
+      { q: '整骨院の施術室間仕切り・防音工事に対応できますか？', a: 'はい、防音対応の間仕切り設置に実績があります。' },
+      { q: 'FC本部の整骨院仕様書に基づいた施工は可能ですか？', a: 'はい、仕様書に基づいた施工管理を行います。' },
+    ],
+  },
+  {
+    slug: 'multi-store-renovation',
+    title: '多店舗展開企業 複数店舗同時改装（関東）',
+    metaTitle: '多店舗展開企業 複数店舗同時改装（関東）｜施工事例｜株式会社播磨商事',
+    metaDescription: '関東エリアの多店舗展開企業による複数店舗同時改装事例。東京・埼玉・千葉の3店舗を同時進行。担当者窓口一本化・統一施工管理。',
+    keywords: ['多店舗 改装 同時', '複数店舗 内装工事', '多店舗展開 改装'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_6.jpg',
+    industry: '小売・サービス業',
+    area: '東京都・埼玉県・千葉県',
+    serviceType: '改装・リニューアル',
+    scope: ['東京1店舗・埼玉1店舗・千葉1店舗の同時進行', 'ブランドリニューアルに伴う内装全面改装', 'クロス・床材・照明の全面更新', '造作家具・棚の更新', '夜間施工での営業継続対応'],
+    duration: '各店舗3週間（同時進行）',
+    nightWork: true,
+    challenge: '3店舗が異なるエリアで同時に進行するため、工程管理・品質確認・担当者報告を一元化する必要がありました。各店舗で夜間施工が必要で、エリアをまたいだリソース配分が求められました。',
+    approach: '本部担当者様への週次報告を1つの報告書に集約し、3店舗の進捗を一括共有。各店舗に担当施工チームを配置し、同一の施工基準・品質管理を徹底しました。',
+    managementPoints: [
+      '3店舗分の工程を一元管理',
+      '本部担当者への週次一括報告',
+      '施工基準の共有による品質統一',
+      'エリアをまたいだリソース配分',
+    ],
+    completionReport: '3店舗分の完了報告書を同時に提出。本部担当者様が1度に3店舗の仕上がりを確認できる形式で作成しました。',
+    relatedService: [
+      { label: '店舗内装工事', href: '/service/shop-interior' },
+      { label: '多店舗展開企業向け', href: '/multi-store' },
+    ],
+    relatedArea: { label: '関東エリア対応', href: '/area' },
+    faqs: [
+      { q: '複数エリアの店舗を同時に改装できますか？', a: 'はい、複数エリアの同時進行管理に対応しています。担当者様の窓口を1つに集約します。' },
+      { q: '夜間施工しながら通常営業を継続できますか？', a: 'はい、閉店後の夜間施工で翌日の営業への影響を最小化します。' },
+    ],
+  },
+  {
+    slug: 'night-construction',
+    title: '商業施設内テナント 夜間集中施工（東京都）',
+    metaTitle: '商業施設内テナント 夜間集中施工（東京都）｜施工事例｜株式会社播磨商事',
+    metaDescription: '東京都内の商業施設テナントの夜間集中施工事例。施設閉館後の限られた時間内での施工完了。翌朝オープンに向けた工程管理。',
+    keywords: ['夜間施工 商業施設', '夜間 内装工事 東京', 'テナント 夜間工事'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_9.jpg',
+    industry: '飲食・サービス業',
+    area: '東京都',
+    serviceType: '店舗内装工事',
+    scope: ['商業施設閉館後（21時〜翌6時）の夜間施工', '内装仕上げ（クロス・床・天井）', '照明設置', '什器設置・固定', '清掃・後片付けを含む時間管理'],
+    duration: '5夜（連続夜間施工）',
+    nightWork: true,
+    challenge: '施設の工事可能時間が閉館後の9時間に制限されており、廃材搬出ルートも施設側の指定ルートのみ使用可能。5夜での完工に向けた精緻なスケジュール管理が必要でした。',
+    approach: '1夜ごとの作業範囲を事前に計画し、廃材搬出・清掃まで含めた時間管理を徹底。5夜で予定通り完工し、翌朝のオープンに間に合わせました。',
+    managementPoints: [
+      '1夜ごとの作業計画の精緻な管理',
+      '施設ルール（廃材搬出・騒音制限）への対応',
+      '翌朝オープン前の最終清掃・仕上がり確認',
+    ],
+    completionReport: '夜間施工の各日の作業記録と完了写真を含む報告書を提出。本部担当者が翌朝の開店前に状況確認できる形式で作成しました。',
+    relatedService: [
+      { label: '店舗内装工事', href: '/service/shop-interior' },
+      { label: '夜間施工', href: '/solution/night-construction' },
+    ],
+    relatedArea: { label: '東京都の店舗内装工事', href: '/area/tokyo' },
+    faqs: [
+      { q: '商業施設内の夜間施工に対応できますか？', a: 'はい、施設ルールに沿った夜間施工の実績があります。' },
+      { q: '翌朝のオープンに確実に間に合わせることはできますか？', a: '工程計画を前倒しで管理し、リスクを最小化します。' },
+    ],
+  },
+  {
+    slug: 'fc-store-standardization',
+    title: 'FC本部 ブランドリニューアル 全店改装管理（関東〜近畿）',
+    metaTitle: 'FC本部 ブランドリニューアル 全店改装管理｜施工事例｜株式会社播磨商事',
+    metaDescription: 'フランチャイズ本部のブランドリニューアルに伴う複数店舗同時改装の管理事例。関東〜近畿エリアの施工管理を一本化。担当者窓口集約・完了報告書標準提出。',
+    keywords: ['FC本部 ブランドリニューアル', 'フランチャイズ 全店改装', 'FC 内装工事 一括管理'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_3.jpg',
+    industry: 'サービス業',
+    area: '関東・東海・近畿',
+    serviceType: '改装・リニューアル',
+    scope: ['関東・東海・近畿の複数店舗の同時改装管理', '新ブランド仕様への内装更新（クロス・床・照明・サイン）', '本部担当者への定期進捗報告', '施工完了報告書の標準提出'],
+    duration: '順次施工（3ヶ月間）',
+    nightWork: true,
+    challenge: 'ブランドリニューアルに伴う複数店舗の同時改装を、広域エリアで管理する必要がありました。各店舗で施工品質が均一になるよう、施工基準の共有と品質確認を徹底する必要がありました。',
+    approach: '新仕様書の内容を施工チーム全体で共有し、施工基準の統一を図りました。本部担当者には週次でまとめた進捗報告を提出し、個別の問い合わせ対応工数を削減しました。',
+    managementPoints: [
+      '新ブランド仕様書の施工チームへの共有・徹底',
+      '広域エリアでの品質均一化',
+      '週次一括進捗報告による担当者工数削減',
+      '完了報告書の標準化・フォーマット統一',
+    ],
+    completionReport: '全店舗の完了報告書を同一フォーマットで提出。新仕様との適合確認写真を項目ごとに整理した形式で作成しました。',
+    relatedService: [
+      { label: '店舗内装工事', href: '/service/shop-interior' },
+      { label: 'FC本部向けサービス', href: '/franchise' },
+      { label: 'ブランド基準の統一施工', href: '/solution/brand-standardization' },
+    ],
+    relatedArea: { label: '対応エリア（関東・東海・近畿）', href: '/area' },
+    faqs: [
+      { q: 'FC本部のブランドリニューアル改装を一括管理できますか？', a: 'はい、複数エリア・複数店舗の改装管理に対応しています。' },
+      { q: '広域エリアの施工でも品質は均一に保てますか？', a: 'はい、施工基準の共有と完了確認で品質を統一します。' },
+    ],
+  },
+  {
+    slug: 'store-closure-restoration',
+    title: '多店舗展開企業 複数店舗同時退去・原状回復管理（関東）',
+    metaTitle: '複数店舗同時退去・原状回復管理（関東）｜施工事例｜株式会社播磨商事',
+    metaDescription: '関東エリアの多店舗展開企業による複数店舗同時退去の管理事例。退去立会い代行・原状回復工事一括発注・費用適正化サポート。担当者窓口一本化。',
+    keywords: ['複数店舗 退去 原状回復', '多店舗 退去管理', '店舗閉店 原状回復 一括'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_21.jpg',
+    industry: 'サービス業（多店舗展開）',
+    area: '東京都・神奈川県・埼玉県',
+    serviceType: '原状回復工事',
+    scope: ['3エリア5店舗の同時退去管理', '退去立会い代行（全5店舗）', '各店舗の原状回復工事', '費用適正化サポート', '完了報告書の一括提出'],
+    duration: '1ヶ月（5店舗を順次・並行）',
+    nightWork: false,
+    challenge: '5店舗の退去期限がほぼ同時期に重なり、担当者様が全店舗の立会い・工事管理を個別に対応することが困難な状況でした。1店舗で管理会社から高額な原状回復費用が提示されていました。',
+    approach: '全5店舗の退去スケジュールを一元管理し、立会い代行から工事まで一括で対応。高額費用が提示された店舗については独自見積りを提出し、費用の適正化をサポートしました。',
+    managementPoints: [
+      '5店舗の退去スケジュール一元管理',
+      '退去立会い代行（全5店舗）',
+      '費用適正化の交渉サポート',
+      '完了報告書の一括提出',
+    ],
+    completionReport: '5店舗分の完了報告書と費用精算資料を一括提出。担当者様の精算業務をサポートしました。',
+    relatedService: [
+      { label: '原状回復工事', href: '/service/restoration' },
+      { label: '多店舗展開企業向け', href: '/multi-store' },
+      { label: '複数店舗の同時退去管理', href: '/solution/multiple-store-closure' },
+    ],
+    relatedArea: { label: '関東エリア対応', href: '/area' },
+    faqs: [
+      { q: '複数店舗の退去が同時に重なっても対応できますか？', a: 'はい、複数店舗の同時退去管理に対応しています。' },
+      { q: '退去立会い代行から工事まで一括で依頼できますか？', a: 'はい、立会い代行〜原状回復工事〜完了報告まで一括で対応します。' },
+    ],
+  },
+  {
+    slug: 'short-term-interior-work',
+    title: 'ロードサイド型店舗 短工期出店施工（埼玉県）',
+    metaTitle: 'ロードサイド型店舗 短工期出店施工（埼玉県）｜施工事例｜株式会社播磨商事',
+    metaDescription: '埼玉県のロードサイド型店舗の短工期出店施工事例。物件決定から2週間でのオープンを実現。昼夜施工体制での工期短縮。',
+    keywords: ['短工期 内装工事 埼玉', '短工期 出店', 'ロードサイド 内装工事'],
+    heroImage: '/LINE_ALBUM_2026.6.10_260610_14.jpg',
+    industry: 'サービス業',
+    area: '埼玉県',
+    serviceType: '店舗内装工事',
+    scope: ['内装仕上げ工事（クロス・床・天井・照明）', '電気設備工事', '什器設置', '看板設置', '清掃'],
+    duration: '2週間',
+    nightWork: true,
+    challenge: '競合出店への対応で開業スケジュールが前倒しになり、物件決定から2週間でのオープンが求められました。通常より短い工期での完工が必要でした。',
+    approach: '昼夜施工体制を組み、通常施工より工期を約40%短縮。材料の先行手配・職人の増員で対応し、2週間でのオープンを実現しました。',
+    managementPoints: [
+      '昼夜施工体制での工期短縮',
+      '材料の先行手配',
+      '職人増員での集中施工',
+      '日次での進捗確認と調整',
+    ],
+    completionReport: '施工完了後の仕上がり写真と各項目確認記録を含む完了報告書を提出しました。',
+    relatedService: [
+      { label: '店舗内装工事', href: '/service/shop-interior' },
+      { label: '短工期施工', href: '/solution/short-term-construction' },
+    ],
+    relatedArea: { label: '埼玉県の店舗内装工事', href: '/area/saitama' },
+    faqs: [
+      { q: '物件決定から2週間でのオープンは可能ですか？', a: '案件内容によります。工事範囲・物件状況を確認の上、最短工期をお伝えします。' },
+      { q: '短工期での施工で品質は落ちませんか？', a: '品質管理は変わりません。工程計画と人員配置で品質を維持します。' },
+    ],
+  },
+]
+
+export function getCase(slug: string): CaseData | undefined {
+  return cases.find((c) => c.slug === slug)
+}
