@@ -66,13 +66,13 @@ export default function Header() {
         >
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{ width: '36px', height: '36px', overflow: 'hidden', flexShrink: 0, position: 'relative' }}>
+            <div style={{ width: '28px', height: '28px', flexShrink: 0, position: 'relative' }}>
               <Image
                 src="/LINE_ALBUM_2026.6.10_260610_5.jpg"
                 alt="播磨商事ロゴ"
                 fill
-                style={{ objectFit: 'cover', objectPosition: 'top center' }}
-                sizes="36px"
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
+                sizes="28px"
               />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
@@ -164,13 +164,13 @@ export default function Header() {
             {/* Mobile top bar */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px', padding: '0 2rem', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div style={{ width: '32px', height: '32px', overflow: 'hidden', flexShrink: 0, position: 'relative', borderRadius: '2px' }}>
+                <div style={{ width: '28px', height: '28px', flexShrink: 0, position: 'relative' }}>
                   <Image
                     src="/LINE_ALBUM_2026.6.10_260610_5.jpg"
                     alt="播磨商事ロゴ"
                     fill
-                    style={{ objectFit: 'cover', objectPosition: 'top center' }}
-                    sizes="32px"
+                    style={{ objectFit: 'contain', objectPosition: 'center' }}
+                    sizes="28px"
                   />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>

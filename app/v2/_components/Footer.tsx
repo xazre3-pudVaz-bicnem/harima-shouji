@@ -41,13 +41,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
-              <div style={{ width: '44px', height: '44px', overflow: 'hidden', flexShrink: 0, position: 'relative', background: '#FFFFFF', borderRadius: '2px' }}>
+              <div style={{ width: '36px', height: '36px', flexShrink: 0, position: 'relative', background: '#FFFFFF', padding: '3px', borderRadius: '2px', boxSizing: 'border-box' }}>
                 <Image
                   src="/LINE_ALBUM_2026.6.10_260610_5.jpg"
                   alt="播磨商事ロゴ"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
-                  sizes="44px"
+                  style={{ objectFit: 'contain', objectPosition: 'center' }}
+                  sizes="36px"
                 />
               </div>
               <div>
