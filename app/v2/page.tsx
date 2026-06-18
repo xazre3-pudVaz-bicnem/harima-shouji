@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Loading from './_components/sections/Loading'
 import Hero from './_components/sections/Hero'
-import About from './_components/sections/About'
 import Service from './_components/sections/Service'
 import WhyHarima from './_components/sections/WhyHarima'
 import Area from './_components/sections/Area'
@@ -21,7 +20,6 @@ export default function V2HomePage() {
     <>
       <Loading />
       <Hero />
-      <About />
       <Service />
       <WhyHarima />
       <Area />

@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { href: '#service', label: 'サービス' },
-  { href: '#why', label: '選ばれる理由' },
-  { href: '#area', label: '対応エリア' },
-  { href: '#contact', label: 'お問い合わせ' },
+  { href: '/v2#service', label: 'サービス' },
+  { href: '/v2#why', label: '選ばれる理由' },
+  { href: '/v2#area', label: '対応エリア' },
+  { href: '/v2/contact', label: 'お問い合わせ' },
 ]
 
 export default function Header() {
