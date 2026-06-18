@@ -1,21 +1,41 @@
 import Link from 'next/link'
 
-const links = [
-  { href: '/service/shop-interior', label: '店舗内装工事' },
-  { href: '/service/restoration', label: '原状回復工事' },
-  { href: '/franchise', label: 'FC本部向け' },
-  { href: '/area', label: '対応エリア' },
-  { href: '/column', label: 'コラム' },
-  { href: '/blog', label: 'ブログ' },
-  { href: '/company', label: '会社概要' },
-  { href: '/contact', label: 'お問い合わせ' },
+const linkGroups = [
+  {
+    label: 'サービス',
+    links: [
+      { href: '/service/shop-interior', label: '店舗内装工事' },
+      { href: '/service/restoration', label: '原状回復工事' },
+      { href: '/industry', label: '業種別対応' },
+      { href: '/solution', label: 'ソリューション' },
+      { href: '/cases', label: '施工事例' },
+    ],
+  },
+  {
+    label: '企業向け',
+    links: [
+      { href: '/franchise', label: 'FC本部向け' },
+      { href: '/multi-store', label: '多店舗展開企業向け' },
+      { href: '/store-development', label: '店舗開発担当者向け' },
+    ],
+  },
+  {
+    label: 'エリア・情報',
+    links: [
+      { href: '/area', label: '対応エリア' },
+      { href: '/column', label: 'コラム' },
+      { href: '/blog', label: 'ブログ' },
+      { href: '/company', label: '会社概要' },
+      { href: '/contact', label: 'お問い合わせ' },
+    ],
+  },
 ]
 
 export default function Footer() {
   return (
     <footer style={{ background: '#0D1117', color: 'rgba(255,255,255,0.4)' }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '5rem 2rem 3rem' }}>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto]">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto_auto_auto]">
 
           {/* Brand */}
           <div>
@@ -42,21 +62,26 @@ export default function Footer() {
             </address>
           </div>
 
-          {/* Links */}
-          <nav>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {links.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    style={{ color: 'rgba(255,255,255,0.35)', textDecoration: 'none', fontSize: '0.8125rem', transition: 'color 0.2s' }}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* Link groups */}
+          {linkGroups.map((group) => (
+            <nav key={group.label}>
+              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.2em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1rem' }}>
+                {group.label}
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      style={{ color: 'rgba(255,255,255,0.35)', textDecoration: 'none', fontSize: '0.8125rem', transition: 'color 0.2s' }}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
 
         </div>
       </div>
