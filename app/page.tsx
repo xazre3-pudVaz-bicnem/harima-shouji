@@ -1,22 +1,23 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/sections/Hero'
-import ServicesShowcase from '@/components/sections/ServicesShowcase'
-import WorkScope from '@/components/sections/WorkScope'
+import AboutSection from '@/components/sections/AboutSection'
+import ServicesSection from '@/components/sections/ServicesSection'
 import WhyFCSection from '@/components/sections/WhyFCSection'
 import AreaSection from '@/components/sections/AreaSection'
 import Process from '@/components/sections/Process'
-import ContactSection from '@/components/sections/ContactSection'
+import CEOMessage from '@/components/sections/CEOMessage'
+import CTABanner from '@/components/sections/CTABanner'
 import { organizationSchema, localBusinessSchema, faqSchema } from '@/lib/structured-data'
 import { faqItems } from '@/data/faq'
 
 export const metadata: Metadata = {
-  title: 'フランチャイズ・多店舗向け内装工事 | 株式会社播磨商事',
+  title: 'フランチャイズ本部・多店舗展開企業の施工パートナー | 株式会社播磨商事',
   description:
-    'FC本部・多店舗展開企業の内装工事をまとめてお任せください。クロス張替え・原状回復・店舗クリーニング・退去立会いまで一括対応。東京・関東圏で複数店舗の施工管理を一元化。現地調査・見積無料。',
+    'FC本部・多店舗展開企業向けの店舗内装工事・原状回復工事。施工管理の負担を軽減します。東京・関東圏を中心に静岡・大阪・兵庫まで対応。現地調査・見積無料。',
   alternates: { canonical: 'https://harima-shouji.co.jp' },
   openGraph: {
-    title: 'フランチャイズ・多店舗向け内装工事 | 株式会社播磨商事',
-    description: 'FC本部・多店舗展開企業の内装工事をまとめてお任せください。クロス張替え・原状回復・店舗クリーニング・退去立会いまで一括対応。',
+    title: 'フランチャイズ本部・多店舗展開企業の施工パートナー | 株式会社播磨商事',
+    description: 'FC本部・多店舗展開企業向けの店舗内装工事・原状回復工事。施工管理の負担を軽減します。',
     url: 'https://harima-shouji.co.jp',
   },
 }
@@ -39,12 +40,13 @@ export default function HomePage() {
       ))}
 
       <Hero />
-      <ServicesShowcase />
-      <WorkScope />
+      <AboutSection />
+      <ServicesSection />
       <WhyFCSection />
       <AreaSection />
       <Process />
-      <ContactSection />
+      <CEOMessage />
+      <CTABanner />
     </>
   )
 }

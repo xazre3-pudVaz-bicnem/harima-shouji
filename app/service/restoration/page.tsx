@@ -68,9 +68,7 @@ const faqs = [
 ]
 
 const related = [
-  { title: '退去立会いサポート', href: '/service/exit-support', description: '立会い代行・費用適正化' },
-  { title: '店舗クリーニング', href: '/service/cleaning', description: '退去前の専門クリーニング' },
-  { title: 'クロス張替え工事', href: '/service/cross-wallpaper', description: '壁紙の復旧・張替え' },
+  { title: '店舗内装工事', href: '/service/shop-interior', description: '新規出店・改装・FC仕様統一施工' },
 ]
 
 export default function RestorationPage() {

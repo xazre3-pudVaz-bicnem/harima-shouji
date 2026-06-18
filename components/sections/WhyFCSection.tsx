@@ -39,6 +39,7 @@ export default function WhyFCSection() {
   return (
     <section className="bg-[#071322]" style={{ paddingTop: '14rem', paddingBottom: '14rem' }}>
       <div className="container">
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,40 +48,52 @@ export default function WhyFCSection() {
           className="mb-20"
         >
           <div className="section-label-light mb-7">WHY CHOOSE US</div>
-          <h2 className="section-title-light">
-            FC本部・多店舗企業から<br />選ばれる理由
-          </h2>
+          <h2 className="section-title-light">選ばれる理由</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5">
+        {/* Horizontal editorial list */}
+        <div>
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.number}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.55, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-[#071322] px-12 py-14 lg:px-16 lg:py-16 group hover:bg-white/[0.025] transition-colors"
+              transition={{ duration: 0.5, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              className="flex items-center py-10 md:py-12 border-b border-white/[0.07] hover:border-white/[0.13] transition-colors group"
             >
+              {/* Ghost number */}
               <div
-                className="font-bold leading-none mb-8 select-none"
+                className="shrink-0 leading-none select-none text-right"
                 style={{
-                  fontSize: 'clamp(4rem, 6vw, 6rem)',
-                  letterSpacing: '-0.04em',
-                  color: 'rgba(255,255,255,0.04)',
+                  width: '5rem',
+                  marginRight: '3rem',
+                  fontSize: 'clamp(3rem, 4.5vw, 5rem)',
+                  color: 'rgba(255,255,255,0.05)',
+                  letterSpacing: '-0.05em',
+                  fontWeight: 700,
                 }}
                 aria-hidden="true"
               >
                 {reason.number}
               </div>
+
+              {/* Title */}
               <h3
-                className="font-bold text-white mb-3 leading-tight"
-                style={{ fontSize: 'clamp(1.4rem, 2vw, 1.75rem)', letterSpacing: '-0.02em' }}
+                className="font-bold text-white leading-tight group-hover:text-amber-300 transition-colors shrink-0"
+                style={{
+                  width: 'clamp(10rem, 22vw, 22rem)',
+                  marginRight: '3rem',
+                  fontSize: 'clamp(1.2rem, 2.2vw, 1.875rem)',
+                  letterSpacing: '-0.025em',
+                }}
               >
                 {reason.title}
               </h3>
+
+              {/* Note */}
               <p
-                className="text-gray-500 leading-relaxed"
+                className="text-gray-500 flex-1 leading-relaxed hidden md:block"
                 style={{ fontSize: '0.9375rem' }}
               >
                 {reason.note}
@@ -88,6 +101,7 @@ export default function WhyFCSection() {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   )

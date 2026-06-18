@@ -79,9 +79,7 @@ const faqs = [
 ]
 
 const related = [
-  { title: 'フランチャイズ本部向け内装工事', href: '/service/franchise-interior', description: 'FC本部の施工パートナー' },
-  { title: 'クロス張替え工事', href: '/service/cross-wallpaper', description: '壁紙の補修・全面張替え' },
-  { title: '原状回復工事', href: '/service/restoration', description: '退去後の内装復旧' },
+  { title: '原状回復工事', href: '/service/restoration', description: '退去・解体・内装復旧' },
 ]
 
 export default function ShopInteriorPage() {

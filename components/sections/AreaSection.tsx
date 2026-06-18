@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { MapPin, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 
-const areas = ['東京都', '神奈川県', '千葉県', '埼玉県', '茨城県', '群馬県', '栃木県']
+const areas = ['東京都', '埼玉県', '千葉県', '神奈川県', '静岡県', '大阪府', '兵庫県']
 
 export default function AreaSection() {
   return (
@@ -23,7 +23,7 @@ export default function AreaSection() {
           >
             <Image
               src="/LINE_ALBUM_2026.6.10_260610_26.jpg"
-              alt="施工・内装管理のイメージ"
+              alt="施工対応エリア"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -39,9 +39,9 @@ export default function AreaSection() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="section-label mb-5">SERVICE AREA</div>
-            <h2 className="section-title mb-6">対応エリア</h2>
+            <h2 className="section-title mb-8">対応エリア</h2>
             <p className="body-text leading-relaxed mb-10">
-              東京都を中心に関東圏7都県に対応。複数店舗を抱えるFC本部・多店舗展開企業様の広域案件もまとめてお任せいただけます。
+              東京・関東圏を中心に、大阪・兵庫を含む全国の店舗工事に対応します。FC本部・多店舗企業様の広域案件もまとめてお任せください。
             </p>
 
             <div className="flex flex-wrap gap-2.5 mb-10">
@@ -58,7 +58,7 @@ export default function AreaSection() {
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed mb-10" style={{ borderLeft: '2px solid #F59E0B', paddingLeft: '1rem' }}>
-              関東圏外の案件・複数店舗の広域対応もお気軽にご相談ください。
+              上記以外のエリアもご相談ください。
             </p>
 
             <Link
@@ -70,6 +70,7 @@ export default function AreaSection() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </motion.div>
+
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ export default function Hero() {
       className="relative flex items-center overflow-hidden"
       style={{ minHeight: '100vh' }}
     >
-      {/* Video Background with subtle zoom parallax */}
+      {/* Video background with scale parallax */}
       <div className="absolute inset-0" style={{ zIndex: 0 }}>
         <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
           <video
@@ -27,62 +27,46 @@ export default function Hero() {
           </video>
         </motion.div>
         <div className="absolute inset-0" style={{ background: 'rgba(2,10,24,0.72)' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(2,10,24,0.55)] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(2,10,24,0.5)] via-transparent to-transparent" />
       </div>
 
-      {/* Content — floats upward on scroll */}
+      {/* Content */}
       <motion.div
         className="container relative"
-        style={{ zIndex: 10, paddingTop: '15rem', paddingBottom: '11rem', y: textY }}
+        style={{ zIndex: 10, paddingTop: '16rem', paddingBottom: '12rem', y: textY }}
       >
         <div className="max-w-5xl">
 
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.0, delay: 0.15, ease: 'easeOut' }}
-            className="flex items-center gap-4 mb-11"
-          >
-            <div className="h-px w-10 bg-amber-500" />
-            <span
-              className="font-bold text-amber-400 uppercase tracking-[0.35em]"
-              style={{ fontSize: '0.6875rem' }}
-            >
-              FC本部・多店舗企業向け施工パートナー
-            </span>
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="font-bold text-white leading-tight mb-11"
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="font-bold text-white leading-tight mb-12"
             style={{
-              fontSize: 'clamp(2.8rem, 6.5vw, 6.5rem)',
-              letterSpacing: '-0.035em',
-              lineHeight: '1.15',
+              fontSize: 'clamp(3rem, 7vw, 7rem)',
+              letterSpacing: '-0.04em',
+              lineHeight: '1.1',
             }}
           >
-            フランチャイズ店舗の<br />
-            内装工事・原状回復を<br />
-            <span style={{ color: '#F59E0B' }}>ワンストップ対応</span>
+            フランチャイズ本部と<br />
+            多店舗展開企業のための<br />
+            <span style={{ color: '#F59E0B' }}>施工パートナー</span>
           </motion.h1>
 
           {/* Subcopy */}
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.52, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              color: 'rgba(209,213,219,0.65)',
-              fontSize: 'clamp(1.05rem, 1.7vw, 1.4rem)',
-              lineHeight: '1.95',
+              color: 'rgba(209,213,219,0.6)',
+              fontSize: 'clamp(1rem, 1.6vw, 1.25rem)',
+              lineHeight: '2',
             }}
           >
-            多店舗展開企業・FC本部向け<br className="hidden md:block" />
-            施工管理の負担を削減します
+            店舗内装工事から原状回復工事まで。<br className="hidden md:block" />
+            施工管理の負担を軽減します。
           </motion.p>
 
         </div>
@@ -92,9 +76,9 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
+        transition={{ duration: 1, delay: 1.3 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
-        style={{ opacity: 0.28 }}
+        style={{ zIndex: 10, opacity: 0.28 }}
       >
         <motion.div
           animate={{ scaleY: [1, 0.6, 1] }}

@@ -8,7 +8,6 @@ import { Menu, X, Phone, Mail, ArrowRight } from 'lucide-react'
 
 const navLinks = [
   { href: '/service', label: 'サービス' },
-  { href: '/service/franchise-interior', label: 'FC本部向け' },
   { href: '/area', label: '対応エリア' },
   { href: '/company', label: '会社概要' },
   { href: '/faq', label: 'FAQ' },

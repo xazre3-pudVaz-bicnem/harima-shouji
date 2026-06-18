@@ -132,10 +132,8 @@ export default async function BlogPostPage({ params }: Props) {
               <h2 className="text-base font-bold text-gray-900 mb-4">関連サービス</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  { href: '/service/franchise-interior', label: 'フランチャイズ本部向け内装工事' },
+                  { href: '/service/shop-interior', label: '店舗内装工事' },
                   { href: '/service/restoration', label: '原状回復工事' },
-                  { href: '/service/cross-wallpaper', label: 'クロス張替え工事' },
-                  { href: '/service/exit-support', label: '退去立会いサポート' },
                 ].map((s) => (
                   <Link
                     key={s.href}
