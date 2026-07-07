@@ -21,7 +21,7 @@ export default function V2Shell({ children }: { children: React.ReactNode }) {
         overflowY: 'auto',
         overflowX: 'hidden',
         scrollBehavior: 'smooth',
-        background: '#FAFAF8',
+        background: '#F6F4EF',
         WebkitFontSmoothing: 'antialiased',
       }}
     >

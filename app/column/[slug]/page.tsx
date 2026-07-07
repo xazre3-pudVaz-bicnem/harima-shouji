@@ -54,7 +54,7 @@ export default async function ColumnDetailPage({ params }: { params: Promise<Par
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
@@ -76,9 +76,9 @@ export default async function ColumnDetailPage({ params }: { params: Promise<Par
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
 
           {/* Meta */}
-          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid #F0EFEC' }}>
-            <span style={{ fontSize: '0.6875rem', color: '#9CA3AF', background: '#F0EFEC', padding: '0.375rem 1rem', fontWeight: 600 }}>{col.category}</span>
-            <time dateTime={col.date} style={{ fontSize: '0.8125rem', color: '#9CA3AF' }}>{formatDate(col.date)}</time>
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid #E7E3DA' }}>
+            <span style={{ fontSize: '0.6875rem', color: '#8F8B82', background: '#E7E3DA', padding: '0.375rem 1rem', fontWeight: 600 }}>{col.category}</span>
+            <time dateTime={col.date} style={{ fontSize: '0.8125rem', color: '#8F8B82' }}>{formatDate(col.date)}</time>
           </div>
 
           {/* Cover image */}
@@ -104,8 +104,8 @@ export default async function ColumnDetailPage({ params }: { params: Promise<Par
 
           {/* Related services */}
           {col.relatedService.length > 0 && (
-            <div style={{ marginTop: '4rem', padding: '2.5rem', background: '#F5F4F0' }}>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>RELATED SERVICES</div>
+            <div style={{ marginTop: '4rem', padding: '2.5rem', background: '#EDEAE2' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>RELATED SERVICES</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {col.relatedService.map((s) => (
                   <Link key={s.href} href={s.href} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.875rem', fontWeight: 700, color: '#0A0A0A', textDecoration: 'none' }}>
@@ -122,16 +122,16 @@ export default async function ColumnDetailPage({ params }: { params: Promise<Par
       </article>
 
       {/* More columns */}
-      <section style={{ background: '#F5F4F0', paddingTop: '6rem', paddingBottom: '6rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '6rem', paddingBottom: '6rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>MORE COLUMNS</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>MORE COLUMNS</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-3">
             {columns
               .filter((c) => c.slug !== slug)
               .slice(0, 3)
               .map((c) => (
                 <Link key={c.slug} href={`/column/${c.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#FFFFFF', padding: '2rem' }}>
-                  <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{c.category}</div>
+                  <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{c.category}</div>
                   <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A', lineHeight: 1.5 }}>{c.title}</div>
                 </Link>
               ))}

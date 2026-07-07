@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
 import Loading from '@/app/v2/_components/sections/Loading'
 import Hero from '@/app/v2/_components/sections/Hero'
+import Marquee from '@/app/v2/_components/sections/Marquee'
+import Stats from '@/app/v2/_components/sections/Stats'
 import Service from '@/app/v2/_components/sections/Service'
+import WorksPreview from '@/app/v2/_components/sections/WorksPreview'
 import WhyHarima from '@/app/v2/_components/sections/WhyHarima'
+import Industries from '@/app/v2/_components/sections/Industries'
 import Area from '@/app/v2/_components/sections/Area'
 import Flow from '@/app/v2/_components/sections/Flow'
 import Message from '@/app/v2/_components/sections/Message'
+import NewsPreview from '@/app/v2/_components/sections/NewsPreview'
 import Contact from '@/app/v2/_components/sections/Contact'
 import { organizationSchema, localBusinessSchema, faqSchema } from '@/lib/structured-data'
 import { faqItems } from '@/data/faq'
@@ -40,11 +45,16 @@ export default function HomePage() {
       ))}
       <Loading />
       <Hero />
+      <Marquee />
+      <Stats />
       <Service />
+      <WorksPreview />
       <WhyHarima />
+      <Industries />
       <Area />
       <Flow />
       <Message />
+      <NewsPreview />
       <Contact />
     </>
   )

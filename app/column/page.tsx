@@ -19,7 +19,7 @@ function formatDate(dateStr: string) {
 
 export default function ColumnPage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <PageHero
         label="COLUMN"
         title="コラム"
@@ -36,7 +36,7 @@ export default function ColumnPage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {columns.map((col) => (
-              <Link key={col.slug} href={`/column/${col.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#FAFAF8' }}>
+              <Link key={col.slug} href={`/column/${col.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#F6F4EF' }}>
                 <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
                   <Image
                     src={col.image}
@@ -48,11 +48,11 @@ export default function ColumnPage() {
                 </div>
                 <div style={{ padding: '1.75rem 1.5rem' }}>
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '0.75rem' }}>
-                    <span style={{ fontSize: '0.6875rem', color: '#9CA3AF', background: '#F0EFEC', padding: '0.25rem 0.75rem', fontWeight: 600 }}>{col.category}</span>
-                    <span style={{ fontSize: '0.6875rem', color: '#9CA3AF' }}>{formatDate(col.date)}</span>
+                    <span style={{ fontSize: '0.6875rem', color: '#8F8B82', background: '#E7E3DA', padding: '0.25rem 0.75rem', fontWeight: 600 }}>{col.category}</span>
+                    <span style={{ fontSize: '0.6875rem', color: '#8F8B82' }}>{formatDate(col.date)}</span>
                   </div>
                   <h2 style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A', lineHeight: 1.6, marginBottom: '0.75rem' }}>{col.title}</h2>
-                  <p style={{ fontSize: '0.8125rem', color: '#6B6B6B', lineHeight: 1.7 }}>{col.description}</p>
+                  <p style={{ fontSize: '0.8125rem', color: '#6B675F', lineHeight: 1.7 }}>{col.description}</p>
                 </div>
               </Link>
             ))}

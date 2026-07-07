@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }} />
 
       <PageHero
@@ -71,17 +71,17 @@ export default async function BlogPostPage({ params }: Props) {
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
 
           {/* Meta */}
-          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid #F0EFEC' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginBottom: '3rem', paddingBottom: '2rem', borderBottom: '1px solid #E7E3DA' }}>
             {categories.length > 0 && (
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 {categories.map((cat) => (
-                  <span key={cat} style={{ fontSize: '0.6875rem', color: '#9CA3AF', background: '#F0EFEC', padding: '0.375rem 1rem', fontWeight: 600 }}>
+                  <span key={cat} style={{ fontSize: '0.6875rem', color: '#8F8B82', background: '#E7E3DA', padding: '0.375rem 1rem', fontWeight: 600 }}>
                     {cat}
                   </span>
                 ))}
               </div>
             )}
-            <time dateTime={post.date} style={{ fontSize: '0.8125rem', color: '#9CA3AF' }}>{formatDate(post.date)}</time>
+            <time dateTime={post.date} style={{ fontSize: '0.8125rem', color: '#8F8B82' }}>{formatDate(post.date)}</time>
           </div>
 
           {/* Featured Image */}
@@ -106,8 +106,8 @@ export default async function BlogPostPage({ params }: Props) {
           />
 
           {/* Related Services */}
-          <div style={{ marginTop: '4rem', padding: '2.5rem', background: '#F5F4F0' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>RELATED SERVICES</div>
+          <div style={{ marginTop: '4rem', padding: '2.5rem', background: '#EDEAE2' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>RELATED SERVICES</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
                 { href: '/service/shop-interior', label: '店舗内装工事' },

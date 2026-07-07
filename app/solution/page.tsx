@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function SolutionIndexPage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <PageHero
         label="SOLUTION"
         title="ソリューション"
@@ -29,13 +29,13 @@ export default function SolutionIndexPage() {
 
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>ALL SOLUTIONS</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>ALL SOLUTIONS</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             施工管理の課題解決
           </h2>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((sol) => (
-              <Link key={sol.slug} href={`/solution/${sol.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#F5F4F0' }}>
+              <Link key={sol.slug} href={`/solution/${sol.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#EDEAE2' }}>
                 <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
                   <Image
                     src={sol.heroImage}
@@ -46,9 +46,9 @@ export default function SolutionIndexPage() {
                   />
                 </div>
                 <div style={{ padding: '1.75rem 1.5rem' }}>
-                  <div style={{ fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.1em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '0.5rem' }}>SOLUTION</div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.14em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '0.5rem' }}>SOLUTION</div>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.5rem' }}>{sol.title}</h3>
-                  <p style={{ fontSize: '0.8125rem', color: '#5A5A5A', lineHeight: 1.7 }}>{sol.problemTitle}</p>
+                  <p style={{ fontSize: '0.8125rem', color: '#57544D', lineHeight: 1.7 }}>{sol.problemTitle}</p>
                 </div>
               </Link>
             ))}

@@ -51,7 +51,7 @@ export default async function SolutionPage({ params }: { params: Promise<Params>
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
 
       <PageHero
@@ -71,11 +71,11 @@ export default async function SolutionPage({ params }: { params: Promise<Params>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: 'clamp(3rem, 6vw, 7rem)', alignItems: 'start' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>PROBLEM</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>PROBLEM</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                 {solution.problemTitle}
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
                 {solution.problemDesc}
               </p>
             </div>
@@ -93,31 +93,31 @@ export default async function SolutionPage({ params }: { params: Promise<Params>
       </section>
 
       {/* Our Solution */}
-      <section style={{ background: '#0D1117', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#101014', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#4B5563', textTransform: 'uppercase', marginBottom: '1.5rem' }}>OUR SOLUTION</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#756F64', textTransform: 'uppercase', marginBottom: '1.5rem' }}>OUR SOLUTION</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '2rem' }}>
             播磨商事のアプローチ
           </h2>
-          <p style={{ fontSize: '1rem', color: '#9CA3AF', lineHeight: 2, maxWidth: '720px' }}>
+          <p style={{ fontSize: '1rem', color: '#8F8B82', lineHeight: 2, maxWidth: '720px' }}>
             {solution.ourSolution}
           </p>
         </div>
       </section>
 
       {/* Features */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FEATURES</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FEATURES</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             具体的な対応内容
           </h2>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {solution.features.map((feature, i) => (
               <div key={i} style={{ background: '#FFFFFF', padding: '2.5rem 2rem' }}>
-                <div style={{ fontSize: '0.625rem', fontWeight: 700, letterSpacing: '0.2em', color: '#9CA3AF', marginBottom: '1rem' }}>0{i + 1}</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.16em', color: '#8F8B82', marginBottom: '1rem' }}>0{i + 1}</div>
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.75rem', lineHeight: 1.4 }}>{feature.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: '#5A5A5A', lineHeight: 1.9 }}>{feature.body}</p>
+                <p style={{ fontSize: '0.875rem', color: '#57544D', lineHeight: 1.9 }}>{feature.body}</p>
               </div>
             ))}
           </div>
@@ -127,18 +127,18 @@ export default async function SolutionPage({ params }: { params: Promise<Params>
       {/* Related */}
       <section style={{ background: '#FFFFFF', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>RELATED</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>RELATED</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            <Link href="/franchise" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>FC本部向け</div>
+            <Link href="/franchise" style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>FC本部向け</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>FC本部の施工管理 →</div>
             </Link>
-            <Link href="/multi-store" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>多店舗展開向け</div>
+            <Link href="/multi-store" style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>多店舗展開向け</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>多店舗展開企業向け →</div>
             </Link>
-            <Link href="/contact" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>まずは相談</div>
+            <Link href="/contact" style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>まずは相談</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>お問い合わせ →</div>
             </Link>
           </div>
@@ -146,9 +146,9 @@ export default async function SolutionPage({ params }: { params: Promise<Params>
       </section>
 
       {/* FAQ */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             よくある質問
           </h2>

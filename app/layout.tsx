@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_JP } from 'next/font/google'
+import { Noto_Sans_JP, Shippori_Mincho, Instrument_Serif, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/app/v2/_components/Header'
 import Footer from '@/app/v2/_components/Footer'
@@ -8,6 +8,28 @@ const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   variable: '--font-noto-sans-jp',
+  display: 'swap',
+})
+
+const shipporiMincho = Shippori_Mincho({
+  weight: ['500', '600'],
+  variable: '--font-serif-jp',
+  display: 'swap',
+  preload: false,
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-serif-en',
+  display: 'swap',
+})
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -46,12 +68,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={notoSansJP.variable}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className="min-h-full flex flex-col" style={{ background: '#FAFAF8' }}>
+    <html
+      lang="ja"
+      className={`${notoSansJP.variable} ${shipporiMincho.variable} ${instrumentSerif.variable} ${plexMono.variable}`}
+    >
+      <body className="min-h-full flex flex-col" style={{ background: 'var(--paper)' }}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

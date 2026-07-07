@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 
+const EASE = [0.22, 1, 0.36, 1] as const
+
 const reasons = [
   {
     number: '01',
@@ -39,28 +41,49 @@ export default function WhyHarima() {
   return (
     <section
       id="why"
-      style={{ background: '#0D1117', paddingTop: '9rem', paddingBottom: '9rem' }}
+      style={{ position: 'relative', background: '#101014', paddingTop: '10rem', paddingBottom: '10rem', overflow: 'hidden' }}
     >
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+      {/* ghost serif word */}
+      <div
+        aria-hidden
+        className="serif-en"
+        style={{
+          position: 'absolute',
+          right: '-1rem',
+          top: '3rem',
+          fontStyle: 'italic',
+          fontSize: 'clamp(5rem, 14vw, 13rem)',
+          color: 'rgba(255,255,255,0.035)',
+          whiteSpace: 'nowrap',
+          lineHeight: 1,
+          userSelect: 'none',
+          pointerEvents: 'none',
+        }}
+      >
+        Reasons
+      </div>
+
+      <div style={{ position: 'relative', maxWidth: '1480px', margin: '0 auto', padding: '0 1.5rem' }}>
 
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: EASE }}
           style={{ marginBottom: '5rem' }}
         >
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+          <div className="mono" style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', marginBottom: '1.75rem' }}>
+            <span style={{ width: '2.25rem', height: '1px', background: '#C25E7F', display: 'inline-block' }} />
             WHY HARIMA
           </div>
           <h2
             style={{
-              fontSize: 'clamp(2rem, 4vw, 3.75rem)',
+              fontSize: 'clamp(2rem, 4.4vw, 3.75rem)',
               fontWeight: 700,
               color: '#FFFFFF',
-              letterSpacing: '-0.03em',
-              lineHeight: 1.15,
+              letterSpacing: '-0.045em',
+              lineHeight: 1.12,
             }}
           >
             選ばれる理由
@@ -68,62 +91,47 @@ export default function WhyHarima() {
         </motion.div>
 
         {/* Editorial list */}
-        <div>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.09)' }}>
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.number}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.6, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, delay: index * 0.06, ease: EASE }}
               style={{
                 display: 'flex',
-                alignItems: 'center',
-                padding: '2.25rem 0',
-                borderBottom: '1px solid rgba(255,255,255,0.06)',
-                gap: '2rem',
+                alignItems: 'baseline',
+                padding: '2.125rem 0',
+                borderBottom: '1px solid rgba(255,255,255,0.09)',
+                gap: 'clamp(1.5rem, 3.5vw, 3.5rem)',
               }}
             >
-              {/* Ghost number */}
-              <div
-                aria-hidden="true"
-                style={{
-                  flexShrink: 0,
-                  width: '4.5rem',
-                  textAlign: 'right',
-                  fontSize: 'clamp(2.5rem, 4vw, 4rem)',
-                  fontWeight: 700,
-                  letterSpacing: '-0.05em',
-                  color: 'rgba(255,255,255,0.04)',
-                  lineHeight: 1,
-                }}
-              >
-                {reason.number}
-              </div>
+              <span className="mono" style={{ flexShrink: 0, fontSize: '0.6875rem', fontWeight: 500, letterSpacing: '0.1em', color: '#C25E7F', width: '2.5rem' }}>
+                ({reason.number})
+              </span>
 
-              {/* Title */}
               <h3
                 style={{
                   flexShrink: 0,
-                  width: 'clamp(9rem, 20vw, 20rem)',
-                  fontSize: 'clamp(1.1rem, 2vw, 1.625rem)',
+                  width: 'clamp(10rem, 24vw, 22rem)',
+                  fontSize: 'clamp(1.15rem, 2.1vw, 1.75rem)',
                   fontWeight: 700,
                   color: '#FFFFFF',
-                  letterSpacing: '-0.025em',
-                  lineHeight: 1.3,
+                  letterSpacing: '-0.03em',
+                  lineHeight: 1.35,
                 }}
               >
                 {reason.title}
               </h3>
 
-              {/* Note */}
               <p
                 className="hidden md:block"
                 style={{
                   flex: 1,
                   fontSize: '0.9375rem',
-                  color: 'rgba(255,255,255,0.38)',
-                  lineHeight: 1.8,
+                  color: 'rgba(255,255,255,0.42)',
+                  lineHeight: 1.9,
                 }}
               >
                 {reason.note}

@@ -38,7 +38,7 @@ export default function ContactForm() {
     padding: '0.875rem 0',
     background: 'transparent',
     border: 'none',
-    borderBottom: '1px solid #E5E3DF',
+    borderBottom: '1px solid #DDD8CE',
     fontSize: '0.9375rem',
     color: '#0A0A0A',
     outline: 'none',
@@ -52,14 +52,14 @@ export default function ContactForm() {
     fontSize: '0.6875rem',
     fontWeight: 600,
     letterSpacing: '0.08em',
-    color: '#9CA3AF',
+    color: '#8F8B82',
     marginBottom: '0.375rem',
     textTransform: 'uppercase',
   }
 
   if (submitted) {
     return (
-      <div style={{ padding: '4rem 3rem', background: '#F5F4F0', textAlign: 'center' }}>
+      <div style={{ padding: '4rem 3rem', background: '#EDEAE2', textAlign: 'center' }}>
         <div style={{ width: '3rem', height: '3rem', background: '#0A0A0A', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
           <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
             <path d="M1 6L6 11L15 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -68,7 +68,7 @@ export default function ContactForm() {
         <p style={{ fontSize: '1.125rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.75rem' }}>
           お問い合わせを受け付けました
         </p>
-        <p style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: 2 }}>
+        <p style={{ fontSize: '0.875rem', color: '#8F8B82', lineHeight: 2 }}>
           内容を確認の上、担当者よりご連絡いたします。<br />
           通常2〜3営業日以内にご返信します。
         </p>
@@ -82,11 +82,11 @@ export default function ContactForm() {
       {/* Company + Name */}
       <div style={{ display: 'grid', gap: '2.5rem' }} className="grid-cols-1 sm:grid-cols-2">
         <div>
-          <label style={label}>会社名 <span style={{ color: '#C4C2BE' }}>必須</span></label>
+          <label style={label}>会社名 <span style={{ color: '#B5B0A4' }}>必須</span></label>
           <input type="text" name="company" value={form.company} onChange={handleChange} required placeholder="株式会社◯◯" style={inputBase} />
         </div>
         <div>
-          <label style={label}>お名前 <span style={{ color: '#C4C2BE' }}>必須</span></label>
+          <label style={label}>お名前 <span style={{ color: '#B5B0A4' }}>必須</span></label>
           <input type="text" name="name" value={form.name} onChange={handleChange} required placeholder="山田 太郎" style={inputBase} />
         </div>
       </div>
@@ -94,7 +94,7 @@ export default function ContactForm() {
       {/* Email + Phone */}
       <div style={{ display: 'grid', gap: '2.5rem' }} className="grid-cols-1 sm:grid-cols-2">
         <div>
-          <label style={label}>メールアドレス <span style={{ color: '#C4C2BE' }}>必須</span></label>
+          <label style={label}>メールアドレス <span style={{ color: '#B5B0A4' }}>必須</span></label>
           <input type="email" name="email" value={form.email} onChange={handleChange} required placeholder="example@company.co.jp" style={inputBase} />
         </div>
         <div>
@@ -141,7 +141,7 @@ export default function ContactForm() {
       </div>
 
       {/* Privacy note */}
-      <p style={{ fontSize: '0.75rem', color: '#9CA3AF', lineHeight: 1.9 }}>
+      <p style={{ fontSize: '0.75rem', color: '#8F8B82', lineHeight: 1.9 }}>
         ご入力いただいた個人情報は、お問い合わせへの対応のみに使用します。
       </p>
 

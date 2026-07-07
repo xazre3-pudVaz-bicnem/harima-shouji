@@ -119,7 +119,7 @@ function PrefectureServicePage({
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
 
@@ -140,35 +140,35 @@ function PrefectureServicePage({
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: 'clamp(3rem, 6vw, 7rem)', alignItems: 'center' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
                 {area!.name.toUpperCase()} / {serviceLabel.toUpperCase()}
               </div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                 {area!.name}での<br />{serviceLabel}課題
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2, marginBottom: '2rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2, marginBottom: '2rem' }}>
                 {data.challenge}
               </p>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
                 {data.merit}
               </p>
             </div>
-            <div style={{ background: '#F5F4F0', padding: '3rem 2.5rem' }}>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>AREA INFO</div>
+            <div style={{ background: '#EDEAE2', padding: '3rem 2.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>AREA INFO</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.25rem' }}>エリア</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.25rem' }}>エリア</div>
                   <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A' }}>{area!.name}</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.25rem' }}>地域</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.25rem' }}>地域</div>
                   <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A' }}>{area!.region}</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.25rem' }}>対応サービス</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.25rem' }}>対応サービス</div>
                   <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A' }}>{serviceLabel}</div>
                 </div>
-                <div style={{ paddingTop: '1rem', borderTop: '1px solid #E5E3DF' }}>
+                <div style={{ paddingTop: '1rem', borderTop: '1px solid #DDD8CE' }}>
                   <Link href={serviceHref} style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', color: '#0A0A0A', textDecoration: 'none', textTransform: 'uppercase', borderBottom: '1px solid #0A0A0A', paddingBottom: '2px' }}>
                     サービス詳細を見る
                   </Link>
@@ -179,18 +179,18 @@ function PrefectureServicePage({
         </div>
       </section>
 
-      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>{area!.name}の他のサービス</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>{area!.name}の他のサービス</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2">
             <Link href={`/area/${prefecture}/${isInterior ? 'restoration' : 'shop-interior'}`} style={{ display: 'block', padding: '2.5rem 2rem', background: '#FFFFFF', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{area!.name}</div>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{area!.name}</div>
               <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A' }}>
                 {isInterior ? '原状回復工事' : '店舗内装工事'}
               </div>
             </Link>
             <Link href="/area" style={{ display: 'block', padding: '2.5rem 2rem', background: '#FFFFFF', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>全エリア</div>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>全エリア</div>
               <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A' }}>対応エリア一覧</div>
             </Link>
           </div>
@@ -199,7 +199,7 @@ function PrefectureServicePage({
 
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             {area!.name}に関する<br />よくある質問
           </h2>
@@ -257,7 +257,7 @@ function CityPage({
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
 
@@ -279,23 +279,23 @@ function CityPage({
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: 'clamp(3rem, 6vw, 7rem)', alignItems: 'start' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>AREA INFO</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>AREA INFO</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                 {city.cityName}の<br />エリア概要
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
                 {city.areaNote}
               </p>
             </div>
-            <div style={{ background: '#F5F4F0', padding: '3rem 2.5rem' }}>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>SERVICES</div>
+            <div style={{ background: '#EDEAE2', padding: '3rem 2.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>SERVICES</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>店舗内装工事</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.5rem' }}>店舗内装工事</div>
                   <p style={{ fontSize: '0.875rem', color: '#3A3A3A', lineHeight: 1.9 }}>{city.shopInteriorNote}</p>
                 </div>
-                <div style={{ paddingTop: '1rem', borderTop: '1px solid #E5E3DF' }}>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>原状回復工事</div>
+                <div style={{ paddingTop: '1rem', borderTop: '1px solid #DDD8CE' }}>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.5rem' }}>原状回復工事</div>
                   <p style={{ fontSize: '0.875rem', color: '#3A3A3A', lineHeight: 1.9 }}>{city.restorationNote}</p>
                 </div>
               </div>
@@ -305,24 +305,24 @@ function CityPage({
       </section>
 
       {/* Service Links */}
-      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>SERVICES</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>SERVICES</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             <Link href={`/area/${prefecture}/shop-interior`} style={{ display: 'block', padding: '2rem 1.5rem', background: '#FFFFFF', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{area.name}全域</div>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{area.name}全域</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>店舗内装工事 →</div>
             </Link>
             <Link href={`/area/${prefecture}/restoration`} style={{ display: 'block', padding: '2rem 1.5rem', background: '#FFFFFF', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{area.name}全域</div>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{area.name}全域</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>原状回復工事 →</div>
             </Link>
             <Link href="/service/shop-interior" style={{ display: 'block', padding: '2rem 1.5rem', background: '#FFFFFF', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>サービス詳細</div>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>サービス詳細</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>店舗内装工事について →</div>
             </Link>
             <Link href="/service/restoration" style={{ display: 'block', padding: '2rem 1.5rem', background: '#FFFFFF', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>サービス詳細</div>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>サービス詳細</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>原状回復工事について →</div>
             </Link>
           </div>
@@ -332,7 +332,7 @@ function CityPage({
       {/* FAQ */}
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             {city.cityName}に関する<br />よくある質問
           </h2>

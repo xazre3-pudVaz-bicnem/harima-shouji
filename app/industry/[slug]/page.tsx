@@ -81,7 +81,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
 
@@ -102,11 +102,11 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: 'clamp(3rem, 6vw, 7rem)', alignItems: 'start' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>OVERVIEW</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>OVERVIEW</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                 {industry.industryJa}の<br />{serviceLabel}について
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
                 {industry.overview}
               </p>
             </div>
@@ -125,18 +125,18 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       </section>
 
       {/* Common Works */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>COMMON WORKS</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>COMMON WORKS</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             主な工事内容
           </h2>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {industry.commonWorks.map((work, i) => (
               <div key={i} style={{ background: '#FFFFFF', padding: '2.5rem 2rem' }}>
-                <div style={{ fontSize: '0.625rem', fontWeight: 700, letterSpacing: '0.2em', color: '#9CA3AF', marginBottom: '1rem' }}>0{i + 1}</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.16em', color: '#8F8B82', marginBottom: '1rem' }}>0{i + 1}</div>
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.75rem', lineHeight: 1.4 }}>{work.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: '#5A5A5A', lineHeight: 1.9 }}>{work.body}</p>
+                <p style={{ fontSize: '0.875rem', color: '#57544D', lineHeight: 1.9 }}>{work.body}</p>
               </div>
             ))}
           </div>
@@ -145,18 +145,18 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
 
       {/* Key Considerations */}
       {industry.keyConsiderations.length > 0 && (
-        <section style={{ background: '#0D1117', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <section style={{ background: '#101014', paddingTop: '7rem', paddingBottom: '7rem' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#4B5563', textTransform: 'uppercase', marginBottom: '1rem' }}>CONSIDERATIONS</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#756F64', textTransform: 'uppercase', marginBottom: '1rem' }}>CONSIDERATIONS</div>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
               {industry.industryJa}工事の<br />重要ポイント
             </h2>
             <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 md:grid-cols-3">
               {industry.keyConsiderations.map((item, i) => (
-                <div key={i} style={{ background: '#161B22', padding: '2.5rem 2rem' }}>
-                  <div style={{ fontSize: '0.625rem', fontWeight: 700, letterSpacing: '0.2em', color: '#4B5563', marginBottom: '1rem' }}>0{i + 1}</div>
-                  <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#F0EFE9', marginBottom: '0.75rem', lineHeight: 1.4 }}>{item.title}</h3>
-                  <p style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: 1.9 }}>{item.body}</p>
+                <div key={i} style={{ background: '#191A20', padding: '2.5rem 2rem' }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.16em', color: '#756F64', marginBottom: '1rem' }}>0{i + 1}</div>
+                  <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#E7E3DA', marginBottom: '0.75rem', lineHeight: 1.4 }}>{item.title}</h3>
+                  <p style={{ fontSize: '0.875rem', color: '#8F8B82', lineHeight: 1.9 }}>{item.body}</p>
                 </div>
               ))}
             </div>
@@ -168,7 +168,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       {industry.galleryImages && industry.galleryImages.length > 0 && (
         <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>GALLERY</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>GALLERY</div>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
               施工イメージ
             </h2>
@@ -185,7 +185,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                   </div>
-                  <figcaption style={{ fontSize: '0.75rem', color: '#6B6B6B', marginTop: '0.625rem', letterSpacing: '0.02em' }}>{img.caption}</figcaption>
+                  <figcaption style={{ fontSize: '0.75rem', color: '#6B675F', marginTop: '0.625rem', letterSpacing: '0.02em' }}>{img.caption}</figcaption>
                 </figure>
               ))}
             </div>
@@ -196,30 +196,30 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       {/* Related Service Links */}
       <section style={{ background: '#FFFFFF', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>RELATED</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>RELATED</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            <Link href={serviceHref} style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>サービス詳細</div>
+            <Link href={serviceHref} style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>サービス詳細</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{serviceLabel}について →</div>
             </Link>
-            <Link href={secondaryHref} style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{secondaryNote}</div>
+            <Link href={secondaryHref} style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{secondaryNote}</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{secondaryLabel}について →</div>
             </Link>
-            <Link href="/franchise" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>FC本部向け</div>
+            <Link href="/franchise" style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>FC本部向け</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>FC本部の施工管理 →</div>
             </Link>
-            <Link href="/works" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>施工実績</div>
+            <Link href="/works" style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>施工実績</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>施工事例を見る →</div>
             </Link>
-            <Link href="/area" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>対応エリア</div>
+            <Link href="/area" style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>対応エリア</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>施工対応エリア一覧 →</div>
             </Link>
-            <Link href="/contact" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
-              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>お問い合わせ</div>
+            <Link href="/contact" style={{ display: 'block', padding: '2rem 1.5rem', background: '#EDEAE2', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>お問い合わせ</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>現地調査・見積り無料 →</div>
             </Link>
           </div>
@@ -227,9 +227,9 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       </section>
 
       {/* FAQ */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             {industry.industryJa}の<br />よくある質問
           </h2>

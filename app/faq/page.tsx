@@ -44,7 +44,7 @@ const faqs = [
 
 export default function FaqPage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
 
       <PageHero
         label="FAQ"
@@ -62,9 +62,9 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section style={{ paddingTop: '6rem', paddingBottom: '6rem', background: '#F5F4F0', textAlign: 'center' }}>
+      <section style={{ paddingTop: '6rem', paddingBottom: '6rem', background: '#EDEAE2', textAlign: 'center' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2, marginBottom: '2rem' }}>こちらに記載のない内容は、お気軽にお問い合わせください。</p>
+          <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2, marginBottom: '2rem' }}>こちらに記載のない内容は、お気軽にお問い合わせください。</p>
           <Link href="/contact" style={{ display: 'inline-block', padding: '1rem 3rem', background: '#0A0A0A', color: '#FFFFFF', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.06em', textDecoration: 'none' }}>
             お問い合わせ
           </Link>

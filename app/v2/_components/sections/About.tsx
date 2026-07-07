@@ -45,7 +45,7 @@ export default function About() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.75rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.75rem' }}>
               ABOUT
             </div>
 
@@ -63,11 +63,11 @@ export default function About() {
               確かな施工体制
             </h2>
 
-            <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2, maxWidth: '360px' }}>
+            <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2, maxWidth: '360px' }}>
               フランチャイズ本部・チェーン店本部・多店舗展開企業を対象に、店舗内装工事と原状回復工事をワンストップで提供します。施工管理の窓口を一本化することで、本部担当者様の負担を大幅に軽減します。
             </p>
 
-            <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #E5E3DF' }}>
+            <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #DDD8CE' }}>
               <dl style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
                 {[
                   { label: '対応エリア', value: '関東・東海・近畿（7都府県）' },
@@ -75,7 +75,7 @@ export default function About() {
                   { label: '対応時間', value: '夜間・短工期対応可' },
                 ].map(({ label, value }) => (
                   <div key={label} style={{ display: 'flex', gap: '1.5rem', alignItems: 'baseline' }}>
-                    <dt style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.06em', color: '#9CA3AF', whiteSpace: 'nowrap', minWidth: '80px' }}>{label}</dt>
+                    <dt style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.06em', color: '#8F8B82', whiteSpace: 'nowrap', minWidth: '80px' }}>{label}</dt>
                     <dd style={{ fontSize: '0.875rem', color: '#3A3A3A' }}>{value}</dd>
                   </div>
                 ))}

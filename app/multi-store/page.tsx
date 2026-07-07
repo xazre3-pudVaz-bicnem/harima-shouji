@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function MultiStorePage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <PageHero
         label="MULTI-STORE MANAGEMENT"
         title="多店舗展開企業向け"
@@ -30,11 +30,11 @@ export default function MultiStorePage() {
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '700px' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>FOR MULTI-STORE</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>FOR MULTI-STORE</div>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
               店舗が増えるほど、<br />施工管理の一本化が重要になる
             </h2>
-            <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+            <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
               多店舗展開企業では、出店・改装・退店が常に複数案件で動いています。エリアごとに異なる施工会社を使い続けると、品質のばらつき・担当者の対応コスト・コスト管理の煩雑さが蓄積します。播磨商事は、関東・東海・近畿の7都府県を1つの体制でカバーし、担当者様の管理負担を継続的に軽減します。
             </p>
           </div>
@@ -42,9 +42,9 @@ export default function MultiStorePage() {
       </section>
 
       {/* What we do */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>WHAT WE DO</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>WHAT WE DO</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
             多店舗展開に必要な<br />施工管理の全領域
           </h2>
@@ -76,9 +76,9 @@ export default function MultiStorePage() {
               },
             ].map((item) => (
               <div key={item.phase} style={{ background: '#FFFFFF', padding: '3rem 2.5rem' }}>
-                <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '0.75rem' }}>{item.phase}</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '0.75rem' }}>{item.phase}</div>
                 <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '1rem' }}>{item.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.8, marginBottom: '1.5rem' }}>{item.body}</p>
+                <p style={{ fontSize: '0.875rem', color: '#6B675F', lineHeight: 1.8, marginBottom: '1.5rem' }}>{item.body}</p>
                 <Link href={item.href} style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', color: '#0A0A0A', textDecoration: 'none', textTransform: 'uppercase', borderBottom: '1px solid #0A0A0A', paddingBottom: '2px' }}>
                   詳しく見る
                 </Link>
@@ -93,16 +93,16 @@ export default function MultiStorePage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: 'clamp(3rem, 6vw, 7rem)', alignItems: 'center' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>COVERAGE</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>COVERAGE</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                 関東・東海・近畿<br />7都府県を<br />1つの窓口でカバー
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2, marginBottom: '2.5rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2, marginBottom: '2.5rem' }}>
                 広域展開する多店舗企業にとって、エリアごとに施工会社が異なることは管理コストを生む大きな要因です。播磨商事は関東から近畿まで、担当者の窓口を1つに集約します。
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 {['東京', '埼玉', '千葉', '神奈川', '静岡', '大阪', '兵庫'].map((area) => (
-                  <span key={area} style={{ padding: '0.5rem 1.25rem', background: '#F5F4F0', fontSize: '0.875rem', fontWeight: 600, color: '#3A3A3A' }}>{area}</span>
+                  <span key={area} style={{ padding: '0.5rem 1.25rem', background: '#EDEAE2', fontSize: '0.875rem', fontWeight: 600, color: '#3A3A3A' }}>{area}</span>
                 ))}
               </div>
             </div>
@@ -114,9 +114,9 @@ export default function MultiStorePage() {
       </section>
 
       {/* Related */}
-      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-3">
             {[
               { label: 'FC本部向けサービス', href: '/franchise', note: 'フランチャイズ本部の施工管理' },
@@ -124,7 +124,7 @@ export default function MultiStorePage() {
               { label: '対応エリア', href: '/area', note: '関東・東海・近畿 7都府県' },
             ].map((item) => (
               <Link key={item.href} href={item.href} style={{ display: 'block', padding: '2rem', background: '#FFFFFF', textDecoration: 'none' }}>
-                <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{item.note}</div>
+                <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{item.note}</div>
                 <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{item.label}</div>
               </Link>
             ))}

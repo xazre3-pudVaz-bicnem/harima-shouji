@@ -55,7 +55,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
       : news.filter((n) => n.category === activeCategory)
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -81,7 +81,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
               display: 'flex',
               gap: '0',
               flexWrap: 'wrap',
-              borderBottom: '1px solid #F0EFEC',
+              borderBottom: '1px solid #E7E3DA',
               marginBottom: '4rem',
             }}
           >
@@ -96,7 +96,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                     padding: '0.75rem 1.5rem',
                     fontSize: '0.8125rem',
                     fontWeight: isActive ? 700 : 400,
-                    color: isActive ? '#0A0A0A' : '#9CA3AF',
+                    color: isActive ? '#0A0A0A' : '#8F8B82',
                     textDecoration: 'none',
                     borderBottom: isActive ? '2px solid #0A0A0A' : '2px solid transparent',
                     marginBottom: '-1px',
@@ -112,7 +112,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
 
           {/* News list */}
           {filteredNews.length === 0 ? (
-            <p style={{ fontSize: '0.9375rem', color: '#9CA3AF', textAlign: 'center', padding: '4rem 0' }}>
+            <p style={{ fontSize: '0.9375rem', color: '#8F8B82', textAlign: 'center', padding: '4rem 0' }}>
               該当するお知らせはありません。
             </p>
           ) : (
@@ -121,15 +121,15 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                 <div
                   key={item.slug}
                   style={{
-                    borderTop: i === 0 ? '1px solid #F0EFEC' : 'none',
-                    borderBottom: '1px solid #F0EFEC',
+                    borderTop: i === 0 ? '1px solid #E7E3DA' : 'none',
+                    borderBottom: '1px solid #E7E3DA',
                   }}
                 >
                   <Link
                     href={`/news/${item.slug}`}
                     style={{ display: 'flex', gap: 'clamp(1rem, 3vw, 1.75rem)', alignItems: 'center', padding: '2rem 0', textDecoration: 'none' }}
                   >
-                    <div style={{ position: 'relative', width: 'clamp(96px, 26vw, 200px)', aspectRatio: '4/3', flexShrink: 0, overflow: 'hidden', borderRadius: '4px', background: '#F5F4F0' }}>
+                    <div style={{ position: 'relative', width: 'clamp(96px, 26vw, 200px)', aspectRatio: '4/3', flexShrink: 0, overflow: 'hidden', borderRadius: '4px', background: '#EDEAE2' }}>
                       <Image
                         src={item.imageUrl}
                         alt={item.imageAlt}
@@ -150,7 +150,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                     >
                       <time
                         dateTime={item.date}
-                        style={{ fontSize: '0.75rem', color: '#9CA3AF', fontVariantNumeric: 'tabular-nums' }}
+                        style={{ fontSize: '0.75rem', color: '#8F8B82', fontVariantNumeric: 'tabular-nums' }}
                       >
                         {formatDate(item.date)}
                       </time>
@@ -159,8 +159,8 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                           fontSize: '0.625rem',
                           fontWeight: 700,
                           letterSpacing: '0.06em',
-                          color: '#6B6B6B',
-                          background: '#F5F4F0',
+                          color: '#6B675F',
+                          background: '#EDEAE2',
                           padding: '0.25rem 0.75rem',
                           textTransform: 'uppercase',
                         }}
@@ -183,7 +183,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                     <p
                       style={{
                         fontSize: '0.8125rem',
-                        color: '#6B6B6B',
+                        color: '#6B675F',
                         lineHeight: 1.8,
                         marginBottom: '1rem',
                       }}

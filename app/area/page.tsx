@@ -37,7 +37,7 @@ const areas = [
 
 export default function AreaPage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
 
       <PageHero
         label="AREA"
@@ -55,7 +55,7 @@ export default function AreaPage() {
           {areas.map((area) => (
             <div key={area.region} style={{ marginBottom: '5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2.5rem' }}>
-                <span style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase' }}>REGION</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase' }}>REGION</span>
                 <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.02em' }}>{area.region}</h2>
               </div>
               <div>
@@ -63,19 +63,19 @@ export default function AreaPage() {
                   <div
                     key={pref.name}
                     id={pref.slug}
-                    style={{ padding: '2rem 0', borderBottom: '1px solid #F0EFEC' }}
+                    style={{ padding: '2rem 0', borderBottom: '1px solid #E7E3DA' }}
                   >
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1rem' }} className="md:grid-cols-[280px_1fr_auto]">
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
                         <span style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.02em' }}>{pref.name}</span>
-                        <span style={{ fontSize: '0.6875rem', color: '#C4C2BE', letterSpacing: '0.1em' }}>{pref.reading}</span>
+                        <span style={{ fontSize: '0.6875rem', color: '#B5B0A4', letterSpacing: '0.1em' }}>{pref.reading}</span>
                       </div>
-                      <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 1.9, alignSelf: 'center' }}>{pref.note}</p>
+                      <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 1.9, alignSelf: 'center' }}>{pref.note}</p>
                       <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignSelf: 'center' }}>
-                        <Link href={`/area/${pref.slug}/shop-interior`} style={{ fontSize: '0.75rem', fontWeight: 600, color: '#0A0A0A', textDecoration: 'none', padding: '0.5rem 1rem', border: '1px solid #E5E3DF', whiteSpace: 'nowrap' }}>
+                        <Link href={`/area/${pref.slug}/shop-interior`} style={{ fontSize: '0.75rem', fontWeight: 600, color: '#0A0A0A', textDecoration: 'none', padding: '0.5rem 1rem', border: '1px solid #DDD8CE', whiteSpace: 'nowrap' }}>
                           内装工事
                         </Link>
-                        <Link href={`/area/${pref.slug}/restoration`} style={{ fontSize: '0.75rem', fontWeight: 600, color: '#0A0A0A', textDecoration: 'none', padding: '0.5rem 1rem', border: '1px solid #E5E3DF', whiteSpace: 'nowrap' }}>
+                        <Link href={`/area/${pref.slug}/restoration`} style={{ fontSize: '0.75rem', fontWeight: 600, color: '#0A0A0A', textDecoration: 'none', padding: '0.5rem 1rem', border: '1px solid #DDD8CE', whiteSpace: 'nowrap' }}>
                           原状回復
                         </Link>
                       </div>
@@ -86,7 +86,7 @@ export default function AreaPage() {
             </div>
           ))}
 
-          <div style={{ padding: '2.5rem', background: '#F5F4F0', borderLeft: '2px solid #0A0A0A', marginTop: '2rem' }}>
+          <div style={{ padding: '2.5rem', background: '#EDEAE2', borderLeft: '2px solid #0A0A0A', marginTop: '2rem' }}>
             <p style={{ fontSize: '0.9375rem', color: '#3A3A3A', lineHeight: 2.1 }}>
               上記エリア外についても、案件内容・規模によってはご対応可能な場合があります。<br />まずはお気軽にお問い合わせください。
             </p>

@@ -24,7 +24,7 @@ export default function IndustryIndexPage() {
   const restorationIndustries = industries.filter((i) => i.serviceType === 'restoration')
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <PageHero
         label="INDUSTRY"
         title="業種別対応"
@@ -39,13 +39,13 @@ export default function IndustryIndexPage() {
       {/* Interior */}
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>INTERIOR WORK</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>INTERIOR WORK</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             店舗内装工事｜業種別対応
           </h2>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {interiorIndustries.map((ind) => (
-              <Link key={ind.slug} href={`/industry/${ind.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#F5F4F0' }}>
+              <Link key={ind.slug} href={`/industry/${ind.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#EDEAE2' }}>
                 <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
                   <Image
                     src={ind.heroImage}
@@ -56,9 +56,9 @@ export default function IndustryIndexPage() {
                   />
                 </div>
                 <div style={{ padding: '1.75rem 1.5rem' }}>
-                  <div style={{ fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.1em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '0.5rem' }}>INTERIOR</div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.14em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '0.5rem' }}>INTERIOR</div>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.5rem' }}>{ind.industryJa}の内装工事</h3>
-                  <p style={{ fontSize: '0.8125rem', color: '#5A5A5A', lineHeight: 1.7 }}>{ind.metaDescription.slice(0, 60)}...</p>
+                  <p style={{ fontSize: '0.8125rem', color: '#57544D', lineHeight: 1.7 }}>{ind.metaDescription.slice(0, 60)}...</p>
                 </div>
               </Link>
             ))}
@@ -67,9 +67,9 @@ export default function IndustryIndexPage() {
       </section>
 
       {/* Restoration */}
-      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '5rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>RESTORATION WORK</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>RESTORATION WORK</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             原状回復工事｜業種別対応
           </h2>
@@ -86,9 +86,9 @@ export default function IndustryIndexPage() {
                   />
                 </div>
                 <div style={{ padding: '1.75rem 1.5rem' }}>
-                  <div style={{ fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.1em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '0.5rem' }}>RESTORATION</div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.14em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '0.5rem' }}>RESTORATION</div>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.5rem' }}>{ind.industryJa}の原状回復工事</h3>
-                  <p style={{ fontSize: '0.8125rem', color: '#5A5A5A', lineHeight: 1.7 }}>{ind.metaDescription.slice(0, 60)}...</p>
+                  <p style={{ fontSize: '0.8125rem', color: '#57544D', lineHeight: 1.7 }}>{ind.metaDescription.slice(0, 60)}...</p>
                 </div>
               </Link>
             ))}

@@ -88,7 +88,7 @@ export default function FranchisePage() {
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
@@ -108,13 +108,13 @@ export default function FranchisePage() {
       {/* 2. Problem — FC本部が抱える課題 */}
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
             THE PROBLEM
           </div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1rem' }}>
             FC本部が抱える課題
           </h2>
-          <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2, marginBottom: '4rem', maxWidth: '560px' }}>
+          <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2, marginBottom: '4rem', maxWidth: '560px' }}>
             店舗数が増えるほど、施工管理の複雑さは増します。担当者1人に集中する負担が、拡大の足を引っ張ります。
           </p>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2">
@@ -140,7 +140,7 @@ export default function FranchisePage() {
                 body: 'オーナーから高額請求が来ても、内容の妥当性を判断できない。複数店舗の退去が重なると、対応が追いつかなくなります。',
               },
             ].map((item) => (
-              <div key={item.number} style={{ background: '#F5F4F0', padding: '3rem 2.5rem', position: 'relative', overflow: 'hidden' }}>
+              <div key={item.number} style={{ background: '#EDEAE2', padding: '3rem 2.5rem', position: 'relative', overflow: 'hidden' }}>
                 <div
                   aria-hidden="true"
                   style={{
@@ -160,7 +160,7 @@ export default function FranchisePage() {
                 <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '1rem', letterSpacing: '-0.02em', position: 'relative' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.9, position: 'relative' }}>{item.body}</p>
+                <p style={{ fontSize: '0.875rem', color: '#6B675F', lineHeight: 1.9, position: 'relative' }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -168,9 +168,9 @@ export default function FranchisePage() {
       </section>
 
       {/* 3. What we can do — 播磨商事ができること */}
-      <section style={{ background: '#0D1117', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#101014', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
             WHAT WE DO
           </div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1rem' }}>
@@ -192,7 +192,7 @@ export default function FranchisePage() {
               />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2.5rem' }}>
-                <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.22em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                   INTERIOR WORKS
                 </div>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>
@@ -221,7 +221,7 @@ export default function FranchisePage() {
               />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2.5rem' }}>
-                <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.22em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                   RESTORATION
                 </div>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>
@@ -243,9 +243,9 @@ export default function FranchisePage() {
       </section>
 
       {/* 4. Feature cards */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
             FEATURES
           </div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
@@ -285,7 +285,7 @@ export default function FranchisePage() {
                     fontWeight: 700,
                     letterSpacing: '-0.05em',
                     lineHeight: 1,
-                    color: '#F5F4F0',
+                    color: '#EDEAE2',
                     userSelect: 'none',
                   }}
                 >
@@ -306,7 +306,7 @@ export default function FranchisePage() {
                     <span style={{ fontSize: '0.5625rem', fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.04em' }}>{item.number}</span>
                   </div>
                   <div style={{ fontSize: '1.0625rem', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.015em', marginBottom: '0.75rem' }}>{item.title}</div>
-                  <div style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: 1.9 }}>{item.body}</div>
+                  <div style={{ fontSize: '0.875rem', color: '#8F8B82', lineHeight: 1.9 }}>{item.body}</div>
                 </div>
               </div>
             ))}
@@ -319,13 +319,13 @@ export default function FranchisePage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: 'clamp(3rem, 6vw, 7rem)', alignItems: 'center' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
                 WORKS
               </div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                 フランチャイズ・<br />チェーン店の施工事例
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2, marginBottom: '2.5rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2, marginBottom: '2.5rem' }}>
                 飲食・小売・サービス業など、業種を問わず対応実績があります。本部仕様書に基づいた統一施工の事例をご覧ください。
               </p>
               <Link
@@ -359,9 +359,9 @@ export default function FranchisePage() {
       </section>
 
       {/* Flow */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
             HOW IT WORKS
           </div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
@@ -385,7 +385,7 @@ export default function FranchisePage() {
                     fontWeight: 700,
                     letterSpacing: '-0.05em',
                     lineHeight: 1,
-                    color: '#F5F4F0',
+                    color: '#EDEAE2',
                     userSelect: 'none',
                   }}
                 >
@@ -406,7 +406,7 @@ export default function FranchisePage() {
                     <span style={{ fontSize: '0.5625rem', fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.04em' }}>{step.number}</span>
                   </div>
                   <div style={{ fontSize: '1.0625rem', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.015em', marginBottom: '0.75rem' }}>{step.title}</div>
-                  <div style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: 1.9 }}>{step.note}</div>
+                  <div style={{ fontSize: '0.875rem', color: '#8F8B82', lineHeight: 1.9 }}>{step.note}</div>
                 </div>
               </div>
             ))}
@@ -415,9 +415,9 @@ export default function FranchisePage() {
       </section>
 
       {/* 6. FAQ */}
-      <section style={{ background: '#0D1117', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#101014', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
             FAQ
           </div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
@@ -451,7 +451,7 @@ export default function FranchisePage() {
       {/* Internal links */}
       <section style={{ background: '#FFFFFF', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { label: '店舗内装工事', href: '/service/shop-interior', note: 'フランチャイズ出店・改装' },
@@ -462,9 +462,9 @@ export default function FranchisePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                style={{ display: 'block', padding: '2rem', background: '#F5F4F0', textDecoration: 'none' }}
+                style={{ display: 'block', padding: '2rem', background: '#EDEAE2', textDecoration: 'none' }}
               >
-                <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{item.note}</div>
+                <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{item.note}</div>
                 <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{item.label}</div>
               </Link>
             ))}

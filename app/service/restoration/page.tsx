@@ -120,7 +120,7 @@ export default function RestorationPage() {
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -159,7 +159,7 @@ export default function RestorationPage() {
                   fontSize: '0.5625rem',
                   fontWeight: 700,
                   letterSpacing: '0.32em',
-                  color: '#9CA3AF',
+                  color: '#8F8B82',
                   textTransform: 'uppercase',
                   marginBottom: '1.5rem',
                 }}
@@ -179,10 +179,10 @@ export default function RestorationPage() {
                 店舗・テナントの<br />
                 原状回復工事とは
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2, marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2, marginBottom: '1.5rem' }}>
                 原状回復工事とは、賃貸借契約終了時に借主が物件を入居前の状態に戻す工事のことです。店舗・テナントの場合は住宅と異なり、造作物の撤去・内装の解体・設備の復旧まで幅広い工事が対象になることがあります。
               </p>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
                 播磨商事では退去立会いの代行から、クロス補修・床復旧・設備復旧・解体撤去まで一括で対応します。契約書と国土交通省の原状回復ガイドラインに基づき、適正な工事範囲と費用を明示します。
               </p>
             </div>
@@ -191,14 +191,14 @@ export default function RestorationPage() {
       </section>
 
       {/* Problems — 退去時に起きやすい課題 */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div
             style={{
               fontSize: '0.5625rem',
               fontWeight: 700,
               letterSpacing: '0.32em',
-              color: '#9CA3AF',
+              color: '#8F8B82',
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}
@@ -217,7 +217,7 @@ export default function RestorationPage() {
           >
             退去時に起きやすい課題
           </h2>
-          <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2, marginBottom: '4rem', maxWidth: '640px' }}>
+          <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2, marginBottom: '4rem', maxWidth: '640px' }}>
             店舗・テナントの退去では、住宅とは異なる複雑な問題が生じやすくなります。
           </p>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2">
@@ -248,7 +248,7 @@ export default function RestorationPage() {
                   style={{
                     fontSize: '2.5rem',
                     fontWeight: 700,
-                    color: '#F0EFEC',
+                    color: '#E7E3DA',
                     letterSpacing: '-0.05em',
                     marginBottom: '0.75rem',
                     lineHeight: 1,
@@ -259,7 +259,7 @@ export default function RestorationPage() {
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '1rem' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.85 }}>{item.body}</p>
+                <p style={{ fontSize: '0.875rem', color: '#6B675F', lineHeight: 1.85 }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -274,7 +274,7 @@ export default function RestorationPage() {
               fontSize: '0.5625rem',
               fontWeight: 700,
               letterSpacing: '0.32em',
-              color: '#9CA3AF',
+              color: '#8F8B82',
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}
@@ -326,7 +326,7 @@ export default function RestorationPage() {
                 body: '管理会社・オーナーとの退去立会いを代行します。費用の適正化交渉・原状回復範囲の確認もサポートします。',
               },
             ].map((item) => (
-              <div key={item.label} style={{ background: '#F5F4F0', padding: '3rem 2.5rem' }}>
+              <div key={item.label} style={{ background: '#EDEAE2', padding: '3rem 2.5rem' }}>
                 <div
                   style={{
                     fontSize: '2.5rem',
@@ -342,7 +342,7 @@ export default function RestorationPage() {
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '1rem' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.85 }}>{item.body}</p>
+                <p style={{ fontSize: '0.875rem', color: '#6B675F', lineHeight: 1.85 }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -350,7 +350,7 @@ export default function RestorationPage() {
       </section>
 
       {/* Benefits — 多店舗展開企業・FC本部向けメリット */}
-      <section style={{ background: '#0D1117', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#101014', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div
             style={{
@@ -455,7 +455,7 @@ export default function RestorationPage() {
               fontSize: '0.5625rem',
               fontWeight: 700,
               letterSpacing: '0.32em',
-              color: '#9CA3AF',
+              color: '#8F8B82',
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}
@@ -510,7 +510,7 @@ export default function RestorationPage() {
                   style={{
                     fontSize: '0.75rem',
                     fontWeight: 700,
-                    color: '#9CA3AF',
+                    color: '#8F8B82',
                     letterSpacing: '0.1em',
                     paddingTop: '0.25rem',
                     textAlign: 'right',
@@ -518,7 +518,7 @@ export default function RestorationPage() {
                 >
                   {item.step}
                 </div>
-                <div style={{ position: 'relative', width: '1px', background: '#E5E3DF' }}>
+                <div style={{ position: 'relative', width: '1px', background: '#DDD8CE' }}>
                   <div
                     style={{
                       position: 'absolute',
@@ -535,7 +535,7 @@ export default function RestorationPage() {
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.5rem' }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.85 }}>{item.body}</p>
+                  <p style={{ fontSize: '0.875rem', color: '#6B675F', lineHeight: 1.85 }}>{item.body}</p>
                 </div>
               </li>
             ))}
@@ -544,14 +544,14 @@ export default function RestorationPage() {
       </section>
 
       {/* Gallery */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div
             style={{
               fontSize: '0.5625rem',
               fontWeight: 700,
               letterSpacing: '0.32em',
-              color: '#9CA3AF',
+              color: '#8F8B82',
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}
@@ -570,7 +570,7 @@ export default function RestorationPage() {
           >
             施工イメージ
           </h2>
-          <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2, marginBottom: '3rem' }}>
+          <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2, marginBottom: '3rem' }}>
             <Link
               href="/works"
               style={{ color: '#0A0A0A', textDecoration: 'underline', textUnderlineOffset: '4px' }}
@@ -608,7 +608,7 @@ export default function RestorationPage() {
               fontSize: '0.5625rem',
               fontWeight: 700,
               letterSpacing: '0.32em',
-              color: '#9CA3AF',
+              color: '#8F8B82',
               textTransform: 'uppercase',
               marginBottom: '1rem',
             }}
@@ -632,14 +632,14 @@ export default function RestorationPage() {
       </section>
 
       {/* Related Links */}
-      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div
             style={{
               fontSize: '0.5625rem',
               fontWeight: 700,
               letterSpacing: '0.32em',
-              color: '#9CA3AF',
+              color: '#8F8B82',
               textTransform: 'uppercase',
               marginBottom: '2rem',
             }}
@@ -660,7 +660,7 @@ export default function RestorationPage() {
                 href={item.href}
                 style={{ display: 'block', padding: '2rem', background: '#FFFFFF', textDecoration: 'none' }}
               >
-                <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{item.note}</div>
+                <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{item.note}</div>
                 <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{item.label}</div>
               </Link>
             ))}

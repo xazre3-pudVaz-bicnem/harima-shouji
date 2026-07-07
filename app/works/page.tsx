@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 }
 
 const categoryConfig: Record<WorkCategory, { label: string; bg: string; color: string }> = {
-  'shop-interior': { label: '店舗内装工事', bg: '#F0EFEC', color: '#1C1C1C' },
+  'shop-interior': { label: '店舗内装工事', bg: '#E7E3DA', color: '#1C1C1C' },
   restoration: { label: '原状回復工事', bg: '#E8EBF0', color: '#1C1C1C' },
   salon: { label: 'サロン内装', bg: '#F0EBF0', color: '#1C1C1C' },
   gym: { label: 'ジム内装', bg: '#EBF0EB', color: '#1C1C1C' },
@@ -69,7 +69,7 @@ const itemListJsonLd = {
 
 export default function WorksPage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -91,7 +91,7 @@ export default function WorksPage() {
       />
 
       {/* Filter tabs */}
-      <section style={{ background: '#FFFFFF', borderBottom: '1px solid #F0EFEC', position: 'sticky', top: 0, zIndex: 10 }}>
+      <section style={{ background: '#FFFFFF', borderBottom: '1px solid #E7E3DA', position: 'sticky', top: 0, zIndex: 10 }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'flex', gap: '0', overflowX: 'auto', scrollbarWidth: 'none' }}>
             {filterTabs.map((tab) => (
@@ -102,7 +102,7 @@ export default function WorksPage() {
                   padding: '1.125rem 1.5rem',
                   fontSize: '0.8125rem',
                   fontWeight: tab.active ? 700 : 400,
-                  color: tab.active ? '#0A0A0A' : '#9CA3AF',
+                  color: tab.active ? '#0A0A0A' : '#8F8B82',
                   background: 'transparent',
                   border: 'none',
                   borderBottom: tab.active ? '2px solid #0A0A0A' : '2px solid transparent',
@@ -120,16 +120,16 @@ export default function WorksPage() {
       </section>
 
       {/* Works grid */}
-      <section style={{ paddingTop: '5rem', paddingBottom: '7rem', background: '#FAFAF8' }}>
+      <section style={{ paddingTop: '5rem', paddingBottom: '7rem', background: '#F6F4EF' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ marginBottom: '3rem' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
               ALL WORKS
             </div>
-            <p style={{ fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '1rem' }}>
+            <p style={{ fontSize: '0.875rem', color: '#8F8B82', marginBottom: '1rem' }}>
               {works.length}件の施工イメージ
             </p>
-            <p style={{ fontSize: '0.8125rem', color: '#6B6B6B', lineHeight: 1.9, background: '#F5F4F0', borderRadius: '4px', padding: '0.875rem 1.25rem', display: 'inline-block' }}>
+            <p style={{ fontSize: '0.8125rem', color: '#6B675F', lineHeight: 1.9, background: '#EDEAE2', borderRadius: '4px', padding: '0.875rem 1.25rem', display: 'inline-block' }}>
               ※ 掲載している写真・事例は施工イメージです。実際の施工実績は準備が整い次第、順次公開してまいります。
             </p>
           </div>
@@ -147,7 +147,7 @@ export default function WorksPage() {
                   style={{ display: 'block', textDecoration: 'none', background: '#FFFFFF', overflow: 'hidden' }}
                 >
                   {/* Image */}
-                  <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden', background: '#F0EFEC' }}>
+                  <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden', background: '#E7E3DA' }}>
                     <Image
                       src={work.imageUrl}
                       alt={work.title}
@@ -192,16 +192,16 @@ export default function WorksPage() {
                     {/* Meta */}
                     <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '1.25rem' }}>
                       <div>
-                        <div style={{ fontSize: '0.625rem', fontWeight: 600, letterSpacing: '0.08em', color: '#C4C2BE', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                        <div style={{ fontSize: '0.625rem', fontWeight: 600, letterSpacing: '0.08em', color: '#B5B0A4', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
                           AREA
                         </div>
-                        <div style={{ fontSize: '0.8125rem', color: '#6B6B6B' }}>{work.area}</div>
+                        <div style={{ fontSize: '0.8125rem', color: '#6B675F' }}>{work.area}</div>
                       </div>
                       <div>
-                        <div style={{ fontSize: '0.625rem', fontWeight: 600, letterSpacing: '0.08em', color: '#C4C2BE', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+                        <div style={{ fontSize: '0.625rem', fontWeight: 600, letterSpacing: '0.08em', color: '#B5B0A4', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
                           DURATION
                         </div>
-                        <div style={{ fontSize: '0.8125rem', color: '#6B6B6B' }}>{work.duration}</div>
+                        <div style={{ fontSize: '0.8125rem', color: '#6B675F' }}>{work.duration}</div>
                       </div>
                     </div>
 
@@ -229,9 +229,9 @@ export default function WorksPage() {
       </section>
 
       {/* Internal links */}
-      <section style={{ paddingTop: '5rem', paddingBottom: '5rem', background: '#F5F4F0' }}>
+      <section style={{ paddingTop: '5rem', paddingBottom: '5rem', background: '#EDEAE2' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
             SERVICES
           </div>
           <h2
@@ -268,7 +268,7 @@ export default function WorksPage() {
                 >
                   {link.label}
                 </div>
-                <div style={{ fontSize: '0.8125rem', color: '#9CA3AF', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                <div style={{ fontSize: '0.8125rem', color: '#8F8B82', lineHeight: 1.8, marginBottom: '1.25rem' }}>
                   {link.note}
                 </div>
                 <div style={{ fontSize: '0.75rem', fontWeight: 600, color: '#0A0A0A', letterSpacing: '0.04em' }}>

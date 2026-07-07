@@ -15,7 +15,7 @@ export default async function BlogPage() {
   const posts = await getPosts(12)
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <PageHero
         label="BLOG"
         title="ブログ"
@@ -31,7 +31,7 @@ export default async function BlogPage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           {posts.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '6rem 0' }}>
-              <p style={{ fontSize: '0.9375rem', color: '#9CA3AF' }}>記事は近日公開予定です。</p>
+              <p style={{ fontSize: '0.9375rem', color: '#8F8B82' }}>記事は近日公開予定です。</p>
             </div>
           ) : (
             <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -40,7 +40,7 @@ export default async function BlogPage() {
                 const categories = getCategories(post)
                 return (
                   <article key={post.id}>
-                    <Link href={`/blog/${post.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#FAFAF8' }}>
+                    <Link href={`/blog/${post.slug}`} style={{ display: 'block', textDecoration: 'none', background: '#F6F4EF' }}>
                       <div style={{ position: 'relative', aspectRatio: '16/9', overflow: 'hidden' }}>
                         {imageUrl ? (
                           <Image
@@ -51,8 +51,8 @@ export default async function BlogPage() {
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           />
                         ) : (
-                          <div style={{ background: '#F0EFEC', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <span style={{ fontSize: '0.75rem', color: '#9CA3AF' }}>播磨商事</span>
+                          <div style={{ background: '#E7E3DA', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <span style={{ fontSize: '0.75rem', color: '#8F8B82' }}>播磨商事</span>
                           </div>
                         )}
                       </div>
@@ -60,7 +60,7 @@ export default async function BlogPage() {
                         {categories.length > 0 && (
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
                             {categories.map((cat) => (
-                              <span key={cat} style={{ fontSize: '0.6875rem', color: '#9CA3AF', background: '#F0EFEC', padding: '0.25rem 0.75rem', fontWeight: 600 }}>
+                              <span key={cat} style={{ fontSize: '0.6875rem', color: '#8F8B82', background: '#E7E3DA', padding: '0.25rem 0.75rem', fontWeight: 600 }}>
                                 {cat}
                               </span>
                             ))}
@@ -70,7 +70,7 @@ export default async function BlogPage() {
                           style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A', lineHeight: 1.6, marginBottom: '0.75rem' }}
                           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                         />
-                        <p style={{ fontSize: '0.75rem', color: '#9CA3AF' }}>{formatDate(post.date)}</p>
+                        <p style={{ fontSize: '0.75rem', color: '#8F8B82' }}>{formatDate(post.date)}</p>
                       </div>
                     </Link>
                   </article>

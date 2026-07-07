@@ -34,7 +34,7 @@ const services = [
 
 export default function ServicePage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <PageHero
         label="SERVICE"
         title="サービス"
@@ -51,7 +51,7 @@ export default function ServicePage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
             {services.map((service) => (
-              <div key={service.number} style={{ display: 'grid', minHeight: '60vh', background: '#FAFAF8' }} className="grid-cols-1 lg:grid-cols-2">
+              <div key={service.number} style={{ display: 'grid', minHeight: '60vh', background: '#F6F4EF' }} className="grid-cols-1 lg:grid-cols-2">
                 <div style={{ position: 'relative', overflow: 'hidden', minHeight: '320px' }}>
                   <Image
                     src={service.image}
@@ -61,16 +61,16 @@ export default function ServicePage() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   <div style={{ position: 'absolute', inset: 0, background: 'rgba(5,5,8,0.12)' }} />
-                  <div style={{ position: 'absolute', top: '2rem', left: '2rem', fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
+                  <div style={{ position: 'absolute', top: '2rem', left: '2rem', fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.22em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
                     {service.label}
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 'clamp(3rem, 6vw, 5.5rem)' }}>
-                  <div style={{ fontSize: '4rem', fontWeight: 700, color: '#F0EFEC', letterSpacing: '-0.05em', lineHeight: 1, marginBottom: '-1rem' }}>{service.number}</div>
+                  <div style={{ fontSize: '4rem', fontWeight: 700, color: '#E7E3DA', letterSpacing: '-0.05em', lineHeight: 1, marginBottom: '-1rem' }}>{service.number}</div>
                   <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                     {service.title}
                   </h2>
-                  <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2, marginBottom: '2.5rem' }}>
+                  <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2, marginBottom: '2.5rem' }}>
                     {service.description}
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 3rem', display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
@@ -98,9 +98,9 @@ export default function ServicePage() {
       </section>
 
       {/* Related links */}
-      <section style={{ paddingTop: '6rem', paddingBottom: '6rem', background: '#F5F4F0' }}>
+      <section style={{ paddingTop: '6rem', paddingBottom: '6rem', background: '#EDEAE2' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>RELATED</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>RELATED</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-3">
             {[
               { label: 'FC本部向けサービス', href: '/franchise', note: 'フランチャイズ本部の施工管理' },
@@ -108,7 +108,7 @@ export default function ServicePage() {
               { label: '店舗開発担当者向け', href: '/store-development', note: '出店から退店まで' },
             ].map((item) => (
               <Link key={item.href} href={item.href} style={{ display: 'block', padding: '2.5rem 2rem', background: '#FFFFFF', textDecoration: 'none' }}>
-                <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{item.note}</div>
+                <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{item.note}</div>
                 <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A' }}>{item.label}</div>
               </Link>
             ))}

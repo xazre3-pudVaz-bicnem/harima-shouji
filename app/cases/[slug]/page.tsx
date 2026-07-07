@@ -61,7 +61,7 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
@@ -81,11 +81,11 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
       <section style={{ background: '#FFFFFF', paddingTop: '4rem', paddingBottom: '0' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#F5F4F0', color: '#0A0A0A', padding: '0.4rem 1rem' }}>{c.serviceType}</span>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#F5F4F0', color: '#0A0A0A', padding: '0.4rem 1rem' }}>{c.industry}</span>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#F5F4F0', color: '#0A0A0A', padding: '0.4rem 1rem' }}>{c.area}</span>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#F5F4F0', color: '#0A0A0A', padding: '0.4rem 1rem' }}>工期: {c.duration}</span>
-            {c.nightWork && <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#0D1117', color: '#FFFFFF', padding: '0.4rem 1rem' }}>夜間施工対応</span>}
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#EDEAE2', color: '#0A0A0A', padding: '0.4rem 1rem' }}>{c.serviceType}</span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#EDEAE2', color: '#0A0A0A', padding: '0.4rem 1rem' }}>{c.industry}</span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#EDEAE2', color: '#0A0A0A', padding: '0.4rem 1rem' }}>{c.area}</span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#EDEAE2', color: '#0A0A0A', padding: '0.4rem 1rem' }}>工期: {c.duration}</span>
+            {c.nightWork && <span style={{ fontSize: '0.75rem', fontWeight: 700, background: '#101014', color: '#FFFFFF', padding: '0.4rem 1rem' }}>夜間施工対応</span>}
           </div>
         </div>
       </section>
@@ -97,7 +97,7 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
             <div>
               {/* Scope */}
               <div style={{ marginBottom: '4rem' }}>
-                <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>SCOPE</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>SCOPE</div>
                 <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>施工範囲</h2>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   {c.scope.map((item, i) => (
@@ -111,26 +111,26 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
 
               {/* Challenge */}
               <div style={{ marginBottom: '4rem' }}>
-                <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>CHALLENGE</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>CHALLENGE</div>
                 <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>課題・状況</h2>
-                <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>{c.challenge}</p>
+                <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>{c.challenge}</p>
               </div>
 
               {/* Approach */}
               <div style={{ marginBottom: '4rem' }}>
-                <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>APPROACH</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>APPROACH</div>
                 <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>対応・施工アプローチ</h2>
-                <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>{c.approach}</p>
+                <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>{c.approach}</p>
               </div>
 
               {/* Management Points */}
               <div>
-                <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>MANAGEMENT POINTS</div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>MANAGEMENT POINTS</div>
                 <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>施工管理のポイント</h2>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {c.managementPoints.map((point, i) => (
-                    <li key={i} style={{ display: 'flex', gap: '1rem', fontSize: '0.9375rem', color: '#3A3A3A', lineHeight: 1.7, padding: '1rem 1.25rem', background: '#F5F4F0' }}>
-                      <span style={{ fontSize: '0.625rem', fontWeight: 700, color: '#9CA3AF', flexShrink: 0, marginTop: '0.2rem' }}>0{i + 1}</span>
+                    <li key={i} style={{ display: 'flex', gap: '1rem', fontSize: '0.9375rem', color: '#3A3A3A', lineHeight: 1.7, padding: '1rem 1.25rem', background: '#EDEAE2' }}>
+                      <span style={{ fontSize: '0.625rem', fontWeight: 700, color: '#8F8B82', flexShrink: 0, marginTop: '0.2rem' }}>0{i + 1}</span>
                       {point}
                     </li>
                   ))}
@@ -139,32 +139,32 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
             </div>
 
             {/* Side info */}
-            <div style={{ background: '#F5F4F0', padding: '2.5rem 2rem', position: 'sticky', top: '6rem' }}>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>CASE INFO</div>
+            <div style={{ background: '#EDEAE2', padding: '2.5rem 2rem', position: 'sticky', top: '6rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>CASE INFO</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.25rem' }}>業種</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.25rem' }}>業種</div>
                   <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{c.industry}</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.25rem' }}>エリア</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.25rem' }}>エリア</div>
                   <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{c.area}</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.25rem' }}>サービス種別</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.25rem' }}>サービス種別</div>
                   <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{c.serviceType}</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.25rem' }}>工期</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.25rem' }}>工期</div>
                   <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{c.duration}</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.25rem' }}>夜間施工</div>
+                  <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginBottom: '0.25rem' }}>夜間施工</div>
                   <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{c.nightWork ? '対応' : '通常施工'}</div>
                 </div>
               </div>
 
-              <div style={{ paddingTop: '2rem', marginTop: '2rem', borderTop: '1px solid #E5E3DF', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ paddingTop: '2rem', marginTop: '2rem', borderTop: '1px solid #DDD8CE', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {c.relatedService.map((rel) => (
                   <Link key={rel.href} href={rel.href} style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#0A0A0A', textDecoration: 'none', borderBottom: '1px solid #0A0A0A', paddingBottom: '2px', alignSelf: 'flex-start' }}>
                     {rel.label} →
@@ -177,11 +177,11 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
       </section>
 
       {/* Completion Report */}
-      <section style={{ background: '#0D1117', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section style={{ background: '#101014', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#4B5563', textTransform: 'uppercase', marginBottom: '1rem' }}>COMPLETION REPORT</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#756F64', textTransform: 'uppercase', marginBottom: '1rem' }}>COMPLETION REPORT</div>
           <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>完了報告について</h2>
-          <p style={{ fontSize: '0.9375rem', color: '#9CA3AF', lineHeight: 2, maxWidth: '720px' }}>{c.completionReport}</p>
+          <p style={{ fontSize: '0.9375rem', color: '#8F8B82', lineHeight: 2, maxWidth: '720px' }}>{c.completionReport}</p>
         </div>
       </section>
 
@@ -189,7 +189,7 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
       {faqData && (
         <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
           <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
               この事例に関する<br />よくある質問
             </h2>
@@ -199,9 +199,9 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
       )}
 
       {/* Related */}
-      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>MORE CASES</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>MORE CASES</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {cases
               .filter((other) => other.slug !== slug)
@@ -218,7 +218,7 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
                     />
                   </div>
                   <div style={{ padding: '1.5rem' }}>
-                    <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{other.industry} / {other.area}</div>
+                    <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{other.industry} / {other.area}</div>
                     <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A', lineHeight: 1.5 }}>{other.title}</div>
                   </div>
                 </Link>

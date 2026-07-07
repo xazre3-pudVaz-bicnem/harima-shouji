@@ -10,7 +10,7 @@ import type { WorkCategory } from '@/data/works'
 type Props = { params: Promise<{ slug: string }> }
 
 const categoryConfig: Record<WorkCategory, { label: string; bg: string; color: string }> = {
-  'shop-interior': { label: '店舗内装工事', bg: '#F0EFEC', color: '#1C1C1C' },
+  'shop-interior': { label: '店舗内装工事', bg: '#E7E3DA', color: '#1C1C1C' },
   restoration: { label: '原状回復工事', bg: '#E8EBF0', color: '#1C1C1C' },
   salon: { label: 'サロン内装', bg: '#F0EBF0', color: '#1C1C1C' },
   gym: { label: 'ジム内装', bg: '#EBF0EB', color: '#1C1C1C' },
@@ -81,7 +81,7 @@ export default async function WorkDetailPage({ params }: Props) {
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -104,11 +104,11 @@ export default async function WorkDetailPage({ params }: Props) {
       />
 
       {/* Info bar */}
-      <section style={{ background: '#FFFFFF', borderBottom: '1px solid #F0EFEC' }}>
+      <section style={{ background: '#FFFFFF', borderBottom: '1px solid #E7E3DA' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '2rem' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem' }}>
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#C4C2BE', textTransform: 'uppercase', marginBottom: '0.375rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#B5B0A4', textTransform: 'uppercase', marginBottom: '0.375rem' }}>
                 CATEGORY
               </div>
               <span
@@ -126,13 +126,13 @@ export default async function WorkDetailPage({ params }: Props) {
               </span>
             </div>
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#C4C2BE', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#B5B0A4', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                 AREA
               </div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: '#1C1C1C' }}>{work.area}</div>
             </div>
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#C4C2BE', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#B5B0A4', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                 DURATION
               </div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: '#1C1C1C' }}>{work.duration}</div>
@@ -146,7 +146,7 @@ export default async function WorkDetailPage({ params }: Props) {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
 
           {/* Image */}
-          <div style={{ position: 'relative', aspectRatio: '16/7', overflow: 'hidden', background: '#F0EFEC', marginBottom: '5rem' }}>
+          <div style={{ position: 'relative', aspectRatio: '16/7', overflow: 'hidden', background: '#E7E3DA', marginBottom: '5rem' }}>
             <Image
               src={work.imageUrl}
               alt={`${cat.label}の施工イメージ`}
@@ -162,7 +162,7 @@ export default async function WorkDetailPage({ params }: Props) {
 
           {/* Scope */}
           <div style={{ marginBottom: '5rem' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
               SCOPE OF WORK
             </div>
             <h2
@@ -185,7 +185,7 @@ export default async function WorkDetailPage({ params }: Props) {
                     alignItems: 'flex-start',
                     gap: '1rem',
                     padding: '1.125rem 1.5rem',
-                    background: '#FAFAF8',
+                    background: '#F6F4EF',
                   }}
                 >
                   <span
@@ -213,7 +213,7 @@ export default async function WorkDetailPage({ params }: Props) {
           {/* Challenge & Approach */}
           <div style={{ display: 'grid', gap: '4rem', alignItems: 'start' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
                 CHALLENGE
               </div>
               <h3
@@ -228,13 +228,13 @@ export default async function WorkDetailPage({ params }: Props) {
               >
                 課題
               </h3>
-              <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2.2 }}>
                 {work.challenge}
               </p>
             </div>
 
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
                 APPROACH
               </div>
               <h3
@@ -249,7 +249,7 @@ export default async function WorkDetailPage({ params }: Props) {
               >
                 対応
               </h3>
-              <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2.2 }}>
                 {work.approach}
               </p>
             </div>
@@ -258,9 +258,9 @@ export default async function WorkDetailPage({ params }: Props) {
       </section>
 
       {/* Related links */}
-      <section style={{ paddingTop: '5rem', paddingBottom: '5rem', background: '#F5F4F0' }}>
+      <section style={{ paddingTop: '5rem', paddingBottom: '5rem', background: '#EDEAE2' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
             RELATED
           </div>
           <h2
@@ -288,7 +288,7 @@ export default async function WorkDetailPage({ params }: Props) {
                   fontWeight: 600,
                   letterSpacing: '0.02em',
                   textDecoration: 'none',
-                  border: '1px solid #E5E3DF',
+                  border: '1px solid #DDD8CE',
                 }}
               >
                 {link.label} →
@@ -300,12 +300,12 @@ export default async function WorkDetailPage({ params }: Props) {
                 display: 'inline-block',
                 padding: '0.75rem 1.5rem',
                 background: 'transparent',
-                color: '#6B6B6B',
+                color: '#6B675F',
                 fontSize: '0.875rem',
                 fontWeight: 600,
                 letterSpacing: '0.02em',
                 textDecoration: 'none',
-                border: '1px solid #C4C2BE',
+                border: '1px solid #B5B0A4',
               }}
             >
               施工実績一覧へ戻る

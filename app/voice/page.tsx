@@ -57,7 +57,7 @@ export default function VoicePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div style={{ background: '#FAFAF8' }}>
+      <div style={{ background: '#F6F4EF' }}>
         <PageHero
           label="VOICE"
           title="お客様の声"
@@ -69,7 +69,7 @@ export default function VoicePage() {
         />
 
         {/* Notice banner */}
-        <section style={{ background: '#F5F4F0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+        <section style={{ background: '#EDEAE2', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
           <div
             style={{
               maxWidth: '1400px',
@@ -163,7 +163,7 @@ export default function VoicePage() {
                 <article
                   key={i}
                   style={{
-                    background: '#FAFAF8',
+                    background: '#F6F4EF',
                     border: '1px solid rgba(0,0,0,0.07)',
                     padding: '2.5rem',
                     display: 'flex',
@@ -182,7 +182,7 @@ export default function VoicePage() {
                       fontWeight: 600,
                       letterSpacing: '0.06em',
                       color: '#A8A29E',
-                      background: '#F5F4F0',
+                      background: '#EDEAE2',
                       border: '1px solid rgba(0,0,0,0.07)',
                       padding: '0.25rem 0.625rem',
                     }}
@@ -267,7 +267,7 @@ export default function VoicePage() {
                     style={{
                       margin: 0,
                       padding: '1.25rem',
-                      background: '#F5F4F0',
+                      background: '#EDEAE2',
                       borderLeft: '3px solid rgba(0,0,0,0.1)',
                       position: 'relative',
                     }}
@@ -312,7 +312,7 @@ export default function VoicePage() {
           style={{
             paddingTop: '6rem',
             paddingBottom: '6rem',
-            background: '#F5F4F0',
+            background: '#EDEAE2',
             textAlign: 'center',
           }}
         >
@@ -350,7 +350,7 @@ export default function VoicePage() {
             <p
               style={{
                 fontSize: '0.9375rem',
-                color: '#6B6B6B',
+                color: '#6B675F',
                 lineHeight: 2,
                 marginBottom: '2.5rem',
                 maxWidth: '480px',

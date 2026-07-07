@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function StoreDevelopmentPage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <PageHero
         label="FOR STORE DEVELOPERS"
         title="店舗開発担当者向け"
@@ -30,14 +30,14 @@ export default function StoreDevelopmentPage() {
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '700px' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>WHO THIS IS FOR</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>WHO THIS IS FOR</div>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
               施工管理まで<br />担っている<br />出店担当者へ
             </h2>
-            <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2, marginBottom: '1.5rem' }}>
               店舗開発・出店開発の担当者は、物件選定・契約・開業準備・本部調整といった本来業務に加えて、施工会社の選定・見積り確認・工程管理・完了確認まで担うケースが少なくありません。
             </p>
-            <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+            <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
               播磨商事は、担当者の施工管理工数を最小化することを目的として、見積りから施工・完了報告まで一貫して対応します。
             </p>
           </div>
@@ -45,9 +45,9 @@ export default function StoreDevelopmentPage() {
       </section>
 
       {/* Support detail */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>SUPPORT</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>SUPPORT</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
             担当者が「やらなくていい」<br />ことを増やす
           </h2>
@@ -62,7 +62,7 @@ export default function StoreDevelopmentPage() {
             ].map((item) => (
               <div key={item.title} style={{ background: '#FFFFFF', padding: '2.5rem 2rem' }}>
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.75rem' }}>{item.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.8 }}>{item.body}</p>
+                <p style={{ fontSize: '0.875rem', color: '#6B675F', lineHeight: 1.8 }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -70,9 +70,9 @@ export default function StoreDevelopmentPage() {
       </section>
 
       {/* Timeline */}
-      <section style={{ background: '#0D1117', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#101014', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1rem' }}>LIFECYCLE</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1rem' }}>LIFECYCLE</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
             出店から退店まで<br />1つのパートナーで完結
           </h2>
@@ -100,14 +100,14 @@ export default function StoreDevelopmentPage() {
               <Image src="/LINE_ALBUM_2026.6.10_260610_21.jpg" alt="店舗開発サポート" fill style={{ objectFit: 'cover' }} sizes="(max-width: 1024px) 100vw, 50vw" />
             </div>
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>APPROACH</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>APPROACH</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                 早めに相談するほど<br />スムーズに動く
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2, marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2, marginBottom: '1.5rem' }}>
                 物件選定の段階から施工会社に相談することで、工事可否・概算費用・工期見通しを早期に把握できます。物件決定後に相談し始めると、工程が後ろ倒しになるケースがあります。
               </p>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
                 播磨商事では物件情報の段階からご相談を受け付けています。正式発注前の概算確認も無料で対応します。
               </p>
             </div>
@@ -116,9 +116,9 @@ export default function StoreDevelopmentPage() {
       </section>
 
       {/* Related */}
-      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { label: '店舗内装工事', href: '/service/shop-interior', note: '新規出店・改装' },
@@ -127,7 +127,7 @@ export default function StoreDevelopmentPage() {
               { label: '対応エリア', href: '/area', note: '関東・東海・近畿' },
             ].map((item) => (
               <Link key={item.href} href={item.href} style={{ display: 'block', padding: '2rem', background: '#FFFFFF', textDecoration: 'none' }}>
-                <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{item.note}</div>
+                <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{item.note}</div>
                 <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{item.label}</div>
               </Link>
             ))}

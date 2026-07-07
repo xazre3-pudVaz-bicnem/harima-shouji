@@ -43,7 +43,7 @@ export default function ShopInteriorPage() {
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -66,14 +66,14 @@ export default function ShopInteriorPage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: 'clamp(3rem, 6vw, 7rem)', alignItems: 'center' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.5rem' }}>OVERVIEW</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>OVERVIEW</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
                 施工管理を<br />本部担当者一人に<br />集約する体制
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2, marginBottom: '2rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2, marginBottom: '2rem' }}>
                 加盟店ごとに施工業者が異なると、品質のばらつき・コスト管理の煩雑さ・担当者の対応負荷が生まれます。播磨商事は、FC本部・多店舗展開企業を主要取引先として、出店・改装施工の窓口を一本化します。
               </p>
-              <p style={{ fontSize: '0.9375rem', color: '#5A5A5A', lineHeight: 2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
                 本部仕様書に基づいた統一施工・夜間施工対応・複数案件の同時進行管理により、担当者の管理工数を大幅に削減します。
               </p>
             </div>
@@ -91,9 +91,9 @@ export default function ShopInteriorPage() {
       </section>
 
       {/* Features */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FEATURES</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FEATURES</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
             対応内容
           </h2>
@@ -107,9 +107,9 @@ export default function ShopInteriorPage() {
               { label: '06', title: '施工完了報告', body: '写真・チェックリスト付きの完了報告書を提出。本部担当者の確認・承認業務を効率化します。' },
             ].map((item) => (
               <div key={item.label} style={{ background: '#FFFFFF', padding: '3rem 2.5rem' }}>
-                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F0EFEC', letterSpacing: '-0.05em', marginBottom: '0.5rem', lineHeight: 1 }}>{item.label}</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#E7E3DA', letterSpacing: '-0.05em', marginBottom: '0.5rem', lineHeight: 1 }}>{item.label}</div>
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '1rem' }}>{item.title}</h3>
-                <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.8 }}>{item.body}</p>
+                <p style={{ fontSize: '0.875rem', color: '#6B675F', lineHeight: 1.8 }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -119,7 +119,7 @@ export default function ShopInteriorPage() {
       {/* Flow */}
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FLOW</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FLOW</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '4rem' }}>
             ご依頼の流れ
           </h2>
@@ -132,13 +132,13 @@ export default function ShopInteriorPage() {
               { step: '05', title: '完了確認・引き渡し', body: '施工完了後、写真・完了報告書を提出します。本部確認後に鍵をお渡しします。' },
             ].map((item, i, arr) => (
               <li key={item.step} style={{ display: 'grid', gridTemplateColumns: '4rem 1px 1fr', gap: '0 2rem', paddingBottom: i < arr.length - 1 ? '3rem' : 0 }}>
-                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.1em', paddingTop: '0.25rem', textAlign: 'right' }}>{item.step}</div>
-                <div style={{ position: 'relative', width: '1px', background: '#E5E3DF' }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#8F8B82', letterSpacing: '0.1em', paddingTop: '0.25rem', textAlign: 'right' }}>{item.step}</div>
+                <div style={{ position: 'relative', width: '1px', background: '#DDD8CE' }}>
                   <div style={{ position: 'absolute', top: '0.25rem', left: '-3px', width: '7px', height: '7px', borderRadius: '50%', background: '#0A0A0A' }} />
                 </div>
                 <div style={{ paddingBottom: '2rem' }}>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', marginBottom: '0.5rem' }}>{item.title}</h3>
-                  <p style={{ fontSize: '0.875rem', color: '#6B6B6B', lineHeight: 1.8 }}>{item.body}</p>
+                  <p style={{ fontSize: '0.875rem', color: '#6B675F', lineHeight: 1.8 }}>{item.body}</p>
                 </div>
               </li>
             ))}
@@ -147,9 +147,9 @@ export default function ShopInteriorPage() {
       </section>
 
       {/* Gallery */}
-      <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>GALLERY</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>GALLERY</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>施工イメージ</h2>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-2 lg:grid-cols-4">
             {[
@@ -169,7 +169,7 @@ export default function ShopInteriorPage() {
       {/* FAQ */}
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1rem' }}>FAQ</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
             よくある質問
           </h2>
@@ -178,9 +178,9 @@ export default function ShopInteriorPage() {
       </section>
 
       {/* Related */}
-      <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
+      <section style={{ background: '#EDEAE2', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { label: 'FC本部向けサービス', href: '/franchise', note: 'フランチャイズ本部の施工管理' },
@@ -191,7 +191,7 @@ export default function ShopInteriorPage() {
               { label: 'お問い合わせ', href: '/contact', note: '現地調査・見積りは無料' },
             ].map((item) => (
               <Link key={item.href} href={item.href} style={{ display: 'block', padding: '2rem', background: '#FFFFFF', textDecoration: 'none' }}>
-                <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{item.note}</div>
+                <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{item.note}</div>
                 <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{item.label}</div>
               </Link>
             ))}

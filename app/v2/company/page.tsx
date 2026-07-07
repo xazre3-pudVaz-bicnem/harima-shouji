@@ -62,7 +62,7 @@ const jsonLd = {
 
 export default function CompanyPage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
 
       <script
         type="application/ld+json"
@@ -85,7 +85,7 @@ export default function CompanyPage() {
 
           {/* Company Info Table */}
           <div style={{ marginBottom: '5rem' }}>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>PROFILE</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>PROFILE</div>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '3rem' }}>
               会社情報
             </h2>
@@ -98,10 +98,10 @@ export default function CompanyPage() {
                     gridTemplateColumns: '7rem 1fr',
                     gap: '1.5rem',
                     padding: '1.375rem 0',
-                    borderBottom: '1px solid #F0EFEC',
+                    borderBottom: '1px solid #E7E3DA',
                   }}
                 >
-                  <dt style={{ fontSize: '0.75rem', fontWeight: 600, color: '#9CA3AF', letterSpacing: '0.04em', paddingTop: '0.125rem' }}>{label}</dt>
+                  <dt style={{ fontSize: '0.75rem', fontWeight: 600, color: '#8F8B82', letterSpacing: '0.04em', paddingTop: '0.125rem' }}>{label}</dt>
                   <dd style={{ fontSize: '0.9375rem', color: '#1C1C1C', lineHeight: 1.9, whiteSpace: 'pre-line' }}>{value}</dd>
                 </div>
               ))}
@@ -110,28 +110,28 @@ export default function CompanyPage() {
 
           {/* Representative Message */}
           <div>
-            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>MESSAGE</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>MESSAGE</div>
             <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '2.5rem' }}>
               代表挨拶
             </h2>
 
             <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start', marginBottom: '2.5rem' }}>
-              <div style={{ flexShrink: 0, width: '80px', height: '100px', position: 'relative', overflow: 'hidden', background: '#F5F4F0' }}>
+              <div style={{ flexShrink: 0, width: '80px', height: '100px', position: 'relative', overflow: 'hidden', background: '#EDEAE2' }}>
                 <Image src="/LINE_ALBUM_2026.6.10_260610_1.jpg" alt="代表 播磨龍樹" fill style={{ objectFit: 'cover' }} sizes="80px" />
               </div>
               <div>
                 <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.01em' }}>播磨 龍樹</div>
-                <div style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: '3px' }}>代表取締役</div>
+                <div style={{ fontSize: '0.75rem', color: '#8F8B82', marginTop: '3px' }}>代表取締役</div>
               </div>
             </div>
 
-            <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2.2, marginBottom: '1.5rem' }}>
               多店舗展開に伴う施工管理の煩雑さを、もっとシンプルにしたい。それが私たちの出発点です。
             </p>
-            <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2.2, marginBottom: '1.5rem' }}>
               フランチャイズ本部の皆様が直面する課題は、店舗数が増えるほど複雑になります。複数の業者との調整、進捗の確認、品質の統一——これらすべてを一社に任せられる体制を整えることが私たちの使命です。
             </p>
-            <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2 }}>
+            <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2.2 }}>
               店舗内装工事から原状回復工事まで、ワンストップでお任せいただくことで、本部担当者様が本来の業務に集中できる環境をつくります。
             </p>
           </div>
@@ -140,9 +140,9 @@ export default function CompanyPage() {
       </section>
 
       {/* Access */}
-      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#F5F4F0' }}>
+      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#EDEAE2' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>ACCESS</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>ACCESS</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '3rem' }}>
             アクセス
           </h2>
@@ -156,10 +156,10 @@ export default function CompanyPage() {
               <a href="tel:080-4724-0713" style={{ fontSize: '0.9375rem', color: '#0A0A0A', textDecoration: 'none', display: 'block', marginBottom: '0.5rem' }}>
                 080-4724-0713
               </a>
-              <p style={{ fontSize: '0.8125rem', color: '#9CA3AF' }}>平日 9:00〜18:00</p>
+              <p style={{ fontSize: '0.8125rem', color: '#8F8B82' }}>平日 9:00〜18:00</p>
             </div>
-            <div style={{ background: '#E5E3DF', aspectRatio: '16/7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <p style={{ fontSize: '0.8125rem', color: '#9CA3AF' }}>Map</p>
+            <div style={{ background: '#DDD8CE', aspectRatio: '16/7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <p style={{ fontSize: '0.8125rem', color: '#8F8B82' }}>Map</p>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ const steps = [
 
 export default function RestorationPage() {
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
 
       <PageHero
         label="SERVICE 02"
@@ -51,14 +51,14 @@ export default function RestorationPage() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gap: '5rem', alignItems: 'center' }} className="grid-cols-1 lg:grid-cols-2">
             <div>
-              <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>OVERVIEW</div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>OVERVIEW</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '2rem' }}>
                 退去管理の煩雑さを<br />ゼロにする
               </h2>
-              <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2, marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2.2, marginBottom: '1.5rem' }}>
                 複数店舗を抱えるフランチャイズ本部・多店舗展開企業にとって、退去時の原状回復は大きな負担です。オーナー・管理会社との調整、立会い代行、解体・内装復旧まですべてを一括してお任せいただけます。
               </p>
-              <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2.2 }}>
+              <p style={{ fontSize: '0.9375rem', color: '#6B675F', lineHeight: 2.2 }}>
                 複数店舗の退去スケジュールを一元管理することで、担当者様が個別に追う手間をなくします。
               </p>
             </div>
@@ -76,9 +76,9 @@ export default function RestorationPage() {
       </section>
 
       {/* Features */}
-      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#F5F4F0' }}>
+      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#EDEAE2' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>FEATURES</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>FEATURES</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '4rem' }}>
             対応内容
           </h2>
@@ -86,12 +86,12 @@ export default function RestorationPage() {
             {features.map((f) => (
               <div
                 key={f.number}
-                style={{ display: 'flex', gap: '2.5rem', alignItems: 'flex-start', padding: '2rem 0', borderBottom: '1px solid #E5E3DF' }}
+                style={{ display: 'flex', gap: '2.5rem', alignItems: 'flex-start', padding: '2rem 0', borderBottom: '1px solid #DDD8CE' }}
               >
-                <span style={{ flexShrink: 0, fontSize: '0.625rem', fontWeight: 700, color: '#C4C2BE', letterSpacing: '0.08em', paddingTop: '0.25rem', minWidth: '2rem' }}>{f.number}</span>
+                <span style={{ flexShrink: 0, fontSize: '0.625rem', fontWeight: 700, color: '#B5B0A4', letterSpacing: '0.08em', paddingTop: '0.25rem', minWidth: '2rem' }}>{f.number}</span>
                 <div>
                   <div style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.015em', marginBottom: '0.5rem' }}>{f.title}</div>
-                  <div style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: 1.85 }}>{f.note}</div>
+                  <div style={{ fontSize: '0.875rem', color: '#8F8B82', lineHeight: 1.85 }}>{f.note}</div>
                 </div>
               </div>
             ))}
@@ -102,7 +102,7 @@ export default function RestorationPage() {
       {/* Works gallery */}
       <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>WORKS</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>WORKS</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '3rem' }}>
             施工事例
           </h2>
@@ -117,20 +117,20 @@ export default function RestorationPage() {
       </section>
 
       {/* Flow */}
-      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#F5F4F0' }}>
+      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#EDEAE2' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1.25rem' }}>FLOW</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.25rem' }}>FLOW</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '4rem' }}>ご依頼の流れ</h2>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step) => (
               <div key={step.number} style={{ background: '#FFFFFF', padding: '2.5rem 2rem', position: 'relative', overflow: 'hidden' }}>
-                <div aria-hidden="true" style={{ position: 'absolute', top: '0.75rem', right: '1rem', fontSize: '5rem', fontWeight: 700, letterSpacing: '-0.05em', lineHeight: 1, color: '#F5F4F0', userSelect: 'none' }}>{step.number}</div>
+                <div aria-hidden="true" style={{ position: 'absolute', top: '0.75rem', right: '1rem', fontSize: '5rem', fontWeight: 700, letterSpacing: '-0.05em', lineHeight: 1, color: '#EDEAE2', userSelect: 'none' }}>{step.number}</div>
                 <div style={{ position: 'relative' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '2rem', height: '2rem', background: '#0A0A0A', marginBottom: '2rem' }}>
                     <span style={{ fontSize: '0.5625rem', fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.04em' }}>{step.number}</span>
                   </div>
                   <div style={{ fontSize: '1.0625rem', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.015em', marginBottom: '0.75rem' }}>{step.title}</div>
-                  <div style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: 1.9 }}>{step.note}</div>
+                  <div style={{ fontSize: '0.875rem', color: '#8F8B82', lineHeight: 1.9 }}>{step.note}</div>
                 </div>
               </div>
             ))}
@@ -139,9 +139,9 @@ export default function RestorationPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#0D1117' }}>
+      <section style={{ paddingTop: '7rem', paddingBottom: '7rem', background: '#101014' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>CONTACT</div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginBottom: '1.5rem' }}>CONTACT</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.25, marginBottom: '2rem' }}>まずはお気軽に<br />ご相談ください</h2>
           <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.4)', lineHeight: 2, marginBottom: '3rem' }}>複数店舗の退去スケジュールのご相談も歓迎します。</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

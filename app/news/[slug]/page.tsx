@@ -67,7 +67,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
   }
 
   return (
-    <div style={{ background: '#FAFAF8' }}>
+    <div style={{ background: '#F6F4EF' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -100,12 +100,12 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
               alignItems: 'center',
               marginBottom: '3rem',
               paddingBottom: '2rem',
-              borderBottom: '1px solid #F0EFEC',
+              borderBottom: '1px solid #E7E3DA',
             }}
           >
             <time
               dateTime={item.date}
-              style={{ fontSize: '0.8125rem', color: '#9CA3AF', fontVariantNumeric: 'tabular-nums' }}
+              style={{ fontSize: '0.8125rem', color: '#8F8B82', fontVariantNumeric: 'tabular-nums' }}
             >
               {formatDate(item.date)}
             </time>
@@ -114,8 +114,8 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
                 fontSize: '0.625rem',
                 fontWeight: 700,
                 letterSpacing: '0.06em',
-                color: '#6B6B6B',
-                background: '#F5F4F0',
+                color: '#6B675F',
+                background: '#EDEAE2',
                 padding: '0.3rem 0.875rem',
               }}
             >
@@ -155,7 +155,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
           </div>
 
           {/* Back link */}
-          <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #F0EFEC' }}>
+          <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #E7E3DA' }}>
             <Link
               href="/news"
               style={{
@@ -181,14 +181,14 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
 
       {/* Related news */}
       {relatedNews.length > 0 && (
-        <section style={{ background: '#F5F4F0', paddingTop: '6rem', paddingBottom: '6rem' }}>
+        <section style={{ background: '#EDEAE2', paddingTop: '6rem', paddingBottom: '6rem' }}>
           <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 2rem' }}>
             <div
               style={{
                 fontSize: '0.5625rem',
                 fontWeight: 700,
                 letterSpacing: '0.32em',
-                color: '#9CA3AF',
+                color: '#8F8B82',
                 textTransform: 'uppercase',
                 marginBottom: '2.5rem',
               }}
@@ -218,7 +218,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
                   >
                     <time
                       dateTime={n.date}
-                      style={{ fontSize: '0.6875rem', color: '#9CA3AF' }}
+                      style={{ fontSize: '0.6875rem', color: '#8F8B82' }}
                     >
                       {n.date}
                     </time>
@@ -226,7 +226,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
                       style={{
                         fontSize: '0.5625rem',
                         fontWeight: 700,
-                        color: '#9CA3AF',
+                        color: '#8F8B82',
                         background: '#FFFFFF',
                         padding: '0.2rem 0.625rem',
                         letterSpacing: '0.04em',
