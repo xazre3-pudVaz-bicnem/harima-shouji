@@ -52,6 +52,11 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
     ? '原状回復工事'
     : '店舗内装・原状回復工事'
 
+  // 主サービスと対になるサービスへの導線
+  const secondaryHref = industry.serviceType === 'restoration' ? '/service/shop-interior' : '/service/restoration'
+  const secondaryLabel = industry.serviceType === 'restoration' ? '店舗内装工事' : '原状回復工事'
+  const secondaryNote = industry.serviceType === 'restoration' ? '新規出店・改装・夜間施工' : '退去・解体・内装復旧'
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -167,13 +172,25 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
               <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>サービス詳細</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{serviceLabel}について →</div>
             </Link>
+            <Link href={secondaryHref} style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{secondaryNote}</div>
+              <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>{secondaryLabel}について →</div>
+            </Link>
             <Link href="/franchise" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
               <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>FC本部向け</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>FC本部の施工管理 →</div>
             </Link>
+            <Link href="/works" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>施工実績</div>
+              <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>施工事例を見る →</div>
+            </Link>
             <Link href="/area" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
               <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>対応エリア</div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>施工対応エリア一覧 →</div>
+            </Link>
+            <Link href="/contact" style={{ display: 'block', padding: '2rem 1.5rem', background: '#F5F4F0', textDecoration: 'none' }}>
+              <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>お問い合わせ</div>
+              <div style={{ fontSize: '0.9375rem', fontWeight: 700, color: '#0A0A0A' }}>現地調査・見積り無料 →</div>
             </Link>
           </div>
         </div>

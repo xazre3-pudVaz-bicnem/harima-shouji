@@ -27,6 +27,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/company`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.6 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/works`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/voice`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/news`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
+  ]
+
+  // Works (施工事例) individual pages (6)
+  const worksRoutes: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/works/restaurant-fc-tokyo`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/works/beauty-salon-kanagawa`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/works/gym-interior-saitama`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/works/restaurant-restoration-tokyo`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/works/retail-fc-osaka`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/works/office-restoration-chiba`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+  ]
+
+  // News individual pages (3)
+  const newsRoutes: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/news/website-launch`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: `${baseUrl}/news/works-coming-soon`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: `${baseUrl}/news/media-info`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
   ]
 
   // Prefecture overview pages (7)
@@ -105,6 +125,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...industryRoutes,
     ...solutionRoutes,
     ...caseRoutes,
+    ...worksRoutes,
+    ...newsRoutes,
     ...columnRoutes,
     ...blogRoutes,
   ]

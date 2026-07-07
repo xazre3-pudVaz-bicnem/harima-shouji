@@ -9,7 +9,7 @@ import Message from './_components/sections/Message'
 import Contact from './_components/sections/Contact'
 
 export const metadata: Metadata = {
-  title: 'フランチャイズ本部・多店舗展開企業の施工パートナー | 株式会社播磨商事',
+  title: 'フランチャイズ本部・多店舗展開企業の施工パートナー',
   description:
     'FC本部・多店舗展開企業向けの店舗内装工事・原状回復工事。施工管理の負担を軽減します。東京・関東圏を中心に7都府県対応。',
   alternates: { canonical: 'https://harima-shouji.co.jp/v2' },

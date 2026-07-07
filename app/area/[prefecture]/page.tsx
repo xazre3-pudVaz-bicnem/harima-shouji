@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!area) return {}
 
   return {
-    title: `${area.name}の店舗内装工事・原状回復｜FC本部・多店舗展開なら株式会社播磨商事`,
+    title: `${area.name}の店舗内装工事・原状回復｜FC本部・多店舗展開`,
     description: `${area.name}の店舗内装工事・原状回復工事に対応。FC本部・多店舗展開企業の施工管理を一括対応。${area.name}全域・主要都市の施工実績あり。現地調査・見積無料。`,
     keywords: [`${area.name} 内装工事`, `${area.name} 原状回復`, `${area.name} FC 内装工事`, `${area.name} 多店舗 内装`],
     alternates: { canonical: `https://harima-shouji.co.jp/area/${prefecture}` },

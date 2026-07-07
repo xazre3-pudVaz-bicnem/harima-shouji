@@ -8,8 +8,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navLinks = [
   { href: '/service', label: 'サービス' },
   { href: '/franchise', label: 'FC本部向け' },
+  { href: '/works', label: '施工実績' },
   { href: '/area', label: '対応エリア' },
-  { href: '/column', label: 'コラム' },
   { href: '/company', label: '会社概要' },
 ]
 

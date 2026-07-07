@@ -16,7 +16,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'fc-construction-management',
     title: 'FC本部向け施工管理',
-    metaTitle: 'FC本部向け施工管理｜店舗内装・原状回復を一括管理する株式会社播磨商事',
+    metaTitle: 'FC本部向け施工管理｜店舗内装・原状回復を一括管理する',
     metaDescription: 'フランチャイズ本部の施工管理負担を解消。加盟店の出店・改装・退店施工を一括管理。品質統一・コスト管理・担当者工数削減。現地調査・見積無料。',
     keywords: ['FC本部 施工管理', 'フランチャイズ 施工管理', 'FC 店舗内装', 'フランチャイズ 内装工事 一本化'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_3.jpg',
@@ -46,7 +46,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'multi-store-rollout',
     title: '多店舗展開時の施工管理',
-    metaTitle: '多店舗展開の施工管理｜複数店舗の内装工事・原状回復を一括管理する株式会社播磨商事',
+    metaTitle: '多店舗展開の施工管理｜複数店舗の内装工事・原状回復を一括管理する',
     metaDescription: '多店舗展開企業の施工管理を一本化。複数店舗の同時進行・エリアをまたいだ一括管理・品質統一。担当者の管理工数削減。現地調査・見積無料。',
     keywords: ['多店舗展開 内装工事', '多店舗 施工管理', '複数店舗 工事 一括', '多店舗 原状回復'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_6.jpg',
@@ -72,7 +72,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'night-construction',
     title: '夜間施工・閉店後工事',
-    metaTitle: '夜間施工・閉店後の店舗工事｜FC本部・多店舗展開の施工管理なら株式会社播磨商事',
+    metaTitle: '夜間施工・閉店後の店舗工事｜FC本部・多店舗展開の施工管理',
     metaDescription: '営業時間外・閉店後の夜間施工に対応。翌朝の営業開始に間に合う工程管理。FC店舗・多店舗展開の夜間工事を一括管理。現地調査・見積無料。',
     keywords: ['夜間 店舗内装工事', '夜間工事 店舗', '閉店後 工事', '夜間施工 内装'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_9.jpg',
@@ -97,7 +97,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'short-term-construction',
     title: '短工期施工',
-    metaTitle: '短工期の店舗内装工事｜タイトなオープンスケジュールに対応する株式会社播磨商事',
+    metaTitle: '短工期の店舗内装工事｜タイトなオープンスケジュールに対応する',
     metaDescription: '短工期の店舗内装工事に対応。物件決定から短期間でのオープンを実現。FC本部・多店舗展開企業の開業スケジュール管理をサポート。現地調査・見積無料。',
     keywords: ['短工期 店舗内装工事', '短工期 内装', '急ぎ 内装工事', '短期間 内装工事'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_14.jpg',
@@ -121,7 +121,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'brand-standardization',
     title: 'ブランド基準の統一施工',
-    metaTitle: 'ブランド基準・VI統一施工｜FC本部・多店舗展開の施工管理なら株式会社播磨商事',
+    metaTitle: 'ブランド基準・VI統一施工｜FC本部・多店舗展開の施工管理',
     metaDescription: 'FC本部・多店舗展開企業のブランド基準・VI基準への対応施工。全店舗で均一な仕上がりを実現。仕様書に基づいた統一施工管理。現地調査・見積無料。',
     keywords: ['ブランド統一 施工', 'VI 内装工事', 'フランチャイズ 仕様書 施工', '店舗 ブランド 統一'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_9.jpg',
@@ -144,7 +144,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'restoration-cost-reduction',
     title: '原状回復費用の適正化',
-    metaTitle: '原状回復費用の適正化｜退去立会い・独自見積りで費用を適正化する株式会社播磨商事',
+    metaTitle: '原状回復費用の適正化｜退去立会い・独自見積りで費用を適正化する',
     metaDescription: '管理会社の原状回復見積りが高すぎると感じている方へ。独自見積りで費用の妥当性を確認。退去立会い代行・費用交渉サポート。複数店舗対応。現地調査無料。',
     keywords: ['原状回復費用 適正化', '原状回復 費用 高い', '原状回復 見積り 比較', '原状回復 費用 相場'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_18.jpg',
@@ -170,7 +170,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'exit-witness-support',
     title: '退去立会い代行',
-    metaTitle: '退去立会い代行｜管理会社との調整・費用適正化サポートする株式会社播磨商事',
+    metaTitle: '退去立会い代行｜管理会社との調整・費用適正化サポートする',
     metaDescription: '店舗退去時の立会い代行。管理会社・オーナーとの原状回復範囲の確認・費用交渉サポート。複数店舗の退去立会いを一括対応。現地調査無料。',
     keywords: ['退去立会い 代行', '退去立会い 店舗', '原状回復 立会い', '店舗退去 立会い 代行'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_21.jpg',
@@ -194,7 +194,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'multiple-store-closure',
     title: '複数店舗の同時退去管理',
-    metaTitle: '複数店舗の同時退去管理｜退去立会い・原状回復工事を一括管理する株式会社播磨商事',
+    metaTitle: '複数店舗の同時退去管理｜退去立会い・原状回復工事を一括管理する',
     metaDescription: '複数店舗の退去スケジュールを一元管理。退去立会い代行・原状回復工事の一括発注・費用適正化まで対応。多店舗展開企業の担当者工数を削減。現地調査無料。',
     keywords: ['複数店舗 原状回復', '複数店舗 退去 管理', '多店舗 退去 一括', '店舗 一斉退去'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
@@ -217,7 +217,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'construction-reporting',
     title: '施工完了報告・進捗管理',
-    metaTitle: '施工完了報告・進捗管理｜FC本部・多店舗展開の施工管理なら株式会社播磨商事',
+    metaTitle: '施工完了報告・進捗管理｜FC本部・多店舗展開の施工管理',
     metaDescription: '施工完了報告書（写真・チェックリスト付き）の標準提出。複数案件の進捗を一元管理・報告。FC本部・多店舗展開担当者の確認業務を効率化。現地調査無料。',
     keywords: ['施工完了報告書', '施工 進捗管理', '内装工事 報告書', '施工 完了確認'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_14.jpg',
@@ -240,7 +240,7 @@ export const solutions: SolutionData[] = [
   {
     slug: 'vendor-consolidation',
     title: '施工業者の一本化',
-    metaTitle: '施工業者の一本化｜店舗内装・原状回復の発注窓口を集約する株式会社播磨商事',
+    metaTitle: '施工業者の一本化｜店舗内装・原状回復の発注窓口を集約する',
     metaDescription: 'バラバラの施工業者を1社に集約。FC本部・多店舗展開の施工管理を一本化することで品質統一・コスト管理・担当者負荷削減を実現。現地調査・見積無料。',
     keywords: ['施工業者 一本化', '内装工事 業者 一本化', '施工管理 一括', '施工 窓口 一本化'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_3.jpg',

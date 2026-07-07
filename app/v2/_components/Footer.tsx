@@ -7,25 +7,24 @@ const linkGroups = [
     links: [
       { href: '/service/shop-interior', label: '店舗内装工事' },
       { href: '/service/restoration', label: '原状回復工事' },
-      { href: '/industry', label: '業種別対応' },
-      { href: '/solution', label: 'ソリューション' },
-      { href: '/cases', label: '施工事例' },
-    ],
-  },
-  {
-    label: '企業向け',
-    links: [
       { href: '/franchise', label: 'FC本部向け' },
-      { href: '/multi-store', label: '多店舗展開企業向け' },
-      { href: '/store-development', label: '店舗開発担当者向け' },
+      { href: '/industry/salon-interior', label: 'サロン内装' },
+      { href: '/industry/gym-interior', label: 'ジム内装' },
     ],
   },
   {
-    label: 'エリア・情報',
+    label: '実績・情報',
+    links: [
+      { href: '/works', label: '施工実績' },
+      { href: '/voice', label: 'お客様の声' },
+      { href: '/news', label: 'ニュース' },
+      { href: '/column', label: 'コラム' },
+    ],
+  },
+  {
+    label: '会社情報',
     links: [
       { href: '/area', label: '対応エリア' },
-      { href: '/column', label: 'コラム' },
-      { href: '/blog', label: 'ブログ' },
       { href: '/company', label: '会社概要' },
       { href: '/contact', label: 'お問い合わせ' },
     ],

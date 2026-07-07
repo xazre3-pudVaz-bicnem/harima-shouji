@@ -25,7 +25,7 @@ export const cases: CaseData[] = [
   {
     slug: 'restaurant-interior-tokyo',
     title: '飲食FC店舗 新規出店内装工事（東京都）',
-    metaTitle: '飲食FC店舗 新規出店内装工事（東京都）｜施工事例｜株式会社播磨商事',
+    metaTitle: '飲食FC店舗 新規出店内装工事（東京都）｜施工事例',
     metaDescription: '東京都内の飲食フランチャイズ店舗の新規出店内装工事事例。厨房工事・排気ダクト・グリストラップ設置・ブランド仕様内装仕上げ。夜間施工対応。',
     keywords: ['飲食店 内装工事 東京', '飲食FC 新規出店', 'フランチャイズ 飲食 内装'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
@@ -59,7 +59,7 @@ export const cases: CaseData[] = [
   {
     slug: 'restaurant-restoration-tokyo',
     title: '飲食店退去 原状回復工事（東京都）',
-    metaTitle: '飲食店退去 原状回復工事（東京都）｜施工事例｜株式会社播磨商事',
+    metaTitle: '飲食店退去 原状回復工事（東京都）｜施工事例',
     metaDescription: '東京都内の飲食店退去時の原状回復工事事例。グリストラップ清掃・臭気処理・床復旧・退去立会い代行・費用適正化サポート。',
     keywords: ['飲食店 原状回復 東京', '飲食店 退去 工事 東京'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
@@ -92,7 +92,7 @@ export const cases: CaseData[] = [
   {
     slug: 'beauty-salon-interior-kanagawa',
     title: '美容室FC店舗 新規出店内装工事（神奈川県）',
-    metaTitle: '美容室FC店舗 新規出店内装工事（神奈川県）｜施工事例｜株式会社播磨商事',
+    metaTitle: '美容室FC店舗 新規出店内装工事（神奈川県）｜施工事例',
     metaDescription: '神奈川県の美容室フランチャイズ店舗の新規出店内装工事事例。シャンプー台給排水・電気増設・ミラー設置・ブランド仕様仕上げ。',
     keywords: ['美容室 内装工事 神奈川', '美容室FC 出店', 'ヘアサロン 内装工事'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
@@ -124,7 +124,7 @@ export const cases: CaseData[] = [
   {
     slug: 'retail-restoration-saitama',
     title: '小売FC店舗 退去 原状回復工事（埼玉県）',
-    metaTitle: '小売FC店舗 退去 原状回復工事（埼玉県）｜施工事例｜株式会社播磨商事',
+    metaTitle: '小売FC店舗 退去 原状回復工事（埼玉県）｜施工事例',
     metaDescription: '埼玉県の小売フランチャイズ店舗の退去・原状回復工事事例。什器撤去・フィッティングルーム撤去・床壁補修・退去立会い代行。',
     keywords: ['小売店 原状回復 埼玉', '小売FC 退去', 'アパレル 原状回復'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
@@ -156,7 +156,7 @@ export const cases: CaseData[] = [
   {
     slug: 'clinic-interior-chiba',
     title: '整骨院FC店舗 新規出店内装工事（千葉県）',
-    metaTitle: '整骨院FC店舗 新規出店内装工事（千葉県）｜施工事例｜株式会社播磨商事',
+    metaTitle: '整骨院FC店舗 新規出店内装工事（千葉県）｜施工事例',
     metaDescription: '千葉県の整骨院フランチャイズ店舗の新規出店内装工事事例。診察室間仕切り・受付カウンター・手洗い設備・ブランド仕様内装仕上げ。',
     keywords: ['整骨院 内装工事 千葉', '接骨院 内装工事', 'クリニック FC 内装'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
@@ -188,7 +188,7 @@ export const cases: CaseData[] = [
   {
     slug: 'multi-store-renovation',
     title: '多店舗展開企業 複数店舗同時改装（関東）',
-    metaTitle: '多店舗展開企業 複数店舗同時改装（関東）｜施工事例｜株式会社播磨商事',
+    metaTitle: '多店舗展開企業 複数店舗同時改装（関東）｜施工事例',
     metaDescription: '関東エリアの多店舗展開企業による複数店舗同時改装事例。東京・埼玉・千葉の3店舗を同時進行。担当者窓口一本化・統一施工管理。',
     keywords: ['多店舗 改装 同時', '複数店舗 内装工事', '多店舗展開 改装'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_6.jpg',
@@ -220,7 +220,7 @@ export const cases: CaseData[] = [
   {
     slug: 'night-construction',
     title: '商業施設内テナント 夜間集中施工（東京都）',
-    metaTitle: '商業施設内テナント 夜間集中施工（東京都）｜施工事例｜株式会社播磨商事',
+    metaTitle: '商業施設内テナント 夜間集中施工（東京都）｜施工事例',
     metaDescription: '東京都内の商業施設テナントの夜間集中施工事例。施設閉館後の限られた時間内での施工完了。翌朝オープンに向けた工程管理。',
     keywords: ['夜間施工 商業施設', '夜間 内装工事 東京', 'テナント 夜間工事'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_9.jpg',
@@ -251,7 +251,7 @@ export const cases: CaseData[] = [
   {
     slug: 'fc-store-standardization',
     title: 'FC本部 ブランドリニューアル 全店改装管理（関東〜近畿）',
-    metaTitle: 'FC本部 ブランドリニューアル 全店改装管理｜施工事例｜株式会社播磨商事',
+    metaTitle: 'FC本部 ブランドリニューアル 全店改装管理｜施工事例',
     metaDescription: 'フランチャイズ本部のブランドリニューアルに伴う複数店舗同時改装の管理事例。関東〜近畿エリアの施工管理を一本化。担当者窓口集約・完了報告書標準提出。',
     keywords: ['FC本部 ブランドリニューアル', 'フランチャイズ 全店改装', 'FC 内装工事 一括管理'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_3.jpg',
@@ -284,7 +284,7 @@ export const cases: CaseData[] = [
   {
     slug: 'store-closure-restoration',
     title: '多店舗展開企業 複数店舗同時退去・原状回復管理（関東）',
-    metaTitle: '複数店舗同時退去・原状回復管理（関東）｜施工事例｜株式会社播磨商事',
+    metaTitle: '複数店舗同時退去・原状回復管理（関東）｜施工事例',
     metaDescription: '関東エリアの多店舗展開企業による複数店舗同時退去の管理事例。退去立会い代行・原状回復工事一括発注・費用適正化サポート。担当者窓口一本化。',
     keywords: ['複数店舗 退去 原状回復', '多店舗 退去管理', '店舗閉店 原状回復 一括'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_21.jpg',
@@ -317,7 +317,7 @@ export const cases: CaseData[] = [
   {
     slug: 'short-term-interior-work',
     title: 'ロードサイド型店舗 短工期出店施工（埼玉県）',
-    metaTitle: 'ロードサイド型店舗 短工期出店施工（埼玉県）｜施工事例｜株式会社播磨商事',
+    metaTitle: 'ロードサイド型店舗 短工期出店施工（埼玉県）｜施工事例',
     metaDescription: '埼玉県のロードサイド型店舗の短工期出店施工事例。物件決定から2週間でのオープンを実現。昼夜施工体制での工期短縮。',
     keywords: ['短工期 内装工事 埼玉', '短工期 出店', 'ロードサイド 内装工事'],
     heroImage: '/LINE_ALBUM_2026.6.10_260610_14.jpg',

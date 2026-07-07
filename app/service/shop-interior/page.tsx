@@ -181,12 +181,14 @@ export default function ShopInteriorPage() {
       <section style={{ background: '#F5F4F0', paddingTop: '5rem', paddingBottom: '5rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '2rem' }}>SEE ALSO</div>
-          <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { label: '原状回復工事', href: '/service/restoration', note: '退去・解体・内装復旧' },
               { label: 'FC本部向けサービス', href: '/franchise', note: 'フランチャイズ本部の施工管理' },
-              { label: '多店舗展開企業向け', href: '/multi-store', note: '複数店舗の一括管理' },
-              { label: '対応エリア', href: '/area', note: '関東・東海・近畿 7都府県' },
+              { label: 'サロン内装工事', href: '/industry/salon-interior', note: '美容室・エステ・ネイル' },
+              { label: 'ジム内装工事', href: '/industry/gym-interior', note: 'フィットネス・パーソナルジム' },
+              { label: '原状回復工事', href: '/service/restoration', note: '退去・解体・内装復旧' },
+              { label: '施工実績', href: '/works', note: '内装・原状回復の実績' },
+              { label: 'お問い合わせ', href: '/contact', note: '現地調査・見積りは無料' },
             ].map((item) => (
               <Link key={item.href} href={item.href} style={{ display: 'block', padding: '2rem', background: '#FFFFFF', textDecoration: 'none' }}>
                 <div style={{ fontSize: '0.6875rem', color: '#9CA3AF', marginBottom: '0.5rem' }}>{item.note}</div>

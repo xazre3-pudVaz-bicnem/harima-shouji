@@ -6,7 +6,7 @@ import CtaSection from '@/app/v2/_components/CtaSection'
 import { cases } from '@/data/cases'
 
 export const metadata: Metadata = {
-  title: '施工事例｜FC本部・多店舗展開の店舗内装工事・原状回復なら株式会社播磨商事',
+  title: '施工事例｜FC本部・多店舗展開の店舗内装工事・原状回復',
   description: '株式会社播磨商事の施工事例。飲食FC・美容室FC・小売FCなどの新規出店内装工事、退去時の原状回復工事の実績を紹介します。',
   keywords: ['施工事例', '内装工事 事例', '原状回復 事例', 'FC 施工事例', '多店舗 内装工事 事例'],
   alternates: { canonical: 'https://harima-shouji.co.jp/cases' },

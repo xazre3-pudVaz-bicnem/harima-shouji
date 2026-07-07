@@ -6,7 +6,7 @@ import CtaSection from '@/app/v2/_components/CtaSection'
 import { industries } from '@/data/industries'
 
 export const metadata: Metadata = {
-  title: '業種別対応｜飲食・美容・クリニック・小売など FC本部向け 株式会社播磨商事',
+  title: '業種別対応｜飲食・美容・クリニック・小売など FC本部向け',
   description: '業種ごとの内装工事・原状回復工事の特徴と対応内容を紹介します。飲食店・美容室・クリニック・学習塾・小売店・ジムなど業種別の施工に対応。',
   keywords: ['業種別 内装工事', '飲食店 内装工事', '美容室 内装工事', 'クリニック 内装工事', '業種別 原状回復'],
   alternates: { canonical: 'https://harima-shouji.co.jp/industry' },
