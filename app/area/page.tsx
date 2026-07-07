@@ -43,7 +43,7 @@ export default function AreaPage() {
         label="AREA"
         title="対応エリア"
         subtitle="関東エリアを中心に、東海・近畿にも対応。複数エリアにまたがる案件もご相談ください。"
-        image="/LINE_ALBUM_2026.6.10_260610_7.jpg"
+        image="/beauty-09.png"
         breadcrumb={[
           { label: 'TOP', href: '/' },
           { label: '対応エリア', href: '/area' },

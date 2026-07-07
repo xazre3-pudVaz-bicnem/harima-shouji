@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -164,29 +163,13 @@ export default function Hero() {
           </motion.span>
         </h1>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1, ease: EASE }}
-          style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2.75rem' }}
-        >
-          <Link href="/contact" className="btn btn-paper">
-            お問い合わせ
-            <span aria-hidden>→</span>
-          </Link>
-          <Link href="/service" className="btn btn-line-light">
-            サービスを見る
-          </Link>
-        </motion.div>
-
         {/* bottom meta rule */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 1.35 }}
+          transition={{ duration: 0.9, delay: 1.2 }}
           style={{
-            marginTop: '4.5rem',
+            marginTop: '5rem',
             borderTop: '1px solid rgba(255,255,255,0.16)',
             display: 'flex',
             justifyContent: 'space-between',
