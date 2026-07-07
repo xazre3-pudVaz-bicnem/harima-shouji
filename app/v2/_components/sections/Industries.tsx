@@ -2,13 +2,15 @@ import Link from 'next/link'
 
 const industries = [
   { href: '/industry/restaurant-interior', ja: '飲食店', en: 'RESTAURANT' },
+  { href: '/industry/cafe-interior', ja: 'カフェ・ベーカリー', en: 'CAFE / BAKERY' },
+  { href: '/industry/bar-interior', ja: 'バー・ダイニングバー', en: 'BAR' },
   { href: '/industry/beauty-salon-interior', ja: '美容室・ヘアサロン', en: 'BEAUTY SALON' },
   { href: '/industry/salon-interior', ja: 'エステ・ネイルサロン', en: 'SALON' },
   { href: '/industry/gym-interior', ja: 'フィットネス・ジム', en: 'GYM' },
   { href: '/industry/clinic-interior', ja: 'クリニック', en: 'CLINIC' },
+  { href: '/industry/dental-interior', ja: '歯科医院', en: 'DENTAL' },
+  { href: '/industry/seikotsuin-interior', ja: '整骨院・接骨院', en: 'SEIKOTSUIN' },
   { href: '/industry/retail-interior', ja: '小売・アパレル', en: 'RETAIL' },
-  { href: '/industry/school-interior', ja: '学習塾・スクール', en: 'SCHOOL' },
-  { href: '/industry/office-restoration', ja: 'オフィス', en: 'OFFICE' },
 ]
 
 export default function Industries() {

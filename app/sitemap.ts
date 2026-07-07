@@ -6,6 +6,8 @@ import { industries } from '@/data/industries'
 import { solutions } from '@/data/solutions'
 import { cases } from '@/data/cases'
 import { cities } from '@/data/cities'
+import { works } from '@/data/works'
+import { news } from '@/data/news'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://harima-shouji.co.jp'
@@ -32,22 +34,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/news`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
   ]
 
-  // Works (施工事例) individual pages (6)
-  const worksRoutes: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/works/restaurant-fc-tokyo`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${baseUrl}/works/beauty-salon-kanagawa`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${baseUrl}/works/gym-interior-saitama`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${baseUrl}/works/restaurant-restoration-tokyo`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${baseUrl}/works/retail-fc-osaka`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${baseUrl}/works/office-restoration-chiba`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-  ]
+  // Works (施工事例) individual pages — data/works.ts から動的生成
+  const worksRoutes: MetadataRoute.Sitemap = works.map((w) => ({
+    url: `${baseUrl}/works/${w.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
-  // News individual pages (3)
-  const newsRoutes: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/news/website-launch`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
-    { url: `${baseUrl}/news/works-coming-soon`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
-    { url: `${baseUrl}/news/media-info`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
-  ]
+  // News individual pages — data/news.ts から動的生成
+  const newsRoutes: MetadataRoute.Sitemap = news.map((n) => ({
+    url: `${baseUrl}/news/${n.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
 
   // Prefecture overview pages (7)
   const prefectureRoutes: MetadataRoute.Sitemap = areas.map((area) => ({
