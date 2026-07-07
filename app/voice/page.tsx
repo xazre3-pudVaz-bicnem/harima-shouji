@@ -61,7 +61,7 @@ export default function VoicePage() {
         <PageHero
           label="VOICE"
           title="お客様の声"
-          image="/LINE_ALBUM_2026.6.10_260610_5.jpg"
+          image="/fc-02.png"
           breadcrumb={[
             { label: 'TOP', href: '/' },
             { label: 'VOICE', href: '/voice' },

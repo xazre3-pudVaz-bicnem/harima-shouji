@@ -97,7 +97,7 @@ export default async function WorkDetailPage({ params }: Props) {
         subtitle={work.summary}
         image={work.imageUrl}
         breadcrumb={[
-          { label: 'TOP', href: '/v2' },
+          { label: 'TOP', href: '/' },
           { label: '施工実績', href: '/works' },
           { label: work.title, href: `/works/${slug}` },
         ]}
@@ -149,12 +149,15 @@ export default async function WorkDetailPage({ params }: Props) {
           <div style={{ position: 'relative', aspectRatio: '16/7', overflow: 'hidden', background: '#F0EFEC', marginBottom: '5rem' }}>
             <Image
               src={work.imageUrl}
-              alt={work.title}
+              alt={`${cat.label}の施工イメージ`}
               fill
               style={{ objectFit: 'cover' }}
               priority
               sizes="(max-width: 1400px) 100vw, 1400px"
             />
+            <div style={{ position: 'absolute', bottom: 0, left: 0, background: 'rgba(10,10,10,0.72)', color: 'rgba(255,255,255,0.85)', fontSize: '0.6875rem', letterSpacing: '0.04em', padding: '0.4rem 0.9rem' }}>
+              ※ 施工イメージ
+            </div>
           </div>
 
           {/* Scope */}

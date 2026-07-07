@@ -82,10 +82,10 @@ export default function WorksPage() {
       <PageHero
         label="WORKS"
         title="施工実績"
-        subtitle="FC飲食店・サロン・ジム・オフィスまで。実際の施工事例からご確認ください。"
-        image="/LINE_ALBUM_2026.6.10_260610_22.jpg"
+        subtitle="FC飲食店・サロン・ジム・オフィスまで。対応可能な施工の一例をご紹介します。"
+        image="/store-01.png"
         breadcrumb={[
-          { label: 'TOP', href: '/v2' },
+          { label: 'TOP', href: '/' },
           { label: '施工実績', href: '/works' },
         ]}
       />
@@ -126,8 +126,11 @@ export default function WorksPage() {
             <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
               ALL WORKS
             </div>
-            <p style={{ fontSize: '0.875rem', color: '#9CA3AF' }}>
-              {works.length}件の施工実績
+            <p style={{ fontSize: '0.875rem', color: '#9CA3AF', marginBottom: '1rem' }}>
+              {works.length}件の施工イメージ
+            </p>
+            <p style={{ fontSize: '0.8125rem', color: '#6B6B6B', lineHeight: 1.9, background: '#F5F4F0', borderRadius: '4px', padding: '0.875rem 1.25rem', display: 'inline-block' }}>
+              ※ 掲載している写真・事例は施工イメージです。実際の施工実績は準備が整い次第、順次公開してまいります。
             </p>
           </div>
 

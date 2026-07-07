@@ -110,11 +110,12 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
                 {industry.overview}
               </p>
             </div>
-            <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden', borderRadius: '4px' }}>
               <Image
-                src={industry.heroImage}
-                alt={`${industry.industryJa}の${serviceLabel}の施工事例`}
+                src={industry.overviewImage ?? industry.heroImage}
+                alt={`${industry.industryJa}の施工イメージ`}
                 fill
+                loading="lazy"
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -157,6 +158,35 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
                   <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#F0EFE9', marginBottom: '0.75rem', lineHeight: 1.4 }}>{item.title}</h3>
                   <p style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: 1.9 }}>{item.body}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Gallery (業種別に画像がある場合のみ) */}
+      {industry.galleryImages && industry.galleryImages.length > 0 && (
+        <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
+            <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>GALLERY</div>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>
+              施工イメージ
+            </h2>
+            <div style={{ display: 'grid', gap: '1rem' }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+              {industry.galleryImages.map((img, i) => (
+                <figure key={i} style={{ margin: 0 }}>
+                  <div style={{ position: 'relative', aspectRatio: '3/4', overflow: 'hidden', borderRadius: '4px' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      loading="lazy"
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                  <figcaption style={{ fontSize: '0.75rem', color: '#6B6B6B', marginTop: '0.625rem', letterSpacing: '0.02em' }}>{img.caption}</figcaption>
+                </figure>
               ))}
             </div>
           </div>

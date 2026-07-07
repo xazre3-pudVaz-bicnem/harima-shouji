@@ -6,6 +6,8 @@ export type IndustryData = {
   metaDescription: string
   keywords: string[]
   heroImage: string
+  overviewImage?: string
+  galleryImages?: { src: string; alt: string; caption: string }[]
   overview: string
   commonWorks: { title: string; body: string }[]
   keyConsiderations: { title: string; body: string }[]
@@ -358,8 +360,15 @@ export const industries: IndustryData[] = [
     serviceType: 'interior',
     metaTitle: 'ジム・フィットネスクラブの内装工事｜FC本部・多店舗展開の施工管理',
     metaDescription: 'フィットネス・ジムの内装工事。ゴム床・耐震床・トレーニング機器対応床下地・鏡設置・換気設備対応。FC 24時間ジムの多店舗施工管理を一括対応。見積無料。',
-    keywords: ['ジム 内装工事', 'フィットネス 内装工事', '24時間ジム 内装', 'FC ジム 内装'],
-    heroImage: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
+    keywords: ['ジム 内装工事', 'フィットネスジム 内装工事', 'パーソナルジム 内装工事', 'ジム 改装工事', 'ジム 原状回復', '24時間ジム 内装', 'FC ジム 内装'],
+    heroImage: '/gym-01.png',
+    overviewImage: '/gym-03.png',
+    galleryImages: [
+      { src: '/gym-02.png', alt: 'ジム内装工事のトレーニングエリアのイメージ', caption: 'フリーウェイト・トレーニングエリア' },
+      { src: '/gym-04.png', alt: 'ジム内装工事のマシンエリアのイメージ', caption: 'マシン・有酸素エリア' },
+      { src: '/gym-05.png', alt: 'ジム内装工事のスタジオのイメージ', caption: '鏡張りスタジオ・防音対応' },
+      { src: '/gym-09.png', alt: 'ジム内装工事の更衣室・シャワーのイメージ', caption: '更衣室・シャワー・水回り' },
+    ],
     overview: 'フィットネス・ジムの内装工事は、重量のあるトレーニング機器に対応する床の耐荷重設計・ゴムマット施工・大型鏡の設置・換気設備の強化が重要です。フランチャイズの24時間ジム・パーソナルジムでは、本部のブランド仕様に基づいた内装と設備への対応が求められます。播磨商事は、フィットネスFC店舗の多店舗展開において、施工管理の窓口を一本化します。',
     commonWorks: [
       { title: 'ゴムマット・耐衝撃床の施工', body: 'ダンベルや器具の落下衝撃に対応するゴム床材・耐衝撃フローリングの施工。重量エリアとストレッチエリアの素材使い分けも行います。' },
@@ -419,7 +428,8 @@ export const industries: IndustryData[] = [
     metaTitle: 'サロン内装工事（美容室・エステ・ネイル）｜FCサロン・多店舗対応',
     metaDescription: '美容室・エステサロン・ネイルサロン・アイラッシュ・リラクゼーションサロンの内装工事。FC本部仕様に基づく多店舗施工管理を一括対応。現地調査・見積無料。',
     keywords: ['サロン 内装工事', '美容室 内装工事', 'エステサロン 内装工事', 'ネイルサロン 内装工事', 'サロン 改装工事', 'FC サロン 内装'],
-    heroImage: '/LINE_ALBUM_2026.6.10_260610_7.jpg',
+    heroImage: '/salon-01.png',
+    overviewImage: '/salon-02.png',
     overview: '美容室・エステサロン・ネイルサロン・アイラッシュサロン・リラクゼーションサロンなど、幅広いサロン業態の内装工事に対応しています。各業態の施術特性に合わせた動線設計・照明計画・個室感の確保を実現しつつ、FC本部の仕様書に基づいた統一施工も一括で管理します。播磨商事は多店舗展開サロンの出店・改装施工において、仕様確認から竣工検査まで窓口を一本化します。',
     commonWorks: [
       { title: '新規出店施工', body: '居抜き物件・スケルトン物件を問わず、サロン業態に合わせた新規出店工事を行います。間仕切り・給排水・電気・内装仕上げを一括対応します。' },

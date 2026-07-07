@@ -129,7 +129,7 @@ export default function RestorationPage() {
         label="RESTORATION"
         title="原状回復工事"
         subtitle="テナント退去から内装復旧まで。費用の適正化・複数店舗の退去スケジュールを一元管理します。"
-        image="/LINE_ALBUM_2026.6.10_260610_19.jpg"
+        image="/resto-03.png"
         breadcrumb={[
           { label: 'TOP', href: '/' },
           { label: 'サービス', href: '/service' },
@@ -146,8 +146,8 @@ export default function RestorationPage() {
           >
             <div style={{ position: 'relative', height: 'clamp(300px, 50vh, 520px)', overflow: 'hidden' }}>
               <Image
-                src="/LINE_ALBUM_2026.6.10_260610_18.jpg"
-                alt="店舗原状回復工事の施工例"
+                src="/resto-04.png"
+                alt="店舗原状回復工事のイメージ"
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -568,7 +568,7 @@ export default function RestorationPage() {
               marginBottom: '0.75rem',
             }}
           >
-            施工事例
+            施工イメージ
           </h2>
           <p style={{ fontSize: '0.9375rem', color: '#6B6B6B', lineHeight: 2, marginBottom: '3rem' }}>
             <Link
@@ -580,16 +580,17 @@ export default function RestorationPage() {
           </p>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-2 lg:grid-cols-4">
             {[
-              '/LINE_ALBUM_2026.6.10_260610_18.jpg',
-              '/LINE_ALBUM_2026.6.10_260610_19.jpg',
-              '/LINE_ALBUM_2026.6.10_260610_21.jpg',
-              '/LINE_ALBUM_2026.6.10_260610_14.jpg',
+              '/resto-05.png',
+              '/resto-06.png',
+              '/resto-07.png',
+              '/resto-01.png',
             ].map((src, i) => (
               <div key={i} style={{ position: 'relative', aspectRatio: '1', overflow: 'hidden' }}>
                 <Image
                   src={src}
-                  alt={`原状回復工事 施工事例 ${i + 1}`}
+                  alt={`店舗原状回復工事のイメージ ${i + 1}`}
                   fill
+                  loading="lazy"
                   style={{ objectFit: 'cover' }}
                   sizes="(max-width: 1024px) 50vw, 25vw"
                 />

@@ -21,7 +21,7 @@ export const works: WorkData[] = [
     category: 'shop-interior',
     area: '東京都新宿区',
     duration: '14日間',
-    imageUrl: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
+    imageUrl: '/store-05.png',
     summary:
       '大手飲食フランチャイズの新規出店に伴う内装工事。FC本部仕様書に基づき、厨房設備・内装仕上げ・ブランドサインまで一括対応しました。',
     challenge:
@@ -47,7 +47,7 @@ export const works: WorkData[] = [
     category: 'salon',
     area: '神奈川県横浜市',
     duration: '10日間',
-    imageUrl: '/LINE_ALBUM_2026.6.10_260610_7.jpg',
+    imageUrl: '/salon-02.png',
     summary:
       '美容サロンフランチャイズの新規出店内装工事。シャンプー台の給排水工事・スタイリングミラー設置・ブランド仕様仕上げを含む総合施工を実施しました。',
     challenge:
@@ -73,7 +73,7 @@ export const works: WorkData[] = [
     category: 'gym',
     area: '埼玉県さいたま市',
     duration: '21日間',
-    imageUrl: '/LINE_ALBUM_2026.6.10_260610_3.jpg',
+    imageUrl: '/gym-06.png',
     summary:
       'パーソナルトレーニングジムの新規出店内装工事。防音・床補強・換気設備など、ジム特有の要件に対応した施工を実施しました。',
     challenge:
@@ -99,7 +99,7 @@ export const works: WorkData[] = [
     category: 'restoration',
     area: '東京都渋谷区',
     duration: '7日間',
-    imageUrl: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
+    imageUrl: '/resto-03.png',
     summary:
       '渋谷区内の飲食店退去に伴う原状回復工事。グリストラップ清掃・臭気処理・床材復旧・クロス張替えまで、退去立会い代行を含めて一括対応しました。',
     challenge:
@@ -125,7 +125,7 @@ export const works: WorkData[] = [
     category: 'shop-interior',
     area: '大阪府大阪市',
     duration: '18日間',
-    imageUrl: '/LINE_ALBUM_2026.6.10_260610_5.jpg',
+    imageUrl: '/store-07.png',
     summary:
       '関西エリア初出店となるFC小売店の内装工事。ブランドコンセプトに合わせた什器レイアウト・照明設計・サイン設置を含む総合施工を担当しました。',
     challenge:
@@ -151,7 +151,7 @@ export const works: WorkData[] = [
     category: 'restoration',
     area: '千葉県千葉市',
     duration: '5日間',
-    imageUrl: '/LINE_ALBUM_2026.6.10_260610_2.jpg',
+    imageUrl: '/resto-06.png',
     summary:
       '千葉市内のオフィステナント退去に伴う原状回復工事。パーテーション撤去・OAフロア復旧・クロス張替えを5日間で完工。費用の適正化もサポートしました。',
     challenge:

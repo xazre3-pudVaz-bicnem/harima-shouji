@@ -61,6 +61,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
     description: item.excerpt,
     datePublished: item.date,
     dateModified: item.date,
+    image: `https://harima-shouji.co.jp${item.imageUrl}`,
     author: { '@type': 'Organization', name: '株式会社播磨商事', url: 'https://harima-shouji.co.jp' },
     publisher: { '@type': 'Organization', name: '株式会社播磨商事', url: 'https://harima-shouji.co.jp' },
   }
@@ -79,7 +80,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
       <PageHero
         label={categoryLabels[item.category].toUpperCase()}
         title={item.title}
-        image="/LINE_ALBUM_2026.6.10_260610_3.jpg"
+        image={item.imageUrl}
         breadcrumb={[
           { label: 'TOP', href: '/' },
           { label: 'ニュース・お知らせ', href: '/news' },

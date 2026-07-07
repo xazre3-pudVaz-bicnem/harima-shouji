@@ -98,7 +98,7 @@ export default function FranchisePage() {
         label="FRANCHISE"
         title={`フランチャイズ・チェーン店の\n内装工事を一本化`}
         subtitle="FC本部の施工管理負担を解消。加盟店の出店・改装・退店を、1社・1窓口・統一品質で対応します。"
-        image="/LINE_ALBUM_2026.6.10_260610_3.jpg"
+        image="/fc-01.png"
         breadcrumb={[
           { label: 'TOP', href: '/' },
           { label: 'FC本部向けサービス', href: '/franchise' },
@@ -184,8 +184,8 @@ export default function FranchisePage() {
             {/* Shop interior */}
             <div style={{ position: 'relative', minHeight: '420px', overflow: 'hidden' }}>
               <Image
-                src="/LINE_ALBUM_2026.6.10_260610_22.jpg"
-                alt="フランチャイズ・チェーン店 店舗内装工事"
+                src="/fc-03.png"
+                alt="フランチャイズ店舗の内装工事イメージ"
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -213,8 +213,8 @@ export default function FranchisePage() {
             {/* Restoration */}
             <div style={{ position: 'relative', minHeight: '420px', overflow: 'hidden' }}>
               <Image
-                src="/LINE_ALBUM_2026.6.10_260610_19.jpg"
-                alt="フランチャイズ店舗 原状回復工事"
+                src="/resto-02.png"
+                alt="フランチャイズ店舗の原状回復工事のイメージ"
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -347,8 +347,8 @@ export default function FranchisePage() {
             </div>
             <div style={{ position: 'relative', height: 'clamp(300px, 50vh, 520px)', overflow: 'hidden' }}>
               <Image
-                src="/LINE_ALBUM_2026.6.10_260610_9.jpg"
-                alt="フランチャイズ店舗の施工事例"
+                src="/fc-05.png"
+                alt="フランチャイズ店舗の内装施工イメージ"
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
 import { news, categoryLabels } from '@/data/news'
@@ -64,7 +65,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
         label="NEWS"
         title="ニュース・お知らせ"
         subtitle="播磨商事からの最新情報をお届けします。"
-        image="/LINE_ALBUM_2026.6.10_260610_3.jpg"
+        image="/fc-05.png"
         breadcrumb={[
           { label: 'TOP', href: '/' },
           { label: 'ニュース・お知らせ', href: '/news' },
@@ -126,8 +127,19 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                 >
                   <Link
                     href={`/news/${item.slug}`}
-                    style={{ display: 'block', padding: '2rem 0', textDecoration: 'none' }}
+                    style={{ display: 'flex', gap: 'clamp(1rem, 3vw, 1.75rem)', alignItems: 'center', padding: '2rem 0', textDecoration: 'none' }}
                   >
+                    <div style={{ position: 'relative', width: 'clamp(96px, 26vw, 200px)', aspectRatio: '4/3', flexShrink: 0, overflow: 'hidden', borderRadius: '4px', background: '#F5F4F0' }}>
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.imageAlt}
+                        fill
+                        loading="lazy"
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 640px) 26vw, 200px"
+                      />
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
                     <div
                       style={{
                         display: 'flex',
@@ -195,6 +207,7 @@ export default async function NewsPage({ searchParams }: { searchParams: Promise
                       </svg>
                       Read more
                     </span>
+                    </div>
                   </Link>
                 </div>
               ))}

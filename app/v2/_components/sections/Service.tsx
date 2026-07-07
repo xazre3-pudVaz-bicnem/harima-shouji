@@ -9,14 +9,16 @@ const services = [
   {
     title: '店舗内装工事',
     description: '新規出店・改装・FC店舗施工・多店舗展開支援',
-    image: '/LINE_ALBUM_2026.6.10_260610_22.jpg',
-    href: '/service/interior',
+    image: '/store-01.png',
+    alt: '店舗内装工事の施工イメージ',
+    href: '/service/shop-interior',
     label: 'INTERIOR',
   },
   {
     title: '原状回復工事',
     description: '退去・解体・内装復旧・クロス補修・設備復旧',
-    image: '/LINE_ALBUM_2026.6.10_260610_19.jpg',
+    image: '/resto-01.png',
+    alt: '店舗原状回復工事のイメージ',
     href: '/service/restoration',
     label: 'RESTORATION',
   },
@@ -60,7 +62,7 @@ export default function Service() {
             {/* Photo */}
             <Image
               src={service.image}
-              alt={service.title}
+              alt={service.alt}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -70,12 +72,12 @@ export default function Service() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/35 to-black/5 group-hover:from-black/92 transition-all duration-500" />
 
             {/* Hover accent bar */}
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/80 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-10 lg:p-14">
               <div
-                className="font-bold tracking-[0.3em] text-amber-400 uppercase mb-4"
+                className="font-bold tracking-[0.3em] text-white/55 uppercase mb-4"
                 style={{ fontSize: '0.625rem' }}
               >
                 {service.label}

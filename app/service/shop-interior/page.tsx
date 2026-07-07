@@ -53,7 +53,7 @@ export default function ShopInteriorPage() {
         label="INTERIOR WORKS"
         title="店舗内装工事"
         subtitle="FC本部・多店舗展開企業の出店・改装施工をまとめてサポート。担当者の管理工数を削減します。"
-        image="/LINE_ALBUM_2026.6.10_260610_22.jpg"
+        image="/store-03.png"
         breadcrumb={[
           { label: 'TOP', href: '/' },
           { label: 'サービス', href: '/service' },
@@ -79,8 +79,8 @@ export default function ShopInteriorPage() {
             </div>
             <div style={{ position: 'relative', height: 'clamp(300px, 50vh, 520px)', overflow: 'hidden' }}>
               <Image
-                src="/LINE_ALBUM_2026.6.10_260610_6.jpg"
-                alt="店舗内装工事の施工例"
+                src="/store-02.png"
+                alt="店舗内装工事の施工イメージ"
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -150,16 +150,16 @@ export default function ShopInteriorPage() {
       <section style={{ background: '#F5F4F0', paddingTop: '7rem', paddingBottom: '7rem' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.32em', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '1rem' }}>GALLERY</div>
-          <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>施工事例</h2>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '3rem' }}>施工イメージ</h2>
           <div style={{ display: 'grid', gap: '2px' }} className="grid-cols-2 lg:grid-cols-4">
             {[
-              '/LINE_ALBUM_2026.6.10_260610_3.jpg',
-              '/LINE_ALBUM_2026.6.10_260610_9.jpg',
-              '/LINE_ALBUM_2026.6.10_260610_14.jpg',
-              '/LINE_ALBUM_2026.6.10_260610_22.jpg',
+              '/store-04.png',
+              '/store-05.png',
+              '/store-06.png',
+              '/store-07.png',
             ].map((src, i) => (
               <div key={i} style={{ position: 'relative', aspectRatio: '1', overflow: 'hidden' }}>
-                <Image src={src} alt={`施工事例 ${i + 1}`} fill style={{ objectFit: 'cover' }} sizes="(max-width: 1024px) 50vw, 25vw" />
+                <Image src={src} alt={`店舗内装工事の施工イメージ ${i + 1}`} fill loading="lazy" style={{ objectFit: 'cover' }} sizes="(max-width: 1024px) 50vw, 25vw" />
               </div>
             ))}
           </div>
