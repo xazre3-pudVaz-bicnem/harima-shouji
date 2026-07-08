@@ -199,7 +199,7 @@ export default function ShopInteriorPage() {
         </div>
       </section>
 
-      <CtaSection heading="店舗内装工事について\nご相談ください" subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。現地調査・見積無料。" />
+      <CtaSection heading={'店舗内装工事について\nご相談ください'} subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。現地調査・見積無料。" />
     </div>
   )
 }

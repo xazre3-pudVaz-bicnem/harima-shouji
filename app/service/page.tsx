@@ -116,7 +116,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <CtaSection heading="店舗内装・原状回復について\n相談する" subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。" />
+      <CtaSection heading={'店舗内装・原状回復について\n相談する'} subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。" />
     </div>
   )
 }

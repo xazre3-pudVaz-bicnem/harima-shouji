@@ -135,7 +135,7 @@ export default function StoreDevelopmentPage() {
         </div>
       </section>
 
-      <CtaSection heading="まずはお気軽に\nご相談ください" subtext="物件の段階からご相談いただけます。概算確認・現地調査は無料です。" />
+      <CtaSection heading={'まずはお気軽に\nご相談ください'} subtext="物件の段階からご相談いただけます。概算確認・現地調査は無料です。" />
     </div>
   )
 }

@@ -8,6 +8,7 @@ import { cases } from '@/data/cases'
 import { cities } from '@/data/cities'
 import { works } from '@/data/works'
 import { news } from '@/data/news'
+import { getBlogPosts } from '@/lib/blog'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://harima-shouji.co.jp'
@@ -96,13 +97,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // Column routes (6)
-  const columnRoutes: MetadataRoute.Sitemap = columns.map((col) => ({
-    url: `${baseUrl}/column/${col.slug}`,
-    lastModified: new Date(col.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  // Column routes — 静的コラム（data/columns.ts）＋自動生成コラム（content/blog/*.md）
+  const columnRoutes: MetadataRoute.Sitemap = [
+    ...columns.map((col) => ({
+      url: `${baseUrl}/column/${col.slug}`,
+      lastModified: new Date(col.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    ...getBlogPosts().map((post) => ({
+      url: `${baseUrl}/column/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ]
 
   // Blog routes from WordPress
   let blogRoutes: MetadataRoute.Sitemap = []

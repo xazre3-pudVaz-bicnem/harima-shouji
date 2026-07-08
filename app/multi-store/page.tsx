@@ -132,7 +132,7 @@ export default function MultiStorePage() {
         </div>
       </section>
 
-      <CtaSection heading="多店舗の施工管理について\nご相談ください" subtext="現在の課題・店舗数・対象エリアをお知らせください。最適な管理体制をご提案します。" />
+      <CtaSection heading={'多店舗の施工管理について\nご相談ください'} subtext="現在の課題・店舗数・対象エリアをお知らせください。最適な管理体制をご提案します。" />
     </div>
   )
 }

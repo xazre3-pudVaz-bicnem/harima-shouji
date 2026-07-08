@@ -132,7 +132,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
 
-      <CtaSection heading="施工管理について\nご相談ください" subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。" />
+      <CtaSection heading={'施工管理について\nご相談ください'} subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。" />
     </div>
   )
 }
