@@ -149,7 +149,10 @@ export default function Footer() {
           <p className="mono" style={{ fontSize: '0.625rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.22)' }}>
             © {new Date().getFullYear()} HARIMA SHOUJI CO., LTD.
           </p>
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '1.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Link href="/sitemap-index" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.25)', textDecoration: 'none' }}>
+              サイトマップ
+            </Link>
             <Link href="/privacy" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.25)', textDecoration: 'none' }}>
               プライバシーポリシー
             </Link>

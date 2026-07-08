@@ -36,20 +36,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/news`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
   ]
 
-  // Works (施工事例) individual pages — data/works.ts から動的生成
+  // Works (施工事例) individual pages — data/works.ts から動的生成（画像付き）
   const worksRoutes: MetadataRoute.Sitemap = works.map((w) => ({
     url: `${baseUrl}/works/${w.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
+    images: [`${baseUrl}${w.imageUrl}`],
   }))
 
-  // News individual pages — data/news.ts から動的生成
+  // News individual pages — data/news.ts から動的生成（画像付き）
   const newsRoutes: MetadataRoute.Sitemap = news.map((n) => ({
     url: `${baseUrl}/news/${n.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(n.date),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
+    images: [`${baseUrl}${n.imageUrl}`],
   }))
 
   // Prefecture overview pages (7)
@@ -74,12 +76,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // Industry pages (13)
+  // Industry pages（画像付き）
   const industryRoutes: MetadataRoute.Sitemap = industries.map((ind) => ({
     url: `${baseUrl}/industry/${ind.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.75,
+    images: [`${baseUrl}${ind.heroImage}`],
   }))
 
   // Solution pages (10)
@@ -98,19 +101,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // Column routes — 静的コラム（data/columns.ts）＋自動生成コラム（content/blog/*.md）
+  // Column routes — 静的コラム（data/columns.ts）＋自動生成コラム（content/blog/*.md）（画像付き）
   const columnRoutes: MetadataRoute.Sitemap = [
     ...columns.map((col) => ({
       url: `${baseUrl}/column/${col.slug}`,
       lastModified: new Date(col.date),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+      images: [`${baseUrl}${col.image}`],
     })),
     ...getBlogPosts().map((post) => ({
       url: `${baseUrl}/column/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+      images: [`${baseUrl}${post.image}`],
     })),
   ]
 

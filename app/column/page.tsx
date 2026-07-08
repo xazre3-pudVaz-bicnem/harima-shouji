@@ -10,7 +10,10 @@ export const metadata: Metadata = {
   title: 'コラム | FC本部・多店舗展開企業向け店舗工事の知識',
   description: 'FC本部・多店舗展開企業の担当者向けに、店舗内装工事・原状回復工事・施工管理・退店対応の実務知識を専門コラムとしてお届けします。東京・関東〜関西で対応。',
   keywords: ['フランチャイズ 内装工事', 'FC本部 店舗工事', '多店舗 施工管理', '店舗 原状回復', '店舗内装工事 コラム'],
-  alternates: { canonical: 'https://harima-shouji.co.jp/column' },
+  alternates: {
+    canonical: 'https://harima-shouji.co.jp/column',
+    types: { 'application/rss+xml': 'https://harima-shouji.co.jp/column/feed.xml' },
+  },
   openGraph: {
     images: ['/og-image.jpg'], title: 'コラム | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/column', type: 'website' },
 }

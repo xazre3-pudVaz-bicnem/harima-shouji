@@ -94,4 +94,32 @@ export const columnTopics: ColumnTopic[] = [
   { slug: 'hyogo-restoration', title: '兵庫で店舗原状回復工事を依頼する際の確認事項', category: 'エリア別店舗工事', description: '兵庫県（神戸ほか）で店舗の原状回復工事を依頼する際に、契約条件や工事範囲について確認すべき事項を解説します。', keywords: ['兵庫 原状回復工事', '店舗 原状回復', 'テナント 原状回復'], image: '/beauty-01.png' },
   { slug: 'kanto-multi-store', title: '関東エリアで複数店舗の工事を一括管理する方法', category: 'エリア別店舗工事', description: '関東エリアに複数店舗を展開する企業が、エリアをまたいだ店舗工事を一括管理する方法を解説します。', keywords: ['東京 店舗内装工事', '多店舗 内装工事', '複数店舗 工事'], image: '/store-05.png' },
   { slug: 'kansai-fc-construction', title: '関西エリアでFC店舗工事を進める際の注意点', category: 'エリア別店舗工事', description: '関西エリア（大阪・兵庫ほか）でフランチャイズ店舗の工事を進める際に、遠隔管理も含めた注意点を解説します。', keywords: ['大阪 店舗内装工事', 'フランチャイズ 内装工事', '多店舗 内装工事'], image: '/rest-10.png' },
+
+  // ———— 第2バッチ：業種・費用・工程・原状回復・FCの深掘り ————
+  { slug: 'izakaya-interior', title: '居酒屋の内装工事で本部が確認すべきこと', category: '業種別内装工事', description: '居酒屋・大衆酒場の内装工事で、厨房・排気・個室造作など業態特有の確認ポイントを本部目線で解説します。', keywords: ['居酒屋 内装工事', '飲食店 内装工事', '厨房 工事'], image: '/rest-09.png' },
+  { slug: 'ramen-interior', title: 'ラーメン店の内装工事で重視すべき厨房と排気計画', category: '業種別内装工事', description: 'ラーメン店の内装工事で要となる厨房設備・排気ダクト・給排水の計画と、確認しておきたいポイントを解説します。', keywords: ['ラーメン店 内装工事', '飲食店 内装工事', '厨房 排気'], image: '/rest-03.png' },
+  { slug: 'yakiniku-interior', title: '焼肉店の内装工事でダクト・排煙を計画するポイント', category: '業種別内装工事', description: '焼肉店の内装工事で欠かせない無煙ロースター用ダクト・排煙・臭気対策の考え方を実務目線でまとめます。', keywords: ['焼肉店 内装工事', '飲食店 内装工事', '排煙 ダクト'], image: '/rest-07.png' },
+  { slug: 'cram-school-interior', title: '学習塾の内装工事で防音と動線を両立する考え方', category: '業種別内装工事', description: '学習塾・スクールの内装工事で、教室間の防音と生徒の安全な動線を両立させる設計の考え方を解説します。', keywords: ['学習塾 内装工事', 'スクール 内装', '防音 工事'], image: '/store-04.png' },
+  { slug: 'relaxation-salon-interior', title: 'リラクゼーションサロンの内装工事で注意すべき点', category: '業種別内装工事', description: 'リラクゼーション・整体サロンの内装工事で、個室の遮音・照明・空調など施術環境を整える注意点を解説します。', keywords: ['リラクゼーション 内装工事', 'サロン 内装工事', '整体 内装'], image: '/salon-05.png' },
+  { slug: 'pharmacy-interior', title: '調剤薬局の内装工事で確認すべき動線と設備', category: '業種別内装工事', description: '調剤薬局の内装工事で、投薬・調剤・待合の動線と設備要件を整理し、確認すべきポイントを解説します。', keywords: ['調剤薬局 内装工事', 'クリニック 内装工事', '薬局 開業'], image: '/clinic-04.png' },
+
+  { slug: 'tsubo-unit-price', title: '店舗内装工事の坪単価の考え方と内訳', category: '店舗工事のコスト削減', description: '店舗内装工事の「坪単価」がどう決まるのか、内訳と変動要因を整理し、比較検討に使う際の注意点を解説します。', keywords: ['店舗内装工事 坪単価', '内装工事 費用', '店舗工事 コスト削減'], image: '/store-06.png' },
+  { slug: 'abc-construction-division', title: 'B工事・C工事とは？店舗工事の区分を理解する', category: '店舗工事のコスト削減', description: '商業施設やビルの店舗工事で登場するA工事・B工事・C工事の区分を整理し、費用と交渉のポイントを解説します。', keywords: ['B工事 C工事', '店舗工事 区分', '店舗工事 コスト削減'], image: '/fc-02.png' },
+  { slug: 'estimate-breakdown-reading', title: '内装工事見積書の内訳の読み方', category: '店舗工事のコスト削減', description: '内装工事の見積書に並ぶ項目の意味と、範囲・数量・単価をどう確認すれば妥当性を判断できるかを解説します。', keywords: ['内装工事 見積もり', '見積書 内訳', '店舗工事 費用'], image: '/store-01.png' },
+  { slug: 'payment-terms-construction', title: '店舗工事の支払い条件で確認すべきこと', category: '店舗工事のコスト削減', description: '店舗工事の契約前に、着手金・中間金・完成払いなどの支払い条件で確認しておくべきポイントを解説します。', keywords: ['店舗工事 支払い', '内装工事 契約', '店舗工事 コスト削減'], image: '/fc-03.png' },
+
+  { slug: 'completion-inspection', title: '店舗内装工事の竣工検査でチェックすべき項目', category: '本部担当者向けノウハウ', description: '店舗内装工事の引き渡し前、竣工検査で本部・担当者が確認しておくべきチェック項目を整理します。', keywords: ['竣工検査', '店舗工事 管理', '施工品質 統一'], image: '/store-02.png' },
+  { slug: 'construction-photos', title: '施工写真を管理・報告に活用する方法', category: '本部担当者向けノウハウ', description: '着工前・施工中・完了の施工写真を、進捗報告と品質管理にどう活用するか、本部目線の考え方を解説します。', keywords: ['施工写真', '工程管理', '店舗工事 管理'], image: '/store-07.png' },
+  { slug: 'neighbor-greeting', title: '店舗工事の近隣挨拶と養生で気をつけること', category: '本部担当者向けノウハウ', description: '店舗工事の着工前に行う近隣挨拶と共用部・什器の養生について、トラブルを避けるための注意点を解説します。', keywords: ['店舗工事 近隣挨拶', '養生', '店舗工事 管理'], image: '/store-03.png' },
+  { slug: 'equipment-delivery', title: '什器・厨房機器の搬入段取りで失敗しない方法', category: '本部担当者向けノウハウ', description: '什器や厨房機器の搬入経路・タイミングを工程に組み込み、搬入トラブルや工期遅れを防ぐ段取りを解説します。', keywords: ['什器 搬入', '厨房機器 搬入', '工程管理'], image: '/rest-10.png' },
+
+  { slug: 'skeleton-return', title: 'スケルトン返しとは？原状回復の範囲を理解する', category: '原状回復・退店対応', description: '店舗退去で求められる「スケルトン返し」の意味と、契約上どこまで解体・復旧するのかを整理して解説します。', keywords: ['スケルトン返し', '店舗 原状回復', '退店 原状回復'], image: '/resto-05.png' },
+  { slug: 'restoration-guideline', title: '原状回復をめぐるガイドラインと店舗の考え方', category: '原状回復・退店対応', description: '原状回復に関する一般的な考え方（通常損耗と借主負担の区分など）を整理し、店舗契約での注意点を解説します。', keywords: ['原状回復 ガイドライン', '店舗 原状回復', 'テナント 原状回復'], image: '/resto-02.png' },
+  { slug: 'inuki-transfer-restoration', title: '居抜き売却で原状回復を免除できるケース', category: '原状回復・退店対応', description: '退去時に居抜きで次のテナントへ引き継ぐことで、原状回復工事を抑えられる可能性と注意点を解説します。', keywords: ['居抜き 売却', '原状回復 免除', '退店 原状回復'], image: '/resto-07.png' },
+  { slug: 'restoration-schedule', title: '退去日から逆算する原状回復工事のスケジュール', category: '原状回復・退店対応', description: '明け渡し期限から逆算して、調査・見積り・施工・立会いをどう配置するか、原状回復の工程設計を解説します。', keywords: ['原状回復 スケジュール', '退店 原状回復', '店舗 原状回復'], image: '/resto-01.png' },
+
+  { slug: 'standard-equipment-package', title: 'FC標準什器パッケージと内装施工の連携', category: 'フランチャイズ内装工事', description: 'FC本部が定める標準什器パッケージと内装施工をどう連携させ、全店の統一と効率化を図るかを解説します。', keywords: ['FC 什器 標準化', 'フランチャイズ 内装工事', 'ブランド仕様 統一'], image: '/fc-04.png' },
+  { slug: 'sv-store-inspection', title: 'SVの店舗巡回で見る内装・設備のチェックポイント', category: '多店舗展開の施工管理', description: 'スーパーバイザーが店舗巡回時に確認しておきたい内装・設備の劣化やメンテナンスのポイントを解説します。', keywords: ['SV 店舗巡回', '多店舗 施工管理', '店舗 メンテナンス'], image: '/store-05.png' },
+  { slug: 'store-opening-review', title: '出店審査と内装計画の進め方', category: '店舗開発・新規出店', description: '出店審査の段階から内装計画を並行して進めることで、開業までをスムーズにする考え方を解説します。', keywords: ['出店審査', '新規出店 内装', '店舗開発 内装工事'], image: '/store-03.png' },
+  { slug: 'multi-store-maintenance', title: '多店舗の内装・設備の保守メンテナンスを一括管理する', category: '多店舗展開の施工管理', description: '複数店舗の内装・設備の不具合対応や小修繕を、窓口を一本化して一括管理するメリットと進め方を解説します。', keywords: ['店舗 メンテナンス', '多店舗 施工管理', '業者管理'], image: '/store-07.png' },
 ]

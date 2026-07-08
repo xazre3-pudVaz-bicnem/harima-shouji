@@ -33,9 +33,31 @@ const services = [
   },
 ]
 
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'TOP', item: 'https://harima-shouji.co.jp' },
+      { '@type': 'ListItem', position: 2, name: 'サービス', item: 'https://harima-shouji.co.jp/service' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '店舗内装工事', url: 'https://harima-shouji.co.jp/service/shop-interior' },
+      { '@type': 'ListItem', position: 2, name: '原状回復工事', url: 'https://harima-shouji.co.jp/service/restoration' },
+    ],
+  },
+]
+
 export default function ServicePage() {
   return (
     <div style={{ background: '#F6F4EF' }}>
+      {structuredData.map((data, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      ))}
       <PageHero
         label="SERVICE"
         title="サービス"
