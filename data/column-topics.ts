@@ -122,4 +122,33 @@ export const columnTopics: ColumnTopic[] = [
   { slug: 'sv-store-inspection', title: 'SVの店舗巡回で見る内装・設備のチェックポイント', category: '多店舗展開の施工管理', description: 'スーパーバイザーが店舗巡回時に確認しておきたい内装・設備の劣化やメンテナンスのポイントを解説します。', keywords: ['SV 店舗巡回', '多店舗 施工管理', '店舗 メンテナンス'], image: '/store-05.png' },
   { slug: 'store-opening-review', title: '出店審査と内装計画の進め方', category: '店舗開発・新規出店', description: '出店審査の段階から内装計画を並行して進めることで、開業までをスムーズにする考え方を解説します。', keywords: ['出店審査', '新規出店 内装', '店舗開発 内装工事'], image: '/store-03.png' },
   { slug: 'multi-store-maintenance', title: '多店舗の内装・設備の保守メンテナンスを一括管理する', category: '多店舗展開の施工管理', description: '複数店舗の内装・設備の不具合対応や小修繕を、窓口を一本化して一括管理するメリットと進め方を解説します。', keywords: ['店舗 メンテナンス', '多店舗 施工管理', '業者管理'], image: '/store-07.png' },
+
+  // ———— 第3バッチ：業種の網羅・費用/保証・原状回復・FCの追加 ————
+  { slug: 'cafe-interior-fc', title: 'カフェの内装工事で本部が確認すべきこと', category: '業種別内装工事', description: 'カフェ・喫茶業態の内装工事で、厨房・客席・提供動線の設計と本部が確認すべきポイントを解説します。', keywords: ['カフェ 内装工事', '飲食店 内装工事', 'カフェ 開業'], image: '/cafe-01.png' },
+  { slug: 'bakery-interior', title: 'ベーカリー・パン屋の内装工事で押さえるべき設備', category: '業種別内装工事', description: 'ベーカリー・パン屋の内装工事で重要になる製造区画・オーブン電源・給排水など設備計画のポイントを解説します。', keywords: ['ベーカリー 内装工事', 'パン屋 内装工事', '製造区画'], image: '/cafe-03.png' },
+  { slug: 'dental-clinic-interior', title: '歯科医院の内装工事で確認すべき動線と設備', category: '業種別内装工事', description: '歯科医院の内装工事で、ユニット配管・X線室・待合の動線など確認しておくべき設備要件を解説します。', keywords: ['歯科医院 内装工事', 'クリニック 内装工事', '歯科 開業'], image: '/clinic-05.png' },
+  { slug: 'seikotsuin-interior-column', title: '整骨院・接骨院の内装工事のポイント', category: '業種別内装工事', description: '整骨院・接骨院の内装工事で、施術ベッドの配置・受付動線・機器用電源など押さえたい点を解説します。', keywords: ['整骨院 内装工事', '接骨院 内装', '整体 内装'], image: '/clinic-08.png' },
+  { slug: 'beauty-clinic-interior', title: '美容クリニックの内装工事で重視すべき点', category: '業種別内装工事', description: '美容クリニックの内装工事で、清潔感・プライバシー・機器設置を両立させる設計の考え方を解説します。', keywords: ['美容クリニック 内装工事', 'クリニック 内装工事', '医院 内装'], image: '/clinic-01.png' },
+  { slug: 'nail-eyelash-interior', title: 'ネイル・アイラッシュサロンの内装工事', category: '業種別内装工事', description: 'ネイル・アイラッシュサロンの内装工事で、施術席のレイアウト・照明・換気の計画ポイントを解説します。', keywords: ['ネイルサロン 内装工事', 'アイラッシュ 内装', 'サロン 内装工事'], image: '/salon-04.png' },
+  { slug: 'coin-laundry-interior', title: 'コインランドリーの内装工事で確認すべき設備', category: '業種別内装工事', description: '無人運営のコインランドリーの内装工事で、給排水・電気容量・防水・換気など設備計画の要点を解説します。', keywords: ['コインランドリー 内装工事', '無人店舗 内装', '店舗内装工事'], image: '/store-06.png' },
+  { slug: 'unmanned-store-interior', title: '無人店舗の内装工事とセキュリティ設計', category: '業種別内装工事', description: '無人・省人店舗の内装工事で、入退店管理・カメラ・什器レイアウトなどセキュリティを含めた設計を解説します。', keywords: ['無人店舗 内装工事', '省人化 店舗', '店舗内装工事'], image: '/store-01.png' },
+  { slug: 'mobile-shop-interior', title: '携帯ショップ・量販店の内装工事のポイント', category: '業種別内装工事', description: '携帯ショップや量販店の内装工事で、接客カウンター・待合・什器レイアウトを整えるポイントを解説します。', keywords: ['携帯ショップ 内装工事', '量販店 内装', '小売店 内装工事'], image: '/retail-02.png' },
+  { slug: 'karaoke-interior', title: 'カラオケ店の内装工事で重視すべき防音', category: '業種別内装工事', description: 'カラオケ店の内装工事で欠かせない防音・遮音の考え方と、個室設計の注意点を実務目線で解説します。', keywords: ['カラオケ 内装工事', '防音 工事', '店舗内装工事'], image: '/rest-09.png' },
+  { slug: 'childcare-interior', title: '保育・学童施設の内装工事で確認すべき安全性', category: '業種別内装工事', description: '保育園・学童施設の内装工事で、子どもの安全に関わる建材・角の処理・動線など確認すべき点を解説します。', keywords: ['保育園 内装工事', '学童 内装', '店舗内装工事'], image: '/store-04.png' },
+  { slug: 'bar-interior-fc', title: 'バー・ダイニングバーの内装工事のポイント', category: '業種別内装工事', description: 'バー・ダイニングバーの内装工事で、カウンター造作・照明・防音など世界観と機能を両立させる点を解説します。', keywords: ['バー 内装工事', 'ダイニングバー 内装', '飲食店 内装工事'], image: '/rest-08.png' },
+
+  { slug: 'depreciation-interior', title: '店舗内装工事と減価償却の基礎知識', category: '店舗工事のコスト削減', description: '店舗内装工事の費用がどのように資産計上・減価償却されるかの基礎を、店舗運営の視点から整理します。', keywords: ['内装工事 減価償却', '店舗工事 費用', '店舗工事 コスト削減'], image: '/fc-02.png' },
+  { slug: 'change-order', title: '追加・変更工事の進め方と費用管理', category: '店舗工事のコスト削減', description: '着工後に発生する追加・変更工事について、費用の膨張を防ぐための取り決めと管理の進め方を解説します。', keywords: ['追加工事', '変更工事', '店舗工事 コスト削減'], image: '/store-02.png' },
+  { slug: 'budgeting-interior', title: '多店舗の内装工事予算の立て方', category: '店舗工事のコスト削減', description: '多店舗展開で内装工事の予算を立てる際に、標準仕様と物件差をどう織り込むかの考え方を解説します。', keywords: ['内装工事 予算', '多店舗 内装工事', '店舗工事 コスト削減'], image: '/fc-03.png' },
+  { slug: 'warranty-aftercare', title: '内装工事の保証とアフターフォロー', category: '本部担当者向けノウハウ', description: '内装工事の引き渡し後の保証範囲やアフターフォローについて、契約前に確認しておくべき点を解説します。', keywords: ['内装工事 保証', 'アフターフォロー', '店舗工事 管理'], image: '/store-07.png' },
+  { slug: 'blueprint-reading', title: '店舗の図面（平面図）の読み方の基本', category: '本部担当者向けノウハウ', description: '店舗の平面図・什器レイアウト図の基本的な読み方を整理し、本部担当者が確認すべき点を解説します。', keywords: ['店舗 図面 読み方', '平面図', '店舗工事 管理'], image: '/store-03.png' },
+
+  { slug: 'deposit-restoration', title: '敷金・保証金と原状回復費用の関係', category: '原状回復・退店対応', description: '店舗退去時の敷金・保証金の精算と原状回復費用の関係を整理し、確認しておくべきポイントを解説します。', keywords: ['敷金 原状回復', '保証金 精算', '店舗 原状回復'], image: '/resto-06.png' },
+  { slug: 'large-store-restoration', title: '大型店舗の原状回復で注意すべきこと', category: '原状回復・退店対応', description: '大型店舗・大区画テナントの原状回復で、解体量・工期・搬出条件など規模特有の注意点を解説します。', keywords: ['大型店舗 原状回復', '店舗 原状回復', '退店 原状回復'], image: '/resto-05.png' },
+  { slug: 'office-restoration-move', title: 'オフィス移転時の原状回復の進め方', category: '原状回復・退店対応', description: 'オフィス移転に伴う原状回復で、旧オフィスの復旧と移転先工事を並行させる進め方を解説します。', keywords: ['オフィス 原状回復', '移転 原状回復', 'テナント 原状回復'], image: '/office-01.png' },
+
+  { slug: 'rollout-pace', title: '出店ペースに施工体制を合わせる方法', category: '多店舗展開の施工管理', description: '出店ペースが上がる局面で、施工体制と品質を両立させるための考え方と施工パートナーの活用を解説します。', keywords: ['出店ペース', '多店舗 施工管理', '複数店舗 工事'], image: '/store-07.png' },
+  { slug: 'opening-permits', title: '開業前の届出・許認可と内装工程の関係', category: '店舗開発・新規出店', description: '飲食・美容などの業態で必要になる届出・許認可と、内装工程の進め方の関係を整理して解説します。', keywords: ['開業 届出', '許認可 内装', '新規出店 内装'], image: '/store-03.png' },
+  { slug: 'brand-renewal-multistore', title: '多店舗の一斉ブランドリニューアルを進める方法', category: '店舗改装・リニューアル', description: '複数店舗の一斉ブランドリニューアルを、営業への影響を抑えながら計画的に進める方法を解説します。', keywords: ['ブランドリニューアル', '多店舗 改装', '店舗改装 工事'], image: '/beauty-02.png' },
+  { slug: 'fc-manual-construction', title: 'FC本部の内装マニュアル整備のポイント', category: 'FC本部向け店舗工事', description: 'FC本部が加盟店向けの内装マニュアル・仕様書を整備する際に、施工品質を統一するための要点を解説します。', keywords: ['FC 内装マニュアル', 'FC本部 内装工事', 'ブランド仕様 統一'], image: '/fc-04.png' },
 ]
