@@ -3,6 +3,7 @@ import ContactForm from './_components/ContactForm'
 import PageHero from '../_components/PageHero'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'お問い合わせ',
   description: '店舗内装工事・原状回復工事のご相談はこちら。複数店舗のまとめてのご相談も歓迎です。',
 }

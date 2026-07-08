@@ -3,6 +3,7 @@ import Link from 'next/link'
 import PageHero from '../_components/PageHero'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: '対応エリア',
   description: '東京都・埼玉県・千葉県・神奈川県・静岡県・大阪府・兵庫県に対応。関東・東海・近畿エリアの店舗内装工事・原状回復工事。',
 }

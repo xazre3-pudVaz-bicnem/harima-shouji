@@ -4,6 +4,7 @@ import Link from 'next/link'
 import PageHero from '@/app/v2/_components/PageHero'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: '店舗内装工事',
   description: '新規出店・改装・リノベーション。クロス・床・設備まで、店舗内装工事を一括対応します。FC本部・多店舗展開企業向け。',
 }

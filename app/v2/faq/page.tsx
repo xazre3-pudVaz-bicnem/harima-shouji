@@ -4,6 +4,7 @@ import PageHero from '../_components/PageHero'
 import FaqAccordion from './_components/FaqAccordion'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: 'よくある質問',
   description: '店舗内装工事・原状回復工事に関するよくある質問。対応エリア・費用・工期・退去立会いについてご確認いただけます。',
 }

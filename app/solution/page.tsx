@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   description: 'FC本部・多店舗展開企業の施工管理課題を解決するソリューションを紹介。担当者窓口の一本化・夜間施工・短工期対応・ブランド統一施工・費用適正化など。',
   keywords: ['FC 施工管理 課題解決', '多店舗展開 施工管理', '原状回復費用 適正化', '夜間施工 対応'],
   alternates: { canonical: 'https://harima-shouji.co.jp/solution' },
-  openGraph: { title: 'ソリューション | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/solution' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: 'ソリューション | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/solution' },
 }
 
 export default function SolutionIndexPage() {

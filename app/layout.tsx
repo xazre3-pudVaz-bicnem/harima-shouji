@@ -3,6 +3,7 @@ import { Noto_Sans_JP, Shippori_Mincho, Instrument_Serif, IBM_Plex_Mono } from '
 import './globals.css'
 import Header from '@/app/v2/_components/Header'
 import Footer from '@/app/v2/_components/Footer'
+import { organizationSchema, websiteSchema } from '@/lib/structured-data'
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
@@ -49,18 +50,13 @@ export const metadata: Metadata = {
     '原状回復工事 東京',
   ],
   metadataBase: new URL('https://harima-shouji.co.jp'),
+  // og:image / twitter:image は app/opengraph-image.jpg・app/twitter-image.jpg（ファイル規約）で
+  // 全ルートに継承させる。個別ページが openGraph.images を指定した場合はそちらが優先される。
   openGraph: {
+    images: ['/og-image.jpg'],
     type: 'website',
     locale: 'ja_JP',
     siteName: '株式会社播磨商事',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: '株式会社播磨商事 - フランチャイズ・多店舗向け内装工事',
-      },
-    ],
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
@@ -73,6 +69,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${notoSansJP.variable} ${shipporiMincho.variable} ${instrumentSerif.variable} ${plexMono.variable}`}
     >
       <body className="min-h-full flex flex-col" style={{ background: 'var(--paper)' }}>
+        {/* サイト共通の構造化データ（全ページ） */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

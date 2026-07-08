@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   description: '株式会社播磨商事の施工事例。飲食FC・美容室FC・小売FCなどの新規出店内装工事、退去時の原状回復工事の実績を紹介します。',
   keywords: ['施工事例', '内装工事 事例', '原状回復 事例', 'FC 施工事例', '多店舗 内装工事 事例'],
   alternates: { canonical: 'https://harima-shouji.co.jp/cases' },
-  openGraph: { title: '施工事例 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/cases' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: '施工事例 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/cases' },
 }
 
 export default function CasesPage() {

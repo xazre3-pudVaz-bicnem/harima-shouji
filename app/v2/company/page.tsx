@@ -4,6 +4,7 @@ import PageHero from '../_components/PageHero'
 import CtaSection from '../_components/CtaSection'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: '会社概要',
   description: '株式会社播磨商事の会社概要。フランチャイズ本部・多店舗展開企業向けの施工パートナー。東京都練馬区を拠点に関東・関西エリアで店舗内装・原状回復工事を手がけます。',
   keywords: ['播磨商事', '会社概要', '店舗内装工事', '原状回復工事', 'フランチャイズ施工'],

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import PageHero from '../../_components/PageHero'
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: '原状回復工事',
   description: '退去立会い・解体・内装復旧まで。複数店舗の退去スケジュールを一元管理します。FC本部・多店舗展開企業向け。',
 }

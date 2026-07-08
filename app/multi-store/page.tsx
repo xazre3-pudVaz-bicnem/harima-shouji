@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   description: '多店舗展開企業の出店・改装・退店施工を一括管理。複数店舗が同時進行しても担当者の窓口は1つ。関東・東海・近畿 7都府県対応。現地調査・見積無料。',
   keywords: ['多店舗展開 内装工事', '多店舗 施工管理', '多店舗 原状回復', '複数店舗 工事 一括'],
   alternates: { canonical: 'https://harima-shouji.co.jp/multi-store' },
-  openGraph: { title: '多店舗展開企業向け | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/multi-store' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: '多店舗展開企業向け | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/multi-store' },
 }
 
 export default function MultiStorePage() {

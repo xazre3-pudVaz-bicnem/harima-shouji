@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: '対応エリア | 関東・東海・近畿 7都府県対応',
   description: '東京都・埼玉県・千葉県・神奈川県・静岡県・大阪府・兵庫県に対応。FC本部・多店舗展開企業の店舗内装工事・原状回復工事を一括管理します。',
   alternates: { canonical: 'https://harima-shouji.co.jp/area' },
-  openGraph: { title: '対応エリア | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/area' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: '対応エリア | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/area' },
 }
 
 const areas = [

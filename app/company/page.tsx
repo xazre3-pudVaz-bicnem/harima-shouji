@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: 'https://harima-shouji.co.jp/company',
   },
   openGraph: {
+    images: ['/og-image.jpg'],
     title: '会社概要 | 株式会社播磨商事',
     description: '株式会社播磨商事の会社概要・代表紹介。店舗内装工事・原状回復工事をワンストップで提供します。',
     locale: 'ja_JP',

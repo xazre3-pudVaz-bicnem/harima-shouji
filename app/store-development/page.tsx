@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   description: '店舗開発・出店開発担当者の施工管理負担を解消。物件決定から開業・改装・退店まで、1つの施工パートナーで対応。複数エリア・複数案件の同時管理に対応します。',
   keywords: ['店舗開発 内装工事', '出店 施工管理', '店舗開発担当 工事', 'テナント工事 管理'],
   alternates: { canonical: 'https://harima-shouji.co.jp/store-development' },
-  openGraph: { title: '店舗開発担当者向け | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/store-development' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: '店舗開発担当者向け | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/store-development' },
 }
 
 export default function StoreDevelopmentPage() {

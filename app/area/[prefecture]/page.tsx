@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     keywords: [`${area.name} 内装工事`, `${area.name} 原状回復`, `${area.name} FC 内装工事`, `${area.name} 多店舗 内装`],
     alternates: { canonical: `https://harima-shouji.co.jp/area/${prefecture}` },
     openGraph: {
+    images: ['/og-image.jpg'],
       title: `${area.name}の店舗内装工事・原状回復 | 株式会社播磨商事`,
       url: `https://harima-shouji.co.jp/area/${prefecture}`,
     },

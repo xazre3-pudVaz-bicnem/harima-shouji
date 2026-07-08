@@ -4,7 +4,11 @@ import ContactForm from '@/app/v2/contact/_components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'お問い合わせ',
-  description: '店舗内装工事・原状回復工事のご相談はこちら。複数店舗のまとめてのご相談も歓迎です。',
+  description: '店舗内装工事・原状回復工事のご相談はこちら。FC本部・多店舗展開企業のまとめてのご相談も歓迎です。現地調査・お見積りは無料です。',
+  keywords: ['店舗内装工事 相談', '原状回復 見積もり', '店舗工事 問い合わせ'],
+  alternates: { canonical: 'https://harima-shouji.co.jp/contact' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: 'お問い合わせ | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/contact', type: 'website' },
 }
 
 export default function ContactPage() {

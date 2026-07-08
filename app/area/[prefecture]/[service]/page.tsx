@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       keywords: [keyword, `${area.name} フランチャイズ 施工`, `${area.name} 多店舗 工事`],
       alternates: { canonical: `https://harima-shouji.co.jp/area/${prefecture}/${service}` },
       openGraph: {
+    images: ['/og-image.jpg'],
         title: `${area.name}の${serviceLabel} | 株式会社播磨商事`,
         url: `https://harima-shouji.co.jp/area/${prefecture}/${service}`,
       },
@@ -54,6 +55,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       keywords: city.keywords,
       alternates: { canonical: `https://harima-shouji.co.jp/area/${prefecture}/${service}` },
       openGraph: {
+    images: ['/og-image.jpg'],
         title: city.metaTitle,
         description: city.metaDescription,
         url: `https://harima-shouji.co.jp/area/${prefecture}/${service}`,

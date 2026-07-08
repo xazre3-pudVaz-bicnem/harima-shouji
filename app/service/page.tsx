@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   title: 'サービス一覧 | 店舗内装工事・原状回復工事',
   description: 'FC本部・多店舗展開企業向けの2つのサービス。店舗内装工事（新規出店・改装）と原状回復工事（退去・解体・内装復旧）を一括対応します。現地調査・見積無料。',
   alternates: { canonical: 'https://harima-shouji.co.jp/service' },
-  openGraph: { title: 'サービス一覧 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/service' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: 'サービス一覧 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/service' },
 }
 
 const services = [

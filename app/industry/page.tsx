@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   description: '業種ごとの内装工事・原状回復工事の特徴と対応内容を紹介します。飲食店・美容室・クリニック・学習塾・小売店・ジムなど業種別の施工に対応。',
   keywords: ['業種別 内装工事', '飲食店 内装工事', '美容室 内装工事', 'クリニック 内装工事', '業種別 原状回復'],
   alternates: { canonical: 'https://harima-shouji.co.jp/industry' },
-  openGraph: { title: '業種別対応 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/industry' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: '業種別対応 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/industry' },
 }
 
 const serviceTypes = [

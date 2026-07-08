@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     description: item.excerpt,
     alternates: { canonical: `https://harima-shouji.co.jp/news/${slug}` },
     openGraph: {
+    images: ['/og-image.jpg'],
       title: `${item.title} | 株式会社播磨商事`,
       description: item.excerpt,
       url: `https://harima-shouji.co.jp/news/${slug}`,

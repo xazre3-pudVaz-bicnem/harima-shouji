@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   description: 'FC本部・多店舗展開企業の店舗内装工事を一括管理。新規出店・改装・夜間施工に対応。ブランド仕様の統一施工で全店品質を均一化。現地調査・見積無料。',
   keywords: ['店舗内装工事', 'フランチャイズ 内装工事', '多店舗 内装工事', 'FC本部 内装工事'],
   alternates: { canonical: 'https://harima-shouji.co.jp/service/shop-interior' },
-  openGraph: { title: '店舗内装工事 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/service/shop-interior' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: '店舗内装工事 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/service/shop-interior' },
 }
 
 const interiorFaq = [
@@ -34,21 +35,40 @@ const interiorFaq = [
 ]
 
 export default function ShopInteriorPage() {
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: '店舗内装工事',
-    provider: { '@type': 'LocalBusiness', name: '株式会社播磨商事' },
-    description: 'FC本部・多店舗展開企業向けの店舗内装工事。新規出店・改装・夜間施工対応。',
-    areaServed: '東京都・埼玉県・千葉県・神奈川県・静岡県・大阪府・兵庫県',
-  }
+  const structuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: '店舗内装工事',
+      serviceType: '店舗内装工事',
+      provider: { '@id': 'https://harima-shouji.co.jp/#organization' },
+      description: 'FC本部・多店舗展開企業向けの店舗内装工事。新規出店・改装・夜間施工対応。',
+      areaServed: ['東京都', '埼玉県', '千葉県', '神奈川県', '静岡県', '大阪府', '兵庫県'],
+      url: 'https://harima-shouji.co.jp/service/shop-interior',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: interiorFaq.flatMap((c) =>
+        c.items.map((it) => ({ '@type': 'Question', name: it.q, acceptedAnswer: { '@type': 'Answer', text: it.a } }))
+      ),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'TOP', item: 'https://harima-shouji.co.jp' },
+        { '@type': 'ListItem', position: 2, name: 'サービス', item: 'https://harima-shouji.co.jp/service' },
+        { '@type': 'ListItem', position: 3, name: '店舗内装工事', item: 'https://harima-shouji.co.jp/service/shop-interior' },
+      ],
+    },
+  ]
 
   return (
     <div style={{ background: '#F6F4EF' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      {structuredData.map((data, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      ))}
 
       <PageHero
         label="INTERIOR WORKS"

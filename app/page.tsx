@@ -12,7 +12,7 @@ import Flow from '@/app/v2/_components/sections/Flow'
 import Message from '@/app/v2/_components/sections/Message'
 import NewsPreview from '@/app/v2/_components/sections/NewsPreview'
 import Contact from '@/app/v2/_components/sections/Contact'
-import { organizationSchema, localBusinessSchema, faqSchema } from '@/lib/structured-data'
+import { localBusinessSchema, faqSchema } from '@/lib/structured-data'
 import { faqItems } from '@/data/faq'
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     'FC本部・多店舗展開企業向けの店舗内装工事・原状回復工事。施工管理の負担を軽減します。東京・関東圏を中心に7都府県対応。',
   alternates: { canonical: 'https://harima-shouji.co.jp' },
   openGraph: {
+    images: ['/og-image.jpg'],
     title: 'フランチャイズ本部・多店舗展開企業の施工パートナー | 株式会社播磨商事',
     description: 'FC本部・多店舗展開企業向けの店舗内装工事・原状回復工事。施工管理の負担を軽減します。',
     url: 'https://harima-shouji.co.jp',
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
+  // Organization / WebSite は layout.tsx が全ページで出力。ここでは LocalBusiness と FAQ を追加。
   const structuredData = [
-    organizationSchema,
     localBusinessSchema,
     faqSchema(faqItems.slice(0, 6)),
   ]

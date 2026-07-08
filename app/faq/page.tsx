@@ -5,7 +5,11 @@ import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
 
 export const metadata: Metadata = {
   title: 'よくある質問',
-  description: '店舗内装工事・原状回復工事に関するよくある質問。対応エリア・費用・工期・退去立会いについてご確認いただけます。',
+  description: '店舗内装工事・原状回復工事に関するよくある質問。対応エリア・費用・工期・退去立会いについてFC本部・多店舗展開企業の担当者向けにご案内します。',
+  keywords: ['店舗内装工事 よくある質問', '原状回復 費用', '夜間工事', '多店舗 施工管理'],
+  alternates: { canonical: 'https://harima-shouji.co.jp/faq' },
+  openGraph: {
+    images: ['/og-image.jpg'], title: 'よくある質問 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/faq', type: 'website' },
 }
 
 const faqs = [
@@ -42,9 +46,32 @@ const faqs = [
   },
 ]
 
+const faqPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.flatMap((c) =>
+    c.items.map((it) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a },
+    }))
+  ),
+}
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TOP', item: 'https://harima-shouji.co.jp' },
+    { '@type': 'ListItem', position: 2, name: 'よくある質問', item: 'https://harima-shouji.co.jp/faq' },
+  ],
+}
+
 export default function FaqPage() {
   return (
     <div style={{ background: '#F6F4EF' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <PageHero
         label="FAQ"

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   keywords: ['播磨商事 お知らせ', '播磨商事 ニュース', '店舗内装 施工情報'],
   alternates: { canonical: 'https://harima-shouji.co.jp/news' },
   openGraph: {
+    images: ['/og-image.jpg'],
     title: 'ニュース・お知らせ | 株式会社播磨商事',
     description: '株式会社播磨商事のニュース・お知らせ一覧です。',
     url: 'https://harima-shouji.co.jp/news',
