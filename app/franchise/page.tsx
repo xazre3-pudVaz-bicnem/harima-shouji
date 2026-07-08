@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
+import RelatedColumns from '@/app/v2/_components/RelatedColumns'
 
 export const metadata: Metadata = {
   title: 'FC本部・フランチャイズ店舗内装工事',
@@ -471,6 +472,8 @@ export default function FranchisePage() {
           </div>
         </div>
       </section>
+
+      <RelatedColumns categorySlugs={['fc-headquarters', 'franchise-interior', 'multi-store', 'know-how']} background="var(--surface)" />
 
       {/* 7. CTA */}
       <CtaSection

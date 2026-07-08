@@ -9,6 +9,7 @@ import { cities } from '@/data/cities'
 import { works } from '@/data/works'
 import { news } from '@/data/news'
 import { getBlogPosts } from '@/lib/blog'
+import { columnCategories } from '@/data/column-categories'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://harima-shouji.co.jp'
@@ -113,6 +114,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ]
 
+  // Column category routes
+  const columnCategoryRoutes: MetadataRoute.Sitemap = columnCategories.map((c) => ({
+    url: `${baseUrl}/column/category/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }))
+
   // Blog routes from WordPress
   let blogRoutes: MetadataRoute.Sitemap = []
   try {
@@ -138,6 +147,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...worksRoutes,
     ...newsRoutes,
     ...columnRoutes,
+    ...columnCategoryRoutes,
     ...blogRoutes,
   ]
 }

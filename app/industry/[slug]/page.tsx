@@ -5,6 +5,7 @@ import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
 import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
+import RelatedColumns from '@/app/v2/_components/RelatedColumns'
 import { industries, getIndustry } from '@/data/industries'
 import { getIndustryLp } from '@/data/industry-lp'
 
@@ -400,6 +401,11 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
           <FaqAccordion faqs={faqData} />
         </div>
       </section>
+
+      <RelatedColumns
+        categorySlugs={industry.serviceType === 'restoration' ? ['industry', 'restoration', 'store-development'] : ['industry', 'store-development', 'fc-headquarters']}
+        background="var(--paper)"
+      />
 
       <CtaSection
         heading={`${industry.industryJa}の${serviceLabel}を\nご検討中の方へ`}

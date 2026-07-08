@@ -4,6 +4,7 @@ import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
 import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
+import RelatedColumns from '@/app/v2/_components/RelatedColumns'
 
 export const metadata: Metadata = {
   title: '店舗内装工事 | FC本部・多店舗展開企業向け',
@@ -198,6 +199,8 @@ export default function ShopInteriorPage() {
           </div>
         </div>
       </section>
+
+      <RelatedColumns categorySlugs={['store-development', 'fc-headquarters', 'cost-reduction', 'industry']} background="var(--paper)" />
 
       <CtaSection heading={'店舗内装工事について\nご相談ください'} subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。現地調査・見積無料。" />
     </div>

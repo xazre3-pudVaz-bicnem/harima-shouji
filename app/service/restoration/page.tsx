@@ -4,6 +4,7 @@ import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
 import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
+import RelatedColumns from '@/app/v2/_components/RelatedColumns'
 
 export const metadata: Metadata = {
   title: '原状回復工事 | 店舗退去・テナント原状回復 東京・関東',
@@ -667,6 +668,8 @@ export default function RestorationPage() {
           </div>
         </div>
       </section>
+
+      <RelatedColumns categorySlugs={['restoration', 'cost-reduction', 'multi-store']} background="var(--paper)" />
 
       <CtaSection
         heading={'店舗・テナントの原状回復工事\nご相談ください'}

@@ -4,6 +4,8 @@ import path from 'path'
 // content/blog/ 配下のMarkdown記事（Claude APIによる自動生成コラム）を読み込むユーティリティ。
 // 外部依存なし：frontmatterパーサーと、生成記事の書式に限定したMarkdown→HTML変換を内蔵する。
 
+export type TocItem = { id: string; text: string }
+
 export type BlogPost = {
   slug: string
   title: string
@@ -14,6 +16,7 @@ export type BlogPost = {
   image: string
   topic?: string
   html: string
+  toc: TocItem[]
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
@@ -82,9 +85,11 @@ function inline(s: string): string {
   return out
 }
 
-export function markdownToHtml(md: string): string {
+export function markdownToHtml(md: string): { html: string; toc: TocItem[] } {
   const lines = md.split(/\r?\n/)
   const html: string[] = []
+  const toc: TocItem[] = []
+  let h2Index = 0
   let listType: 'ul' | 'ol' | null = null
   let paragraph: string[] = []
 
@@ -119,13 +124,13 @@ export function markdownToHtml(md: string): string {
     if (h3) {
       flushParagraph(); flushList()
       html.push(`<h3>${inline(h3[1])}</h3>`)
-    } else if (h2) {
-      flushParagraph(); flushList()
-      html.push(`<h2>${inline(h2[1])}</h2>`)
-    } else if (h1) {
+    } else if (h2 || h1) {
       // 本文中のh1はh2に降格（ページのh1はタイトルが担う）
       flushParagraph(); flushList()
-      html.push(`<h2>${inline(h1[1])}</h2>`)
+      const text = (h2 ? h2[1] : h1![1]).trim()
+      const id = `sec-${h2Index++}`
+      toc.push({ id, text })
+      html.push(`<h2 id="${id}">${inline(text)}</h2>`)
     } else if (ul) {
       flushParagraph()
       if (listType !== 'ul') { flushList(); html.push('<ul>'); listType = 'ul' }
@@ -142,7 +147,7 @@ export function markdownToHtml(md: string): string {
   flushParagraph()
   flushList()
 
-  return html.join('\n')
+  return { html: html.join('\n'), toc }
 }
 
 /* ———— 読み込みAPI ———— */
@@ -160,6 +165,7 @@ export function getBlogPosts(): BlogPost[] {
       const slug = data.slug || file.replace(/\.md$/, '')
       if (!data.title || !slug) continue
 
+      const { html, toc } = markdownToHtml(body)
       posts.push({
         slug,
         title: data.title,
@@ -169,7 +175,8 @@ export function getBlogPosts(): BlogPost[] {
         tags: parseTags(data.tags),
         image: data.image || CATEGORY_IMAGES[data.category || ''] || DEFAULT_IMAGE,
         topic: data.topic,
-        html: markdownToHtml(body),
+        html,
+        toc,
       })
     } catch {
       // 壊れたファイルはスキップ（ビルドを止めない）
