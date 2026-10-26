@@ -2,39 +2,36 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
+import { SITE_URL, serviceAreas, serviceAreaSummary, serviceAreaText } from '@/data/company'
 
 export const metadata: Metadata = {
-  title: '対応エリア | 関東・東海・近畿 7都府県対応',
-  description: '東京都・埼玉県・千葉県・神奈川県・静岡県・大阪府・兵庫県に対応。FC本部・多店舗展開企業の店舗内装工事・原状回復工事を一括管理します。',
-  alternates: { canonical: 'https://harima-shouji.co.jp/area' },
+  title: `対応エリア | ${serviceAreaSummary}`,
+  description: `${serviceAreaText}で施工に対応。サロン・ジム・ピラティススタジオなどの店舗内装工事、FC・多店舗展開の内装、原状回復工事を承ります。`,
+  alternates: { canonical: `${SITE_URL}/area` },
   openGraph: {
-    images: ['/og-image.jpg'], title: '対応エリア | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/area' },
+    images: ['/og-image.jpg'], title: '対応エリア | 株式会社播磨商事', url: `${SITE_URL}/area` },
 }
 
-const areas = [
-  {
-    region: '関東',
-    prefectures: [
-      { name: '東京都', reading: 'Tokyo', slug: 'tokyo', note: '都内全域対応。23区・多摩地区ともに対応可能です。' },
-      { name: '埼玉県', reading: 'Saitama', slug: 'saitama', note: 'さいたま市・川口市・川越市など主要エリアに対応。' },
-      { name: '千葉県', reading: 'Chiba', slug: 'chiba', note: '千葉市・船橋市・柏市など主要エリアに対応。' },
-      { name: '神奈川県', reading: 'Kanagawa', slug: 'kanagawa', note: '横浜市・川崎市・相模原市など主要エリアに対応。' },
-    ],
-  },
-  {
-    region: '東海',
-    prefectures: [
-      { name: '静岡県', reading: 'Shizuoka', slug: 'shizuoka', note: '静岡市・浜松市・沼津市など主要エリアに対応。' },
-    ],
-  },
-  {
-    region: '近畿',
-    prefectures: [
-      { name: '大阪府', reading: 'Osaka', slug: 'osaka', note: '大阪市内・堺市・東大阪市など主要エリアに対応。' },
-      { name: '兵庫県', reading: 'Hyogo', slug: 'hyogo', note: '神戸市・姫路市・西宮市など主要エリアに対応。' },
-    ],
-  },
-]
+// 各都府県の補足（対応エリアそのものは data/company.ts で管理）
+const prefectureNotes: Record<string, string> = {
+  tokyo: '都内全域対応。23区・多摩地区ともに対応可能です。',
+  kanagawa: '横浜市・川崎市・相模原市など主要エリアに対応。',
+  chiba: '千葉市・船橋市・柏市など主要エリアに対応。',
+  saitama: 'さいたま市・川口市・川越市など主要エリアに対応。',
+  osaka: '大阪市内・堺市・東大阪市など主要エリアに対応。',
+  hyogo: '神戸市・姫路市・西宮市など主要エリアに対応。',
+  kyoto: '京都市をはじめ府内の主要エリアに対応。',
+  aichi: '名古屋市をはじめ県内の主要エリアに対応。',
+  gifu: '岐阜市をはじめ県内の主要エリアに対応。',
+  shizuoka: '静岡市・浜松市・沼津市など主要エリアに対応。',
+}
+
+const areas = [...new Set(serviceAreas.map((a) => a.region))].map((region) => ({
+  region,
+  prefectures: serviceAreas
+    .filter((a) => a.region === region)
+    .map((a) => ({ name: a.name, reading: a.en.charAt(0) + a.en.slice(1).toLowerCase(), slug: a.slug, note: prefectureNotes[a.slug] ?? '' })),
+}))
 
 export default function AreaPage() {
   return (
@@ -43,7 +40,7 @@ export default function AreaPage() {
       <PageHero
         label="AREA"
         title="対応エリア"
-        subtitle="関東エリアを中心に、東海・近畿にも対応。複数エリアにまたがる案件もご相談ください。"
+        subtitle={`${serviceAreaSummary}で施工に対応しています。複数エリアにまたがる案件もご相談ください。`}
         image="/beauty-09.png"
         breadcrumb={[
           { label: 'TOP', href: '/' },

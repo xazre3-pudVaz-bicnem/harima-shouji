@@ -1,17 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { works } from '@/data/works'
-import type { WorkCategory } from '@/data/works'
-
-const categoryLabels: Record<WorkCategory, string> = {
-  'shop-interior': '店舗内装工事',
-  restoration: '原状回復工事',
-  salon: 'サロン内装',
-  gym: 'ジム内装',
-}
+import { visibleWorks, workCategoryLabels as categoryLabels } from '@/data/works'
 
 export default function WorksPreview() {
-  const featured = works.slice(0, 3)
+  // 実際の施工事例を優先して3件（足りない分は施工イメージ）
+  const featured = visibleWorks.slice(0, 3)
+  const hasIllustration = featured.some((w) => w.isIllustration)
 
   return (
     <section style={{ background: 'var(--surface)', paddingTop: '9rem', paddingBottom: '9rem' }}>
@@ -42,7 +36,7 @@ export default function WorksPreview() {
               <div className="img-zoom" style={{ position: 'relative', aspectRatio: '4/3', background: '#DDD8CE', marginBottom: '1.375rem' }}>
                 <Image
                   src={work.imageUrl}
-                  alt={`${categoryLabels[work.category]}の施工イメージ`}
+                  alt={work.isIllustration ? `${categoryLabels[work.category]}の施工イメージ` : work.title}
                   fill
                   loading="lazy"
                   style={{ objectFit: 'cover' }}
@@ -64,6 +58,7 @@ export default function WorksPreview() {
                   }}
                 >
                   {String(i + 1).padStart(2, '0')} — {categoryLabels[work.category]}
+                  {work.isIllustration && '（施工イメージ）'}
                 </span>
               </div>
               <div className="mono" style={{ fontSize: '0.5625rem', letterSpacing: '0.16em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '0.625rem' }}>
@@ -76,9 +71,11 @@ export default function WorksPreview() {
           ))}
         </div>
 
-        <p className="mono" style={{ marginTop: '2.75rem', fontSize: '0.5625rem', letterSpacing: '0.14em', color: '#8F8B82' }}>
-          ※ 掲載写真は施工イメージです。実際の施工実績は準備が整い次第、順次公開いたします。
-        </p>
+        {hasIllustration && (
+          <p className="mono" style={{ marginTop: '2.75rem', fontSize: '0.5625rem', letterSpacing: '0.14em', color: '#8F8B82' }}>
+            ※「施工イメージ」は実際の施工実績ではなく、対応できる工事の参考例です。実際の施工事例は準備が整い次第、順次公開いたします。
+          </p>
+        )}
       </div>
     </section>
   )

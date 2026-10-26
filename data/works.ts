@@ -1,22 +1,67 @@
-export type WorkCategory = 'shop-interior' | 'restoration' | 'salon' | 'gym'
+import { showDrafts } from '@/lib/content-status'
+
+export type WorkCategory = 'shop-interior' | 'restoration' | 'salon' | 'gym' | 'pilates'
+
+export const workCategoryLabels: Record<WorkCategory, string> = {
+  'shop-interior': '店舗内装工事',
+  restoration: '原状回復工事',
+  salon: 'サロン内装',
+  gym: 'ジム内装',
+  pilates: 'ピラティススタジオ内装',
+}
+
+export type WorkPhoto = {
+  /** public/ 以下のパス（例: '/works/esthetic-shibuya/before-01.jpg'） */
+  src: string
+  alt: string
+}
 
 export type WorkData = {
   slug: string
   title: string
   category: WorkCategory
+  /** 業種（例: 'エステサロン'） */
+  industry?: string
+  /** 施工エリア（市区町村まで。例: '東京都渋谷区'） */
   area: string
+  /** 坪数 */
+  tsubo?: number
+  /** 施工費用の帯（例: { range: '300万〜400万円', tax: '税込' }） */
+  cost?: { range: string; tax: '税込' | '税別' }
+  /** 工期（例: '14日間'） */
   duration: string
+  /** 竣工年月（YYYY-MM） */
+  completedAt?: string
+  /** 工事範囲 */
+  scope: string[]
+  /** 施工前後の写真（同じ場所・同じ向きで撮ったペア） */
+  beforeAfter?: { before: WorkPhoto; after: WorkPhoto; caption?: string }[]
+  /** 工事のポイント */
+  points?: { title: string; body: string }[]
+  /** 一覧・OGPに使う代表写真 */
   imageUrl: string
   summary: string
-  challenge: string
-  approach: string
-  scope: string[]
+  challenge?: string
+  approach?: string
   relatedLinks: { label: string; href: string }[]
+  /**
+   * 施工イメージ（実際の施工実績ではない参考例）。
+   * 一覧では「施工イメージ」と明記し、詳細ページは検索エンジンに登録しない（noindex・サイトマップ対象外）。
+   */
+  isIllustration?: boolean
+  /**
+   * 実際の施工事例は、施主様の掲載許可と内容の確認が済んだら 'published' にする。
+   * 'published' の施工事例は 業種・坪数・費用の帯・工期 が必須（未入力ならビルドが止まる）。
+   */
+  status?: 'draft' | 'published'
 }
 
+// 実際の施工事例はこの配列の先頭に追加する（項目の意味は上の WorkData の説明を参照）。
+// 下の10件は、実績の写真が揃うまでの「施工イメージ」（AI生成画像・想定事例）。
 export const works: WorkData[] = [
   {
     slug: 'restaurant-fc-tokyo',
+    isIllustration: true,
     title: 'FC飲食店 新規出店内装工事',
     category: 'shop-interior',
     area: '東京都新宿区',
@@ -43,6 +88,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'beauty-salon-kanagawa',
+    isIllustration: true,
     title: 'FCサロン 新規出店内装工事',
     category: 'salon',
     area: '神奈川県横浜市',
@@ -69,6 +115,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'gym-interior-saitama',
+    isIllustration: true,
     title: 'パーソナルジム 内装工事',
     category: 'gym',
     area: '埼玉県さいたま市',
@@ -95,6 +142,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'restaurant-restoration-tokyo',
+    isIllustration: true,
     title: '飲食店 テナント退去 原状回復',
     category: 'restoration',
     area: '東京都渋谷区',
@@ -121,6 +169,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'retail-fc-osaka',
+    isIllustration: true,
     title: 'FC小売店 新規出店内装工事',
     category: 'shop-interior',
     area: '大阪府大阪市',
@@ -147,6 +196,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'office-restoration-chiba',
+    isIllustration: true,
     title: 'オフィス 原状回復工事',
     category: 'restoration',
     area: '千葉県千葉市',
@@ -173,6 +223,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'cafe-interior-shibuya',
+    isIllustration: true,
     title: 'カフェ 新規出店内装工事',
     category: 'shop-interior',
     area: '東京都渋谷区',
@@ -198,6 +249,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'yakiniku-interior-osaka',
+    isIllustration: true,
     title: '焼肉店 新規出店内装工事',
     category: 'shop-interior',
     area: '大阪府大阪市',
@@ -223,6 +275,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'hair-salon-renewal-tokyo',
+    isIllustration: true,
     title: 'ヘアサロン 全面改装リニューアル',
     category: 'salon',
     area: '東京都港区',
@@ -248,6 +301,7 @@ export const works: WorkData[] = [
   },
   {
     slug: 'clinic-interior-yokohama',
+    isIllustration: true,
     title: 'クリニック 新規開院内装工事',
     category: 'shop-interior',
     area: '神奈川県横浜市',
@@ -274,10 +328,36 @@ export const works: WorkData[] = [
   },
 ]
 
+export const isRealWork = (w: WorkData) => !w.isIllustration
+
+// 公開済みの実際の施工事例に、必須項目の抜けがないかをビルド時に確認する
+for (const w of works) {
+  if (w.isIllustration || w.status !== 'published') continue
+  const missing = [
+    !w.industry && '業種',
+    w.tsubo === undefined && '坪数',
+    !w.cost && '費用の帯',
+    !w.duration && '工期',
+  ].filter(Boolean)
+  if (missing.length > 0) throw new Error(`[works] ${w.slug}: ${missing.join('・')}を入力してください`)
+}
+
+const sortKey = (w: WorkData) => (w.isIllustration ? '0' : `1${w.completedAt ?? ''}`)
+
+/** 表示する施工事例（実際の施工事例を新しい順に先頭へ、施工イメージは後ろ） */
+export const visibleWorks: WorkData[] = works
+  .filter((w) => w.isIllustration || w.status === 'published' || showDrafts)
+  .sort((a, b) => sortKey(b).localeCompare(sortKey(a)))
+
+export const realWorks = visibleWorks.filter(isRealWork)
+
+/** 検索エンジンに登録する施工事例（サイトマップ対象） */
+export const indexableWorks = works.filter((w) => !w.isIllustration && w.status === 'published')
+
 export function getWork(slug: string): WorkData | undefined {
-  return works.find((w) => w.slug === slug)
+  return visibleWorks.find((w) => w.slug === slug)
 }
 
 export function getWorksByCategory(category: WorkCategory): WorkData[] {
-  return works.filter((w) => w.category === category)
+  return visibleWorks.filter((w) => w.category === category)
 }

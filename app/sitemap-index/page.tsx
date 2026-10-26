@@ -8,6 +8,7 @@ import { industries } from '@/data/industries'
 import { solutions } from '@/data/solutions'
 import { columnCategories } from '@/data/column-categories'
 import { getAllColumns } from '@/lib/columns'
+import { detailQa, pricePageVisible, startPageVisible, visibleQaCategories } from '@/data/qa'
 
 export const metadata: Metadata = {
   title: 'サイトマップ | 全ページ一覧',
@@ -32,6 +33,18 @@ function LinkList({ items }: { items: { href: string; label: string }[] }) {
   )
 }
 
+function Section({ label, title, items }: { label: string; title: string; items: { href: string; label: string }[] }) {
+  return (
+    <div style={{ marginBottom: '4rem' }}>
+      <div style={eyebrow}>{label}</div>
+      <h2 style={h2Style}>{title}</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: '0 2rem' }}>
+        <LinkList items={items} />
+      </div>
+    </div>
+  )
+}
+
 export default function SitemapIndexPage() {
   const main = [
     { href: '/', label: 'トップ' },
@@ -50,7 +63,14 @@ export default function SitemapIndexPage() {
     { href: '/column', label: 'コラム' },
     { href: '/news', label: 'ニュース' },
     { href: '/faq', label: 'よくある質問' },
+    ...(startPageVisible ? [{ href: '/start', label: '初めて店舗を出店する方へ' }] : []),
+    ...(pricePageVisible ? [{ href: '/price', label: '店舗内装の費用の目安' }] : []),
     { href: '/contact', label: 'お問い合わせ' },
+  ]
+
+  const faqLinks = [
+    ...visibleQaCategories.map((c) => ({ href: `/faq/${c.slug}`, label: c.title })),
+    ...detailQa.map((q) => ({ href: `/faq/${q.category}/${q.slug}`, label: q.question })),
   ]
 
   const areaLinks = areas.flatMap((a) => [
@@ -73,15 +93,6 @@ export default function SitemapIndexPage() {
     ],
   }
 
-  const Section = ({ label, title, items }: { label: string; title: string; items: { href: string; label: string }[] }) => (
-    <div style={{ marginBottom: '4rem' }}>
-      <div style={eyebrow}>{label}</div>
-      <h2 style={h2Style}>{title}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: '0 2rem' }}>
-        <LinkList items={items} />
-      </div>
-    </div>
-  )
 
   return (
     <div style={{ background: 'var(--paper)' }}>
@@ -101,6 +112,7 @@ export default function SitemapIndexPage() {
       <section style={{ background: '#FFFFFF', paddingTop: '6rem', paddingBottom: '6rem' }}>
         <div style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 1.5rem' }}>
           <Section label="MAIN" title="主要ページ" items={main} />
+          {faqLinks.length > 0 && <Section label="FAQ" title="よくある質問（分野別）" items={faqLinks} />}
           <Section label="INDUSTRY" title="業種別対応" items={industryLinks} />
           <Section label="AREA" title="対応エリア" items={areaLinks} />
           <Section label="CITY" title="市区町村別" items={cityLinks} />

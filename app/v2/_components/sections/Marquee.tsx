@@ -1,11 +1,15 @@
+import { serviceAreas } from '@/data/company'
+
 const items = [
   'SHOP INTERIOR',
   '店舗内装工事',
   'RESTORATION',
   '原状回復工事',
+  'SALON / GYM / PILATES',
+  'サロン・ジム・ピラティスの内装',
   'FC CONSTRUCTION MANAGEMENT',
   '夜間・短工期施工',
-  '7 PREFECTURES',
+  `${serviceAreas.length} PREFECTURES`,
   '多店舗一括管理',
 ]
 

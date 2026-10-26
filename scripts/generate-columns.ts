@@ -13,16 +13,18 @@
 import fs from 'fs'
 import path from 'path'
 import { columnTopics, STANDARD_OUTLINE, type ColumnTopic } from '../data/column-topics'
+import { serviceAreaShortText } from '../data/company'
 
 const DEFAULT_MODEL = 'claude-haiku-4-5-20251001'
 const MODEL = process.env.ANTHROPIC_MODEL?.trim() || DEFAULT_MODEL
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog')
 
-const AREA_KEYWORD = '東京・埼玉・千葉・神奈川・静岡・大阪・兵庫'
+// 対応エリアはサイトの表記（data/company.ts）と同じものを使う
+const AREA_KEYWORD = serviceAreaShortText
 
 function buildPrompt(topic: ColumnTopic): { system: string; user: string } {
   const outline = topic.outline ?? STANDARD_OUTLINE
-  const system = `あなたは、フランチャイズ本部・多店舗展開企業向けの店舗内装工事・原状回復工事に詳しい専門ライターです。株式会社播磨商事（対応エリア: ${AREA_KEYWORD}、事業: 店舗内装工事・原状回復工事、FC本部・多店舗の施工管理を一括対応、現地調査・見積無料）のサイトに掲載するSEOコラムを書きます。
+  const system = `あなたは、フランチャイズ本部・多店舗展開企業向けの店舗内装工事・原状回復工事に詳しい専門ライターです。株式会社播磨商事（対応エリア: ${AREA_KEYWORD}、事業: サロン・ジム・ピラティススタジオなどの店舗内装工事、FC本部・多店舗の内装工事、原状回復工事、現地調査・見積無料）のサイトに掲載するSEOコラムを書きます。
 
 厳守ルール:
 - 日本語。本文1,500〜2,500文字

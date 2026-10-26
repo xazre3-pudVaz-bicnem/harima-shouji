@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { companyInfo, fullAddress, serviceAreaEnText } from '@/data/company'
+import { pricePageVisible, startPageVisible } from '@/data/qa'
+
+const guideLinks = [
+  ...(startPageVisible ? [{ href: '/start', label: '初めて出店する方へ' }] : []),
+  ...(pricePageVisible ? [{ href: '/price', label: '費用の目安' }] : []),
+  { href: '/faq', label: 'よくある質問' },
+]
 
 const linkGroups = [
   {
@@ -16,6 +24,7 @@ const linkGroups = [
     label: 'ARCHIVE',
     links: [
       { href: '/works', label: '施工実績' },
+      ...guideLinks,
       { href: '/voice', label: 'お客様の声' },
       { href: '/news', label: 'ニュース' },
       { href: '/column', label: 'コラム' },
@@ -79,25 +88,25 @@ export default function Footer() {
                   HARIMA SHOUJI CO., LTD.
                 </div>
                 <div style={{ fontSize: '1.0625rem', fontWeight: 700, color: '#FFFFFF', letterSpacing: '-0.015em' }}>
-                  株式会社播磨商事
+                  {companyInfo.name}
                 </div>
               </div>
             </div>
             <address style={{ fontStyle: 'normal', fontSize: '0.8125rem', lineHeight: 2.1, color: 'rgba(255,255,255,0.38)' }}>
-              <div>〒177-0053 東京都練馬区関町南2丁目2-4 山一ビル</div>
+              <div>〒{companyInfo.address.postalCode} {fullAddress}</div>
               <div className="mono" style={{ letterSpacing: '0.04em' }}>
-                <a href="tel:080-4724-0713" style={{ color: 'rgba(255,255,255,0.38)', textDecoration: 'none' }}>
-                  080-4724-0713
+                <a href={`tel:${companyInfo.tel}`} style={{ color: 'rgba(255,255,255,0.38)', textDecoration: 'none' }}>
+                  {companyInfo.tel}
                 </a>
               </div>
               <div className="mono" style={{ letterSpacing: '0.02em' }}>
-                <a href="mailto:naisou@harima-shouji.co.jp" style={{ color: 'rgba(255,255,255,0.38)', textDecoration: 'none' }}>
-                  naisou@harima-shouji.co.jp
+                <a href={`mailto:${companyInfo.email}`} style={{ color: 'rgba(255,255,255,0.38)', textDecoration: 'none' }}>
+                  {companyInfo.email}
                 </a>
               </div>
             </address>
             <div className="mono" style={{ marginTop: '1.75rem', fontSize: '0.5625rem', letterSpacing: '0.24em', color: 'rgba(255,255,255,0.18)', textTransform: 'uppercase' }}>
-              TOKYO / SAITAMA / CHIBA / KANAGAWA<br />SHIZUOKA / OSAKA / HYOGO
+              {serviceAreaEnText}
             </div>
           </div>
 

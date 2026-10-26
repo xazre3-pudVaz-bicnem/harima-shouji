@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
+import { serviceAreaSummary } from '@/data/company'
 
 export const metadata: Metadata = {
   title: '店舗開発担当者向け | 出店から退店まで施工管理を一括サポート',
@@ -125,7 +126,7 @@ export default function StoreDevelopmentPage() {
               { label: '店舗内装工事', href: '/service/shop-interior', note: '新規出店・改装' },
               { label: '原状回復工事', href: '/service/restoration', note: '退去・解体・復旧' },
               { label: 'FC本部向けサービス', href: '/franchise', note: 'フランチャイズ施工管理' },
-              { label: '対応エリア', href: '/area', note: '関東・東海・近畿' },
+              { label: '対応エリア', href: '/area', note: serviceAreaSummary },
             ].map((item) => (
               <Link key={item.href} href={item.href} style={{ display: 'block', padding: '2rem', background: '#FFFFFF', textDecoration: 'none' }}>
                 <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{item.note}</div>

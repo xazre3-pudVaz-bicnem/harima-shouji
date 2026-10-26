@@ -2,100 +2,64 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
+import JsonLd from '@/components/ui/JsonLd'
+import { SITE_URL, companyInfo, fullAddress, serviceAreaShortText, serviceAreaText } from '@/data/company'
+import { aboutPageSchema, breadcrumbSchema } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: '会社概要',
-  description: '株式会社播磨商事の会社概要・代表紹介。フランチャイズ本部・多店舗展開企業向けに店舗内装工事・原状回復工事をワンストップで提供します。東京都練馬区を拠点に首都圏・関西圏対応。',
+  description: `株式会社播磨商事の会社概要・代表紹介。東京都練馬区を拠点に、サロン・ジム・ピラティススタジオなどの店舗内装工事、FC・多店舗展開の内装、原状回復工事を${serviceAreaShortText}で承ります。`,
   alternates: {
-    canonical: 'https://harima-shouji.co.jp/company',
+    canonical: `${SITE_URL}/company`,
   },
   openGraph: {
     images: ['/og-image.jpg'],
     title: '会社概要 | 株式会社播磨商事',
-    description: '株式会社播磨商事の会社概要・代表紹介。店舗内装工事・原状回復工事をワンストップで提供します。',
+    description: '株式会社播磨商事の会社概要・代表紹介。サロン・ジム・ピラティススタジオなどの店舗内装工事を専門とする内装会社です。',
     locale: 'ja_JP',
     type: 'website',
   },
 }
 
 const ceoProfile = [
-  { label: '氏名', value: '播磨 龍樹（はりま りゅうき）' },
-  { label: '役職', value: '代表取締役' },
-  { label: '拠点', value: '東京都練馬区' },
+  { label: '氏名', value: `${companyInfo.representative.name}（${companyInfo.representative.reading}）` },
+  { label: '役職', value: companyInfo.representative.title },
+  { label: '拠点', value: `${companyInfo.address.prefecture}${companyInfo.address.city}` },
   { label: '担当領域', value: '店舗内装工事・原状回復工事の施工管理全般' },
-  { label: '対応エリア', value: '関東（東京・埼玉・千葉・神奈川）／静岡・大阪・兵庫' },
+  { label: '対応エリア', value: serviceAreaShortText },
 ]
 
+// 会社情報の表（data/company.ts から生成。空欄の項目は表示しない）
 const companyData = [
-  { label: '商号', value: '株式会社播磨商事' },
-  { label: '代表取締役', value: '播磨 龍樹' },
-  { label: '所在地', value: '〒177-0053\n東京都練馬区関町南2丁目2-4 山一ビル' },
-  { label: '電話番号', value: '080-4724-0713' },
-  { label: 'メール', value: 'naisou@harima-shouji.co.jp' },
-  { label: '営業時間', value: '平日 9:00〜18:00\n（夜間・土日は要相談）' },
-  { label: '事業内容', value: '店舗内装工事\n原状回復工事' },
-  { label: '対応エリア', value: '東京都・埼玉県・千葉県・神奈川県\n静岡県・大阪府・兵庫県' },
-]
+  { label: '商号', value: companyInfo.name },
+  { label: '代表取締役', value: companyInfo.representative.name },
+  { label: '所在地', value: `〒${companyInfo.address.postalCode}\n${fullAddress}` },
+  { label: '電話番号', value: companyInfo.tel },
+  { label: 'メール', value: companyInfo.email },
+  { label: '営業時間', value: `${companyInfo.businessHours}\n（${companyInfo.businessNote}）` },
+  { label: '設立', value: companyInfo.foundingDate },
+  { label: '資本金', value: companyInfo.capital },
+  { label: '従業員数', value: companyInfo.employees },
+  { label: '事業内容', value: 'サロン・ジム・ピラティススタジオなどの店舗内装工事\nFC・多店舗展開の内装工事\n原状回復工事' },
+  { label: '対応エリア', value: serviceAreaText },
+  { label: '建設業許可', value: companyInfo.license },
+  { label: '法人番号', value: companyInfo.corporateNumber },
+  { label: '適格請求書発行事業者登録番号', value: companyInfo.invoiceNumber },
+].filter((row) => row.value)
 
-const breadcrumbJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'TOP',
-      item: 'https://harima-shouji.co.jp/',
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: '会社概要',
-      item: 'https://harima-shouji.co.jp/company',
-    },
-  ],
-}
-
-const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: '株式会社播磨商事',
-  url: 'https://harima-shouji.co.jp',
-  logo: 'https://harima-shouji.co.jp/logo.png',
-  description: '店舗内装工事・原状回復工事をワンストップで提供。フランチャイズ本部・多店舗展開企業を専門にサポートする施工会社。',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '関町南2丁目2-4 山一ビル',
-    addressLocality: '練馬区',
-    addressRegion: '東京都',
-    postalCode: '177-0053',
-    addressCountry: 'JP',
-  },
-  telephone: '080-4724-0713',
-  email: 'naisou@harima-shouji.co.jp',
-  founder: {
-    '@type': 'Person',
-    name: '播磨 龍樹',
-  },
-  areaServed: ['東京都', '埼玉県', '千葉県', '神奈川県', '静岡県', '大阪府', '兵庫県'],
-}
+const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(fullAddress)}&z=16&output=embed`
 
 export default function CompanyPage() {
   return (
     <div style={{ background: 'var(--paper)' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
+      <JsonLd data={breadcrumbSchema([{ name: 'TOP', url: '/' }, { name: '会社概要', url: '/company' }])} />
+      {/* 会社の実体（GeneralContractor）は layout.tsx で出力済み。ここでは会社概要ページであることだけを示す */}
+      <JsonLd data={aboutPageSchema('/company')} />
 
       <PageHero
         label="COMPANY"
         title="会社概要"
-        subtitle="フランチャイズ本部・多店舗展開企業の施工パートナーとして、店舗内装工事から原状回復工事までを一括で担います。"
+        subtitle="サロン・ジム・ピラティススタジオなどの店舗内装を専門に、FC・多店舗展開の内装工事から原状回復工事までを一括で担います。"
         image="/fc-02.png"
         breadcrumb={[
           { label: 'TOP', href: '/' },
@@ -197,17 +161,23 @@ export default function CompanyPage() {
             アクセス
           </h2>
           <p style={{ fontSize: '0.9375rem', color: '#1C1C1C', lineHeight: 2.1, marginBottom: '0.875rem' }}>
-            〒177-0053<br />
-            東京都練馬区関町南2丁目2-4 山一ビル
+            〒{companyInfo.address.postalCode}<br />
+            {fullAddress}
           </p>
-          <a href="tel:080-4724-0713" className="mono" style={{ fontSize: '1.0625rem', color: '#0A0A0A', textDecoration: 'none', display: 'inline-block', marginBottom: '0.375rem', letterSpacing: '0.04em' }}>
-            080-4724-0713
+          <a href={`tel:${companyInfo.tel}`} className="mono" style={{ fontSize: '1.0625rem', color: '#0A0A0A', textDecoration: 'none', display: 'inline-block', marginBottom: '0.375rem', letterSpacing: '0.04em' }}>
+            {companyInfo.tel}
           </a>
           <p className="mono" style={{ fontSize: '0.625rem', color: '#8F8B82', marginBottom: '2.5rem', letterSpacing: '0.16em', textTransform: 'uppercase' }}>
             OPEN — WEEKDAYS 9:00–18:00
           </p>
-          <div style={{ background: 'var(--surface)', aspectRatio: '16/7', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--line)' }}>
-            <p className="mono" style={{ fontSize: '0.625rem', color: '#8F8B82', letterSpacing: '0.2em' }}>MAP</p>
+          <div style={{ background: 'var(--surface)', aspectRatio: '16/7', minHeight: '280px', width: '100%', border: '1px solid var(--line)' }}>
+            <iframe
+              src={mapSrc}
+              title={`${companyInfo.name}の所在地（Googleマップ）`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ border: 0, width: '100%', height: '100%', display: 'block' }}
+            />
           </div>
         </div>
       </section>

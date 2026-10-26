@@ -8,6 +8,8 @@ import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
 import RelatedColumns from '@/app/v2/_components/RelatedColumns'
 import { industries, getIndustry } from '@/data/industries'
 import { getIndustryLp } from '@/data/industry-lp'
+import { areaServedSchema, organizationRef } from '@/lib/structured-data'
+import { serviceAreaSummary } from '@/data/company'
 
 type Params = { slug: string }
 
@@ -76,13 +78,8 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
     '@type': 'Service',
     name: `${industry.industryJa}の${serviceLabel}`,
     description: industry.metaDescription,
-    provider: {
-      '@type': 'Organization',
-      name: '株式会社播磨商事',
-      url: 'https://harima-shouji.co.jp',
-      telephone: '080-4724-0713',
-    },
-    areaServed: ['東京都', '埼玉県', '千葉県', '神奈川県', '静岡県', '大阪府', '兵庫県'],
+    provider: organizationRef,
+    areaServed: areaServedSchema,
     url: `https://harima-shouji.co.jp/industry/${slug}`,
   }
 
@@ -139,7 +136,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
               <div style={{ display: 'flex', gap: '2.5rem', marginTop: '2.5rem', paddingTop: '2rem', borderTop: '1px solid var(--line)' }}>
                 <div>
                   <div className="mono" style={{ fontSize: '0.5625rem', letterSpacing: '0.22em', color: '#C25E7F', textTransform: 'uppercase', marginBottom: '0.5rem' }}>AREA</div>
-                  <div style={{ fontSize: '0.8125rem', color: '#57544D', lineHeight: 1.8 }}>関東・東海・近畿<br />7都府県対応</div>
+                  <div style={{ fontSize: '0.8125rem', color: '#57544D', lineHeight: 1.8 }}>{serviceAreaSummary}</div>
                 </div>
                 <div>
                   <div className="mono" style={{ fontSize: '0.5625rem', letterSpacing: '0.22em', color: '#C25E7F', textTransform: 'uppercase', marginBottom: '0.5rem' }}>SURVEY</div>

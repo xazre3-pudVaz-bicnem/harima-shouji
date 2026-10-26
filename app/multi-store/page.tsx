@@ -3,10 +3,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
+import { serviceAreas, serviceAreaShortText, serviceAreaSummary } from '@/data/company'
 
 export const metadata: Metadata = {
   title: '多店舗展開企業向け | 複数店舗の施工管理を一括対応',
-  description: '多店舗展開企業の出店・改装・退店施工を一括管理。複数店舗が同時進行しても担当者の窓口は1つ。関東・東海・近畿 7都府県対応。現地調査・見積無料。',
+  description: `多店舗展開企業の出店・改装・退店施工を一括管理。複数店舗が同時進行しても担当者の窓口は1つ。${serviceAreaShortText}で施工に対応。現地調査・見積無料。`,
   keywords: ['多店舗展開 内装工事', '多店舗 施工管理', '多店舗 原状回復', '複数店舗 工事 一括'],
   alternates: { canonical: 'https://harima-shouji.co.jp/multi-store' },
   openGraph: {
@@ -36,7 +37,7 @@ export default function MultiStorePage() {
               店舗が増えるほど、<br />施工管理の一本化が重要になる
             </h2>
             <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2 }}>
-              多店舗展開企業では、出店・改装・退店が常に複数案件で動いています。エリアごとに異なる施工会社を使い続けると、品質のばらつき・担当者の対応コスト・コスト管理の煩雑さが蓄積します。播磨商事は、関東・東海・近畿の7都府県を1つの体制でカバーし、担当者様の管理負担を継続的に軽減します。
+              多店舗展開企業では、出店・改装・退店が常に複数案件で動いています。エリアごとに異なる施工会社を使い続けると、品質のばらつき・担当者の対応コスト・コスト管理の煩雑さが蓄積します。播磨商事は、{serviceAreaSummary}を1つの体制でカバーし、担当者様の管理負担を継続的に軽減します。
             </p>
           </div>
         </div>
@@ -96,13 +97,13 @@ export default function MultiStorePage() {
             <div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.625rem', fontWeight: 500, letterSpacing: '0.24em', color: '#8F8B82', textTransform: 'uppercase', marginBottom: '1.5rem' }}>COVERAGE</div>
               <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.2, marginBottom: '1.5rem' }}>
-                関東・東海・近畿<br />7都府県を<br />1つの窓口でカバー
+                {serviceAreas.length}都府県を<br />1つの窓口でカバー
               </h2>
               <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2, marginBottom: '2.5rem' }}>
-                広域展開する多店舗企業にとって、エリアごとに施工会社が異なることは管理コストを生む大きな要因です。播磨商事は関東から近畿まで、担当者の窓口を1つに集約します。
+                広域展開する多店舗企業にとって、エリアごとに施工会社が異なることは管理コストを生む大きな要因です。播磨商事は対応エリア内の店舗を、担当者の窓口1つに集約します。
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                {['東京', '埼玉', '千葉', '神奈川', '静岡', '大阪', '兵庫'].map((area) => (
+                {serviceAreas.map((a) => a.short).map((area) => (
                   <span key={area} style={{ padding: '0.5rem 1.25rem', background: '#EDEAE2', fontSize: '0.875rem', fontWeight: 600, color: '#3A3A3A' }}>{area}</span>
                 ))}
               </div>
@@ -122,7 +123,7 @@ export default function MultiStorePage() {
             {[
               { label: 'FC本部向けサービス', href: '/franchise', note: 'フランチャイズ本部の施工管理' },
               { label: '店舗開発担当者向け', href: '/store-development', note: '出店から退店まで' },
-              { label: '対応エリア', href: '/area', note: '関東・東海・近畿 7都府県' },
+              { label: '対応エリア', href: '/area', note: serviceAreaSummary },
             ].map((item) => (
               <Link key={item.href} href={item.href} style={{ display: 'block', padding: '2rem', background: '#FFFFFF', textDecoration: 'none' }}>
                 <div style={{ fontSize: '0.6875rem', color: '#8F8B82', marginBottom: '0.5rem' }}>{item.note}</div>

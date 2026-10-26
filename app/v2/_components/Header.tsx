@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
+import { companyInfo } from '@/data/company'
 
 const navLinks = [
   { href: '/service', label: 'サービス', en: 'SERVICE' },
@@ -248,8 +249,8 @@ export default function Header() {
                 お問い合わせ →
               </Link>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
-                <a href="tel:080-4724-0713" className="mono" style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.06em' }}>
-                  080-4724-0713
+                <a href={`tel:${companyInfo.tel}`} className="mono" style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.06em' }}>
+                  {companyInfo.tel}
                 </a>
                 <span className="mono" style={{ fontSize: '0.5625rem', color: 'rgba(255,255,255,0.25)', letterSpacing: '0.22em' }}>
                   TOKYO / KANTO — KANSAI

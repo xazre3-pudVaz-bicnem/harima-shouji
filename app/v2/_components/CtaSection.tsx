@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { companyInfo } from '@/data/company'
 
 type Props = {
   heading?: string
@@ -65,8 +66,8 @@ export default function CtaSection({
             {primaryLabel}
             <span aria-hidden>→</span>
           </Link>
-          <a href="tel:080-4724-0713" className="btn btn-line-light mono" style={{ letterSpacing: '0.08em' }}>
-            080-4724-0713
+          <a href={`tel:${companyInfo.tel}`} className="btn btn-line-light mono" style={{ letterSpacing: '0.08em' }}>
+            {companyInfo.tel}
           </a>
           <span className="mono" style={{ fontSize: '0.5625rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.28)', textTransform: 'uppercase', marginLeft: '0.5rem' }}>
             SURVEY & ESTIMATE FREE

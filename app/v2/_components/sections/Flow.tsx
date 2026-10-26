@@ -11,20 +11,33 @@ const steps = [
     title: 'お問い合わせ',
     description: 'お電話またはフォームよりご連絡ください。複数店舗のまとめてのご相談も歓迎です。',
   },
+  // 紹介文（data/expertise.ts）の「内見同行 → 現地調査 → 見積もり → 施工 → 現場管理」と同じ順序
   {
     number: '02',
+    en: 'VIEWING',
+    title: '内見同行（物件契約前）',
+    description: '物件の契約前に内見へ同行し、電気容量・給排水・天井高・床の強度・管理規約を確認します。',
+  },
+  {
+    number: '03',
     en: 'SURVEY',
     title: '現地調査（無料）',
     description: '工事内容・スケジュールのヒアリング後、対象店舗に伺います。調査費用は無料です。',
   },
   {
-    number: '03',
+    number: '04',
+    en: 'ESTIMATE',
+    title: 'お見積もり（無料）',
+    description: '現地調査の内容をもとに、工事範囲と費用をお見積もりします。',
+  },
+  {
+    number: '05',
     en: 'CONSTRUCTION',
-    title: '施工・工程管理',
+    title: '施工・現場管理',
     description: '夜間・短工期にも対応。施工中は定期的に進捗をご報告します。',
   },
   {
-    number: '04',
+    number: '06',
     en: 'HANDOVER',
     title: '完了・引き渡し',
     description: '施工完了後にご確認いただき引き渡しとなります。引き渡し後も継続サポート可能です。',
@@ -62,12 +75,12 @@ export default function Flow() {
             </h2>
           </div>
           <span className="mono" style={{ fontSize: '0.625rem', letterSpacing: '0.24em', color: '#B5B0A4', textTransform: 'uppercase' }}>
-            ( 04 STEPS )
+            ( {String(steps.length).padStart(2, '0')} STEPS )
           </span>
         </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: '3rem 0' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: '3rem 0' }}>
           {steps.map((step, index) => (
             <motion.div
               key={step.number}

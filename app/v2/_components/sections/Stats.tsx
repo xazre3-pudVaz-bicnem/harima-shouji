@@ -1,43 +1,71 @@
-const stats = [
-  { value: '07', en: 'PREFECTURES', ja: '対応都府県 — 関東・東海・近畿' },
-  { value: '14', en: 'INDUSTRIES', ja: '対応業種 — 飲食・美容・ジムほか' },
-  { value: '01', en: 'ONE CONTACT', ja: '発注窓口 — 内装から原状回復まで' },
+import Link from 'next/link'
+import { serviceAreas, serviceRegions } from '@/data/company'
+import { specialtyStatement } from '@/data/expertise'
+import { publishedAchievements, achievementsNote } from '@/data/achievements'
+import { startPageVisible } from '@/data/qa'
+
+// 会社の専門分野・対応範囲（紹介文は data/expertise.ts。構造化データの description と同じ文）
+const facts = [
+  { value: '03', en: 'SPECIALTIES', ja: '専門分野 — サロン・ジム・ピラティススタジオ' },
+  { value: String(serviceAreas.length).padStart(2, '0'), en: 'PREFECTURES', ja: `対応エリア — ${serviceRegions.join('・')}` },
+  { value: '01', en: 'ONE STOP', ja: '窓口 — 物件の内見同行から現場管理まで' },
 ]
 
 export default function Stats() {
+  // 実績件数は、集計時点・集計対象が確認できたものだけを表示する（data/achievements.ts）
+  const rows = [
+    ...facts,
+    ...publishedAchievements.map((a) => ({ value: String(a.count), en: a.en, ja: `${a.label}の施工実績（${a.unit}）` })),
+  ]
+
   return (
-    <section style={{ background: 'var(--paper)', paddingTop: '9rem', paddingBottom: '9rem' }}>
+    <section id="about" style={{ background: 'var(--paper)', paddingTop: '9rem', paddingBottom: '9rem' }}>
       <div style={{ maxWidth: '1480px', margin: '0 auto', padding: '0 1.5rem' }}>
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr]" style={{ gap: 'clamp(4rem, 7vw, 8rem)', alignItems: 'start' }}>
 
           {/* Statement */}
           <div>
             <div className="eyebrow" style={{ marginBottom: '2.25rem' }}>ABOUT US</div>
+            {/* 語句の途中で改行されないよう、句ごとに inline-block でまとめる */}
             <h2
               style={{
-                fontSize: 'clamp(2rem, 4.4vw, 3.75rem)',
+                fontSize: 'clamp(1.75rem, 3.4vw, 3rem)',
                 fontWeight: 700,
                 color: '#0A0A0A',
                 letterSpacing: '-0.045em',
-                lineHeight: 1.28,
+                lineHeight: 1.36,
                 marginBottom: '2.25rem',
               }}
             >
-              施工管理の煩雑さを、
+              <span className="inline-block">サロン・ジム・</span>
+              <span className="inline-block">ピラティスの</span>
               <br />
-              <span className="serif-jp" style={{ fontWeight: 500 }}>シンプル</span>に。
+              <span className="inline-block">店舗内装を、</span>
+              <span className="inline-block">
+                <span className="serif-jp" style={{ fontWeight: 500 }}>一貫</span>して。
+              </span>
             </h2>
-            <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2.2, maxWidth: '560px', marginBottom: '1.25rem' }}>
-              店舗数が増えるほど、業者への発注・進捗確認・品質の統一は複雑になります。播磨商事は、店舗内装工事から原状回復工事までを一社で引き受け、本部担当者様の窓口をひとつに集約します。
+            <p style={{ fontSize: '1rem', color: '#3A3A3A', lineHeight: 2.1, maxWidth: '600px', marginBottom: '1.25rem' }}>
+              {specialtyStatement[0]}
+              {specialtyStatement[1]}
             </p>
-            <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2.2, maxWidth: '560px' }}>
-              夜間施工・短工期・複数店舗の同時進行。多店舗展開の現場で求められる施工管理を、仕組みで支えます。
+            <p style={{ fontSize: '1rem', color: '#3A3A3A', lineHeight: 2.1, maxWidth: '600px' }}>
+              {specialtyStatement[2]}
+              {specialtyStatement[3]}
             </p>
+            {startPageVisible && (
+              <Link
+                href="/start"
+                style={{ display: 'inline-block', marginTop: '2.25rem', fontSize: '0.875rem', fontWeight: 700, color: '#0A0A0A', textDecoration: 'none', paddingBottom: '0.375rem', borderBottom: '1px solid #0A0A0A' }}
+              >
+                初めて店舗を出店する方へ →
+              </Link>
+            )}
           </div>
 
-          {/* Stats */}
+          {/* Facts */}
           <div>
-            {stats.map((s) => (
+            {rows.map((s) => (
               <div
                 key={s.en}
                 style={{
@@ -57,7 +85,7 @@ export default function Stats() {
                     color: '#0A0A0A',
                     lineHeight: 1,
                     flexShrink: 0,
-                    width: '3ch',
+                    minWidth: '3ch',
                   }}
                 >
                   {s.value}
@@ -71,6 +99,9 @@ export default function Stats() {
               </div>
             ))}
             <div style={{ borderTop: '1px solid var(--line-2)' }} />
+            {achievementsNote && (
+              <p style={{ marginTop: '1rem', fontSize: '0.75rem', color: '#8F8B82', lineHeight: 1.8 }}>※ {achievementsNote}</p>
+            )}
           </div>
 
         </div>

@@ -8,14 +8,17 @@
  */
 import fs from 'fs'
 import path from 'path'
+import { SITE_URL, serviceAreas, serviceAreaShortText } from '../data/company'
+import { specialtyStatementText } from '../data/expertise'
 
 /* ———————————— サイト設定 ———————————— */
 
 const SITE_NAME = '株式会社播磨商事'
-const BASE_URL = 'https://www.harima-shouji.co.jp'
-const AREA_KEYWORD = '東京・埼玉・千葉・神奈川・静岡・大阪・兵庫'
-const BUSINESS_TYPE = '店舗内装工事・原状回復工事・フランチャイズ内装'
-const MAIN_KEYWORD = '店舗内装工事 フランチャイズ'
+const BASE_URL = SITE_URL
+// 対応エリア・事業内容はサイトの表記（data/company.ts・data/expertise.ts）と同じものを使う
+const AREA_KEYWORD = serviceAreaShortText
+const BUSINESS_TYPE = 'サロン・ジム・ピラティススタジオなどの店舗内装工事・FC多店舗の内装・原状回復工事'
+const MAIN_KEYWORD = '店舗内装工事'
 
 const DEFAULT_MODEL = 'claude-haiku-4-5-20251001'
 const MODEL = process.env.ANTHROPIC_MODEL?.trim() || DEFAULT_MODEL
@@ -28,6 +31,8 @@ const INTERNAL_LINKS = [
   { href: '/service/restoration', label: '原状回復工事サービス' },
   { href: '/franchise', label: 'FC本部向けサービス' },
   { href: '/works', label: '施工実績' },
+  { href: '/start', label: '初めて店舗を出店する方へ' },
+  { href: '/faq', label: 'よくある質問' },
   { href: '/industry', label: '業種別対応一覧' },
   { href: '/company', label: '会社概要' },
   { href: '/contact', label: 'お問い合わせ' },
@@ -70,6 +75,9 @@ const TOPICS: Topic[] = [
   { theme: '静岡 店舗内装工事', slugBase: 'shizuoka-shop-interior', category: 'エリア', tags: ['静岡 店舗内装工事', '静岡 店舗工事'], image: '/rest-02.png' },
   { theme: '大阪 店舗内装工事', slugBase: 'osaka-shop-interior', category: 'エリア', tags: ['大阪 店舗内装工事', '大阪 店舗工事'], image: '/rest-06.png' },
   { theme: '兵庫 店舗内装工事', slugBase: 'hyogo-shop-interior', category: 'エリア', tags: ['兵庫 店舗内装工事', '神戸 店舗工事'], image: '/beauty-01.png' },
+  { theme: '京都 店舗内装工事', slugBase: 'kyoto-shop-interior', category: 'エリア', tags: ['京都 店舗内装工事', '京都 店舗工事'], image: '/salon-04.png' },
+  { theme: '愛知 店舗内装工事', slugBase: 'aichi-shop-interior', category: 'エリア', tags: ['愛知 店舗内装工事', '名古屋 店舗工事'], image: '/store-06.png' },
+  { theme: '岐阜 店舗内装工事', slugBase: 'gifu-shop-interior', category: 'エリア', tags: ['岐阜 店舗内装工事', '岐阜 店舗工事'], image: '/gym-04.png' },
   { theme: '居抜き物件の内装工事', slugBase: 'inuki-interior', category: '店舗内装', tags: ['居抜き 内装工事', '居抜き物件'], image: '/cafe-03.png' },
   { theme: 'スケルトン物件の内装工事', slugBase: 'skeleton-interior', category: '店舗内装', tags: ['スケルトン 内装工事', 'スケルトン物件'], image: '/resto-05.png' },
   { theme: '店舗退去時の原状回復', slugBase: 'store-exit-restoration', category: '原状回復', tags: ['店舗退去 原状回復', '退去立会い'], image: '/resto-06.png' },
@@ -109,9 +117,13 @@ const STATIC_COLUMN_TITLES = [
   '閉店・退店時の原状回復の進め方',
 ]
 
+// エリア別のテーマは、対応エリア（data/company.ts）に含まれる都府県のものだけを使う
+const AREA_TOPIC_SLUGS = new Set(['kanto', ...serviceAreas.map((a) => a.slug)])
+const ACTIVE_TOPICS = TOPICS.filter((t) => t.category !== 'エリア' || AREA_TOPIC_SLUGS.has(t.slugBase.replace(/-shop-interior$/, '')))
+
 function pickTopic(existing: ExistingPost[]): { topic: Topic; previousTitles: string[] } {
   const countByTopic = new Map<string, { count: number; latest: string; titles: string[] }>()
-  for (const t of TOPICS) countByTopic.set(t.theme, { count: 0, latest: '', titles: [] })
+  for (const t of ACTIVE_TOPICS) countByTopic.set(t.theme, { count: 0, latest: '', titles: [] })
   for (const p of existing) {
     if (!p.topic) continue
     const entry = countByTopic.get(p.topic)
@@ -122,11 +134,11 @@ function pickTopic(existing: ExistingPost[]): { topic: Topic; previousTitles: st
   }
 
   // 未使用トピックを優先（プール順）。全て使用済みなら「本数が最少 → 最終投稿が最も古い」順。
-  const unused = TOPICS.filter((t) => countByTopic.get(t.theme)!.count === 0)
+  const unused = ACTIVE_TOPICS.filter((t) => countByTopic.get(t.theme)!.count === 0)
   if (unused.length > 0) {
     return { topic: unused[0], previousTitles: [] }
   }
-  const sorted = [...TOPICS].sort((a, b) => {
+  const sorted = [...ACTIVE_TOPICS].sort((a, b) => {
     const ea = countByTopic.get(a.theme)!
     const eb = countByTopic.get(b.theme)!
     if (ea.count !== eb.count) return ea.count - eb.count
@@ -142,7 +154,7 @@ async function callClaude(apiKey: string, topic: Topic, previousTitles: string[]
   const linkList = INTERNAL_LINKS.map((l) => `- [${l.label}](${l.href})`).join('\n')
   const avoidTitles = [...STATIC_COLUMN_TITLES, ...previousTitles]
 
-  const system = `あなたは${SITE_NAME}（${BUSINESS_TYPE}を手がける施工会社、対応エリア: ${AREA_KEYWORD}）のオウンドメディア編集者兼ライターです。店舗施工の実務に詳しく、FC本部・多店舗展開企業の担当者や出店予定のオーナーに向けた、検索流入を狙う専門コラムを書きます。
+  const system = `あなたは${SITE_NAME}（${BUSINESS_TYPE}を手がける施工会社、対応エリア: ${AREA_KEYWORD}）のオウンドメディア編集者兼ライターです。店舗施工の実務に詳しく、初めて店舗を出す個人オーナーからFC本部・多店舗展開企業の担当者まで、出店を検討する読者に向けた、検索流入を狙う専門コラムを書きます。
 
 執筆ルール（厳守）:
 - 日本語。本文は2,000〜3,000文字程度
@@ -155,7 +167,9 @@ async function callClaude(apiKey: string, topic: Topic, previousTitles: string[]
 - 地域名（${AREA_KEYWORD}のいずれか）、店舗内装工事、原状回復、フランチャイズ内装、といった語を不自然にならない範囲で本文に含める
 - 記事の途中または末尾で、次の内部リンクのうち文脈に合う2〜3本をMarkdownリンクとしてそのままのURLで自然に挿入する:
 ${linkList}
-- ${SITE_NAME}のサービス実態（店舗内装工事と原状回復工事の2事業、FC・多店舗の施工管理一括対応、現地調査・見積無料）と矛盾する記述をしない
+- ${SITE_NAME}の会社紹介（${specialtyStatementText}）と矛盾する記述をしない。現地調査・見積もりは無料
+- サロン・ジム・ピラティスなど業種別のテーマでは、導入文で「初めて出店する方にも」役立つ内容だと伝わる書き方にする（FC本部・多店舗企業の担当者だけに向けた書き方にしない）
+- ${SITE_NAME}の実績として、具体的な金額・件数・工期・施工事例を書かない（確認済みの数値ではないため）。一般的な目安を書く場合も「物件条件によって変わる」と添える
 - 会社を紹介する場合は控えめに。宣伝より読者の実務に役立つ情報を優先する
 
 出力形式（この形式以外の文字列を一切含めない）:

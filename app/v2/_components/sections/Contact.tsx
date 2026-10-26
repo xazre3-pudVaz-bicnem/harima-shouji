@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { companyInfo } from '@/data/company'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -132,11 +133,11 @@ export default function Contact() {
             </p>
 
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.75rem', display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
-              <a href="tel:080-4724-0713" className="mono" style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.85)', textDecoration: 'none', letterSpacing: '0.04em' }}>
-                080-4724-0713
+              <a href={`tel:${companyInfo.tel}`} className="mono" style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.85)', textDecoration: 'none', letterSpacing: '0.04em' }}>
+                {companyInfo.tel}
               </a>
-              <a href="mailto:naisou@harima-shouji.co.jp" className="mono" style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', letterSpacing: '0.02em' }}>
-                naisou@harima-shouji.co.jp
+              <a href={`mailto:${companyInfo.email}`} className="mono" style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', letterSpacing: '0.02em' }}>
+                {companyInfo.email}
               </a>
               <span className="mono" style={{ fontSize: '0.5625rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', marginTop: '0.5rem' }}>
                 SURVEY & ESTIMATE FREE

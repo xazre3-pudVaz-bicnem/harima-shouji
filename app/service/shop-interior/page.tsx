@@ -5,6 +5,7 @@ import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
 import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
 import RelatedColumns from '@/app/v2/_components/RelatedColumns'
+import { areaServedSchema } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: '店舗内装工事 | FC本部・多店舗展開企業向け',
@@ -43,7 +44,7 @@ export default function ShopInteriorPage() {
       serviceType: '店舗内装工事',
       provider: { '@id': 'https://harima-shouji.co.jp/#organization' },
       description: 'FC本部・多店舗展開企業向けの店舗内装工事。新規出店・改装・夜間施工対応。',
-      areaServed: ['東京都', '埼玉県', '千葉県', '神奈川県', '静岡県', '大阪府', '兵庫県'],
+      areaServed: areaServedSchema,
       url: 'https://harima-shouji.co.jp/service/shop-interior',
     },
     {

@@ -3,10 +3,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
+import Scope from '@/app/v2/_components/sections/Scope'
+import JsonLd from '@/components/ui/JsonLd'
+import { specialtyStatement, specialtyFacts } from '@/data/expertise'
 
 export const metadata: Metadata = {
-  title: 'サービス一覧 | 店舗内装工事・原状回復工事',
-  description: 'FC本部・多店舗展開企業向けの2つのサービス。店舗内装工事（新規出店・改装）と原状回復工事（退去・解体・内装復旧）を一括対応します。現地調査・見積無料。',
+  title: 'サービス一覧 | サロン・ジム・ピラティスの店舗内装工事・原状回復工事',
+  description: 'サロン・ジム・ピラティススタジオなどの店舗内装工事を専門に、FC・多店舗展開の内装工事、退去時の原状回復工事まで。物件契約前の内見同行から現地調査・見積もり・施工・現場管理まで一貫対応します。',
   alternates: { canonical: 'https://harima-shouji.co.jp/service' },
   openGraph: {
     images: ['/og-image.jpg'], title: 'サービス一覧 | 株式会社播磨商事', url: 'https://harima-shouji.co.jp/service' },
@@ -56,18 +59,39 @@ export default function ServicePage() {
   return (
     <div style={{ background: '#F6F4EF' }}>
       {structuredData.map((data, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+        <JsonLd key={i} data={data} />
       ))}
       <PageHero
         label="SERVICE"
         title="サービス"
-        subtitle="播磨商事が対応するのは2つのサービスのみ。FC本部・多店舗展開企業の施工管理を一本化します。"
+        subtitle="サロン・ジム・ピラティススタジオの店舗内装を中心に、FC・多店舗の内装工事から退去時の原状回復まで。内見同行から現場管理まで一貫して対応します。"
         image="/LINE_ALBUM_2026.6.10_260610_3.jpg"
         breadcrumb={[
           { label: 'TOP', href: '/' },
           { label: 'サービス', href: '/service' },
         ]}
       />
+
+      {/* 専門分野・対応範囲（紹介文は data/expertise.ts） */}
+      <section style={{ background: 'var(--paper)', paddingTop: '7rem', paddingBottom: '7rem' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr]" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', gap: 'clamp(3rem, 6vw, 6rem)', alignItems: 'start' }}>
+          <div>
+            <div className="eyebrow" style={{ marginBottom: '1.5rem' }}>ABOUT</div>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#0A0A0A', letterSpacing: '-0.03em', lineHeight: 1.3, marginBottom: '1.75rem' }}>
+              播磨商事の専門分野と対応範囲
+            </h2>
+            <p style={{ fontSize: '1rem', color: '#3A3A3A', lineHeight: 2.1 }}>{specialtyStatement.join('')}</p>
+          </div>
+          <dl style={{ borderTop: '1px solid var(--line-2)' }}>
+            {specialtyFacts.map((f) => (
+              <div key={f.label} style={{ display: 'grid', gridTemplateColumns: 'minmax(6rem, 8rem) 1fr', gap: '1.25rem', padding: '1.25rem 0.25rem', borderBottom: '1px solid var(--line-2)' }}>
+                <dt style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#0A0A0A' }}>{f.label}</dt>
+                <dd style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 1.9 }}>{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
 
       {/* Service list */}
       <section style={{ background: '#FFFFFF', paddingTop: '7rem', paddingBottom: '7rem' }}>
@@ -120,6 +144,8 @@ export default function ServicePage() {
         </div>
       </section>
 
+      <Scope />
+
       {/* Related links */}
       <section style={{ paddingTop: '6rem', paddingBottom: '6rem', background: '#EDEAE2' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
@@ -139,7 +165,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <CtaSection heading={'店舗内装・原状回復について\n相談する'} subtext="FC本部・多店舗展開企業向けの施工管理をまとめてサポートします。" />
+      <CtaSection heading={'店舗内装・原状回復について\n相談する'} subtext="サロン・ジム・ピラティススタジオの内装から、FC・多店舗の施工管理まで。現地調査・お見積もりは無料です。" />
     </div>
   )
 }

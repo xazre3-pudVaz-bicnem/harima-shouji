@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { serviceRegionEnText } from '@/data/company'
 
 type Props = {
   label: string
@@ -102,7 +103,7 @@ export default function PageHero({ label, title, subtitle, image, breadcrumb }: 
             HARIMA SHOUJI — CONSTRUCTION MANAGEMENT
           </span>
           <span className="mono hidden sm:inline" style={{ fontSize: '0.5625rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.28)', textTransform: 'uppercase' }}>
-            TOKYO / KANTO — KANSAI
+            {serviceRegionEnText}
           </span>
         </div>
       </div>

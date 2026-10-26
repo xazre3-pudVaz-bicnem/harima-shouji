@@ -78,13 +78,12 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
         </span>
       </button>
 
-      {open && (
-        <div style={{ paddingBottom: '1.875rem', paddingLeft: '3.1rem' }}>
-          <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2.05, margin: 0, borderLeft: '1px solid #C25E7F', paddingLeft: '1.5rem' }}>
-            {a}
-          </p>
-        </div>
-      )}
+      {/* 閉じている間も回答をHTMLに残す（検索エンジン・AIが回答を読めるように hidden で隠す） */}
+      <div hidden={!open} style={{ paddingBottom: '1.875rem', paddingLeft: '3.1rem' }}>
+        <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2.05, margin: 0, borderLeft: '1px solid #C25E7F', paddingLeft: '1.5rem' }}>
+          {a}
+        </p>
+      </div>
     </div>
   )
 }

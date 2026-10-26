@@ -7,6 +7,8 @@ import CtaSection from '@/app/v2/_components/CtaSection'
 import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
 import { areas, getArea } from '@/data/areas'
 import { getCitiesByPrefecture } from '@/data/cities'
+import { organizationRef } from '@/lib/structured-data'
+import { serviceAreaText, outsideAreaNote } from '@/data/company'
 
 type Params = { prefecture: string }
 
@@ -21,7 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
   return {
     title: `${area.name}の店舗内装工事・原状回復｜FC本部・多店舗展開`,
-    description: `${area.name}の店舗内装工事・原状回復工事に対応。FC本部・多店舗展開企業の施工管理を一括対応。${area.name}全域・主要都市の施工実績あり。現地調査・見積無料。`,
+    // 施工実績は府県ごとに確認できていないため、メタ情報では「実績あり」と書かない
+    description: `${area.name}の店舗内装工事・原状回復工事に対応。サロン・ジム・ピラティススタジオなどの店舗内装から、FC本部・多店舗展開企業の施工管理まで一括対応。現地調査・見積無料。`,
     keywords: [`${area.name} 内装工事`, `${area.name} 原状回復`, `${area.name} FC 内装工事`, `${area.name} 多店舗 内装`],
     alternates: { canonical: `https://harima-shouji.co.jp/area/${prefecture}` },
     openGraph: {
@@ -41,9 +44,9 @@ export default async function PrefecturePage({ params }: { params: Promise<Param
 
   const localBusinessData = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: '株式会社播磨商事',
-    url: 'https://harima-shouji.co.jp',
+    '@type': 'Service',
+    name: `${area.name}の店舗内装工事・原状回復工事`,
+    provider: organizationRef,
     areaServed: { '@type': 'AdministrativeArea', name: area.name },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -61,7 +64,7 @@ export default async function PrefecturePage({ params }: { params: Promise<Param
     { q: `${area.name}で夜間施工は対応できますか？`, a: 'はい、閉店後の夜間施工に対応しています。翌朝の営業開始に間に合わせるスケジュール管理を行います。' },
     { q: `${area.name}の複数店舗を同時に施工できますか？`, a: `はい、${area.name}内の複数案件の同時進行管理に対応しています。担当者様の窓口を1つに集約します。` },
     { q: '現地調査・見積りは無料ですか？', a: 'はい、現地調査・見積りは無料です。まずはお気軽にご相談ください。' },
-    { q: `${area.name}エリア外の案件も対応できますか？`, a: '関東（東京・埼玉・千葉・神奈川）、静岡、大阪、兵庫に対応しています。エリア外についてもご相談ください。' },
+    { q: `${area.name}エリア外の案件も対応できますか？`, a: `${serviceAreaText}で施工に対応しています。${outsideAreaNote}` },
   ]
 
   const faqData = [{ category: `${area.name}に関するよくある質問`, items: faqItems }]

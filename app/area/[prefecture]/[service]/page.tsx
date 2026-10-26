@@ -7,6 +7,7 @@ import CtaSection from '@/app/v2/_components/CtaSection'
 import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
 import { areas, getArea } from '@/data/areas'
 import { cities, getCity, getCitiesByPrefecture } from '@/data/cities'
+import { organizationRef } from '@/lib/structured-data'
 
 type Params = { prefecture: string; service: string }
 
@@ -105,7 +106,7 @@ function PrefectureServicePage({
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: `${area!.name}の${serviceLabel}`,
-    provider: { '@type': 'LocalBusiness', name: '株式会社播磨商事', address: { '@type': 'PostalAddress', addressRegion: '東京都' } },
+    provider: organizationRef,
     description: data.description,
     areaServed: { '@type': 'AdministrativeArea', name: area!.name },
   }
@@ -231,9 +232,9 @@ function CityPage({
 
   const localBusinessData = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: '株式会社播磨商事',
-    url: 'https://harima-shouji.co.jp',
+    '@type': 'Service',
+    name: `${city.cityName}の店舗内装工事・原状回復工事`,
+    provider: organizationRef,
     areaServed: [
       { '@type': 'AdministrativeArea', name: city.cityName },
       { '@type': 'AdministrativeArea', name: area.name },

@@ -4,10 +4,12 @@ import Image from 'next/image'
 import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
 import RelatedColumns from '@/app/v2/_components/RelatedColumns'
+import { areaServedSchema, organizationRef } from '@/lib/structured-data'
+import { serviceAreaShortText, serviceAreaText } from '@/data/company'
 
 export const metadata: Metadata = {
   title: 'FC本部・フランチャイズ店舗内装工事',
-  description: 'フランチャイズ・チェーン店の内装工事・原状回復を一括管理。FC本部の施工品質統一・窓口一本化・コスト管理を支援。関東・東海・近畿 7都府県対応。',
+  description: `フランチャイズ・チェーン店の内装工事・原状回復を一括管理。FC本部の施工品質統一・窓口一本化・コスト管理を支援。${serviceAreaShortText}で施工に対応。`,
   keywords: [
     'FC本部 内装工事',
     'フランチャイズ 内装工事',
@@ -41,7 +43,7 @@ const faqItems = [
   },
   {
     q: '対応エリアはどこですか？',
-    a: '東京都・神奈川県・埼玉県・千葉県・静岡県・大阪府・兵庫県に対応しています。関東を中心としたFC展開から、東海・近畿エリアへの広域展開まで、1社で対応可能です。',
+    a: `${serviceAreaText}で施工に対応しています。複数エリアにまたがるFC展開も、1社でまとめて対応します。`,
   },
   {
     q: '退去時の原状回復も対応してもらえますか？',
@@ -58,14 +60,10 @@ export default function FranchisePage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'FC本部向け内装工事・施工管理サービス',
-    provider: {
-      '@type': 'LocalBusiness',
-      name: '株式会社播磨商事',
-      url: 'https://harima-shouji.co.jp',
-    },
+    provider: organizationRef,
     description:
       'フランチャイズ・チェーン店舗の内装工事・原状回復工事を一括管理。FC本部の施工品質統一・窓口一本化・コスト管理を支援します。',
-    areaServed: '東京都・神奈川県・埼玉県・千葉県・静岡県・大阪府・兵庫県',
+    areaServed: areaServedSchema,
     serviceType: ['店舗内装工事', '原状回復工事', 'フランチャイズ施工管理'],
   }
 

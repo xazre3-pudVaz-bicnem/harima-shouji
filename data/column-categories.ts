@@ -1,3 +1,4 @@
+import { serviceAreaSummary } from './company'
 // 専門コラムのカテゴリ体系。
 // 10カテゴリを正規化し、各記事の category 文字列（frontmatter / data/columns.ts）を
 // カテゴリslugへマッピングする。/column/category/[category] のルーティングに使う。
@@ -81,7 +82,7 @@ export const columnCategories: ColumnCategory[] = [
     slug: 'area',
     label: 'エリア別店舗工事',
     short: 'エリア別',
-    description: '東京・埼玉・千葉・神奈川・静岡・大阪・兵庫など、エリアごとの店舗工事・原状回復の注意点を解説します。',
+    description: `${serviceAreaSummary}を中心に、エリアごとの店舗工事・原状回復の注意点を解説します。`,
     image: '/store-05.png',
     aliases: ['エリア'],
   },

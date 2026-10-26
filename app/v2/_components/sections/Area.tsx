@@ -2,18 +2,12 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { serviceAreas, serviceAreaSummary, outsideAreaNote } from '@/data/company'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-const prefectures = [
-  { name: '東京都', reading: 'TOKYO', slug: 'tokyo' },
-  { name: '埼玉県', reading: 'SAITAMA', slug: 'saitama' },
-  { name: '千葉県', reading: 'CHIBA', slug: 'chiba' },
-  { name: '神奈川県', reading: 'KANAGAWA', slug: 'kanagawa' },
-  { name: '静岡県', reading: 'SHIZUOKA', slug: 'shizuoka' },
-  { name: '大阪府', reading: 'OSAKA', slug: 'osaka' },
-  { name: '兵庫県', reading: 'HYOGO', slug: 'hyogo' },
-]
+// 対応エリアは data/company.ts で一元管理
+const prefectures = serviceAreas.map((a) => ({ name: a.name, reading: a.en, slug: a.slug }))
 
 export default function Area() {
   return (
@@ -47,7 +41,7 @@ export default function Area() {
               対応エリア
             </h2>
             <p style={{ fontSize: '0.9375rem', color: '#57544D', lineHeight: 2.1, maxWidth: '360px' }}>
-              関東エリアを中心に、東海・近畿にも対応。複数エリアにまたがる案件もご相談ください。
+              {serviceAreaSummary}で施工に対応しています。複数エリアにまたがる案件もご相談ください。
             </p>
 
             <div
@@ -59,7 +53,7 @@ export default function Area() {
               }}
             >
               <p style={{ fontSize: '0.8125rem', color: '#57544D', lineHeight: 2 }}>
-                上記エリア外についても、案件内容によってはご対応可能な場合があります。まずはお気軽にお問い合わせください。
+                {outsideAreaNote}まずはお気軽にお問い合わせください。
               </p>
             </div>
           </motion.div>

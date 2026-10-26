@@ -5,6 +5,8 @@ import PageHero from '@/app/v2/_components/PageHero'
 import CtaSection from '@/app/v2/_components/CtaSection'
 import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
 import RelatedColumns from '@/app/v2/_components/RelatedColumns'
+import { areaServedSchema, organizationRef } from '@/lib/structured-data'
+import { serviceAreaSummary } from '@/data/company'
 
 export const metadata: Metadata = {
   title: '原状回復工事 | 店舗退去・テナント原状回復 東京・関東',
@@ -76,20 +78,10 @@ export default function RestorationPage() {
     '@type': 'Service',
     name: '原状回復工事',
     alternateName: ['店舗 原状回復', 'テナント 原状回復', '原状回復工事 東京'],
-    provider: {
-      '@type': 'LocalBusiness',
-      name: '株式会社播磨商事',
-      url: 'https://harima-shouji.co.jp',
-      telephone: '080-4724-0713',
-      address: {
-        '@type': 'PostalAddress',
-        addressCountry: 'JP',
-        addressRegion: '東京都',
-      },
-    },
+    provider: organizationRef,
     description:
       '退去立会い代行・解体・クロス補修・床復旧・設備復旧まで一括対応。複数店舗の退去スケジュール一元管理と費用の適正化サポートを提供。',
-    areaServed: ['東京都', '埼玉県', '千葉県', '神奈川県', '静岡県', '大阪府', '兵庫県'],
+    areaServed: areaServedSchema,
     serviceType: '原状回復工事',
   }
 
@@ -408,8 +400,8 @@ export default function RestorationPage() {
               },
               {
                 num: '04',
-                title: '全国エリア対応',
-                body: '関東・東海・近畿の7都府県に対応。多店舗展開エリアをカバーし、エリアをまたいだ退去管理も可能です。',
+                title: '複数エリアに対応',
+                body: `${serviceAreaSummary}に対応。多店舗展開エリアをカバーし、エリアをまたいだ退去管理も可能です。`,
               },
             ].map((item) => (
               <div

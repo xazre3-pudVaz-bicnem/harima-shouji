@@ -6,13 +6,16 @@ import { industries } from '@/data/industries'
 import { solutions } from '@/data/solutions'
 import { cases } from '@/data/cases'
 import { cities } from '@/data/cities'
-import { works } from '@/data/works'
+import { indexableWorks } from '@/data/works'
+import { SITE_URL } from '@/data/company'
+import { detailQa, visibleQaCategories, startPageVisible, pricePageVisible } from '@/data/qa'
+import { showDrafts } from '@/lib/content-status'
 import { news } from '@/data/news'
 import { getBlogPosts } from '@/lib/blog'
 import { columnCategories } from '@/data/column-categories'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://harima-shouji.co.jp'
+  const baseUrl = SITE_URL
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
@@ -36,8 +39,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/news`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
   ]
 
-  // Works (施工事例) individual pages — data/works.ts から動的生成（画像付き）
-  const worksRoutes: MetadataRoute.Sitemap = works.map((w) => ({
+  // Works (施工事例) individual pages — 実際の施工事例のみ（施工イメージは noindex のため除外）
+  const worksRoutes: MetadataRoute.Sitemap = indexableWorks.map((w) => ({
     url: `${baseUrl}/works/${w.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
@@ -141,8 +144,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // WordPress not connected
   }
 
+  // 初めての出店・費用の目安・よくある質問（公開済みのページだけ。下書きを表示する確認用ビルドでは出力しない）
+  const guideRoutes: MetadataRoute.Sitemap = showDrafts
+    ? []
+    : [
+        ...(startPageVisible ? [{ url: `${baseUrl}/start`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 }] : []),
+        ...(pricePageVisible ? [{ url: `${baseUrl}/price`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 }] : []),
+        ...visibleQaCategories.map((c) => ({ url: `${baseUrl}/faq/${c.slug}`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.75 })),
+        ...detailQa.map((q) => ({ url: `${baseUrl}/faq/${q.category}/${q.slug}`, lastModified: q.updatedAt ? new Date(q.updatedAt) : new Date(), changeFrequency: 'monthly' as const, priority: 0.7 })),
+      ]
+
   return [
     ...staticRoutes,
+    ...guideRoutes,
     ...prefectureRoutes,
     ...areaRoutes,
     ...cityRoutes,

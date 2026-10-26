@@ -4,6 +4,7 @@ import Hero from '@/app/v2/_components/sections/Hero'
 import Marquee from '@/app/v2/_components/sections/Marquee'
 import Stats from '@/app/v2/_components/sections/Stats'
 import Service from '@/app/v2/_components/sections/Service'
+import Scope from '@/app/v2/_components/sections/Scope'
 import WorksPreview from '@/app/v2/_components/sections/WorksPreview'
 import WhyHarima from '@/app/v2/_components/sections/WhyHarima'
 import Industries from '@/app/v2/_components/sections/Industries'
@@ -12,43 +13,34 @@ import Flow from '@/app/v2/_components/sections/Flow'
 import Message from '@/app/v2/_components/sections/Message'
 import NewsPreview from '@/app/v2/_components/sections/NewsPreview'
 import Contact from '@/app/v2/_components/sections/Contact'
-import { localBusinessSchema, faqSchema } from '@/lib/structured-data'
-import { faqItems } from '@/data/faq'
+import { SITE_URL } from '@/data/company'
+import { HOME_DESCRIPTION, HOME_TITLE } from '@/lib/site-copy'
 
 export const metadata: Metadata = {
-  title: 'フランチャイズ本部・多店舗展開企業の施工パートナー | 株式会社播磨商事',
-  description:
-    'FC本部・多店舗展開企業向けの店舗内装工事・原状回復工事。施工管理の負担を軽減します。東京・関東圏を中心に7都府県対応。',
-  alternates: { canonical: 'https://harima-shouji.co.jp' },
+  // layout.tsx の title.template は同じ階層の page には適用されないため、社名まで含めて指定する
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
+  keywords: ['店舗内装工事', 'サロン 内装', 'エステサロン 内装', 'ネイルサロン 内装', 'パーソナルジム 内装', 'ピラティス 内装', 'FC 内装工事', '原状回復'],
+  alternates: { canonical: SITE_URL },
   openGraph: {
     images: ['/og-image.jpg'],
-    title: 'フランチャイズ本部・多店舗展開企業の施工パートナー | 株式会社播磨商事',
-    description: 'FC本部・多店舗展開企業向けの店舗内装工事・原状回復工事。施工管理の負担を軽減します。',
-    url: 'https://harima-shouji.co.jp',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: SITE_URL,
   },
 }
 
+// 会社の構造化データ（GeneralContractor）は layout.tsx が全ページで出力する。
+// 以前ここで出していた FAQPage は、ページに表示していない質問だったため削除した（/faq などで出力）。
 export default function HomePage() {
-  // Organization / WebSite は layout.tsx が全ページで出力。ここでは LocalBusiness と FAQ を追加。
-  const structuredData = [
-    localBusinessSchema,
-    faqSchema(faqItems.slice(0, 6)),
-  ]
-
   return (
     <>
-      {structuredData.map((data, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-        />
-      ))}
       <Loading />
       <Hero />
       <Marquee />
       <Stats />
       <Service />
+      <Scope />
       <WorksPreview />
       <WhyHarima />
       <Industries />

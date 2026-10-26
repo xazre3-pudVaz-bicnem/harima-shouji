@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { serviceAreas, serviceRegionEnText } from '@/data/company'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -159,7 +160,7 @@ export default function Hero() {
               marginTop: '1.75rem',
             }}
           >
-            フランチャイズ本部・多店舗展開企業のための施工パートナー
+            初めての出店からFC・多店舗展開まで任せられる店舗内装の専門会社
           </motion.span>
         </h1>
 
@@ -179,7 +180,7 @@ export default function Hero() {
           }}
         >
           <span className="mono" style={{ fontSize: '0.5625rem', letterSpacing: '0.24em', color: 'rgba(255,255,255,0.38)', textTransform: 'uppercase' }}>
-            TOKYO / SAITAMA / CHIBA / KANAGAWA / SHIZUOKA / OSAKA / HYOGO
+            {serviceRegionEnText} — {serviceAreas.length} PREFECTURES
           </span>
           <span className="mono hidden md:flex" style={{ alignItems: 'center', gap: '0.75rem', fontSize: '0.5625rem', letterSpacing: '0.28em', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase' }}>
             SCROLL

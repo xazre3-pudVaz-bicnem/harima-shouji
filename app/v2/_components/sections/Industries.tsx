@@ -1,12 +1,13 @@
 import Link from 'next/link'
 
 const industries = [
+  // 専門分野（サロン・ジム）を先頭に
+  { href: '/industry/salon-interior', ja: 'エステ・ネイルサロン', en: 'SALON' },
+  { href: '/industry/beauty-salon-interior', ja: '美容室・ヘアサロン', en: 'BEAUTY SALON' },
+  { href: '/industry/gym-interior', ja: 'フィットネス・ジム', en: 'GYM' },
   { href: '/industry/restaurant-interior', ja: '飲食店', en: 'RESTAURANT' },
   { href: '/industry/cafe-interior', ja: 'カフェ・ベーカリー', en: 'CAFE / BAKERY' },
   { href: '/industry/bar-interior', ja: 'バー・ダイニングバー', en: 'BAR' },
-  { href: '/industry/beauty-salon-interior', ja: '美容室・ヘアサロン', en: 'BEAUTY SALON' },
-  { href: '/industry/salon-interior', ja: 'エステ・ネイルサロン', en: 'SALON' },
-  { href: '/industry/gym-interior', ja: 'フィットネス・ジム', en: 'GYM' },
   { href: '/industry/clinic-interior', ja: 'クリニック', en: 'CLINIC' },
   { href: '/industry/dental-interior', ja: '歯科医院', en: 'DENTAL' },
   { href: '/industry/seikotsuin-interior', ja: '整骨院・接骨院', en: 'SEIKOTSUIN' },

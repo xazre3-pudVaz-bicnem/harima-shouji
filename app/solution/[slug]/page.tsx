@@ -7,6 +7,7 @@ import CtaSection from '@/app/v2/_components/CtaSection'
 import FaqAccordion from '@/app/v2/faq/_components/FaqAccordion'
 import { solutions, getSolution } from '@/data/solutions'
 import { getSolutionLp } from '@/data/solution-lp'
+import { areaServedSchema, organizationRef } from '@/lib/structured-data'
 
 type Params = { slug: string }
 
@@ -63,13 +64,8 @@ export default async function SolutionPage({ params }: { params: Promise<Params>
     '@type': 'Service',
     name: solution.title,
     description: solution.metaDescription,
-    provider: {
-      '@type': 'Organization',
-      name: '株式会社播磨商事',
-      url: 'https://harima-shouji.co.jp',
-      telephone: '080-4724-0713',
-    },
-    areaServed: ['東京都', '埼玉県', '千葉県', '神奈川県', '静岡県', '大阪府', '兵庫県'],
+    provider: organizationRef,
+    areaServed: areaServedSchema,
     url: `https://harima-shouji.co.jp/solution/${slug}`,
   }
 
