@@ -3,36 +3,30 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { companyInfo } from '@/data/company'
+import { emptyInquiry, sendInquiry, type Inquiry, type SendResult } from '@/lib/contact'
+import ContactFallback from '@/components/ui/ContactFallback'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-type FormData = {
-  company: string
-  name: string
-  email: string
-  phone: string
-  service: string
-  message: string
-}
-
 export default function Contact() {
-  const [form, setForm] = useState<FormData>({
-    company: '',
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  })
+  const [form, setForm] = useState<Inquiry>(emptyInquiry)
+  const [sending, setSending] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [failure, setFailure] = useState<Extract<SendResult, { ok: false }> | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // 送信に成功したときだけ「受け付けました」を表示する。失敗時はメール・電話での連絡を案内する
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSending(true)
+    setFailure(null)
+    const result = await sendInquiry({ ...form, page: window.location.pathname })
+    setSending(false)
+    if (result.ok) setSubmitted(true)
+    else setFailure(result)
   }
 
   const inputStyle: React.CSSProperties = {
@@ -176,14 +170,13 @@ export default function Contact() {
               >
                 <div className="grid grid-cols-1 gap-9 sm:grid-cols-2">
                   <div>
-                    <label style={labelStyle}>COMPANY {requiredMark}</label>
+                    <label style={labelStyle}>COMPANY</label>
                     <input
                       type="text"
                       name="company"
                       value={form.company}
                       onChange={handleChange}
-                      required
-                      placeholder="会社名"
+                      placeholder="会社名・屋号（任意）"
                       style={inputStyle}
                       {...focusHandlers}
                     />
@@ -261,10 +254,20 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* スパム対策：画面には出さない入力欄（ボットだけが入力する） */}
+                <div aria-hidden style={{ position: 'absolute', left: '-10000px', width: '1px', height: '1px', overflow: 'hidden' }}>
+                  <label>
+                    ウェブサイト
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={handleChange} />
+                  </label>
+                </div>
+
+                {failure && <ContactFallback inquiry={form} result={failure} tone="dark" />}
+
                 <div style={{ paddingTop: '0.75rem' }}>
-                  <button type="submit" className="btn btn-paper" style={{ padding: '1.1rem 3.5rem' }}>
-                    送信する
-                    <span aria-hidden>→</span>
+                  <button type="submit" className="btn btn-paper" disabled={sending} style={{ padding: '1.1rem 3.5rem', opacity: sending ? 0.6 : 1, cursor: sending ? 'wait' : 'pointer' }}>
+                    {sending ? '送信中…' : '送信する'}
+                    {!sending && <span aria-hidden>→</span>}
                   </button>
                 </div>
               </motion.form>

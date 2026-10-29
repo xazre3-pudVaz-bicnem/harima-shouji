@@ -1,36 +1,28 @@
 'use client'
 
 import { useState } from 'react'
-
-type FormData = {
-  company: string
-  name: string
-  email: string
-  phone: string
-  service: string
-  stores: string
-  message: string
-}
+import { emptyInquiry, sendInquiry, type Inquiry, type SendResult } from '@/lib/contact'
+import ContactFallback from '@/components/ui/ContactFallback'
 
 export default function ContactForm() {
-  const [form, setForm] = useState<FormData>({
-    company: '',
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    stores: '',
-    message: '',
-  })
+  const [form, setForm] = useState<Inquiry>(emptyInquiry)
+  const [sending, setSending] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [failure, setFailure] = useState<Extract<SendResult, { ok: false }> | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // 送信に成功したときだけ「受け付けました」を表示する。失敗時はメール・電話での連絡を案内する
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSending(true)
+    setFailure(null)
+    const result = await sendInquiry({ ...form, page: window.location.pathname })
+    setSending(false)
+    if (result.ok) setSubmitted(true)
+    else setFailure(result)
   }
 
   const inputBase: React.CSSProperties = {
@@ -77,13 +69,13 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+    <form onSubmit={handleSubmit} style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
 
       {/* Company + Name */}
       <div style={{ display: 'grid', gap: '2.5rem' }} className="grid-cols-1 sm:grid-cols-2">
         <div>
-          <label style={label}>会社名 <span style={{ color: '#B5B0A4' }}>必須</span></label>
-          <input type="text" name="company" value={form.company} onChange={handleChange} required placeholder="株式会社◯◯" style={inputBase} />
+          <label style={label}>会社名・屋号 <span style={{ color: '#B5B0A4' }}>任意</span></label>
+          <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="株式会社◯◯（個人の方は空欄で構いません）" style={inputBase} />
         </div>
         <div>
           <label style={label}>お名前 <span style={{ color: '#B5B0A4' }}>必須</span></label>
@@ -145,10 +137,21 @@ export default function ContactForm() {
         ご入力いただいた個人情報は、お問い合わせへの対応のみに使用します。
       </p>
 
+      {/* スパム対策：画面には出さない入力欄（ボットだけが入力する） */}
+      <div aria-hidden style={{ position: 'absolute', left: '-10000px', width: '1px', height: '1px', overflow: 'hidden' }}>
+        <label>
+          ウェブサイト
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={handleChange} />
+        </label>
+      </div>
+
+      {failure && <ContactFallback inquiry={form} result={failure} tone="light" />}
+
       {/* Submit */}
       <div>
         <button
           type="submit"
+          disabled={sending}
           style={{
             padding: '1.125rem 3.5rem',
             background: '#0A0A0A',
@@ -157,14 +160,15 @@ export default function ContactForm() {
             fontWeight: 700,
             letterSpacing: '0.08em',
             border: 'none',
-            cursor: 'pointer',
+            cursor: sending ? 'wait' : 'pointer',
+            opacity: sending ? 0.6 : 1,
             fontFamily: 'inherit',
             transition: 'background 0.2s',
           }}
           onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#2A2A2A' }}
           onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = '#0A0A0A' }}
         >
-          送信する
+          {sending ? '送信中…' : '送信する'}
         </button>
       </div>
 
